@@ -12,7 +12,6 @@ add_action( 'vc_before_init', function () {
 			'description' => esc_html__( 'Buttons to share the current page on social networks', SEFWPB_TD ),
 			'category'    => esc_html__( 'Social', SEFWPB_TD ),
 			'icon'        => 'sefwpb-icon-share-buttons',
-			'front_enqueue_css'       => preg_replace( '/\s/', '%20', plugins_url( 'assets/css/social-share.css', __FILE__ ) ),
 			'params'      => [
 				[
 					'type' => 'textfield',

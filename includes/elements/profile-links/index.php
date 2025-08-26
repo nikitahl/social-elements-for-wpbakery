@@ -12,7 +12,6 @@ add_action( 'vc_before_init', function () {
 			'description' => esc_html__( 'Buttons linking to your social media profiles', SEFWPB_TD ),
 			'category'    => esc_html__( 'Social', SEFWPB_TD ),
 			'icon'        => 'sefwpb-icon-profile-links',
-			'front_enqueue_css'       => preg_replace( '/\s/', '%20', plugins_url( 'assets/css/profile-links.css', __FILE__ ) ),
 			'params'      => [
 				[
 					'type' => 'textfield',

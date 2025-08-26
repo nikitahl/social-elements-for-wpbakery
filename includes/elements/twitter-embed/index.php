@@ -12,7 +12,6 @@ add_action( 'vc_before_init', function () {
 			'description'       => esc_html__( 'Embed X (Twitter) timeline or tweet', SEFWPB_TD ),
 			'category'          => esc_html__( 'Social', SEFWPB_TD ),
 			'icon'              => 'sefwpb-icon-twitter-embed',
-			'front_enqueue_js'  => preg_replace( '/\s/', '%20', plugins_url( 'assets/js/twitter-embed.js', __FILE__ ) ),
 			'params'            => [
 				[
 					'type' => 'textfield',

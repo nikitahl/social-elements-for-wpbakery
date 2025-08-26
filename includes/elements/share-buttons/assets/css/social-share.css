@@ -1,0 +1,58 @@
+.sefwpb-social-share {
+    --justify-content: left;
+    --border-radius: 5px;
+    --button-gap: 5px;
+    --button-padding: 6px 12px;
+    --button-font-size: 14px;
+    --button-icon-size: 16px;
+    --button-color: #fff;
+    --button-bg: transparent;
+    --button-hover-bg: #333;
+    --button-hover-color: #fff;
+}
+
+.sefwpb-social-share--solid .sefwpb-social-share__button {
+    background: var(--button-bg);
+    border: none;
+    color: var(--button-color);
+}
+
+.sefwpb-social-share--outline .sefwpb-social-share__button {
+    background: transparent;
+    border: 2px solid var(--button-bg);
+    color: var(--button-bg);
+}
+
+.sefwpb-social-share--minimal .sefwpb-social-share__button {
+    background: transparent;
+    border: none;
+    color: var(--button-color);
+}
+
+.sefwpb-social-share__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: var(--justify-content);
+    gap: var(--button-gap);
+}
+
+.sefwpb-social-share__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 5px;
+    padding: var(--button-padding);
+    border-radius: var(--border-radius);
+    color: var(--button-color);
+    font-size: var(--button-font-size);
+}
+
+.sefwpb-social-share__button i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--button-icon-size);
+    line-height: var(--button-icon-size);
+}

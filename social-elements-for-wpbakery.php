@@ -1,0 +1,76 @@
+<?php
+/**
+ * Plugin Name: Social Elements for WPBakery Page Builder
+ * Description: A collection of social elements (share buttons, profile links, and more) for WPBakery Page Builder.
+ * Author: Nikita Hlopov
+ * Author URI: https://nikitahl.com
+ * Version: 1.0.0
+ * Requires PHP: 7.0
+ * Requires at least: 6.4
+ * License: GPLv3
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ * Text Domain: social-elements-wpbakery
+ * Domain Path: /languages
+ *
+ * @package SocialElementsWPBakery
+ */
+
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+// -----------------------------------------------------------------------------
+// Constants
+// -----------------------------------------------------------------------------
+/**
+ * Plugin version.
+ * @since 1.0.0
+ */
+define( 'SEFWPB_VERSION', '1.0.0' );
+define( 'SEFWPB_PATH', plugin_dir_path( __FILE__ ) );
+define( 'SEFWPB_URL', plugin_dir_url( __FILE__ ) );
+define( 'SEFWPB_DIR', __DIR__ . '/' );
+define( 'SEFWPB_TD', 'social-elements-wpbakery' );
+
+// -----------------------------------------------------------------------------
+// Bootstrap
+// -----------------------------------------------------------------------------
+
+/**
+ * Loads plugin files and bootstraps components.
+ *
+ * @since 1.0.0
+ * @return void
+ */
+function sefwpb_bootstrap() {
+	// i18n
+	load_plugin_textdomain( SEFWPB_TD, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+
+
+	// Admin dependency notice if WPBakery is missing.
+	if ( ! function_exists( 'vc_map' ) ) {
+		add_action( 'admin_notices', 'sefwpb_missing_wpbakery_notice' );
+		return; // Do not proceed without WPBakery.
+	}
+
+	// Elements.
+	require_once SEFWPB_DIR . 'includes/elements/share-buttons/index.php';
+	require_once SEFWPB_DIR . 'includes/elements/profile-links/index.php';
+	require_once SEFWPB_DIR . 'includes/elements/twitter-embed/index.php';
+}
+add_action( 'plugins_loaded', 'sefwpb_bootstrap' );
+
+
+/**
+ * Shows admin notice if WPBakery Page Builder is not active.
+ *
+ * @since 1.0.0
+ * @return void
+ */
+function sefwpb_missing_wpbakery_notice() {
+	if ( current_user_can( 'activate_plugins' ) ) {
+		echo '<div class="notice notice-error"><p>' . esc_html__('Social Elements for WPBakery requires WPBakery Page Builder to be installed and active.', SEFWPB_TD) . '</p></div>';
+	}
+}

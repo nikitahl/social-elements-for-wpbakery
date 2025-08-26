@@ -1,0 +1,65 @@
+.sefwpb-profile-links {
+    --justify-content: left;
+    --border-radius: 5px;
+    --button-gap: 5px;
+    --button-padding: 6px 12px;
+    --button-font-size: 14px;
+    --button-icon-size: 16px;
+    --button-color: #fff;
+    --button-bg: transparent;
+    --button-hover-bg: #333;
+    --button-hover-color: #fff;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: var(--justify-content);
+    gap: var(--button-gap);
+}
+
+.sefwpb-profile-links--solid .sefwpb-profile-links__button {
+    background: var(--button-bg);
+    border: none;
+    color: var(--button-color);
+}
+
+.sefwpb-profile-links--outline .sefwpb-profile-links__button {
+    background: transparent;
+    border: 2px solid var(--button-bg);
+    color: var(--button-bg);
+}
+
+.sefwpb-profile-links--minimal .sefwpb-profile-links__button {
+    background: transparent;
+    border: none;
+    color: var(--button-color);
+}
+
+.sefwpb-profile-links__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 5px;
+    width: var(--button-icon-size);
+    height: var(--button-icon-size);
+    padding: var(--button-padding);
+    border-radius: var(--border-radius);
+    color: var(--button-color);
+    background: var(--button-bg);
+    font-size: var(--button-font-size);
+}
+
+.sefwpb-profile-links__icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sefwpb-profile-links__button i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--button-font-size);
+    line-height: var(--button-font-size);
+}

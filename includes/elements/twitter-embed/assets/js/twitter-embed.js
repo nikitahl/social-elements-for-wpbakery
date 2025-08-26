@@ -1,4 +1,3 @@
-// twitter-embed.js
 function sefwpbLoadTwitterEmbed(context) {
 	(context || document).querySelectorAll('.sefwpb-twitter-embed-container[data-is-rendered="false"]').forEach(function(container) {
 		var url = container.getAttribute('data-tweet-url');
@@ -9,6 +8,9 @@ function sefwpbLoadTwitterEmbed(context) {
 		window[callbackName] = function(data) {
 			container.innerHTML = data.html;
 			container.setAttribute('data-is-rendered', 'true');
+			if (window.twttr && window.twttr.widgets && typeof window.twttr.widgets.load === 'function') {
+				window.twttr.widgets.load(container);
+			}
 			delete window[callbackName];
 		};
 

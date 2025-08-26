@@ -24,6 +24,18 @@ add_action( 'vc_before_init', function () {
 					'heading' => esc_html__('Post (Tweet) URL', SEFWPB_TD),
 					'param_name' => 'url',
 					'description' => esc_html__('Enter the URL of the tweet you want to embed.', SEFWPB_TD),
+					'value' => 'https://x.com/Interior/status/463440424141459456',
+				],
+				[
+					'type' => 'dropdown',
+					'heading' => esc_html__( 'Theme', SEFWPB_TD ),
+					'description' => esc_html__( 'Select light or dark theme for the embedded tweet.', SEFWPB_TD ),
+					'param_name' => 'theme',
+					'value' => [
+						esc_html__( 'Light', SEFWPB_TD ) => 'light',
+						esc_html__( 'Dark', SEFWPB_TD ) => 'dark',
+					],
+					'std' => 'light',
 				],
 				[
 					'type' => 'dropdown',

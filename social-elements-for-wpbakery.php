@@ -62,6 +62,7 @@ function sefwpb_bootstrap() {
 	require_once SEFWPB_DIR . 'includes/elements/reddit-embed/index.php';
 	require_once SEFWPB_DIR . 'includes/elements/pinterest-embed/index.php';
 	require_once SEFWPB_DIR . 'includes/elements/facebook-embed/index.php';
+	require_once SEFWPB_DIR . 'includes/elements/flickr-embed/index.php';
 }
 add_action( 'plugins_loaded', 'sefwpb_bootstrap' );
 

@@ -27,9 +27,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 
 			$style = '';
 			$css_classes = [ 'sefwpb-element', 'sefwpb-pinterest-embed', $el_class, $this->getCSSAnimation( $css_animation ) ];
-			if ( ! empty( $el_class ) ) {
-				$css_classes[] = $el_class;
-			}
 			if ( ! empty( $css ) ) {
 				$css_classes[] = vc_shortcode_custom_css_class( $css );
 			}

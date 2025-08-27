@@ -49,6 +49,49 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		}
 
 		/**
+		 * Get copy button script.
+		 *
+		 * @return string
+		 */
+		public function get_copy_button_script () {
+			return '<script>
+			function copyToClipboard(text) {
+				if (navigator.clipboard && window.isSecureContext) {
+					return navigator.clipboard.writeText(text);
+				} else {
+					let textArea = document.createElement("textarea");
+					textArea.value = text;
+					textArea.style.position = "fixed";
+					textArea.style.left = "-999999px";
+					textArea.style.top = "-999999px";
+					document.body.appendChild(textArea);
+					textArea.focus();
+					textArea.select();
+					return new Promise((res, rej) => {
+						document.execCommand("copy") ? res() : rej();
+						textArea.remove();
+					});
+				}
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				document.querySelectorAll(".sefwpb-social-share__button--copy").forEach(function(button) {
+					button.addEventListener("click", function(e) {
+						e.preventDefault();
+						copyToClipboard("' . esc_js( get_permalink() ) . '").then(function() {
+							button.querySelector("span").innerText = "' . esc_js( __( 'Link copied', SEFWPB_TD ) ) . '";
+							setTimeout(function() {
+								button.querySelector("span").innerText = "' . esc_js( __( 'Copy link', SEFWPB_TD ) ) . '";
+							}, 1500);
+						}, function() {
+							alert("' . esc_js( __( 'Failed to copy link. Please copy it manually:', SEFWPB_TD ) ) . ' ' . esc_js( get_permalink() ) . '");
+						});
+					});
+				});
+			});
+			</script>';
+		}
+
+		/**
 		 * Get button styles.
 		 *
 		 * @param array $atts Shortcode attributes.
@@ -136,11 +179,23 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 					case 'email':
 						$share_url = 'mailto:?subject=' . rawurlencode( $title ) . '&body=' . rawurlencode( $url );
 						break;
+					case 'copy':
+						$share_url = 'javascript:void(0);';
+						$icon .= $this->get_copy_button_script();
+						break;
 					default:
 						$share_url = '#';
 				}
 
-				$output .= '<a href="' . esc_url( $share_url ) . '" class="sefwpb-social-share__button sefwpb-social-share__button--' . esc_attr( $platform ) . '" style="' . $color . '" target="_blank" rel="noopener noreferrer" title="' . esc_attr( $platform ) .'">' . $icon . esc_html( $label ) . '</a>';
+				$link = $share_url;
+				$link_target = 'target="_self"';
+				// Fallback icon if none selected
+				if ( $platform !== 'copy' ) {
+					$link = esc_url( $share_url );
+					$link_target = ' target="_blank" rel="noopener noreferrer"';
+				}
+
+				$output .= '<a href="' . $link . '" class="sefwpb-social-share__button sefwpb-social-share__button--' . esc_attr( $platform ) . '" style="' . $color . '"' . $link_target . ' title="' . esc_attr( $label ) .'">' . $icon . '<span>' . esc_html( $label ) . '</span></a>';
 			}
 			$output .= '</div>';
 			return $output;

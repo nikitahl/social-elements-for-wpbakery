@@ -61,6 +61,13 @@ add_action( 'vc_before_init', function () {
 							'icon_type' => 'monosocial',
 							'icon_monosocial' => 'vc-mono vc-mono-email',
 						],
+						[
+							'label' => esc_html__( 'Copy link', SEFWPB_TD ),
+							'social_platform' => 'copy',
+							'color' => '#364fc7',
+							'icon_type' => 'fontawesome',
+							'icon_fontawesome' => 'fa fa-regular fa-copy',
+						]
 					] ) ),
 					'params' => [
 						[
@@ -75,6 +82,7 @@ add_action( 'vc_before_init', function () {
 								esc_html__( 'WhatsApp', SEFWPB_TD ) => 'whatsapp',
 								esc_html__( 'Telegram', SEFWPB_TD ) => 'telegram',
 								esc_html__( 'Email', SEFWPB_TD ) => 'email',
+								esc_html__( 'Copy link', SEFWPB_TD ) => 'copy',
 							],
 							'std' => 'facebook',
 							'admin_label' => true,

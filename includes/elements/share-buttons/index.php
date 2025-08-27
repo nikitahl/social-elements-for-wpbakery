@@ -11,7 +11,7 @@ add_action( 'vc_before_init', function () {
 			'base'        => 'sefwpb_social_share',
 			'description' => esc_html__( 'Buttons to share the current page on social networks', SEFWPB_TD ),
 			'category'    => esc_html__( 'Social', SEFWPB_TD ),
-			'icon'        => 'sefwpb-icon-share-buttons',
+			'icon'        => SEFWPB_ASSETS_URI . '/images/icons/icon-share-buttons.svg',
 			'params'      => [
 				[
 					'type' => 'textfield',

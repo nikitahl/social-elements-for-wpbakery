@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Flickr</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Flickr">
+            <rect id="Rectangle" fill="#4C2A8A" x="0" y="0" width="200" height="200" rx="5"></rect>
+            <g id="flickr" transform="translate(36.000000, 70.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <path d="M30.4761905,0 C13.7142857,0 0,13.725 0,30.5 C0,47.275 13.7142857,61 30.4761905,61 C47.2380952,61 60.952381,47.275 60.952381,30.5 C60.952381,13.725 47.2380952,0 30.4761905,0 Z M97.5238095,0 C80.7619048,0 67.047619,13.725 67.047619,30.5 C67.047619,47.275 80.7619048,61 97.5238095,61 C114.285714,61 128,47.275 128,30.5 C128,13.725 114.285714,0 97.5238095,0 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -11,7 +11,7 @@ add_action( 'vc_before_init', function () {
 			'base'        => 'sefwpb_profile_links',
 			'description' => esc_html__( 'Buttons linking to your social media profiles', SEFWPB_TD ),
 			'category'    => esc_html__( 'Social', SEFWPB_TD ),
-			'icon'        => 'sefwpb-icon-profile-links',
+			'icon'        => SEFWPB_ASSETS_URI . '/images/icons/icon-profile-links.svg',
 			'params'      => [
 				[
 					'type' => 'textfield',

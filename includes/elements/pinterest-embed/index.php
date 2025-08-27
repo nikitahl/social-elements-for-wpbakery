@@ -11,7 +11,7 @@ add_action( 'vc_before_init', function () {
 			'base'              => 'sefwpb_pinterest_embed',
 			'description'       => esc_html__( 'Embed a single Pinterest post easily.', SEFWPB_TD ),
 			'category'          => esc_html__( 'Social', SEFWPB_TD ),
-			'icon'              => 'sefwpb-icon-pinterest-embed',
+			'icon'              => SEFWPB_ASSETS_URI . '/images/icons/icon-pinterest-embed.svg',
 			'params'            => [
 				[
 					'type' => 'textfield',

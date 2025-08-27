@@ -11,7 +11,7 @@ add_action( 'vc_before_init', function () {
 			'base'              => 'sefwpb_flickr_embed',
 			'description'       => esc_html__( 'Embed a single Flickr image easily.', SEFWPB_TD ),
 			'category'          => esc_html__( 'Social', SEFWPB_TD ),
-			'icon'              => 'sefwpb-icon-flickr-embed',
+			'icon'              => SEFWPB_ASSETS_URI . '/images/icons/icon-flickr-embed.svg',
 			'params'            => [
 				[
 					'type' => 'textfield',

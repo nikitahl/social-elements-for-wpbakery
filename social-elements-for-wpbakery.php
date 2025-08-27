@@ -33,6 +33,8 @@ define( 'SEFWPB_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SEFWPB_URL', plugin_dir_url( __FILE__ ) );
 define( 'SEFWPB_DIR', __DIR__ . '/' );
 define( 'SEFWPB_TD', 'social-elements-wpbakery' );
+define( 'SEFWPB_ASSETS_URI', plugins_url( 'assets', __FILE__ ) );
+
 
 // -----------------------------------------------------------------------------
 // Bootstrap

@@ -11,7 +11,7 @@ add_action( 'vc_before_init', function () {
 			'base'              => 'sefwpb_facebook_embed',
 			'description'       => esc_html__( 'Embed a single Facebook post easily.', SEFWPB_TD ),
 			'category'          => esc_html__( 'Social', SEFWPB_TD ),
-			'icon'              => 'sefwpb-icon-facebook-embed',
+			'icon'              => SEFWPB_ASSETS_URI . '/images/icons/icon-facebook-embed.svg',
 			'params'            => [
 				[
 					'type' => 'textfield',

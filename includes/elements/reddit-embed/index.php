@@ -11,7 +11,7 @@ add_action( 'vc_before_init', function () {
 			'base'              => 'sefwpb_reddit_embed',
 			'description'       => esc_html__( 'Embed Reddit posts easily.', SEFWPB_TD ),
 			'category'          => esc_html__( 'Social', SEFWPB_TD ),
-			'icon'              => 'sefwpb-icon-reddit-embed',
+			'icon'              => SEFWPB_ASSETS_URI . '/images/icons/icon-reddit-embed.svg',
 			'params'            => [
 				[
 					'type' => 'textfield',

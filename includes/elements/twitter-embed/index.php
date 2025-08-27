@@ -11,7 +11,7 @@ add_action( 'vc_before_init', function () {
 			'base'              => 'sefwpb_twitter_embed',
 			'description'       => esc_html__( 'Embed X (Twitter) timeline or tweet', SEFWPB_TD ),
 			'category'          => esc_html__( 'Social', SEFWPB_TD ),
-			'icon'              => 'sefwpb-icon-twitter-embed',
+			'icon'              => SEFWPB_ASSETS_URI . '/images/icons/icon-twitter-embed.svg',
 			'params'            => [
 				[
 					'type' => 'textfield',

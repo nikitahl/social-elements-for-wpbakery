@@ -23,6 +23,3 @@ function sefwpbLoadTwitterEmbed(context) {
 document.addEventListener('DOMContentLoaded', function() {
 	sefwpbLoadTwitterEmbed();
 });
-
-// If you add new containers dynamically, call:
-// renderTwitterEmbeds(); // or renderTwitterEmbeds(parentElement);

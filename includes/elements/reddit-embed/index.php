@@ -9,7 +9,7 @@ add_action( 'vc_before_init', function () {
 		[
 			'name'              => esc_html__( 'Reddit Embed', SEFWPB_TD ),
 			'base'              => 'sefwpb_reddit_embed',
-			'description'       => esc_html__( 'Embed Reddit posts easily.', SEFWPB_TD ),
+			'description'       => esc_html__( 'Embed Reddit post', SEFWPB_TD ),
 			'category'          => esc_html__( 'Social', SEFWPB_TD ),
 			'icon'              => SEFWPB_ASSETS_URI . '/images/icons/icon-reddit-embed.svg',
 			'params'            => [

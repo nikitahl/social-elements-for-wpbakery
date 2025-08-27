@@ -9,7 +9,7 @@ add_action( 'vc_before_init', function () {
 		[
 			'name'              => esc_html__( 'X (Twitter) Embed', SEFWPB_TD ),
 			'base'              => 'sefwpb_twitter_embed',
-			'description'       => esc_html__( 'Embed X (Twitter) timeline or tweet', SEFWPB_TD ),
+			'description'       => esc_html__( 'Embed X (Twitter) post', SEFWPB_TD ),
 			'category'          => esc_html__( 'Social', SEFWPB_TD ),
 			'icon'              => SEFWPB_ASSETS_URI . '/images/icons/icon-twitter-embed.svg',
 			'params'            => [

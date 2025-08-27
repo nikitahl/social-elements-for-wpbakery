@@ -9,7 +9,7 @@ add_action( 'vc_before_init', function () {
 		[
 			'name'              => esc_html__( 'Pinterest Embed', SEFWPB_TD ),
 			'base'              => 'sefwpb_pinterest_embed',
-			'description'       => esc_html__( 'Embed a single Pinterest post easily.', SEFWPB_TD ),
+			'description'       => esc_html__( 'Embed a single Pinterest post', SEFWPB_TD ),
 			'category'          => esc_html__( 'Social', SEFWPB_TD ),
 			'icon'              => SEFWPB_ASSETS_URI . '/images/icons/icon-pinterest-embed.svg',
 			'params'            => [

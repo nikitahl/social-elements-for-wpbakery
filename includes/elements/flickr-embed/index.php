@@ -9,7 +9,7 @@ add_action( 'vc_before_init', function () {
 		[
 			'name'              => esc_html__( 'Flickr Embed', SEFWPB_TD ),
 			'base'              => 'sefwpb_flickr_embed',
-			'description'       => esc_html__( 'Embed a single Flickr image easily.', SEFWPB_TD ),
+			'description'       => esc_html__( 'Embed a single Flickr image', SEFWPB_TD ),
 			'category'          => esc_html__( 'Social', SEFWPB_TD ),
 			'icon'              => SEFWPB_ASSETS_URI . '/images/icons/icon-flickr-embed.svg',
 			'params'            => [

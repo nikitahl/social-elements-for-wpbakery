@@ -9,7 +9,7 @@ add_action( 'vc_before_init', function () {
 		[
 			'name'              => esc_html__( 'Facebook Embed', SEFWPB_TD ),
 			'base'              => 'sefwpb_facebook_embed',
-			'description'       => esc_html__( 'Embed a single Facebook post easily.', SEFWPB_TD ),
+			'description'       => esc_html__( 'Embed a single Facebook post', SEFWPB_TD ),
 			'category'          => esc_html__( 'Social', SEFWPB_TD ),
 			'icon'              => SEFWPB_ASSETS_URI . '/images/icons/icon-facebook-embed.svg',
 			'params'            => [

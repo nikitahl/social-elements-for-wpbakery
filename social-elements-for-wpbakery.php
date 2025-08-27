@@ -59,6 +59,7 @@ function sefwpb_bootstrap() {
 	require_once SEFWPB_DIR . 'includes/elements/share-buttons/index.php';
 	require_once SEFWPB_DIR . 'includes/elements/profile-links/index.php';
 	require_once SEFWPB_DIR . 'includes/elements/twitter-embed/index.php';
+	require_once SEFWPB_DIR . 'includes/elements/reddit-embed/index.php';
 }
 add_action( 'plugins_loaded', 'sefwpb_bootstrap' );
 

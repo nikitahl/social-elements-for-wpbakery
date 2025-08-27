@@ -28,7 +28,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		public function element_enqueueing_assets() {
 			wp_enqueue_style(
-				'sefwpb-profile-links',
+				'sefwpb-twitter-embed',
 				plugins_url( '/assets/css/twitter-embed.css', __FILE__ ),
 				[],
 				SEFWPB_VERSION

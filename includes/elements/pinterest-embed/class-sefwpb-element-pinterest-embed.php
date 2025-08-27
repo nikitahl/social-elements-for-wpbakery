@@ -20,26 +20,23 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts = shortcode_atts(
-				[
-					'title'      => '',
-					'url'        => 'https://www.pinterest.com/pin/3940718420141988/',
-					'align'      => 'left',
-					'el_id'      => '',
-					'css_animation' => '',
-				],
-				$atts,
-				$this->settings['base']
-			);
+			$atts = vc_map_get_attributes( $this->getShortcode(), $atts );
+			$el_class = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
+			$css      = isset( $atts['css'] ) ? $atts['css'] : '';
+			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
+
 			$style = '';
-			$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, 'sefwpb-element sefwpb-pinterest-embed', $this->settings['base'], $atts );
-			$css_class .= $this->getCSSAnimation( $atts['css_animation']);
-			if ( ! empty( $atts['el_class'] ) ) {
-				$css_class .= ' ' . esc_attr( $atts['el_class'] );
+			$css_classes = [ 'sefwpb-element', 'sefwpb-pinterest-embed', $el_class, $this->getCSSAnimation( $css_animation ) ];
+			if ( ! empty( $el_class ) ) {
+				$css_classes[] = $el_class;
+			}
+			if ( ! empty( $css ) ) {
+				$css_classes[] = vc_shortcode_custom_css_class( $css );
 			}
 			if ( isset( $atts['align'] ) ) {
 				$style .= 'text-align: ' . $atts['align'] . ';';
 			}
+			$css_class = implode( ' ', array_filter( $css_classes ) );
 			$el_id = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
 			$output = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '">';
 			if ( ! empty( $atts['title'] ) ) {

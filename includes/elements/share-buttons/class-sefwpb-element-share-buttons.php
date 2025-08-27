@@ -168,6 +168,9 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			if ( ! empty( $atts['el_class'] ) ) {
 				$classes[] = esc_attr( $atts['el_class'] );
 			}
+			if ( ! empty( $atts['css'] ) ) {
+				$classes[] = vc_shortcode_custom_css_class( $atts['css'] );
+			}
 			$style = $this->get_button_styles( $atts );
 
 			$output  = '<div class="' . esc_attr( implode( ' ', $classes ) ) . '" style="' . esc_attr( $style ) . '"' . ( $atts['el_id'] ? ' id="' . esc_attr( $atts['el_id'] ) . '"' : '' ) . '>';

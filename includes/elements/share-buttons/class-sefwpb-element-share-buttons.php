@@ -33,8 +33,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				[],
 				WPB_VC_VERSION
 			);
-
-			// Monosocial bundled with WPBakery.
 			wp_enqueue_style(
 				'vc_monosocial',
 				vc_asset_url( 'css/lib/monosocialiconsfont/monosocialiconsfont.css' ),
@@ -45,50 +43,15 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				'sefwpb-social-share',
 				plugins_url( '/assets/css/social-share.css', __FILE__ ),
 				[],
-				SEFWPB_VERSION );
-		}
-
-		/**
-		 * Get copy button script.
-		 *
-		 * @return string
-		 */
-		public function get_copy_button_script () {
-			return '<script>
-			function copyToClipboard(text) {
-				if (navigator.clipboard && window.isSecureContext) {
-					return navigator.clipboard.writeText(text);
-				} else {
-					let textArea = document.createElement("textarea");
-					textArea.value = text;
-					textArea.style.position = "fixed";
-					textArea.style.left = "-999999px";
-					textArea.style.top = "-999999px";
-					document.body.appendChild(textArea);
-					textArea.focus();
-					textArea.select();
-					return new Promise((res, rej) => {
-						document.execCommand("copy") ? res() : rej();
-						textArea.remove();
-					});
-				}
-			}
-			document.addEventListener("DOMContentLoaded", function() {
-				document.querySelectorAll(".sefwpb-social-share__button--copy").forEach(function(button) {
-					button.addEventListener("click", function(e) {
-						e.preventDefault();
-						copyToClipboard("' . esc_js( get_permalink() ) . '").then(function() {
-							button.querySelector("span").innerText = "' . esc_js( __( 'Link copied', SEFWPB_TD ) ) . '";
-							setTimeout(function() {
-								button.querySelector("span").innerText = "' . esc_js( __( 'Copy link', SEFWPB_TD ) ) . '";
-							}, 1500);
-						}, function() {
-							alert("' . esc_js( __( 'Failed to copy link. Please copy it manually:', SEFWPB_TD ) ) . ' ' . esc_js( get_permalink() ) . '");
-						});
-					});
-				});
-			});
-			</script>';
+				SEFWPB_VERSION
+			);
+			wp_enqueue_script(
+				'sefwpb-social-share-copy',
+				plugins_url( '/assets/js/social-share-copy.js', __FILE__ ),
+				[],
+				SEFWPB_VERSION,
+				true
+			);
 		}
 
 		/**
@@ -154,48 +117,46 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				// Build share URL
 				$url   = get_permalink();
 				$title = get_the_title();
-				switch ( $platform ) {
-					case 'facebook':
-						$share_url = 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode( $url );
-						break;
-					case 'x':
-						$share_url = 'https://twitter.com/intent/tweet?url=' . rawurlencode( $url ) . '&text=' . rawurlencode( $title );
-						break;
-					case 'linkedin':
-						$share_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . rawurlencode( $url ) . '&title=' . rawurlencode( $title );
-						break;
-					case 'reddit':
-						$share_url = 'https://www.reddit.com/submit?url=' . rawurlencode( $url ) . '&title=' . rawurlencode( $title );
-						break;
-					case 'pinterest':
-						$share_url = 'https://pinterest.com/pin/create/button/?url=' . rawurlencode( $url ) . '&description=' . rawurlencode( $title );
-						break;
-					case 'whatsapp':
-						$share_url = 'https://wa.me/?text=' . rawurlencode( $title . ' ' . $url );
-						break;
-					case 'telegram':
-						$share_url = 'https://t.me/share/url?url=' . rawurlencode( $url ) . '&text=' . rawurlencode( $title );
-						break;
-					case 'email':
-						$share_url = 'mailto:?subject=' . rawurlencode( $title ) . '&body=' . rawurlencode( $url );
-						break;
-					case 'copy':
-						$share_url = 'javascript:void(0);';
-						$icon .= $this->get_copy_button_script();
-						break;
-					default:
-						$share_url = '#';
+				if ( $platform === 'copy' ) {
+					$output .= '<a href="javascript:void(0);" class="sefwpb-social-share__button sefwpb-social-share__button--copy" style="' . $color . '"'
+						. ' data-link="' . esc_attr( $url ) . '"'
+						. ' data-copy-label="' . esc_attr( __( 'Copy link', SEFWPB_TD ) ) . '"'
+						. ' data-copied-label="' . esc_attr( __( 'Link copied', SEFWPB_TD ) ) . '"'
+						. ' data-fail-label="' . esc_attr( __( 'Failed to copy link. Please copy it manually:', SEFWPB_TD ) ) . '"'
+						. ' title="' . esc_attr( $label ) . '">'
+						. $icon . '<span>' . esc_html( __( 'Copy link', SEFWPB_TD ) ) . '</span></a>';
+				} else {
+					switch ( $platform ) {
+						case 'facebook':
+							$share_url = 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode( $url );
+							break;
+						case 'x':
+							$share_url = 'https://twitter.com/intent/tweet?url=' . rawurlencode( $url ) . '&text=' . rawurlencode( $title );
+							break;
+						case 'linkedin':
+							$share_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . rawurlencode( $url ) . '&title=' . rawurlencode( $title );
+							break;
+						case 'reddit':
+							$share_url = 'https://www.reddit.com/submit?url=' . rawurlencode( $url ) . '&title=' . rawurlencode( $title );
+							break;
+						case 'pinterest':
+							$share_url = 'https://pinterest.com/pin/create/button/?url=' . rawurlencode( $url ) . '&description=' . rawurlencode( $title );
+							break;
+						case 'whatsapp':
+							$share_url = 'https://wa.me/?text=' . rawurlencode( $title . ' ' . $url );
+							break;
+						case 'telegram':
+							$share_url = 'https://t.me/share/url?url=' . rawurlencode( $url ) . '&text=' . rawurlencode( $title );
+							break;
+						case 'email':
+							$share_url = 'mailto:?subject=' . rawurlencode( $title ) . '&body=' . rawurlencode( $url );
+							break;
+						default:
+							$share_url = '#';
+					}
+					$output .= '<a href="' . esc_url( $share_url ) . '" class="sefwpb-social-share__button sefwpb-social-share__button--' . esc_attr( $platform ) . '" style="' . $color . '" target="_blank" rel="noopener noreferrer" title="' . esc_attr( $label ) .'">'
+						. $icon . '<span>' . esc_html( $label ) . '</span></a>';
 				}
-
-				$link = $share_url;
-				$link_target = 'target="_self"';
-				// Fallback icon if none selected
-				if ( $platform !== 'copy' ) {
-					$link = esc_url( $share_url );
-					$link_target = ' target="_blank" rel="noopener noreferrer"';
-				}
-
-				$output .= '<a href="' . $link . '" class="sefwpb-social-share__button sefwpb-social-share__button--' . esc_attr( $platform ) . '" style="' . $color . '"' . $link_target . ' title="' . esc_attr( $label ) .'">' . $icon . '<span>' . esc_html( $label ) . '</span></a>';
 			}
 			$output .= '</div>';
 			return $output;

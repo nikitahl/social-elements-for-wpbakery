@@ -119,11 +119,11 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts      = vc_map_get_attributes( $this->getShortcode(), $atts );
-			$output    = $this->build_wrapper_open( $atts );
-			$output   .= $this->build_title( $atts );
-			$output   .= $this->build_embed_or_error( $atts );
-			$output   .= '</div>';
+			$atts    = vc_map_get_attributes( $this->getShortcode(), $atts );
+			$output  = $this->build_wrapper_open( $atts );
+			$output .= $this->build_title( $atts );
+			$output .= $this->build_embed_or_error( $atts );
+			$output .= '</div>';
 			return $output;
 		}
 

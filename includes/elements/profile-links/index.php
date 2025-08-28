@@ -34,38 +34,40 @@ add_action(
 						'param_name'  => 'values',
 						'description' => esc_html__( 'Enter values for links - title, icon, color, URL.', 'social-elements-wpbakery' ),
 						'value'       => rawurlencode(
-							wp_json_encode( [
+							wp_json_encode(
 								[
-									'label'            => esc_html__( 'Facebook', 'social-elements-wpbakery' ),
-									'color'            => '#0866FF',
-									'icon_type'        => 'fontawesome',
-									'icon_fontawesome' => 'fa fa-brands fa-facebook-f',
-								],
-								[
-									'label'            => esc_html__( 'X', 'social-elements-wpbakery' ),
-									'color'            => '#000000',
-									'icon_type'        => 'fontawesome',
-									'icon_fontawesome' => 'fa fa-brands fa-x-twitter',
-								],
-								[
-									'label'            => esc_html__( 'YouTube', 'social-elements-wpbakery' ),
-									'color'            => '#FF0000',
-									'icon_type'        => 'fontawesome',
-									'icon_fontawesome' => 'fa fa-brands fa-youtube',
-								],
-								[
-									'label'            => esc_html__( 'Instagram', 'social-elements-wpbakery' ),
-									'color'            => '#E1306C',
-									'icon_type'        => 'fontawesome',
-									'icon_fontawesome' => 'fa fa-brands fa-instagram',
-								],
-								[
-									'label'            => esc_html__( 'TikTok', 'social-elements-wpbakery' ),
-									'color'            => '#000000',
-									'icon_type'        => 'fontawesome',
-									'icon_fontawesome' => 'fa fa-brands fa-tiktok',
-								],
-							])
+									[
+										'label'            => esc_html__( 'Facebook', 'social-elements-wpbakery' ),
+										'color'            => '#0866FF',
+										'icon_type'        => 'fontawesome',
+										'icon_fontawesome' => 'fa fa-brands fa-facebook-f',
+									],
+									[
+										'label'            => esc_html__( 'X', 'social-elements-wpbakery' ),
+										'color'            => '#000000',
+										'icon_type'        => 'fontawesome',
+										'icon_fontawesome' => 'fa fa-brands fa-x-twitter',
+									],
+									[
+										'label'            => esc_html__( 'YouTube', 'social-elements-wpbakery' ),
+										'color'            => '#FF0000',
+										'icon_type'        => 'fontawesome',
+										'icon_fontawesome' => 'fa fa-brands fa-youtube',
+									],
+									[
+										'label'            => esc_html__( 'Instagram', 'social-elements-wpbakery' ),
+										'color'            => '#E1306C',
+										'icon_type'        => 'fontawesome',
+										'icon_fontawesome' => 'fa fa-brands fa-instagram',
+									],
+									[
+										'label'            => esc_html__( 'TikTok', 'social-elements-wpbakery' ),
+										'color'            => '#000000',
+										'icon_type'        => 'fontawesome',
+										'icon_fontawesome' => 'fa fa-brands fa-tiktok',
+									],
+								]
+							)
 						),
 						'params'      => [
 							[

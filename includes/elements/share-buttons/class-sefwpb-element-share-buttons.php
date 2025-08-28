@@ -1,4 +1,3 @@
-php
 <?php
 /**
  * WPBakery Element: Social Share Buttons
@@ -90,7 +89,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$extra_attr = $this->get_extra_attr( $platform, $url );
 			$classes    = $this->get_button_classes( $platform );
 
-			$output  = '<a class="' . esc_attr( $classes ) . '" href="' . esc_url( $url ) . '" style="' . esc_attr( $color ) . '" ' . $extra_attr . '>';
+			$output = '<a class="' . esc_attr( $classes ) . '" href="' . esc_url( $url ) . '" style="' . esc_attr( $color ) . '" ' . $extra_attr . '>';
 			if ( $icon ) {
 				$output .= '<span class="sefwpb-social-share__icon">' . $icon . '</span>';
 			}
@@ -137,7 +136,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			return $output;
 		}
 
-		// --- Private helpers for complexity reduction ---
+		// Private helpers for complexity reduction.
 
 		/**
 		 * Get shape style.
@@ -224,7 +223,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return array
 		 */
 		private function get_wrapper_classes( $atts ) {
-			$classes   = [
+			$classes = [
 				'sefwpb-social-share',
 				'sefwpb-social-share--' . esc_attr( $atts['style'] ),
 			];
@@ -313,20 +312,25 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$url   = get_permalink();
 			$title = get_the_title();
 
-			switch ( $platform ) {
-				case 'facebook':
-					return 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode( $url );
-				case 'twitter':
-					return 'https://twitter.com/intent/tweet?url=' . rawurlencode( $url ) . '&text=' . rawurlencode( $title );
-				case 'linkedin':
-					return 'https://www.linkedin.com/shareArticle?mini=true&url=' . rawurlencode( $url ) . '&title=' . rawurlencode( $title );
-				case 'pinterest':
-					return 'https://pinterest.com/pin/create/button/?url=' . rawurlencode( $url ) . '&description=' . rawurlencode( $title );
-				case 'copy':
-					return 'javascript:void(0);';
-				default:
-					return '#';
+			$templates = [
+				'facebook'  => 'https://www.facebook.com/sharer/sharer.php?u=%s',
+				'twitter'   => 'https://twitter.com/intent/tweet?url=%s&text=%s',
+				'linkedin'  => 'https://www.linkedin.com/shareArticle?mini=true&url=%s&title=%s',
+				'pinterest' => 'https://pinterest.com/pin/create/button/?url=%s&description=%s',
+			];
+
+			if ( isset( $templates[ $platform ] ) ) {
+				if ( 'facebook' === $platform ) {
+					return sprintf( $templates[ $platform ], rawurlencode( $url ) );
+				}
+				return sprintf( $templates[ $platform ], rawurlencode( $url ), rawurlencode( $title ) );
 			}
+
+			if ( 'copy' === $platform ) {
+				return 'javascript:void(0);';
+			}
+
+			return '#';
 		}
 
 		/**

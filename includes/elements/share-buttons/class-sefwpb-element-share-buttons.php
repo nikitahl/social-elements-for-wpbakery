@@ -4,21 +4,27 @@
  *
  * Renders a flexible set of share buttons for common networks.
  *
- * @since 1.0.0
+ * @package SocialElementsWPBakery
+ * @since   1.0.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
+	/**
+	 * Class WPBakeryShortCode_Sefwpb_Social_Share
+	 *
+	 * Handles the Social Share Buttons element for WPBakery.
+	 */
 	class WPBakeryShortCode_Sefwpb_Social_Share extends WPBakeryShortCode {
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
-		 * @param array $settings
+		 * @param array $settings Shortcode settings.
 		 */
 		public function __construct( $settings ) {
-			parent::__construct( $settings ); // Important to call parent constructor to activate all logic for shortcode.
+			parent::__construct( $settings );
 			$this->element_enqueueing_assets();
 		}
 
@@ -59,7 +65,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @param array $atts Shortcode attributes.
 		 * @return string
 		 */
-		public function get_button_styles ( $atts ) {
+		public function get_button_styles( $atts ) {
 			$styles = '';
 			if ( ! empty( $atts['shape'] ) ) {
 				$styles .= '--border-radius:' . esc_attr( $atts['shape'] ) . ';';
@@ -71,25 +77,74 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$styles .= '--button-gap:' . esc_attr( $atts['gap'] ) . ';';
 			}
 			if ( ! empty( $atts['size'] ) ) {
-				if ( $atts['size'] === 'sm' ) {
-					$styles .= '--button-padding:4px 8px;';
-					$styles .= '--button-font-size:12px;';
+				if ( 'sm' === $atts['size'] ) {
+					$styles .= '--button-padding:5px;';
+					$styles .= '--button-font-size:11px;';
 					$styles .= '--button-icon-size:14px;';
-				} elseif ( $atts['size'] === 'md' ) {
-					$styles .= '--button-padding:6px 12px;';
-					$styles .= '--button-font-size:14px;';
-					$styles .= '--button-icon-size:16px;';
-				} elseif ( $atts['size'] === 'lg' ) {
-					$styles .= '--button-padding:8px 16px;';
+				} elseif ( 'md' === $atts['size'] ) {
+					$styles .= '--button-padding:12px;';
 					$styles .= '--button-font-size:16px;';
-					$styles .= '--button-icon-size:18px;';
+					$styles .= '--button-icon-size:19px;';
+				} elseif ( 'lg' === $atts['size'] ) {
+					$styles .= '--button-padding:16px;';
+					$styles .= '--button-font-size:20px;';
+					$styles .= '--button-icon-size:25px;';
 				}
 			}
-			if ( ! empty( $atts['text_color'] ) && $atts['style'] === 'minimal' ) {
+			if ( ! empty( $atts['text_color'] ) && 'minimal' === $atts['style'] ) {
 				$styles .= '--button-color:' . esc_attr( $atts['text_color'] ) . ';';
 			}
-
 			return $styles;
+		}
+
+		/**
+		 * Generate a single button output.
+		 *
+		 * @param array $btn Button data.
+		 * @return string
+		 */
+		private function get_single_button_output( $btn ) {
+			$platform = isset( $btn['social_platform'] ) ? $btn['social_platform'] : '';
+			$label    = isset( $btn['label'] ) ? $btn['label'] : ucfirst( $platform );
+			$color    = ! empty( $btn['color'] ) ? '--button-bg:' . esc_attr( $btn['color'] ) . ';' : '';
+			$icon     = '';
+
+			if ( isset( $btn['icon_type'] ) ) {
+				if ( 'monosocial' === $btn['icon_type'] && ! empty( $btn['icon_monosocial'] ) ) {
+					$icon = '<i class="' . esc_attr( $btn['icon_monosocial'] ) . '" aria-hidden="true"></i>';
+				} elseif ( 'fontawesome' === $btn['icon_type'] && ! empty( $btn['icon_fontawesome'] ) ) {
+					$icon = '<i class="' . esc_attr( $btn['icon_fontawesome'] ) . '" aria-hidden="true"></i>';
+				} elseif ( 'custom' === $btn['icon_type'] && ! empty( $btn['icon_custom'] ) ) {
+					$icon = '<img src="' . esc_url( $btn['icon_custom'] ) . '" alt="' . esc_attr( $label ) . '"/>';
+				}
+			}
+
+			$url   = get_permalink();
+			$title = get_the_title();
+
+			$share_url = '#';
+			if ( 'facebook' === $platform ) {
+				$share_url = 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode( $url );
+			} elseif ( 'twitter' === $platform ) {
+				$share_url = 'https://twitter.com/intent/tweet?url=' . rawurlencode( $url ) . '&text=' . rawurlencode( $title );
+			} elseif ( 'linkedin' === $platform ) {
+				$share_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . rawurlencode( $url ) . '&title=' . rawurlencode( $title );
+			} elseif ( 'pinterest' === $platform ) {
+				$share_url = 'https://pinterest.com/pin/create/button/?url=' . rawurlencode( $url ) . '&description=' . rawurlencode( $title );
+			} elseif ( 'copy' === $platform ) {
+				$share_url = 'javascript:void(0);';
+			}
+
+			$extra_attr = ( 'copy' === $platform ) ? 'data-share-copy="' . esc_url( $url ) . '"' : 'target="_blank" rel="noopener noreferrer"';
+
+			$output  = '<a class="sefwpb-social-share__button sefwpb-social-share__button--' . esc_attr( $platform ) . '" href="' . esc_url( $share_url ) . '" style="' . esc_attr( $color ) . '" ' . $extra_attr . '>';
+			if ( $icon ) {
+				$output .= '<span class="sefwpb-social-share__icon">' . $icon . '</span>';
+			}
+			$output .= '<span class="sefwpb-social-share__label">' . esc_html( $label ) . '</span>';
+			$output .= '</a>';
+
+			return $output;
 		}
 
 		/**
@@ -98,64 +153,10 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @param array $buttons Buttons data.
 		 * @return string
 		 */
-		public function get_buttons_output ( $buttons ) {
+		public function get_buttons_output( $buttons ) {
 			$output = '<div class="sefwpb-social-share__buttons">';
 			foreach ( $buttons as $btn ) {
-				$platform = isset( $btn['social_platform'] ) ? $btn['social_platform'] : '';
-				$label    = isset( $btn['label'] ) ? $btn['label'] : ucfirst( $platform );
-				$color    = ! empty( $btn['color'] ) ? '--button-bg:' . esc_attr( $btn['color'] ) . ';' : '';
-				$icon     = '';
-				if ( isset( $btn['icon_type'] ) ) {
-					if ( $btn['icon_type'] === 'fontawesome' && ! empty( $btn['icon_fontawesome'] ) ) {
-						$icon = '<i class="' . esc_attr( $btn['icon_fontawesome'] ) . '"></i>';
-					} elseif ( $btn['icon_type'] === 'monosocial' && ! empty( $btn['icon_monosocial'] ) ) {
-						$icon = '<i class="' . esc_attr( $btn['icon_monosocial'] ) . '"></i>';
-					}
-				}
-
-				// Build share URL
-				$url   = get_permalink();
-				$title = get_the_title();
-				if ( $platform === 'copy' ) {
-					$output .= '<a href="javascript:void(0);" class="sefwpb-social-share__button sefwpb-social-share__button--copy" style="' . $color . '"'
-						. ' data-link="' . esc_attr( $url ) . '"'
-						. ' data-copy-label="' . esc_attr( __( 'Copy link', SEFWPB_TD ) ) . '"'
-						. ' data-copied-label="' . esc_attr( __( 'Link copied', SEFWPB_TD ) ) . '"'
-						. ' data-fail-label="' . esc_attr( __( 'Failed to copy link. Please copy it manually:', SEFWPB_TD ) ) . '"'
-						. ' title="' . esc_attr( $label ) . '">'
-						. $icon . '<span>' . esc_html( __( 'Copy link', SEFWPB_TD ) ) . '</span></a>';
-				} else {
-					switch ( $platform ) {
-						case 'facebook':
-							$share_url = 'https://www.facebook.com/sharer/sharer.php?u=' . rawurlencode( $url );
-							break;
-						case 'x':
-							$share_url = 'https://twitter.com/intent/tweet?url=' . rawurlencode( $url ) . '&text=' . rawurlencode( $title );
-							break;
-						case 'linkedin':
-							$share_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . rawurlencode( $url ) . '&title=' . rawurlencode( $title );
-							break;
-						case 'reddit':
-							$share_url = 'https://www.reddit.com/submit?url=' . rawurlencode( $url ) . '&title=' . rawurlencode( $title );
-							break;
-						case 'pinterest':
-							$share_url = 'https://pinterest.com/pin/create/button/?url=' . rawurlencode( $url ) . '&description=' . rawurlencode( $title );
-							break;
-						case 'whatsapp':
-							$share_url = 'https://wa.me/?text=' . rawurlencode( $title . ' ' . $url );
-							break;
-						case 'telegram':
-							$share_url = 'https://t.me/share/url?url=' . rawurlencode( $url ) . '&text=' . rawurlencode( $title );
-							break;
-						case 'email':
-							$share_url = 'mailto:?subject=' . rawurlencode( $title ) . '&body=' . rawurlencode( $url );
-							break;
-						default:
-							$share_url = '#';
-					}
-					$output .= '<a href="' . esc_url( $share_url ) . '" class="sefwpb-social-share__button sefwpb-social-share__button--' . esc_attr( $platform ) . '" style="' . $color . '" target="_blank" rel="noopener noreferrer" title="' . esc_attr( $label ) .'">'
-						. $icon . '<span>' . esc_html( $label ) . '</span></a>';
-				}
+				$output .= $this->get_single_button_output( $btn );
 			}
 			$output .= '</div>';
 			return $output;
@@ -169,17 +170,20 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts = vc_map_get_attributes( $this->getShortcode(), $atts );
-			$values = $atts['values'];
+			$atts    = vc_map_get_attributes( $this->getShortcode(), $atts );
+			$values  = $atts['values'];
 
-			// Parse param_group values
+			// Parse param_group values.
 			$buttons = [];
 			if ( ! empty( $values ) ) {
 				$buttons = vc_param_group_parse_atts( $values );
 			}
 
-			// Prepare wrapper classes and styles
-			$classes = [ 'sefwpb-social-share', 'sefwpb-social-share--' . esc_attr( $atts['style'] ) ];
+			// Prepare wrapper classes and styles.
+			$classes = [
+				'sefwpb-social-share',
+				'sefwpb-social-share--' . esc_attr( $atts['style'] ),
+			];
 			if ( ! empty( $atts['el_class'] ) ) {
 				$classes[] = esc_attr( $atts['el_class'] );
 			}
@@ -188,12 +192,12 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			}
 			$style = $this->get_button_styles( $atts );
 
-			$output  = '<div class="' . esc_attr( implode( ' ', $classes ) ) . '" style="' . esc_attr( $style ) . '"' . ( $atts['el_id'] ? ' id="' . esc_attr( $atts['el_id'] ) . '"' : '' ) . '>';
+			$output  = '<div class="' . esc_attr( implode( ' ', $classes ) ) . '" style="' . esc_attr( $style ) . '"' . ( ! empty( $atts['el_id'] ) ? ' id="' . esc_attr( $atts['el_id'] ) . '"' : '' ) . '>';
 			if ( ! empty( $atts['share_title'] ) ) {
 				$output .= '<div class="sefwpb-social-share__title">' . esc_html( $atts['share_title'] ) . '</div>';
 			}
 
-			if ( $buttons ) {
+			if ( ! empty( $buttons ) ) {
 				$output .= $this->get_buttons_output( $buttons );
 			}
 

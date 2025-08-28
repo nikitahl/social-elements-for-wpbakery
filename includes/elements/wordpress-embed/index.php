@@ -1,72 +1,85 @@
 <?php
+/**
+ * Register the WordPress Embed element for WPBakery.
+ *
+ * @package SocialElementsWPBakery
+ * @since   1.0.0
+ */
 
 defined( 'ABSPATH' ) || exit;
 
-add_action( 'vc_before_init', function () {
-	require_once __DIR__ . '/class-sefwpb-element-wordpress-embed.php';
+add_action(
+	'vc_before_init',
+	function () {
+		require_once __DIR__ . '/class-sefwpb-element-wordpress-embed.php';
 
-	vc_map(
-		[
-			'name'              => esc_html__( 'WordPress Embed', SEFWPB_TD ),
-			'base'              => 'sefwpb_wordpress_embed',
-			'description'       => esc_html__( 'Embed WordPress post/page', SEFWPB_TD ),
-			'category'          => esc_html__( 'Social', SEFWPB_TD ),
-			'icon'              => SEFWPB_ASSETS_URI . '/images/icons/icon-wordpress-embed.svg',
-			'params'            => [
-				[
-					'type' => 'textfield',
-					'heading' => esc_html__('Title', SEFWPB_TD),
-					'param_name' => 'title',
-					'description' => esc_html__('Optional. Enter title to display above embed.', SEFWPB_TD),
-				],
-				[
-					'type' => 'textfield',
-					'heading' => esc_html__('Post URL', SEFWPB_TD),
-					'param_name' => 'url',
-					'description' => esc_html__('Enter the URL of the post you want to embed.', SEFWPB_TD),
-					'value' => '',
-				],
-				[
-					'type' => 'dropdown',
-					'heading' => esc_html__( 'Alignment', SEFWPB_TD ),
-					'param_name' => 'align',
-					'group' => esc_html__( 'Styles', SEFWPB_TD ),
-					'value' => [
-						esc_html__( 'Left', SEFWPB_TD ) => 'flex-start',
-						esc_html__( 'Center', SEFWPB_TD ) => 'center',
-						esc_html__( 'Right', SEFWPB_TD ) => 'flex-end',
+		vc_map(
+			[
+				'name'        => esc_html__( 'WordPress Embed', 'social-elements-wpbakery' ),
+				'base'        => 'sefwpb_wordpress_embed',
+				'description' => esc_html__( 'Embed WordPress post/page', 'social-elements-wpbakery' ),
+				'category'    => esc_html__( 'Social', 'social-elements-wpbakery' ),
+				'icon'        => SEFWPB_ASSETS_URI . '/images/icons/icon-wordpress-embed.svg',
+				'params'      => [
+					[
+						'type'        => 'textfield',
+						'heading'     => esc_html__( 'Title', 'social-elements-wpbakery' ),
+						'param_name'  => 'title',
+						'description' => esc_html__( 'Optional. Enter title to display above embed.', 'social-elements-wpbakery' ),
 					],
-					'std' => 'left',
-				],
-				[
-					'type' => 'textfield',
-					'heading' => esc_html__('Width', SEFWPB_TD),
-					'param_name' => 'width',
-					'group' => esc_html__( 'Styles', SEFWPB_TD ),
-					'description' => esc_html__('Optional. Enter width of the embedded post in pixels. Default is 500px.', SEFWPB_TD),
-					'value' => '500',
-				],
-				vc_map_add_css_animation(),
-				[
-					'type'        => 'el_id',
-					'heading'     => esc_html__( 'Element ID', SEFWPB_TD ),
-					'param_name'  => 'el_id',
-					// translators: %1$s: link to w3c specification, %2$s: closing anchor tag.
-					'description' => sprintf( esc_html__( 'Enter element ID (Note: make sure it is unique and valid according to %1$sw3c specification%2$s).', SEFWPB_TD ), '<a href="https://www.w3schools.com/tags/att_global_id.asp" target="_blank">', '</a>' ),
-				],
-				[
-					'type'        => 'textfield',
-					'heading'     => esc_html__( 'Extra class name', SEFWPB_TD ),
-					'param_name'  => 'el_class',
-					'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', SEFWPB_TD ),
-				],
-				[
-					'type'       => 'css_editor',
-					'heading'    => esc_html__( 'CSS', SEFWPB_TD ),
-					'param_name' => 'css',
-					'group'      => esc_html__( 'Design Options', SEFWPB_TD ),
+					[
+						'type'        => 'textfield',
+						'heading'     => esc_html__( 'Post URL', 'social-elements-wpbakery' ),
+						'param_name'  => 'url',
+						'description' => esc_html__( 'Enter the URL of the post you want to embed.', 'social-elements-wpbakery' ),
+						'value'       => '',
+					],
+					[
+						'type'        => 'dropdown',
+						'heading'     => esc_html__( 'Alignment', 'social-elements-wpbakery' ),
+						'param_name'  => 'align',
+						'group'       => esc_html__( 'Styles', 'social-elements-wpbakery' ),
+						'value'       => [
+							esc_html__( 'Left', 'social-elements-wpbakery' )   => 'flex-start',
+							esc_html__( 'Center', 'social-elements-wpbakery' ) => 'center',
+							esc_html__( 'Right', 'social-elements-wpbakery' )  => 'flex-end',
+						],
+						'std'         => 'left',
+					],
+					[
+						'type'        => 'textfield',
+						'heading'     => esc_html__( 'Width', 'social-elements-wpbakery' ),
+						'param_name'  => 'width',
+						'group'       => esc_html__( 'Styles', 'social-elements-wpbakery' ),
+						'description' => esc_html__( 'Optional. Enter width of the embedded post in pixels. Default is 500px.', 'social-elements-wpbakery' ),
+						'value'       => '500',
+					],
+					vc_map_add_css_animation(),
+					[
+						'type'        => 'el_id',
+						'heading'     => esc_html__( 'Element ID', 'social-elements-wpbakery' ),
+						'param_name'  => 'el_id',
+						// translators: %1$s: link to w3c specification, %2$s: closing anchor tag.
+						'description' => sprintf(
+							esc_html__( 'Enter element ID (Note: make sure it is unique and valid according to %1$sw3c specification%2$s).', 'social-elements-wpbakery' ),
+							'<a href="https://www.w3schools.com/tags/att_global_id.asp" target="_blank">',
+							'</a>'
+						),
+					],
+					[
+						'type'        => 'textfield',
+						'heading'     => esc_html__( 'Extra class name', 'social-elements-wpbakery' ),
+						'param_name'  => 'el_class',
+						'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'social-elements-wpbakery' ),
+					],
+					[
+						'type'       => 'css_editor',
+						'heading'    => esc_html__( 'CSS', 'social-elements-wpbakery' ),
+						'param_name' => 'css',
+						'group'      => esc_html__( 'Design Options', 'social-elements-wpbakery' ),
+					],
 				],
 			]
-		]
-	);
-} );
+		);
+	}
+);

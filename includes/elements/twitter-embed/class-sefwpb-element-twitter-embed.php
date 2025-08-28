@@ -4,21 +4,27 @@
  *
  * Embeds X (Twitter) timeline or tweet.
  *
- * @since 1.0.0
+ * @package SocialElementsWPBakery
+ * @since   1.0.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
+	/**
+	 * Class WPBakeryShortCode_Sefwpb_Twitter_Embed
+	 *
+	 * Handles the Twitter embed element for WPBakery.
+	 */
 	class WPBakeryShortCode_Sefwpb_Twitter_Embed extends WPBakeryShortCode {
 
 		/**
-		 * Constructor
+		 * Constructor.
 		 *
-		 * @param array $settings
+		 * @param array $settings Shortcode settings.
 		 */
 		public function __construct( $settings ) {
-			parent::__construct( $settings ); // Important to call parent constructor to activate all logic for shortcode.
+			parent::__construct( $settings );
 			$this->element_enqueueing_assets();
 		}
 
@@ -30,20 +36,20 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				'sefwpb-twitter-embed',
 				plugins_url( '/assets/css/twitter-embed.css', __FILE__ ),
 				[],
-				SEFWPB_VERSION
+				defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0'
 			);
 			wp_enqueue_script(
 				'twitter-widgets',
 				'https://platform.twitter.com/widgets.js',
 				[],
-				null,
+				defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0',
 				true
 			);
 			wp_enqueue_script(
 				'sefwpb-twitter-embed',
 				plugins_url( '/assets/js/twitter-embed.js', __FILE__ ),
-				['jquery'],
-				SEFWPB_VERSION,
+				[ 'jquery' ],
+				defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0',
 				true
 			);
 		}
@@ -56,51 +62,82 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts = vc_map_get_attributes( $this->getShortcode(), $atts );
-			// Extract shortcode attributes.
-			$title    = isset( $atts['title'] ) ? $atts['title'] : '';
-			$url      = isset( $atts['url'] ) ? $atts['url'] : '';
-			$align    = isset( $atts['align'] ) ? $atts['align'] : 'left';
-			$theme    = isset( $atts['theme'] ) ? $atts['theme'] : 'light';
-			$el_id    = isset( $atts['el_id'] ) ? $atts['el_id'] : '';
-			$el_class = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
-			$css      = isset( $atts['css'] ) ? $atts['css'] : '';
-			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
-			// Build CSS classes.
-			$css_classes = ['sefwpb-element', 'sefwpb-twitter-embed', $el_class, $this->getCSSAnimation( $css_animation )];
-			if ( ! empty( $css ) ) {
-				$css_classes[] = vc_shortcode_custom_css_class( $css );
-			}
-			$css_class = implode( ' ', array_filter( $css_classes ) );
-			$style = 'style="--align: ' . esc_attr( $align ) . ';"';
-			// Start output buffering.
-			ob_start();
-			?>
-			<div <?php echo ! empty( $el_id ) ? 'id="' . esc_attr( $el_id ) . '"' : ''; ?> class="<?php echo esc_attr( $css_class ); ?>" <?php echo $style; ?>>
-				<?php if ( ! empty( $title ) ) : ?>
-					<h3 class="sefwpb-twitter-embed-title"><?php echo esc_html( $title ); ?></h3>
-				<?php endif; ?>
-				<?php if ( ! empty( $url ) ) : ?>
-					<div class="sefwpb-twitter-embed-container" data-tweet-url="<?php echo esc_url($url); ?>" data-theme="<?php echo esc_attr($theme)?>" data-is-rendered="false">
-						<div class="sefwpb-twitter-embed-temp"><a href="<?php echo esc_url($url); ?>" target="_blank" rel="noreferrer noopener"><?php echo esc_url($url); ?></a></div>
-						<script>
-							if (typeof window.sefwpbLoadTwitterEmbed === 'function') {
-								window.sefwpbLoadTwitterEmbed();
-							}
-						</script>
-					</div>
-				<?php else : ?>
-					<p><?php echo esc_html__( 'Please provide a valid Tweet URL to embed.', SEFWPB_TD ); ?></p>
-				<?php endif; ?>
-			</div>
-			<?php
-			// Get output and clean buffer.
-			$output = ob_get_clean();
-			// Return output.
-
+			$atts         = vc_map_get_attributes( $this->getShortcode(), $atts );
+			$css_class    = $this->build_css_class( $atts );
+			$el_id        = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
+			$style        = $this->build_style( $atts );
+			$output       = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '" style="' . esc_attr( $style ) . '">';
+			$output      .= $this->render_title( $atts );
+			$output      .= $this->render_twitter_embed( $atts );
+			$output      .= '</div>';
 			return $output;
 		}
 
-	}
+		/**
+		 * Build CSS class string.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
+		private function build_css_class( $atts ) {
+			$el_class      = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
+			$css           = isset( $atts['css'] ) ? $atts['css'] : '';
+			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
+			$css_classes   = [
+				'sefwpb-element',
+				'sefwpb-twitter-embed',
+				$el_class,
+				$this->getCSSAnimation( $css_animation ),
+			];
+			if ( ! empty( $css ) ) {
+				$css_classes[] = vc_shortcode_custom_css_class( $css );
+			}
+			return implode( ' ', array_filter( $css_classes ) );
+		}
 
+		/**
+		 * Build style string.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
+		private function build_style( $atts ) {
+			$align = isset( $atts['align'] ) ? $atts['align'] : 'left';
+			return '--align: ' . $align . ';';
+		}
+
+		/**
+		 * Render the title if set.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
+		private function render_title( $atts ) {
+			if ( ! empty( $atts['title'] ) ) {
+				return '<h3 class="sefwpb-twitter-embed-title">' . esc_html( $atts['title'] ) . '</h3>';
+			}
+			return '';
+		}
+
+		/**
+		 * Render the Twitter embed.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
+		private function render_twitter_embed( $atts ) {
+			$url   = isset( $atts['url'] ) ? $atts['url'] : '';
+			$theme = isset( $atts['theme'] ) ? $atts['theme'] : 'light';
+			if ( ! empty( $url ) ) {
+				$output  = '<div class="sefwpb-twitter-embed-container" data-tweet-url="' . esc_url( $url ) . '" data-theme="' . esc_attr( $theme ) . '" data-is-rendered="false">';
+				$output .= '<div class="sefwpb-twitter-embed-temp"><a href="' . esc_url( $url ) . '" target="_blank" rel="noreferrer noopener">' . esc_url( $url ) . '</a></div>';
+				$output .= '<script>';
+				$output .= 'if (typeof window.sefwpbLoadTwitterEmbed === "function") { window.sefwpbLoadTwitterEmbed(); }';
+				$output .= '</script>';
+				$output .= '</div>';
+				return $output;
+			}
+			return '<p>' . esc_html__( 'Please provide a valid Tweet URL to embed.', 'social-elements-wpbakery' ) . '</p>';
+		}
+	}
 }

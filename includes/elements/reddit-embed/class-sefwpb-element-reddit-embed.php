@@ -12,6 +12,53 @@ defined( 'ABSPATH' ) || exit;
 if ( class_exists( 'WPBakeryShortCode' ) ) {
 	class WPBakeryShortCode_Sefwpb_Reddit_Embed extends WPBakeryShortCode {
 		/**
+		 * Gets attributes and builds CSS class for the element.
+		 *
+		 * @param $atts
+		 * @return string
+		 */
+		private function build_css_class( $atts ) {
+			$el_class      = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
+			$css           = isset( $atts['css'] ) ? $atts['css'] : '';
+			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
+			$css_classes   = [ 'sefwpb-element', 'sefwpb-reddit-embed', $el_class, $this->getCSSAnimation( $css_animation ) ];
+			if ( ! empty( $css ) ) {
+				$css_classes[] = vc_shortcode_custom_css_class( $css );
+			}
+			return implode( ' ', array_filter( $css_classes ) );
+		}
+
+		/**
+		 * Gets element title.
+		 *
+		 * @param $atts
+		 * @return string
+		 */
+		private function render_title( $atts ) {
+			if ( ! empty( $atts['title'] ) ) {
+				return '<h3 class="sefwpb-reddit-embed-title">' . esc_html( $atts['title'] ) . '</h3>';
+			}
+			return '';
+		}
+
+		/**
+		 * Renders the Reddit embed blockquote and script.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
+		private function render_embed( $atts ) {
+			$url = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
+			$output = '<div class="sefwpb-reddit-embed-container">';
+			$output .= '<blockquote class="reddit-embed-bq" style="height: 400px; width: 300px" data-embed-height="400" data-embed-width="300">';
+			$output .= '<a href="' . $url . '">Reddit Post</a>';
+			$output .= '</blockquote>';
+			$output .= '<script async="" src="https://embed.reddit.com/widgets.js" charSet="UTF-8"></script>';
+			$output .= '</div>';
+			return $output;
+		}
+
+		/**
 		 * Shortcode output.
 		 *
 		 * @param array  $atts    Shortcode attributes.
@@ -19,29 +66,13 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts = vc_map_get_attributes( $this->getShortcode(), $atts );
-			$el_class = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
-			$css      = isset( $atts['css'] ) ? $atts['css'] : '';
-			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
-
-			$css_classes = [ 'sefwpb-element', 'sefwpb-reddit-embed', $el_class, $this->getCSSAnimation( $css_animation ) ];
-
-			if ( ! empty( $css ) ) {
-				$css_classes[] = vc_shortcode_custom_css_class( $css );
-			}
-			$css_class = implode( ' ', array_filter( $css_classes ) );
-			$el_id = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
-			$output = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '">';
-			if ( ! empty( $atts['title'] ) ) {
-				$output .= '<h3 class="sefwpb-reddit-embed-title">' . esc_html( $atts['title'] ) . '</h3>';
-			}
-			$output .= '<div class="sefwpb-reddit-embed-container">';
-			$output .= '<blockquote class="reddit-embed-bq" style="height: 400px; width: 300px" data-embed-height="400" data-embed-width="300">';
-			$output .= '<a href="' . esc_url( $atts['url'] ) . '">Reddit Post</a>';
-			$output .= '</blockquote>';
-			$output .= '<script async="" src="https://embed.reddit.com/widgets.js" charSet="UTF-8"></script>';
-			$output .= '</div>'; // .sefwpb-reddit-embed-container
-			$output .= '</div>'; // .sefwpb-element
+			$atts      = vc_map_get_attributes( $this->getShortcode(), $atts );
+			$css_class = $this->build_css_class( $atts );
+			$el_id     = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
+			$output    = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '">';
+			$output   .= $this->render_title( $atts );
+			$output   .= $this->render_embed( $atts );
+			$output   .= '</div>';
 			return $output;
 		}
 	}

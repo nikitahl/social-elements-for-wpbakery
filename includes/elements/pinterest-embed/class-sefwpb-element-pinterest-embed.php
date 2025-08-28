@@ -2,15 +2,46 @@
 /**
  * WPBakery Element: Pinterest Embed
  *
- * Embeds Ponterest post.
+ * Embeds Pinterest post.
  *
- * @since 1.0.0
+ * @package SocialElementsWPBakery
+ * @since   1.0.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
+	/**
+	 * Class WPBakeryShortCode_Sefwpb_Pinterest_Embed
+	 *
+	 * Handles the Pinterest embed element for WPBakery.
+	 */
 	class WPBakeryShortCode_Sefwpb_Pinterest_Embed extends WPBakeryShortCode {
+		/**
+		 * Constructor.
+		 *
+		 * @param array $settings Shortcode settings.
+		 */
+		public function __construct( $settings ) {
+			parent::__construct( $settings );
+			add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_pinterest_script' ] );
+		}
+
+		/**
+		 * Enqueue Pinterest embed script.
+		 */
+		public function enqueue_pinterest_script() {
+			if ( ! is_admin() ) {
+				wp_enqueue_script(
+					'pinterest-embed',
+					'https://assets.pinterest.com/js/pinit.js',
+					[],
+					null,
+					true
+				);
+			}
+		}
+
 		/**
 		 * Shortcode output.
 		 *
@@ -19,35 +50,66 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts = vc_map_get_attributes( $this->getShortcode(), $atts );
-			$el_class = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
-			$css      = isset( $atts['css'] ) ? $atts['css'] : '';
-			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
+			$atts      = vc_map_get_attributes( $this->getShortcode(), $atts );
+			$css_class = $this->build_css_class( $atts );
+			$el_id     = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
+			$output    = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '">';
+			$output   .= $this->render_title( $atts );
+			$output   .= $this->render_pinterest_embed( $atts );
+			$output   .= '</div>';
+			return $output;
+		}
 
-			$style = '';
-			$css_classes = [ 'sefwpb-element', 'sefwpb-pinterest-embed', $el_class, $this->getCSSAnimation( $css_animation ) ];
+		/**
+		 * Build CSS class string.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
+		private function build_css_class( $atts ) {
+			$el_class      = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
+			$css           = isset( $atts['css'] ) ? $atts['css'] : '';
+			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
+			$css_classes   = [ 'sefwpb-element', 'sefwpb-pinterest-embed', $el_class, $this->getCSSAnimation( $css_animation ) ];
 			if ( ! empty( $css ) ) {
 				$css_classes[] = vc_shortcode_custom_css_class( $css );
 			}
+			return implode( ' ', array_filter( $css_classes ) );
+		}
+
+		/**
+		 * Render the title if set.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
+		private function render_title( $atts ) {
+			if ( ! empty( $atts['title'] ) ) {
+				return '<h3 class="sefwpb-pinterest-embed-title">' . esc_html( $atts['title'] ) . '</h3>';
+			}
+			return '';
+		}
+
+		/**
+		 * Render the Pinterest embed.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
+		private function render_pinterest_embed( $atts ) {
+			$style = '';
 			if ( isset( $atts['align'] ) ) {
 				$style .= 'text-align: ' . $atts['align'] . ';';
 			}
-			$css_class = implode( ' ', array_filter( $css_classes ) );
-			$el_id = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
-			$output = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '">';
-			if ( ! empty( $atts['title'] ) ) {
-				$output .= '<h3 class="sefwpb-pinterest-embed-title">' . esc_html( $atts['title'] ) . '</h3>';
-			}
-			$output .= '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">';
-			$output .= '<a data-pin-do="embedPin" href="' . esc_url( $atts['url'] ) . '">Pinterest Post</a>';
-			$output .= '<script async defer src="https://assets.pinterest.com/js/pinit.js"></script>';
+			$url    = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
+			$output = '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">';
+			$output .= '<a data-pin-do="embedPin" href="' . $url . '">Pinterest Post</a>';
 			$output .= '<script>';
 			$output .= 'if (window.PinUtils && typeof window.PinUtils.build === "function") {';
 			$output .= 'window.PinUtils.build();';
 			$output .= '}';
 			$output .= '</script>';
-			$output .= '</div>'; // .sefwpb-pinterest-embed-container
-			$output .= '</div>'; // .sefwpb-element
+			$output .= '</div>';
 			return $output;
 		}
 	}

@@ -15,7 +15,6 @@
  * @package SocialElementsWPBakery
  */
 
-
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -28,13 +27,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Plugin version.
  * @since 1.0.0
  */
+
 define( 'SEFWPB_VERSION', '1.0' );
 define( 'SEFWPB_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SEFWPB_URL', plugin_dir_url( __FILE__ ) );
 define( 'SEFWPB_DIR', __DIR__ . '/' );
 define( 'SEFWPB_TD', 'social-elements-wpbakery' );
 define( 'SEFWPB_ASSETS_URI', plugins_url( 'assets', __FILE__ ) );
-
 
 // -----------------------------------------------------------------------------
 // Bootstrap
@@ -46,10 +45,10 @@ define( 'SEFWPB_ASSETS_URI', plugins_url( 'assets', __FILE__ ) );
  * @since 1.0.0
  * @return void
  */
+
 function sefwpb_bootstrap() {
 	// i18n
 	load_plugin_textdomain( SEFWPB_TD, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-
 
 	// Admin dependency notice if WPBakery is missing.
 	if ( ! function_exists( 'vc_map' ) ) {
@@ -70,7 +69,6 @@ function sefwpb_bootstrap() {
 }
 add_action( 'plugins_loaded', 'sefwpb_bootstrap' );
 
-
 /**
  * Shows admin notice if WPBakery Page Builder is not active.
  *
@@ -79,6 +77,6 @@ add_action( 'plugins_loaded', 'sefwpb_bootstrap' );
  */
 function sefwpb_missing_wpbakery_notice() {
 	if ( current_user_can( 'activate_plugins' ) ) {
-		echo '<div class="notice notice-error"><p>' . esc_html__('Social Elements for WPBakery requires WPBakery Page Builder to be installed and active.', SEFWPB_TD) . '</p></div>';
+		echo '<div class="notice notice-error"><p>' . esc_html__( 'Social Elements for WPBakery requires WPBakery Page Builder to be installed and active.', 'social-elements-wpbakery' ) . '</p></div>';
 	}
 }

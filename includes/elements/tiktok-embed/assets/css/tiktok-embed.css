@@ -1,0 +1,15 @@
+.sefwpb-tiktok-embed {
+    --justify-content: flex-start;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: var(--justify-content);
+    align-items: center;
+}
+
+.sefwpb-tiktok-embed-wrap {
+    --width: 500px;
+    width: var(--width);
+    min-width: 325px;
+    max-width: 100%;
+}

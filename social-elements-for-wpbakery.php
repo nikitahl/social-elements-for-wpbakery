@@ -25,6 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // -----------------------------------------------------------------------------
 /**
  * Plugin version.
+ *
  * @since 1.0.0
  */
 
@@ -45,9 +46,8 @@ define( 'SEFWPB_ASSETS_URI', plugins_url( 'assets', __FILE__ ) );
  * @since 1.0.0
  * @return void
  */
-
 function sefwpb_bootstrap() {
-	// i18n
+	// i18n.
 	load_plugin_textdomain( SEFWPB_TD, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 	// Admin dependency notice if WPBakery is missing.

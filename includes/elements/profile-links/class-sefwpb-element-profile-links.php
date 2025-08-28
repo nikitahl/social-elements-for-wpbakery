@@ -59,7 +59,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function get_button_styles( array $atts ) {
-			$styles = '';
+			$styles  = '';
 			$styles .= $this->get_shape_style( $atts );
 			$styles .= $this->get_align_style( $atts );
 			$styles .= $this->get_gap_style( $atts );
@@ -121,7 +121,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts = $this->get_default_atts( $atts );
+			$atts            = $this->get_default_atts( $atts );
 			$buttons         = is_array( $atts['buttons'] ) ? $atts['buttons'] : [];
 			$wrapper_classes = $this->get_wrapper_classes( $atts );
 
@@ -143,15 +143,15 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		private function get_default_atts( $atts ) {
 			return shortcode_atts(
 				[
-					'buttons'     => [],
-					'shape'       => '',
-					'align'       => '',
-					'gap'         => '',
-					'size'        => '',
-					'text_color'  => '',
-					'style'       => '',
-					'el_class'    => '',
-					'css'         => '',
+					'buttons'    => [],
+					'shape'      => '',
+					'align'      => '',
+					'gap'        => '',
+					'size'       => '',
+					'text_color' => '',
+					'style'      => '',
+					'el_class'   => '',
+					'css'        => '',
 				],
 				$atts,
 				$this->shortcode

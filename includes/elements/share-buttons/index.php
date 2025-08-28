@@ -33,55 +33,57 @@ add_action(
 						'heading'     => esc_html__( 'Share buttons', 'social-elements-wpbakery' ),
 						'param_name'  => 'values',
 						'description' => esc_html__( 'Enter values for button - title, icon, color.', 'social-elements-wpbakery' ),
-						'value'       => rawurlencode( wp_json_encode( [
-							[
-								'label'           => esc_html__( 'Facebook', 'social-elements-wpbakery' ),
-								'social_platform' => 'facebook',
-								'color'           => '#0866FF',
-								'icon_type'       => 'monosocial',
-								'icon_monosocial' => 'vc-mono vc-mono-facebook',
-							],
-							[
-								'label'            => esc_html__( 'X', 'social-elements-wpbakery' ),
-								'social_platform'  => 'x',
-								'color'            => '#000000',
-								'icon_type'        => 'fontawesome',
-								'icon_fontawesome' => 'fa fa-brands fa-x-twitter',
-							],
-							[
-								'label'           => esc_html__( 'Linkedin', 'social-elements-wpbakery' ),
-								'social_platform' => 'linkedin',
-								'color'           => '#0077b5',
-								'icon_type'       => 'monosocial',
-								'icon_monosocial' => 'vc-mono vc-mono-linkedin',
-							],
-							[
-								'label'           => esc_html__( 'Reddit', 'social-elements-wpbakery' ),
-								'social_platform' => 'reddit',
-								'color'           => '#ff4500',
-								'icon_type'       => 'monosocial',
-								'icon_monosocial' => 'vc-mono vc-mono-reddit',
-							],
-							[
-								'label'           => esc_html__( 'Email', 'social-elements-wpbakery' ),
-								'social_platform' => 'email',
-								'color'           => '#777777',
-								'icon_type'       => 'monosocial',
-								'icon_monosocial' => 'vc-mono vc-mono-email',
-							],
-							[
-								'label'            => esc_html__( 'Copy link', 'social-elements-wpbakery' ),
-								'social_platform'  => 'copy',
-								'color'            => '#364fc7',
-								'icon_type'        => 'fontawesome',
-								'icon_fontawesome' => 'fa fa-regular fa-copy',
-							],
-						] ) ),
+						'value'       => rawurlencode(
+							wp_json_encode( [
+								[
+									'label'           => esc_html__( 'Facebook', 'social-elements-wpbakery' ),
+									'social_platform' => 'facebook',
+									'color'           => '#0866FF',
+									'icon_type'       => 'monosocial',
+									'icon_monosocial' => 'vc-mono vc-mono-facebook',
+								],
+								[
+									'label'            => esc_html__( 'X', 'social-elements-wpbakery' ),
+									'social_platform'  => 'x',
+									'color'            => '#000000',
+									'icon_type'        => 'fontawesome',
+									'icon_fontawesome' => 'fa fa-brands fa-x-twitter',
+								],
+								[
+									'label'           => esc_html__( 'Linkedin', 'social-elements-wpbakery' ),
+									'social_platform' => 'linkedin',
+									'color'           => '#0077b5',
+									'icon_type'       => 'monosocial',
+									'icon_monosocial' => 'vc-mono vc-mono-linkedin',
+								],
+								[
+									'label'           => esc_html__( 'Reddit', 'social-elements-wpbakery' ),
+									'social_platform' => 'reddit',
+									'color'           => '#ff4500',
+									'icon_type'       => 'monosocial',
+									'icon_monosocial' => 'vc-mono vc-mono-reddit',
+								],
+								[
+									'label'           => esc_html__( 'Email', 'social-elements-wpbakery' ),
+									'social_platform' => 'email',
+									'color'           => '#777777',
+									'icon_type'       => 'monosocial',
+									'icon_monosocial' => 'vc-mono vc-mono-email',
+								],
+								[
+									'label'            => esc_html__( 'Copy link', 'social-elements-wpbakery' ),
+									'social_platform'  => 'copy',
+									'color'            => '#364fc7',
+									'icon_type'        => 'fontawesome',
+									'icon_fontawesome' => 'fa fa-regular fa-copy',
+								],
+							])
+						),
 						'params'      => [
 							[
-								'type'             => 'dropdown',
-								'heading'          => esc_html__( 'Social platform', 'social-elements-wpbakery' ),
-								'value'            => [
+								'type'        => 'dropdown',
+								'heading'     => esc_html__( 'Social platform', 'social-elements-wpbakery' ),
+								'value'       => [
 									esc_html__( 'Facebook', 'social-elements-wpbakery' ) => 'facebook',
 									esc_html__( 'X (Twitter)', 'social-elements-wpbakery' ) => 'x',
 									esc_html__( 'Linkedin', 'social-elements-wpbakery' ) => 'linkedin',

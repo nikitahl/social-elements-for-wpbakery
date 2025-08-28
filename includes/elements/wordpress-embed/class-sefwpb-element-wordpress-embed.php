@@ -60,7 +60,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 					// Excerpt.
 					$excerpt = '<p class="sefwpb-embed-excerpt">' . esc_html( get_the_excerpt( $post_id ) ) . '</p>';
 					// Site logo.
-					$site_logo = '';
+					$site_logo      = '';
 					$custom_logo_id = get_theme_mod( 'custom_logo' );
 					if ( $custom_logo_id ) {
 						$site_logo = wp_get_attachment_image( $custom_logo_id, 'full', false, [ 'class' => 'sefwpb-embed-site-logo' ] );
@@ -120,26 +120,64 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		public function content( $atts, $content = '' ) {
 			$atts      = vc_map_get_attributes( $this->getShortcode(), $atts );
-			$title     = isset( $atts['title'] ) ? $atts['title'] : '';
-			$url       = isset( $atts['url'] ) ? $atts['url'] : '';
-			$align     = isset( $atts['align'] ) ? $atts['align'] : 'left';
-			$width     = isset( $atts['width'] ) ? $atts['width'] : '500px';
+			$output    = $this->build_wrapper_open( $atts );
+			$output   .= $this->build_title( $atts );
+			$output   .= $this->build_embed_or_error( $atts );
+			$output   .= '</div>';
+			return $output;
+		}
+
+		/**
+		 * Build the opening wrapper div.
+		 *
+		 * @param array $atts
+		 * @return string
+		 */
+		private function build_wrapper_open( $atts ) {
 			$el_id     = isset( $atts['el_id'] ) ? $atts['el_id'] : '';
 			$css_class = $this->build_css_class( $atts );
+			$align     = isset( $atts['align'] ) ? $atts['align'] : 'left';
 			$style     = 'style="--justify-content: ' . esc_attr( $align ) . ';"';
-			$output    = '<div ' . ( ! empty( $el_id ) ? 'id="' . esc_attr( $el_id ) . '"' : '' ) . ' class="' . esc_attr( $css_class ) . '" ' . $style . '>';
-			if ( ! empty( $title ) ) {
-				$output .= '<h3 class="sefwpb-element-title">' . esc_html( $title ) . '</h3>';
+			$id_attr   = ! empty( $el_id ) ? 'id="' . esc_attr( $el_id ) . '"' : '';
+			return '<div ' . $id_attr . ' class="' . esc_attr( $css_class ) . '" ' . $style . '>';
+		}
+
+		/**
+		 * Build the title HTML if present.
+		 *
+		 * @param array $atts
+		 * @return string
+		 */
+		private function build_title( $atts ) {
+			if ( ! empty( $atts['title'] ) ) {
+				return '<h3 class="sefwpb-element-title">' . esc_html( $atts['title'] ) . '</h3>';
 			}
-			if ( ! empty( $url ) ) {
-				$output .= '<div class="sefwpb-embed-wrapper" style="width:' . esc_attr( intval( $width ) ) . 'px;">';
-				$output .= $this->get_post_content( $url );
-				$output .= '</div>';
-			} else {
-				$output .= '<p>' . esc_html__( 'Please provide a valid URL to embed.', 'social-elements-wpbakery' ) . '</p>';
+			return '';
+		}
+
+		/**
+		 * Build the embed or error message.
+		 *
+		 * @param array $atts
+		 * @return string
+		 */
+		private function build_embed_or_error( $atts ) {
+			if ( ! empty( $atts['url'] ) ) {
+				$width = isset( $atts['width'] ) ? $atts['width'] : '500px';
+				return '<div class="sefwpb-embed-wrapper" style="width:' . esc_attr( intval( $width ) ) . 'px;">'
+					. $this->get_post_content( $atts['url'] )
+					. '</div>';
 			}
-			$output .= '</div>';
-			return $output;
+			return $this->build_error_message();
+		}
+
+		/**
+		 * Build the error message for missing URL.
+		 *
+		 * @return string
+		 */
+		private function build_error_message() {
+			return '<p>' . esc_html__( 'Please provide a valid URL to embed.', 'social-elements-wpbakery' ) . '</p>';
 		}
 	}
 }

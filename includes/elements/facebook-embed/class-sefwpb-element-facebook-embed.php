@@ -18,6 +18,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 	class WPBakeryShortCode_Sefwpb_Facebook_Embed extends WPBakeryShortCode {
 		/**
 		 * Constructor
+		 *
 		 * @param array $settings
 		 */
 		public function __construct( $settings ) {
@@ -35,7 +36,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 					'facebook-jssdk',
 					'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0',
 					[],
-					null,
+					SEFWPB_VERSION,
 					true
 				);
 			}
@@ -62,7 +63,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		/**
 		 * Build CSS class string.
 		 *
-		 * @param $atts
+		 * @param array $atts Shortcode attributes.
 		 * @return string
 		 */
 		private function build_css_class( $atts ) {
@@ -79,7 +80,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		/**
 		 * Render title if provided.
 		 *
-		 * @param $atts
+		 * @param array $atts Shortcode attributes.
 		 * @return string
 		 */
 		private function render_title( $atts ) {
@@ -92,7 +93,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		/**
 		 * Render Facebook embed code.
 		 *
-		 * @param $atts
+		 * @param array $atts Shortcode attributes.
 		 * @return string
 		 */
 		private function render_facebook_embed( $atts ) {

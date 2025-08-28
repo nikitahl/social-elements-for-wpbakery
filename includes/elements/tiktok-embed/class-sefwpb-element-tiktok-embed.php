@@ -1,16 +1,15 @@
 <?php
+/**
+ * WPBakery Element: TikTok Embed
+ *
+ * Embeds TikTok post.
+ *
+ * @since 1.0.0
+ */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
-
-	/**
-	 * WPBakery Element: TikTok Embed
-	 *
-	 * Embeds TikTok post.
-	 *
-	 * @since 1.0.0
-	 */
 	class WPBakeryShortCode_Sefwpb_Tiktok_Embed extends WPBakeryShortCode {
 		/**
 		 * Constructor

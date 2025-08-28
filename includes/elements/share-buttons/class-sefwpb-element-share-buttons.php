@@ -1,16 +1,15 @@
 <?php
+/**
+ * WPBakery Element: Social Share Buttons
+ *
+ * Renders a flexible set of share buttons for common networks.
+ *
+ * @since 1.0.0
+ */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
-
-	/**
-	 * WPBakery Element: Social Share Buttons
-	 *
-	 * Renders a flexible set of share buttons for common networks.
-	 *
-	 * @since 1.0.0
-	 */
 	class WPBakeryShortCode_Sefwpb_Social_Share extends WPBakeryShortCode {
 
 		/**

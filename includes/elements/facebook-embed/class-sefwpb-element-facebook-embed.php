@@ -1,16 +1,15 @@
 <?php
+/**
+ * WPBakery Element: Facebook Embed
+ *
+ * Embeds Facebook post.
+ *
+ * @since 1.0.0
+ */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
-
-	/**
-	 * WPBakery Element: Facebook Embed
-	 *
-	 * Embeds Facebook post.
-	 *
-	 * @since 1.0.0
-	 */
 	class WPBakeryShortCode_Sefwpb_Facebook_Embed extends WPBakeryShortCode {
 		/**
 		 * Shortcode output.

@@ -1,16 +1,15 @@
 <?php
+/**
+ * WPBakery Element: Twitter Embed
+ *
+ * Embeds X (Twitter) timeline or tweet.
+ *
+ * @since 1.0.0
+ */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
-
-	/**
-	 * WPBakery Element: Twitter Embed
-	 *
-	 * Embeds X (Twitter) timeline or tweet.
-	 *
-	 * @since 1.0.0
-	 */
 	class WPBakeryShortCode_Sefwpb_Twitter_Embed extends WPBakeryShortCode {
 
 		/**

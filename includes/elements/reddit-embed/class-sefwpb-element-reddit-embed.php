@@ -1,16 +1,15 @@
 <?php
+/**
+ * WPBakery Element: Reddit Embed
+ *
+ * Embeds Reddit post.
+ *
+ * @since 1.0.0
+ */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
-
-	/**
-	 * WPBakery Element: Reddit Embed
-	 *
-	 * Embeds Reddit post.
-	 *
-	 * @since 1.0.0
-	 */
 	class WPBakeryShortCode_Sefwpb_Reddit_Embed extends WPBakeryShortCode {
 		/**
 		 * Shortcode output.

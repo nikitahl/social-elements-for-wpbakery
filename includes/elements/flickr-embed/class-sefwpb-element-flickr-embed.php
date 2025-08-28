@@ -1,16 +1,15 @@
 <?php
+/**
+ * WPBakery Element: Flickr Embed
+ *
+ * Embeds Flickr image.
+ *
+ * @since 1.0.0
+ */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
-
-	/**
-	 * WPBakery Element: Flickr Embed
-	 *
-	 * Embeds Flickr image.
-	 *
-	 * @since 1.0.0
-	 */
 	class WPBakeryShortCode_Sefwpb_Flickr_Embed extends WPBakeryShortCode {
 
 		/**

@@ -1,16 +1,15 @@
 <?php
+/**
+ * WPBakery Element: Social Profile Links
+ *
+ * Renders a flexible set of buttons linking to social media profiles.
+ *
+ * @since 1.0.0
+ */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
-
-	/**
-	 * WPBakery Element: Social Profile Links
-	 *
-	 * Renders a flexible set of buttons linking to social media profiles.
-	 *
-	 * @since 1.0.0
-	 */
 	class WPBakeryShortCode_Sefwpb_Profile_Links extends WPBakeryShortCode {
 
 		/**

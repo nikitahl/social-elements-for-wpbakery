@@ -1,16 +1,15 @@
 <?php
+/**
+ * WPBakery Element: Pinterest Embed
+ *
+ * Embeds Ponterest post.
+ *
+ * @since 1.0.0
+ */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
-
-	/**
-	 * WPBakery Element: Pinterest Embed
-	 *
-	 * Embeds Ponterest post.
-	 *
-	 * @since 1.0.0
-	 */
 	class WPBakeryShortCode_Sefwpb_Pinterest_Embed extends WPBakeryShortCode {
 		/**
 		 * Shortcode output.

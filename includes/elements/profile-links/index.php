@@ -33,7 +33,7 @@ add_action(
 						'heading'     => esc_html__( 'Profile links', 'social-elements-wpbakery' ),
 						'param_name'  => 'values',
 						'description' => esc_html__( 'Enter values for links - title, icon, color, URL.', 'social-elements-wpbakery' ),
-						'value' => rawurlencode( wp_json_encode( [
+						'value'       => rawurlencode( wp_json_encode( [
 							[
 								'label'            => esc_html__( 'Facebook', 'social-elements-wpbakery' ),
 								'color'            => '#0866FF',
@@ -65,7 +65,7 @@ add_action(
 								'icon_fontawesome' => 'fa fa-brands fa-tiktok',
 							],
 						] ) ),
-						'params' => [
+						'params'      => [
 							[
 								'type'        => 'textfield',
 								'heading'     => esc_html__( 'Label', 'social-elements-wpbakery' ),
@@ -87,9 +87,9 @@ add_action(
 								'description' => esc_html__( 'Select icon color.', 'social-elements-wpbakery' ),
 							],
 							[
-								'type'    => 'dropdown',
-								'heading' => esc_html__( 'Icon library', 'social-elements-wpbakery' ),
-								'value'   => [
+								'type'        => 'dropdown',
+								'heading'     => esc_html__( 'Icon library', 'social-elements-wpbakery' ),
+								'value'       => [
 									esc_html__( 'Font Awesome', 'social-elements-wpbakery' ) => 'fontawesome',
 									esc_html__( 'Mono Social', 'social-elements-wpbakery' ) => 'monosocial',
 								],
@@ -98,32 +98,32 @@ add_action(
 								'description' => esc_html__( 'Select icon library.', 'social-elements-wpbakery' ),
 							],
 							[
-								'type'       => 'iconpicker',
-								'heading'    => esc_html__( 'Icon', 'social-elements-wpbakery' ),
-								'param_name' => 'icon_fontawesome',
-								'value'      => 'fas fa-adjust',
-								'settings'   => [
+								'type'        => 'iconpicker',
+								'heading'     => esc_html__( 'Icon', 'social-elements-wpbakery' ),
+								'param_name'  => 'icon_fontawesome',
+								'value'       => 'fas fa-adjust',
+								'settings'    => [
 									'emptyIcon'    => false,
 									'type'         => 'fontawesome',
 									'iconsPerPage' => 500,
 								],
-								'dependency' => [
+								'dependency'  => [
 									'element' => 'icon_type',
 									'value'   => 'fontawesome',
 								],
 								'description' => esc_html__( 'Select icon from library.', 'social-elements-wpbakery' ),
 							],
 							[
-								'type'       => 'iconpicker',
-								'heading'    => esc_html__( 'Icon', 'social-elements-wpbakery' ),
-								'param_name' => 'icon_monosocial',
-								'value'      => 'vc-mono vc-mono-fivehundredpx',
-								'settings'   => [
+								'type'        => 'iconpicker',
+								'heading'     => esc_html__( 'Icon', 'social-elements-wpbakery' ),
+								'param_name'  => 'icon_monosocial',
+								'value'       => 'vc-mono vc-mono-fivehundredpx',
+								'settings'    => [
 									'emptyIcon'    => false,
 									'type'         => 'monosocial',
 									'iconsPerPage' => 4000,
 								],
-								'dependency' => [
+								'dependency'  => [
 									'element' => 'icon_type',
 									'value'   => 'monosocial',
 								],
@@ -136,12 +136,12 @@ add_action(
 						'heading'    => esc_html__( 'Style', 'social-elements-wpbakery' ),
 						'group'      => esc_html__( 'Styles', 'social-elements-wpbakery' ),
 						'param_name' => 'style',
-						'value' => [
+						'value'      => [
 							esc_html__( 'Solid (brand color)', 'social-elements-wpbakery' ) => 'solid',
 							esc_html__( 'Outline', 'social-elements-wpbakery' ) => 'outline',
 							esc_html__( 'Minimal (no shape, icon only)', 'social-elements-wpbakery' ) => 'minimal',
 						],
-						'std' => 'solid',
+						'std'        => 'solid',
 					],
 					[
 						'type'        => 'colorpicker',
@@ -152,7 +152,7 @@ add_action(
 						'value'       => '#0a0b0e',
 						'dependency'  => [
 							'element' => 'style',
-							'value' => [ 'minimal' ],
+							'value'   => [ 'minimal' ],
 						],
 					],
 					[
@@ -165,7 +165,7 @@ add_action(
 							esc_html__( 'Medium', 'social-elements-wpbakery' ) => 'md',
 							esc_html__( 'Large', 'social-elements-wpbakery' ) => 'lg',
 						],
-						'std' => 'md',
+						'std'        => 'md',
 					],
 					[
 						'type'       => 'dropdown',
@@ -177,7 +177,7 @@ add_action(
 							esc_html__( 'Rounded', 'social-elements-wpbakery' ) => '5px',
 							esc_html__( 'Circle', 'social-elements-wpbakery' ) => '50px',
 						],
-						'std' => 'rounded',
+						'std'        => 'rounded',
 					],
 					[
 						'type'       => 'dropdown',
@@ -189,7 +189,7 @@ add_action(
 							esc_html__( 'Center', 'social-elements-wpbakery' ) => 'center',
 							esc_html__( 'Right', 'social-elements-wpbakery' ) => 'right',
 						],
-						'std' => 'left',
+						'std'        => 'left',
 					],
 					[
 						'type'       => 'textfield',
@@ -218,7 +218,7 @@ add_action(
 						'param_name' => 'css',
 						'group'      => esc_html__( 'Design Options', 'social-elements-wpbakery' ),
 					],
-				]
+				],
 			]
 		);
 	}

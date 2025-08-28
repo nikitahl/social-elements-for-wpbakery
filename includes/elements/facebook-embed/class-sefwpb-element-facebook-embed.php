@@ -10,14 +10,26 @@
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
+	/**
+	 * Class WPBakeryShortCode_Sefwpb_Facebook_Embed
+	 *
+	 * Handles the Facebook embed element for WPBakery.
+	 */
 	class WPBakeryShortCode_Sefwpb_Facebook_Embed extends WPBakeryShortCode {
+		/**
+		 * Constructor
+		 * @param array $settings
+		 */
 		public function __construct( $settings ) {
 			parent::__construct( $settings );
 			add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_facebook_sdk' ] );
 		}
 
+		/**
+		 * Enqueue Facebook SDK script.
+		 */
 		public function enqueue_facebook_sdk() {
-			// Only enqueue on frontend
+			// Only enqueue on frontend.
 			if ( ! is_admin() ) {
 				wp_enqueue_script(
 					'facebook-jssdk',

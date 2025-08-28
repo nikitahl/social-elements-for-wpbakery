@@ -10,11 +10,16 @@
 defined( 'ABSPATH' ) || exit;
 
 if ( class_exists( 'WPBakeryShortCode' ) ) {
+	/**
+	 * Class WPBakeryShortCode_Sefwpb_Reddit_Embed
+	 *
+	 * Handles the Reddit embed element for WPBakery.
+	 */
 	class WPBakeryShortCode_Sefwpb_Reddit_Embed extends WPBakeryShortCode {
 		/**
 		 * Gets attributes and builds CSS class for the element.
 		 *
-		 * @param $atts
+		 * @param array $atts
 		 * @return string
 		 */
 		private function build_css_class( $atts ) {
@@ -31,7 +36,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		/**
 		 * Gets element title.
 		 *
-		 * @param $atts
+		 * @param array $atts
 		 * @return string
 		 */
 		private function render_title( $atts ) {
@@ -48,8 +53,8 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function render_embed( $atts ) {
-			$url = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
-			$output = '<div class="sefwpb-reddit-embed-container">';
+			$url     = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
+			$output  = '<div class="sefwpb-reddit-embed-container">';
 			$output .= '<blockquote class="reddit-embed-bq" style="height: 400px; width: 300px" data-embed-height="400" data-embed-width="300">';
 			$output .= '<a href="' . $url . '">Reddit Post</a>';
 			$output .= '</blockquote>';

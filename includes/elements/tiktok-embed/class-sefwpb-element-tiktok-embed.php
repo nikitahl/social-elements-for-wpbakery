@@ -35,7 +35,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				'tiktok-embed',
 				'https://www.tiktok.com/embed.js',
 				[],
-				null,
+				SEFWPB_VERSION,
 				true
 			);
 			wp_enqueue_style(
@@ -68,21 +68,21 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts           = vc_map_get_attributes( $this->getShortcode(), $atts );
-			$el_class       = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
-			$css            = isset( $atts['css'] ) ? $atts['css'] : '';
-			$css_animation  = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
-			$width          = isset( $atts['width'] ) ? $atts['width'] : '500px';
+			$atts          = vc_map_get_attributes( $this->getShortcode(), $atts );
+			$el_class      = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
+			$css           = isset( $atts['css'] ) ? $atts['css'] : '';
+			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
+			$width         = isset( $atts['width'] ) ? $atts['width'] : '500px';
 
-			$css_class      = $this->build_css_class( $el_class, $css, $css_animation );
+			$css_class       = $this->build_css_class( $el_class, $css, $css_animation );
 			$container_style = $this->build_container_style( $atts );
-			$style          = $this->build_width_style( $width );
-			$el_id          = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
+			$style           = $this->build_width_style( $width );
+			$el_id           = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
 
-			$output         = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '" style="' . esc_attr( $container_style ) . '">';
-			$output        .= $this->render_title( $atts );
-			$output        .= $this->render_tiktok_embed( $atts, $style );
-			$output        .= '</div>';
+			$output  = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '" style="' . esc_attr( $container_style ) . '">';
+			$output .= $this->render_title( $atts );
+			$output .= $this->render_tiktok_embed( $atts, $style );
+			$output .= '</div>';
 
 			return $output;
 		}

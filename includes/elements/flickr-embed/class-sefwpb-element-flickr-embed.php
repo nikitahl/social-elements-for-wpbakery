@@ -27,20 +27,20 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts      = vc_map_get_attributes( $this->getShortcode(), $atts );
-			$el_class  = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
-			$css       = isset( $atts['css'] ) ? $atts['css'] : '';
+			$atts          = vc_map_get_attributes( $this->getShortcode(), $atts );
+			$el_class      = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
+			$css           = isset( $atts['css'] ) ? $atts['css'] : '';
 			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
-			$width     = ! empty( $atts['width'] ) && is_numeric( $atts['width'] ) ? intval( $atts['width'] ) : 500;
+			$width         = ! empty( $atts['width'] ) && is_numeric( $atts['width'] ) ? intval( $atts['width'] ) : 500;
 
 			$css_class = $this->build_css_class( $el_class, $css, $css_animation );
 			$style     = $this->build_style( $atts );
 			$el_id     = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
 
-			$output    = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '" style="' . esc_attr( $style ) . '">';
-			$output   .= $this->render_title( $atts );
-			$output   .= $this->render_flickr_embed( $atts, $width );
-			$output   .= '</div>';
+			$output  = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '" style="' . esc_attr( $style ) . '">';
+			$output .= $this->render_title( $atts );
+			$output .= $this->render_flickr_embed( $atts, $width );
+			$output .= '</div>';
 
 			return $output;
 		}

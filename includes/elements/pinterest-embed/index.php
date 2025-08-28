@@ -35,16 +35,16 @@ add_action(
 						'value'       => 'https://www.pinterest.com/pin/3940718420141988/',
 					],
 					[
-						'type'        => 'dropdown',
-						'heading'     => esc_html__( 'Alignment', 'social-elements-wpbakery' ),
-						'param_name'  => 'align',
-						'group'       => esc_html__( 'Styles', 'social-elements-wpbakery' ),
-						'value'       => [
+						'type'       => 'dropdown',
+						'heading'    => esc_html__( 'Alignment', 'social-elements-wpbakery' ),
+						'param_name' => 'align',
+						'group'      => esc_html__( 'Styles', 'social-elements-wpbakery' ),
+						'value'      => [
 							esc_html__( 'Left', 'social-elements-wpbakery' )   => 'left',
 							esc_html__( 'Center', 'social-elements-wpbakery' ) => 'center',
 							esc_html__( 'Right', 'social-elements-wpbakery' )  => 'right',
 						],
-						'std'         => 'left',
+						'std'        => 'left',
 					],
 					[
 						'type'        => 'textfield',
@@ -59,8 +59,8 @@ add_action(
 						'type'        => 'el_id',
 						'heading'     => esc_html__( 'Element ID', 'social-elements-wpbakery' ),
 						'param_name'  => 'el_id',
-						// translators: %1$s: link to w3c specification, %2$s: closing anchor tag.
 						'description' => sprintf(
+							// translators: %1$s: link to w3c specification, %2$s: closing anchor tag.
 							esc_html__( 'Enter element ID (Note: make sure it is unique and valid according to %1$sw3c specification%2$s).', 'social-elements-wpbakery' ),
 							'<a href="https://www.w3schools.com/tags/att_global_id.asp" target="_blank">',
 							'</a>'

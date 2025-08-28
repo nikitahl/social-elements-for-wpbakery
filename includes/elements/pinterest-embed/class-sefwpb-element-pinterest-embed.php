@@ -36,7 +36,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 					'pinterest-embed',
 					'https://assets.pinterest.com/js/pinit.js',
 					[],
-					null,
+					SEFWPB_VERSION,
 					true
 				);
 			}
@@ -101,8 +101,8 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			if ( isset( $atts['align'] ) ) {
 				$style .= 'text-align: ' . $atts['align'] . ';';
 			}
-			$url    = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
-			$output = '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">';
+			$url     = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
+			$output  = '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">';
 			$output .= '<a data-pin-do="embedPin" href="' . $url . '">Pinterest Post</a>';
 			$output .= '<script>';
 			$output .= 'if (window.PinUtils && typeof window.PinUtils.build === "function") {';

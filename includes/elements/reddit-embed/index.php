@@ -39,8 +39,8 @@ add_action(
 						'type'        => 'el_id',
 						'heading'     => esc_html__( 'Element ID', 'social-elements-wpbakery' ),
 						'param_name'  => 'el_id',
-						// translators: %1$s: link to w3c specification, %2$s: closing anchor tag.
 						'description' => sprintf(
+							// translators: %1$s: link to w3c specification, %2$s: closing anchor tag.
 							esc_html__( 'Enter element ID (Note: make sure it is unique and valid according to %1$sw3c specification%2$s).', 'social-elements-wpbakery' ),
 							'<a href="https://www.w3schools.com/tags/att_global_id.asp" target="_blank">',
 							'</a>'

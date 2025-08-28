@@ -62,14 +62,14 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts         = vc_map_get_attributes( $this->getShortcode(), $atts );
-			$css_class    = $this->build_css_class( $atts );
-			$el_id        = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
-			$style        = $this->build_style( $atts );
-			$output       = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '" style="' . esc_attr( $style ) . '">';
-			$output      .= $this->render_title( $atts );
-			$output      .= $this->render_twitter_embed( $atts );
-			$output      .= '</div>';
+			$atts      = vc_map_get_attributes( $this->getShortcode(), $atts );
+			$css_class = $this->build_css_class( $atts );
+			$el_id     = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
+			$style     = $this->build_style( $atts );
+			$output    = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '" style="' . esc_attr( $style ) . '">';
+			$output   .= $this->render_title( $atts );
+			$output   .= $this->render_twitter_embed( $atts );
+			$output   .= '</div>';
 			return $output;
 		}
 

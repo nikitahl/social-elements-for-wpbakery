@@ -32,15 +32,12 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * Enqueue frontend assets.
 		 */
 		public function element_enqueueing_assets() {
-			// Fontawesome bundled with WPBakery.
 			wp_enqueue_style(
 				'vc_font_awesome',
 				vc_asset_url( 'lib/vendor/dist/@fortawesome/fontawesome-free/css/all.min.css' ),
 				[],
 				WPB_VC_VERSION
 			);
-
-			// Monosocial bundled with WPBakery.
 			wp_enqueue_style(
 				'vc_monosocial',
 				vc_asset_url( 'css/lib/monosocialiconsfont/monosocialiconsfont.css' ),
@@ -63,34 +60,11 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		public function get_button_styles( array $atts ) {
 			$styles = '';
-			if ( ! empty( $atts['shape'] ) ) {
-				$styles .= '--border-radius:' . esc_attr( $atts['shape'] ) . ';';
-			}
-			if ( ! empty( $atts['align'] ) ) {
-				$styles .= '--justify-content:' . esc_attr( $atts['align'] ) . ';';
-			}
-			if ( ! empty( $atts['gap'] ) ) {
-				$styles .= '--button-gap:' . esc_attr( $atts['gap'] ) . ';';
-			}
-			if ( ! empty( $atts['size'] ) ) {
-				if ( 'sm' === $atts['size'] ) {
-					$styles .= '--button-padding:5px;';
-					$styles .= '--button-font-size:11px;';
-					$styles .= '--button-icon-size:14px;';
-				} elseif ( 'md' === $atts['size'] ) {
-					$styles .= '--button-padding:12px;';
-					$styles .= '--button-font-size:16px;';
-					$styles .= '--button-icon-size:19px;';
-				} elseif ( 'lg' === $atts['size'] ) {
-					$styles .= '--button-padding:16px;';
-					$styles .= '--button-font-size:20px;';
-					$styles .= '--button-icon-size:25px;';
-				}
-			}
-			if ( ! empty( $atts['text_color'] ) && 'minimal' === $atts['style'] ) {
-				$styles .= '--button-color:' . esc_attr( $atts['text_color'] ) . ';';
-			}
-
+			$styles .= $this->get_shape_style( $atts );
+			$styles .= $this->get_align_style( $atts );
+			$styles .= $this->get_gap_style( $atts );
+			$styles .= $this->get_size_style( $atts );
+			$styles .= $this->get_text_color_style( $atts );
 			return $styles;
 		}
 
@@ -115,36 +89,28 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function get_single_button_output( $button ) {
-			$label     = ! empty( $button['label'] ) ? $button['label'] : '';
-			$url       = ! empty( $button['url'] ) ? $button['url'] : '#';
-			$icon_type = ! empty( $button['icon_type'] ) ? $button['icon_type'] : 'monosocial';
-			$icon      = '';
+			$label       = $this->get_label( $button );
+			$url         = $this->get_url( $button );
+			$icon        = $this->get_icon_html( $button, $label );
+			$color_style = $this->get_color_style( $button );
+			$title       = $this->get_title_attr( $label );
+			$target      = $this->get_target_attr( $button );
+			$rel         = $this->get_rel_attr( $button );
+			$class       = $this->get_button_class( $button );
+			$extra_attrs = $this->get_extra_attrs( $button );
 
-			if ( 'monosocial' === $icon_type && ! empty( $button['icon_monosocial'] ) ) {
-				$icon = '<i class="' . esc_attr( $button['icon_monosocial'] ) . '" aria-hidden="true"></i>';
-			} elseif ( 'fontawesome' === $icon_type && ! empty( $button['icon_fontawesome'] ) ) {
-				$icon = '<i class="' . esc_attr( $button['icon_fontawesome'] ) . '" aria-hidden="true"></i>';
-			} elseif ( 'custom' === $icon_type && ! empty( $button['icon_custom'] ) ) {
-				$icon = '<img src="' . esc_url( $button['icon_custom'] ) . '" alt="' . esc_attr( $label ) . '"/>';
-			}
-
-			$color_style = '';
-			if ( ! empty( $button['color'] ) ) {
-				$color_style = 'style="--button-bg: ' . esc_attr( $button['color'] ) . ';"';
-			}
-
-			$title = '';
-			if ( $label ) {
-				$title = 'title="' . esc_html( $label ) . '"';
-			}
-
-			$output  = '<a class="sefwpb-profile-links__button" href="' . esc_url( $url ) . '" target="_blank" rel="noopener noreferrer" ' . $color_style . ' ' . $title . '>';
-			if ( $icon ) {
-				$output .= '<span class="sefwpb-profile-links__icon">' . $icon . '</span>';
-			}
-			$output .= '</a>';
-
-			return $output;
+			return sprintf(
+				'<a href="%1$s" class="sefwpb-profile-link %2$s" style="%3$s" %4$s %5$s %6$s %7$s>%8$s<span class="sefwpb-profile-link-label">%9$s</span></a>',
+				esc_url( $url ),
+				esc_attr( $class ),
+				esc_attr( $color_style ),
+				$title,
+				$target,
+				$rel,
+				$extra_attrs,
+				$icon,
+				esc_html( $label )
+			);
 		}
 
 		/**
@@ -155,40 +121,230 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts    = vc_map_get_attributes( $this->getShortcode(), $atts );
-			$values  = $atts['values'];
+			$atts = $this->get_default_atts( $atts );
+			$buttons         = is_array( $atts['buttons'] ) ? $atts['buttons'] : [];
+			$wrapper_classes = $this->get_wrapper_classes( $atts );
 
-			// Parse param_group values.
-			$buttons = [];
-			if ( ! empty( $values ) ) {
-				$buttons = vc_param_group_parse_atts( $values );
-			}
-
-			// Prepare wrapper classes and styles.
-			$classes = [
-				'sefwpb-profile-links',
-				'sefwpb-profile-links--' . esc_attr( $atts['style'] ),
-			];
-			if ( ! empty( $atts['el_class'] ) ) {
-				$classes[] = esc_attr( $atts['el_class'] );
-			}
-			if ( ! empty( $atts['css'] ) ) {
-				$classes[] = vc_shortcode_custom_css_class( $atts['css'] );
-			}
-			$style = $this->get_button_styles( $atts );
-
-			$output  = '<div class="' . esc_attr( implode( ' ', $classes ) ) . '" style="' . esc_attr( $style ) . '"' . ( ! empty( $atts['el_id'] ) ? ' id="' . esc_attr( $atts['el_id'] ) . '"' : '' ) . '>';
-			if ( ! empty( $atts['profile_title'] ) ) {
-				$output .= '<div class="sefwpb-profile-links__title">' . esc_html( $atts['profile_title'] ) . '</div>';
-			}
-
-			if ( ! empty( $buttons ) ) {
-				$output .= $this->get_buttons_output( $buttons );
-			}
-
+			$output  = '<div class="' . esc_attr( implode( ' ', $wrapper_classes ) ) . '" style="' . esc_attr( $this->get_button_styles( $atts ) ) . '">';
+			$output .= $this->get_buttons_output( $buttons );
 			$output .= '</div>';
 
 			return $output;
+		}
+
+		// --- Private helper methods for complexity reduction ---
+
+		/**
+		 * Get default shortcode attributes.
+		 *
+		 * @param array $atts
+		 * @return array
+		 */
+		private function get_default_atts( $atts ) {
+			return shortcode_atts(
+				[
+					'buttons'     => [],
+					'shape'       => '',
+					'align'       => '',
+					'gap'         => '',
+					'size'        => '',
+					'text_color'  => '',
+					'style'       => '',
+					'el_class'    => '',
+					'css'         => '',
+				],
+				$atts,
+				$this->shortcode
+			);
+		}
+
+		/**
+		 * Get wrapper classes.
+		 *
+		 * @param array $atts
+		 * @return array
+		 */
+		private function get_wrapper_classes( $atts ) {
+			$classes = [ 'sefwpb-profile-links', $atts['el_class'] ];
+			if ( ! empty( $atts['style'] ) ) {
+				$classes[] = 'sefwpb-profile-links-style-' . esc_attr( $atts['style'] );
+			}
+			if ( ! empty( $atts['css'] ) ) {
+				$classes[] = vc_shortcode_custom_css_class( $atts['css'], ' ' );
+			}
+			return $classes;
+		}
+
+		/**
+		 * Get label.
+		 *
+		 * @param array $button
+		 * @return string
+		 */
+		private function get_label( $button ) {
+			return ! empty( $button['label'] ) ? $button['label'] : '';
+		}
+
+		/**
+		 * Get URL.
+		 *
+		 * @param array $button
+		 * @return string
+		 */
+		private function get_url( $button ) {
+			return ! empty( $button['url'] ) ? $button['url'] : '#';
+		}
+
+		/**
+		 * Get icon HTML.
+		 *
+		 * @param array  $button
+		 * @param string $label
+		 * @return string
+		 */
+		private function get_icon_html( $button, $label ) {
+			$icon_type = ! empty( $button['icon_type'] ) ? $button['icon_type'] : 'monosocial';
+			if ( 'monosocial' === $icon_type && ! empty( $button['icon_monosocial'] ) ) {
+				return '<i class="' . esc_attr( $button['icon_monosocial'] ) . '" aria-hidden="true"></i>';
+			}
+			if ( 'fontawesome' === $icon_type && ! empty( $button['icon_fontawesome'] ) ) {
+				return '<i class="' . esc_attr( $button['icon_fontawesome'] ) . '" aria-hidden="true"></i>';
+			}
+			if ( 'custom' === $icon_type && ! empty( $button['icon_custom'] ) ) {
+				return '<img src="' . esc_url( $button['icon_custom'] ) . '" alt="' . esc_attr( $label ) . '"/>';
+			}
+			return '';
+		}
+
+		/**
+		 * Get color style.
+		 *
+		 * @param array $button
+		 * @return string
+		 */
+		private function get_color_style( $button ) {
+			return ! empty( $button['color'] ) ? '--button-bg:' . esc_attr( $button['color'] ) . ';' : '';
+		}
+
+		/**
+		 * Get title attribute.
+		 *
+		 * @param string $label
+		 * @return string
+		 */
+		private function get_title_attr( $label ) {
+			return $label ? 'title="' . esc_html( $label ) . '"' : '';
+		}
+
+		/**
+		 * Get target attribute.
+		 *
+		 * @param array $button
+		 * @return string
+		 */
+		private function get_target_attr( $button ) {
+			return ! empty( $button['target'] ) ? 'target="' . esc_attr( $button['target'] ) . '"' : '';
+		}
+
+		/**
+		 * Get rel attribute.
+		 *
+		 * @param array $button
+		 * @return string
+		 */
+		private function get_rel_attr( $button ) {
+			return ! empty( $button['rel'] ) ? 'rel="' . esc_attr( $button['rel'] ) . '"' : '';
+		}
+
+		/**
+		 * Get button class.
+		 *
+		 * @param array $button
+		 * @return string
+		 */
+		private function get_button_class( $button ) {
+			$classes = [];
+			if ( ! empty( $button['class'] ) ) {
+				$classes[] = $button['class'];
+			}
+			if ( ! empty( $button['style'] ) ) {
+				$classes[] = 'sefwpb-profile-link-style-' . esc_attr( $button['style'] );
+			}
+			return implode( ' ', $classes );
+		}
+
+		/**
+		 * Get extra attributes.
+		 *
+		 * @param array $button
+		 * @return string
+		 */
+		private function get_extra_attrs( $button ) {
+			return ! empty( $button['extra_attrs'] ) ? $button['extra_attrs'] : '';
+		}
+
+		/**
+		 * Get shape style.
+		 *
+		 * @param array $atts
+		 * @return string
+		 */
+		private function get_shape_style( $atts ) {
+			return ! empty( $atts['shape'] ) ? '--border-radius:' . esc_attr( $atts['shape'] ) . ';' : '';
+		}
+
+		/**
+		 * Get align style.
+		 *
+		 * @param array $atts
+		 * @return string
+		 */
+		private function get_align_style( $atts ) {
+			return ! empty( $atts['align'] ) ? '--justify-content:' . esc_attr( $atts['align'] ) . ';' : '';
+		}
+
+		/**
+		 * Get gap style.
+		 *
+		 * @param array $atts
+		 * @return string
+		 */
+		private function get_gap_style( $atts ) {
+			return ! empty( $atts['gap'] ) ? '--button-gap:' . esc_attr( $atts['gap'] ) . ';' : '';
+		}
+
+		/**
+		 * Get size style.
+		 *
+		 * @param array $atts
+		 * @return string
+		 */
+		private function get_size_style( $atts ) {
+			if ( empty( $atts['size'] ) ) {
+				return '';
+			}
+			if ( 'sm' === $atts['size'] ) {
+				return '--button-size:32px;';
+			}
+			if ( 'md' === $atts['size'] ) {
+				return '--button-size:40px;';
+			}
+			if ( 'lg' === $atts['size'] ) {
+				return '--button-size:48px;';
+			}
+			return '';
+		}
+
+		/**
+		 * Get text color style.
+		 *
+		 * @param array $atts
+		 * @return string
+		 */
+		private function get_text_color_style( $atts ) {
+			return ( ! empty( $atts['text_color'] ) && 'minimal' === $atts['style'] )
+				? '--button-color:' . esc_attr( $atts['text_color'] ) . ';'
+				: '';
 		}
 	}
 }

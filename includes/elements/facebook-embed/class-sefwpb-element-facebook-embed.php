@@ -26,7 +26,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
 
 			$style = '';
-			$css_classes = [ 'sefwpb-element', 'sefwpb-pinterest-embed', $el_class, $this->getCSSAnimation( $css_animation ) ];
+			$css_classes = [ 'sefwpb-element', 'sefwpb-facebook-embed', $el_class, $this->getCSSAnimation( $css_animation ) ];
 			if ( ! empty( $css ) ) {
 				$css_classes[] = vc_shortcode_custom_css_class( $css );
 			}

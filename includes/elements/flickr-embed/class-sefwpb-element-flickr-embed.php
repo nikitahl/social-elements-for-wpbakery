@@ -40,7 +40,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$el_id = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
 			$output = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '" style="' . esc_attr( $style ) . '">';
 			if ( ! empty( $atts['title'] ) ) {
-				$output .= '<h3 class="sefwpb-spotify-embed-title">' . esc_html( $atts['title'] ) . '</h3>';
+				$output .= '<h3 class="sefwpb-flickr-embed-title">' . esc_html( $atts['title'] ) . '</h3>';
 			}
 			if ( ! empty( $atts['url'] ) ) {
 				$flickr_url = esc_url( $atts['url'] );

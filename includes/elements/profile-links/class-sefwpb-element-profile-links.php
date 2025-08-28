@@ -27,6 +27,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * Enqueue frontend assets.
 		 */
 		public function element_enqueueing_assets() {
+			// Fontawesome bundled with WPBakery.
 			wp_enqueue_style(
 				'vc_font_awesome',
 				vc_asset_url( 'lib/vendor/dist/@fortawesome/fontawesome-free/css/all.min.css' ),

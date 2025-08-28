@@ -4,7 +4,7 @@ Contributors: nikitahl
 Tags: wpbakery, wpbakery-extension, wpbakery-addon
 Requires at least: 6.4
 Tested up to: 6.8.1
-Stable tag: 1.0.0
+Stable tag: 1.0
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -17,10 +17,19 @@ Enhance your WPBakery Page Builder with a collection of social elements designed
 
 This plugin adds a variety of customizable social media components, including share buttons, profile links, and social embeds, making it easy to integrate social features into your pages.
 
-== Features ==
+The WPBakery Page Builder must be installed and activated for this plugin to work.
 
-* Social Share Buttons: Easily add share buttons for popular social networks like Facebook, Twitter, LinkedIn, and more.
-* Social Profile Links: Display links to your social media profiles with customizable icons and styles.
+== Elements ==
+
+1. Social Share Buttons: Easily add share buttons for popular social networks like Facebook, Twitter, LinkedIn, and more.
+2. Social Profile Links: Display links to your social media profiles with customizable icons and styles.
+3. Twitter Embed: Embed tweets directly into your pages.
+4. Facebook Embed: Integrate Facebook posts.
+5. Reddit Embed: Showcase Reddit posts.
+6. Flickr Embed: Display Flickr photos.
+7. Pinterest Embed: Add Pinterest pins to your content.
+8. TikTok Embed: Embed TikTok videos.
+9. WordPress Embed: Integrate WordPress posts.
 
 == Requirements ==
 
@@ -28,22 +37,10 @@ This plugin adds a variety of customizable social media components, including sh
 * PHP 7.0 or later
 * WordPress 6.4 or later
 
-== Contribute ==
-
-
-
 == Installation ==
 
 1. Upload the plugin folder to your /wp-content/plugins/ folder.
 2. Go to the **Plugins** page and activate the plugin.
-
-== Screenshots ==
-
-1. Screenshot 1
-
-== Frequently Asked Questions ==
-
-
 
 == Changelog ==
 

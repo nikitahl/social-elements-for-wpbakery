@@ -59,13 +59,13 @@ function sefwpb_bootstrap() {
 	// Elements.
 	require_once SEFWPB_DIR . 'includes/elements/share-buttons/index.php';
 	require_once SEFWPB_DIR . 'includes/elements/profile-links/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/twitter-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/reddit-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/pinterest-embed/index.php';
+//	require_once SEFWPB_DIR . 'includes/elements/twitter-embed/index.php';
+//	require_once SEFWPB_DIR . 'includes/elements/reddit-embed/index.php';
+//	require_once SEFWPB_DIR . 'includes/elements/pinterest-embed/index.php';
 	require_once SEFWPB_DIR . 'includes/elements/facebook-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/flickr-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/wordpress-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/tiktok-embed/index.php';
+//	require_once SEFWPB_DIR . 'includes/elements/flickr-embed/index.php';
+//	require_once SEFWPB_DIR . 'includes/elements/wordpress-embed/index.php';
+//	require_once SEFWPB_DIR . 'includes/elements/tiktok-embed/index.php';
 }
 add_action( 'plugins_loaded', 'sefwpb_bootstrap' );
 

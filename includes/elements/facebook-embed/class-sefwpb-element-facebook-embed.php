@@ -29,7 +29,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$el_id     = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
 			$output    = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '">';
 			$output   .= $this->render_title( $atts );
-			$output   .= $this->facebook_sdk_script(); // Output SDK only when element is rendered
 			$output   .= $this->render_facebook_embed( $atts );
 			$output   .= '</div>';
 			return $output;
@@ -90,6 +89,8 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$output  = '<div class="sefwpb-facebook-embed-container" style="' . esc_attr( $style ) . '">';
 			$output .= '<div class="fb-post" data-href="' . $url . '" data-width="' . $width . '"></div>';
 			$output .= '<div id="fb-root"></div>';
+			// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
+			$output   .= '<script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"></script>';
 			$output .= '<script>';
 			$output .= 'if (typeof FB !== "undefined" && FB.XFBML && FB.XFBML.parse) {';
 			$output .= 'FB.XFBML.parse();';

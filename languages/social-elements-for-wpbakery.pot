@@ -1,0 +1,653 @@
+# Copyright (C) 2025 Nikita Hlopov
+# This file is distributed under the same license as the Social Elements for WPBakery Page Builder plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Social Elements for WPBakery Page Builder 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/social-elements-for-wpbakery\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-08-29T13:50:03+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: social-elements-wpbakery\n"
+
+#. Plugin Name of the plugin
+msgid "Social Elements for WPBakery Page Builder"
+msgstr ""
+
+#. Description of the plugin
+msgid "A collection of social elements (share buttons, profile links, and more) for WPBakery Page Builder."
+msgstr ""
+
+#. Author of the plugin
+msgid "Nikita Hlopov"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://nikitahl.com"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:18
+msgid "Facebook Embed"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:20
+msgid "Embed a single Facebook post"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:21
+#: includes/elements/flickr-embed/index.php:21
+#: includes/elements/pinterest-embed/index.php:21
+#: includes/elements/profile-links/index.php:21
+#: includes/elements/reddit-embed/index.php:21
+#: includes/elements/share-buttons/index.php:21
+#: includes/elements/tiktok-embed/index.php:21
+#: includes/elements/twitter-embed/index.php:21
+#: includes/elements/wordpress-embed/index.php:21
+msgid "Social"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:26
+#: includes/elements/flickr-embed/index.php:26
+#: includes/elements/pinterest-embed/index.php:26
+#: includes/elements/profile-links/index.php:26
+#: includes/elements/reddit-embed/index.php:26
+#: includes/elements/tiktok-embed/index.php:26
+#: includes/elements/twitter-embed/index.php:26
+#: includes/elements/wordpress-embed/index.php:26
+msgid "Title"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:28
+#: includes/elements/flickr-embed/index.php:28
+#: includes/elements/pinterest-embed/index.php:28
+#: includes/elements/reddit-embed/index.php:28
+#: includes/elements/tiktok-embed/index.php:28
+#: includes/elements/twitter-embed/index.php:28
+#: includes/elements/wordpress-embed/index.php:28
+msgid "Optional. Enter title to display above embed."
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:32
+msgid "Facebook Post URL"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:34
+msgid "Enter the URL of the Facebook post you want to embed. Example: https://www.facebook.com/100064860875397/posts/10154009990506729/"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:39
+#: includes/elements/flickr-embed/index.php:39
+#: includes/elements/pinterest-embed/index.php:39
+#: includes/elements/profile-links/index.php:188
+#: includes/elements/share-buttons/index.php:211
+#: includes/elements/tiktok-embed/index.php:39
+#: includes/elements/twitter-embed/index.php:39
+#: includes/elements/wordpress-embed/index.php:39
+msgid "Alignment"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:41
+#: includes/elements/facebook-embed/index.php:53
+#: includes/elements/flickr-embed/index.php:41
+#: includes/elements/flickr-embed/index.php:53
+#: includes/elements/pinterest-embed/index.php:41
+#: includes/elements/pinterest-embed/index.php:53
+#: includes/elements/profile-links/index.php:141
+#: includes/elements/profile-links/index.php:153
+#: includes/elements/profile-links/index.php:165
+#: includes/elements/profile-links/index.php:177
+#: includes/elements/profile-links/index.php:190
+#: includes/elements/profile-links/index.php:202
+#: includes/elements/share-buttons/index.php:164
+#: includes/elements/share-buttons/index.php:176
+#: includes/elements/share-buttons/index.php:188
+#: includes/elements/share-buttons/index.php:200
+#: includes/elements/share-buttons/index.php:213
+#: includes/elements/share-buttons/index.php:225
+#: includes/elements/tiktok-embed/index.php:41
+#: includes/elements/tiktok-embed/index.php:53
+#: includes/elements/twitter-embed/index.php:41
+#: includes/elements/twitter-embed/index.php:53
+#: includes/elements/wordpress-embed/index.php:41
+#: includes/elements/wordpress-embed/index.php:53
+msgid "Styles"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:43
+#: includes/elements/flickr-embed/index.php:43
+#: includes/elements/pinterest-embed/index.php:43
+#: includes/elements/profile-links/index.php:192
+#: includes/elements/share-buttons/index.php:215
+#: includes/elements/tiktok-embed/index.php:43
+#: includes/elements/twitter-embed/index.php:43
+#: includes/elements/wordpress-embed/index.php:43
+msgid "Left"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:44
+#: includes/elements/flickr-embed/index.php:44
+#: includes/elements/pinterest-embed/index.php:44
+#: includes/elements/profile-links/index.php:193
+#: includes/elements/share-buttons/index.php:216
+#: includes/elements/tiktok-embed/index.php:44
+#: includes/elements/twitter-embed/index.php:44
+#: includes/elements/wordpress-embed/index.php:44
+msgid "Center"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:45
+#: includes/elements/flickr-embed/index.php:45
+#: includes/elements/pinterest-embed/index.php:45
+#: includes/elements/profile-links/index.php:194
+#: includes/elements/share-buttons/index.php:217
+#: includes/elements/tiktok-embed/index.php:45
+#: includes/elements/twitter-embed/index.php:45
+#: includes/elements/wordpress-embed/index.php:45
+msgid "Right"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:51
+#: includes/elements/flickr-embed/index.php:51
+#: includes/elements/pinterest-embed/index.php:51
+#: includes/elements/tiktok-embed/index.php:51
+#: includes/elements/twitter-embed/index.php:51
+#: includes/elements/wordpress-embed/index.php:51
+msgid "Width"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:54
+#: includes/elements/pinterest-embed/index.php:54
+#: includes/elements/tiktok-embed/index.php:54
+#: includes/elements/twitter-embed/index.php:54
+#: includes/elements/wordpress-embed/index.php:54
+msgid "Optional. Enter width of the embedded post in pixels. Default is 500px."
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:60
+#: includes/elements/flickr-embed/index.php:60
+#: includes/elements/pinterest-embed/index.php:60
+#: includes/elements/profile-links/index.php:208
+#: includes/elements/reddit-embed/index.php:40
+#: includes/elements/share-buttons/index.php:231
+#: includes/elements/tiktok-embed/index.php:60
+#: includes/elements/twitter-embed/index.php:60
+#: includes/elements/wordpress-embed/index.php:60
+msgid "Element ID"
+msgstr ""
+
+#. translators: %1$s: link to w3c specification, %2$s: closing anchor tag.
+#: includes/elements/facebook-embed/index.php:64
+#: includes/elements/flickr-embed/index.php:64
+#: includes/elements/pinterest-embed/index.php:64
+#: includes/elements/profile-links/index.php:211
+#: includes/elements/reddit-embed/index.php:44
+#: includes/elements/share-buttons/index.php:234
+#: includes/elements/tiktok-embed/index.php:64
+#: includes/elements/twitter-embed/index.php:64
+#: includes/elements/wordpress-embed/index.php:64
+msgid "Enter element ID (Note: make sure it is unique and valid according to %1$sw3c specification%2$s)."
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:71
+#: includes/elements/flickr-embed/index.php:71
+#: includes/elements/pinterest-embed/index.php:71
+#: includes/elements/profile-links/index.php:215
+#: includes/elements/reddit-embed/index.php:51
+#: includes/elements/share-buttons/index.php:238
+#: includes/elements/tiktok-embed/index.php:71
+#: includes/elements/twitter-embed/index.php:71
+#: includes/elements/wordpress-embed/index.php:71
+msgid "Extra class name"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:73
+#: includes/elements/flickr-embed/index.php:73
+#: includes/elements/pinterest-embed/index.php:73
+#: includes/elements/profile-links/index.php:217
+#: includes/elements/reddit-embed/index.php:53
+#: includes/elements/share-buttons/index.php:240
+#: includes/elements/tiktok-embed/index.php:73
+#: includes/elements/twitter-embed/index.php:73
+#: includes/elements/wordpress-embed/index.php:73
+msgid "If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file."
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:77
+#: includes/elements/flickr-embed/index.php:77
+#: includes/elements/pinterest-embed/index.php:77
+#: includes/elements/profile-links/index.php:221
+#: includes/elements/reddit-embed/index.php:57
+#: includes/elements/share-buttons/index.php:244
+#: includes/elements/tiktok-embed/index.php:77
+#: includes/elements/twitter-embed/index.php:77
+#: includes/elements/wordpress-embed/index.php:77
+msgid "CSS"
+msgstr ""
+
+#: includes/elements/facebook-embed/index.php:79
+#: includes/elements/flickr-embed/index.php:79
+#: includes/elements/pinterest-embed/index.php:79
+#: includes/elements/profile-links/index.php:223
+#: includes/elements/reddit-embed/index.php:59
+#: includes/elements/share-buttons/index.php:246
+#: includes/elements/tiktok-embed/index.php:79
+#: includes/elements/twitter-embed/index.php:79
+#: includes/elements/wordpress-embed/index.php:79
+msgid "Design Options"
+msgstr ""
+
+#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:109
+msgid "Could not retrieve Flickr embed."
+msgstr ""
+
+#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:116
+msgid "Invalid Flickr image URL."
+msgstr ""
+
+#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:118
+msgid "Please provide a valid Flickr image URL."
+msgstr ""
+
+#: includes/elements/flickr-embed/index.php:18
+msgid "Flickr Embed"
+msgstr ""
+
+#: includes/elements/flickr-embed/index.php:20
+msgid "Embed a single Flickr image"
+msgstr ""
+
+#: includes/elements/flickr-embed/index.php:32
+msgid "Flickr image URL"
+msgstr ""
+
+#: includes/elements/flickr-embed/index.php:34
+msgid "Enter the URL of the Flickr image you want to embed. Example: https://www.flickr.com/photos/thomasheaton/31961411065/"
+msgstr ""
+
+#: includes/elements/flickr-embed/index.php:54
+msgid "Optional. Enter width of the embedded image in pixels. Default is 500px."
+msgstr ""
+
+#: includes/elements/pinterest-embed/index.php:18
+msgid "Pinterest Embed"
+msgstr ""
+
+#: includes/elements/pinterest-embed/index.php:20
+msgid "Embed a single Pinterest post"
+msgstr ""
+
+#: includes/elements/pinterest-embed/index.php:32
+msgid "Pinterest Post URL"
+msgstr ""
+
+#: includes/elements/pinterest-embed/index.php:34
+msgid "Enter the URL of the Pinterest post you want to embed. Example: https://www.pinterest.com/pin/3940718420141988/"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:18
+msgid "Social Profile Links"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:20
+msgid "Buttons linking to your social media profiles"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:27
+msgid "Follow us on:"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:29
+msgid "Optional. Used before the buttons to incidate that these are profile links"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:33
+msgid "Profile links"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:35
+msgid "Enter values for links - title, icon, color, URL."
+msgstr ""
+
+#: includes/elements/profile-links/index.php:40
+#: includes/elements/share-buttons/index.php:40
+#: includes/elements/share-buttons/index.php:89
+msgid "Facebook"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:46
+#: includes/elements/share-buttons/index.php:47
+msgid "X"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:52
+msgid "YouTube"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:58
+msgid "Instagram"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:64
+msgid "TikTok"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:75
+#: includes/elements/share-buttons/index.php:106
+msgid "Label"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:78
+msgid "Enter text used as title of icon."
+msgstr ""
+
+#: includes/elements/profile-links/index.php:82
+msgid "URL"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:84
+msgid "Enter full URL to your profile, starting with http:// or https://"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:89
+#: includes/elements/share-buttons/index.php:112
+msgid "Color"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:91
+msgid "Select icon color."
+msgstr ""
+
+#: includes/elements/profile-links/index.php:95
+#: includes/elements/share-buttons/index.php:118
+msgid "Icon library"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:97
+#: includes/elements/share-buttons/index.php:120
+msgid "Font Awesome"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:98
+#: includes/elements/share-buttons/index.php:121
+msgid "Mono Social"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:102
+#: includes/elements/share-buttons/index.php:125
+msgid "Select icon library."
+msgstr ""
+
+#: includes/elements/profile-links/index.php:106
+#: includes/elements/profile-links/index.php:122
+#: includes/elements/share-buttons/index.php:129
+#: includes/elements/share-buttons/index.php:145
+msgid "Icon"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:118
+#: includes/elements/profile-links/index.php:134
+#: includes/elements/share-buttons/index.php:141
+#: includes/elements/share-buttons/index.php:157
+msgid "Select icon from library."
+msgstr ""
+
+#: includes/elements/profile-links/index.php:140
+#: includes/elements/share-buttons/index.php:163
+msgid "Style"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:144
+#: includes/elements/share-buttons/index.php:167
+msgid "Solid (brand color)"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:145
+#: includes/elements/share-buttons/index.php:168
+msgid "Outline"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:146
+msgid "Minimal (no shape, icon only)"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:152
+#: includes/elements/share-buttons/index.php:175
+msgid "Text color"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:155
+msgid "Optional. Set custom icon color in."
+msgstr ""
+
+#: includes/elements/profile-links/index.php:164
+#: includes/elements/share-buttons/index.php:187
+msgid "Size"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:168
+#: includes/elements/share-buttons/index.php:191
+msgid "Small"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:169
+#: includes/elements/share-buttons/index.php:192
+msgid "Medium"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:170
+#: includes/elements/share-buttons/index.php:193
+msgid "Large"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:176
+#: includes/elements/share-buttons/index.php:199
+msgid "Button shape"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:180
+#: includes/elements/share-buttons/index.php:203
+msgid "Square"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:181
+#: includes/elements/share-buttons/index.php:204
+msgid "Rounded"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:182
+#: includes/elements/share-buttons/index.php:205
+msgid "Circle"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:200
+msgid "Icon gap"
+msgstr ""
+
+#: includes/elements/reddit-embed/index.php:18
+msgid "Reddit Embed"
+msgstr ""
+
+#: includes/elements/reddit-embed/index.php:20
+msgid "Embed Reddit post"
+msgstr ""
+
+#: includes/elements/reddit-embed/index.php:32
+msgid "Reddit Post URL"
+msgstr ""
+
+#: includes/elements/reddit-embed/index.php:34
+msgid "Enter the URL of the Reddit post you want to embed. Example: https://www.reddit.com/r/InteriorDesign/comments/abcd123/example_post/"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:18
+msgid "Social Share Buttons"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:20
+msgid "Buttons to share the current page on social networks"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:26
+msgid "Share Title"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:27
+msgid "Share this:"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:29
+msgid "Optional. Used before the buttons to incidate that these are share buttons"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:33
+msgid "Share buttons"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:35
+msgid "Enter values for button - title, icon, color."
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:54
+#: includes/elements/share-buttons/index.php:91
+msgid "Linkedin"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:61
+#: includes/elements/share-buttons/index.php:92
+msgid "Reddit"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:68
+#: includes/elements/share-buttons/index.php:96
+msgid "Email"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:75
+#: includes/elements/share-buttons/index.php:97
+msgid "Copy link"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:87
+msgid "Social platform"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:90
+msgid "X (Twitter)"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:93
+msgid "Pinterest"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:94
+msgid "WhatsApp"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:95
+msgid "Telegram"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:102
+msgid "Select social media platform to share on."
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:108
+msgid "Enter text used as title of button."
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:114
+msgid "Select button color."
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:169
+msgid "Minimal (text only)"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:178
+msgid "Optional. Set custom text color in."
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:223
+msgid "Button gap"
+msgstr ""
+
+#: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:163
+msgid "Please provide a valid TikTok post URL."
+msgstr ""
+
+#: includes/elements/tiktok-embed/index.php:18
+msgid "TikTok Embed"
+msgstr ""
+
+#: includes/elements/tiktok-embed/index.php:20
+msgid "Embed a single TikTok post"
+msgstr ""
+
+#: includes/elements/tiktok-embed/index.php:32
+msgid "TikTok Post URL"
+msgstr ""
+
+#: includes/elements/tiktok-embed/index.php:34
+msgid "Enter the URL of the TikTok post you want to embed. Example: https://www.tiktok.com/@adnanjanbaloch7/video/7412994512169192710"
+msgstr ""
+
+#: includes/elements/twitter-embed/class-sefwpb-element-twitter-embed.php:135
+msgid "Please provide a valid Tweet URL to embed."
+msgstr ""
+
+#: includes/elements/twitter-embed/index.php:18
+msgid "X (Twitter) Embed"
+msgstr ""
+
+#: includes/elements/twitter-embed/index.php:20
+msgid "Embed X (Twitter) post"
+msgstr ""
+
+#: includes/elements/twitter-embed/index.php:32
+msgid "Post (Tweet) URL"
+msgstr ""
+
+#: includes/elements/twitter-embed/index.php:34
+msgid "Enter the URL of the tweet you want to embed."
+msgstr ""
+
+#. Translators: %d is the number of comments.
+#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:71
+msgid "%d Comments"
+msgstr ""
+
+#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:84
+msgid "Unable to find the specified post."
+msgstr ""
+
+#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:87
+msgid "Unable to embed the specified URL."
+msgstr ""
+
+#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:180
+msgid "Please provide a valid URL to embed."
+msgstr ""
+
+#: includes/elements/wordpress-embed/index.php:18
+msgid "WordPress Embed"
+msgstr ""
+
+#: includes/elements/wordpress-embed/index.php:20
+msgid "Embed WordPress post/page"
+msgstr ""
+
+#: includes/elements/wordpress-embed/index.php:32
+msgid "Post URL"
+msgstr ""
+
+#: includes/elements/wordpress-embed/index.php:34
+msgid "Enter the URL of the post you want to embed."
+msgstr ""
+
+#: social-elements-for-wpbakery.php:80
+msgid "Social Elements for WPBakery requires WPBakery Page Builder to be installed and active."
+msgstr ""

@@ -156,8 +156,8 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$output  .= '<section> </section>';
 				$output  .= '</blockquote>';
 				// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
-				$output  .= '<script async src="https://www.tiktok.com/embed.js"></script>';
-				$output  .= '</div>';
+				$output .= '<script async src="https://www.tiktok.com/embed.js"></script>';
+				$output .= '</div>';
 				return $output;
 			}
 			return esc_html__( 'Please provide a valid TikTok post URL.', 'social-elements-wpbakery' );

@@ -26,6 +26,15 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 8. TikTok Embed: Embed TikTok videos.
 9. WordPress Embed: Integrate WordPress posts.
 
+## Installation
+
+It's recommended to use the [official plugin page on WordPress.org](#).
+
+Also, you can install the plugin directly from the GitHub repository.
+1. Clone the repository to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. That's it! If you go to any WPBakery Page Builder editor, you'll find new elements under the 'Social' tab in the 'Add Element' WPBakery popup.
+
 ## Requirements
 
 * WPBakery Page Builder 8.0 or later
@@ -35,11 +44,3 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 ## License
 
 This plugin is licensed under the GPLv3.
-
-## Installation
-It's recommended to use the [official plugin page on WordPress.org](#).
-
-Also, you can install the plugin directly from the GitHub repository.
-1. Clone the repository to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. That's it! If you go to any WPBakery Page Builder editor, you'll find new elements under the 'Social' tab in the 'Add Element' WPBakery popup.

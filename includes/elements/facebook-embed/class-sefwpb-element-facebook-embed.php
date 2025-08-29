@@ -35,15 +35,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		}
 
 		/**
-		 * Output Facebook SDK script only when needed.
-		 *
-		 * @return string
-		 */
-		private function facebook_sdk_script() {
-			return '<div id="fb-root"></div><script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"></script>';
-		}
-
-		/**
 		 * Build CSS class string.
 		 *
 		 * @param array $atts Shortcode attributes.
@@ -90,7 +81,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$output .= '<div class="fb-post" data-href="' . $url . '" data-width="' . $width . '"></div>';
 			$output .= '<div id="fb-root"></div>';
 			// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
-			$output   .= '<script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"></script>';
+			$output .= '<script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"></script>';
 			$output .= '<script>';
 			$output .= 'if (typeof FB !== "undefined" && FB.XFBML && FB.XFBML.parse) {';
 			$output .= 'FB.XFBML.parse();';

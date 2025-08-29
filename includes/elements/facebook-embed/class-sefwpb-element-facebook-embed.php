@@ -17,32 +17,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 	 */
 	class WPBakeryShortCode_Sefwpb_Facebook_Embed extends WPBakeryShortCode {
 		/**
-		 * Constructor
-		 *
-		 * @param array $settings
-		 */
-		public function __construct( $settings ) {
-			parent::__construct( $settings );
-			add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_facebook_sdk' ] );
-		}
-
-		/**
-		 * Enqueue Facebook SDK script.
-		 */
-		public function enqueue_facebook_sdk() {
-			// Only enqueue on frontend.
-			if ( ! is_admin() ) {
-				wp_enqueue_script(
-					'facebook-jssdk',
-					'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0',
-					[],
-					SEFWPB_VERSION,
-					true
-				);
-			}
-		}
-
-		/**
 		 * Shortcode output.
 		 *
 		 * @param array  $atts    Shortcode attributes.
@@ -55,9 +29,19 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$el_id     = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
 			$output    = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '">';
 			$output   .= $this->render_title( $atts );
+			$output   .= $this->facebook_sdk_script(); // Output SDK only when element is rendered
 			$output   .= $this->render_facebook_embed( $atts );
 			$output   .= '</div>';
 			return $output;
+		}
+
+		/**
+		 * Output Facebook SDK script only when needed.
+		 *
+		 * @return string
+		 */
+		private function facebook_sdk_script() {
+			return '<div id="fb-root"></div><script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"></script>';
 		}
 
 		/**

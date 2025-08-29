@@ -17,30 +17,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 	 */
 	class WPBakeryShortCode_Sefwpb_Reddit_Embed extends WPBakeryShortCode {
 		/**
-		 * Constructor.
-		 *
-		 * @param array $settings Shortcode settings.
-		 */
-		public function __construct( $settings ) {
-			parent::__construct( $settings );
-			add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_reddit_script' ] );
-		}
-
-		/**
-		 * Enqueue Reddit embed script.
-		 */
-		public function enqueue_reddit_script() {
-			if ( ! is_admin() ) {
-				wp_enqueue_script(
-					'reddit-embed',
-					'https://embed.reddit.com/widgets.js',
-					[],
-					SEFWPB_VERSION,
-					true
-				);
-			}
-		}
-		/**
 		 * Gets attributes and builds CSS class for the element.
 		 *
 		 * @param array $atts
@@ -82,6 +58,8 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$output .= '<blockquote class="reddit-embed-bq" style="height: 400px; width: 300px" data-embed-height="400" data-embed-width="300">';
 			$output .= '<a href="' . $url . '">Reddit Post</a>';
 			$output .= '</blockquote>';
+			// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
+			$output .= '<script async="" src="https://embed.reddit.com/widgets.js" charSet="UTF-8"></script>';
 			$output .= '</div>';
 			return $output;
 		}

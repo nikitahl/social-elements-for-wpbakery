@@ -31,13 +31,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * Enqueue frontend assets.
 		 */
 		public function element_enqueueing_assets() {
-			wp_enqueue_script(
-				'tiktok-embed',
-				'https://www.tiktok.com/embed.js',
-				[],
-				SEFWPB_VERSION,
-				true
-			);
 			wp_enqueue_style(
 				'sefwpb-tiktok-embed',
 				plugins_url( '/assets/css/tiktok-embed.css', __FILE__ ),
@@ -162,6 +155,8 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$output  .= '<blockquote class="tiktok-embed" cite="' . esc_url( $atts['url'] ) . '" data-video-id="' . esc_attr( $video_id ) . '" style="max-width: 100%;min-width: 325px;" >';
 				$output  .= '<section> </section>';
 				$output  .= '</blockquote>';
+				// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
+				$output  .= '<script async src="https://www.tiktok.com/embed.js"></script>';
 				$output  .= '</div>';
 				return $output;
 			}

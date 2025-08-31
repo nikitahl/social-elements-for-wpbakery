@@ -119,9 +119,9 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts    = vc_map_get_attributes( $this->getShortcode(), $atts );
-			$values  = $atts['values'];
-			$buttons = [];
+			$atts            = vc_map_get_attributes( $this->getShortcode(), $atts );
+			$values          = $atts['values'];
+			$buttons         = [];
 			$wrapper_classes = $this->get_wrapper_classes( $atts );
 			if ( ! empty( $values ) ) {
 				$buttons = vc_param_group_parse_atts( $values );
@@ -187,7 +187,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		private function get_icon_html( $button, $label ) {
 			$icon_type = ! empty( $button['icon_type'] ) ? $button['icon_type'] : 'monosocial';
-			$icon = '';
+			$icon      = '';
 			if ( 'monosocial' === $icon_type && ! empty( $button['icon_monosocial'] ) ) {
 				$icon = '<i class="' . esc_attr( $button['icon_monosocial'] ) . '" aria-hidden="true"></i>';
 			}

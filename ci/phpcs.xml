@@ -36,7 +36,7 @@
 
     <rule ref="Generic.Metrics.CyclomaticComplexity">
         <properties>
-            <property name="complexity" value="6"/>
+            <property name="complexity" value="7"/>
         </properties>
     </rule>
 

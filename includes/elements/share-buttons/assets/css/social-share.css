@@ -11,6 +11,12 @@
     --button-hover-color: #fff;
 }
 
+.sefwpb-social-share__title {
+    margin: 0 0 10px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
 .sefwpb-social-share--solid .sefwpb-social-share__button {
     background: var(--button-bg);
     border: none;
@@ -42,7 +48,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    gap: 5px;
+    gap: 10px;
     padding: var(--button-padding);
     border-radius: var(--border-radius);
     color: var(--button-color);
@@ -55,4 +61,8 @@
     align-items: center;
     font-size: var(--button-icon-size);
     line-height: var(--button-icon-size);
+}
+
+.sefwpb-social-share__icon {
+    line-height: 1;
 }

@@ -244,7 +244,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		private function get_share_title( $atts ) {
 			if ( ! empty( $atts['share_title'] ) ) {
-				return '<div class="sefwpb-social-share__title">' . esc_html( $atts['share_title'] ) . '</div>';
+				return '<h3 class="sefwpb-social-share__title">' . esc_html( $atts['share_title'] ) . '</h3>';
 			}
 			return '';
 		}

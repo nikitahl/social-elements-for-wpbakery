@@ -2,19 +2,18 @@
     --justify-content: left;
     --border-radius: 5px;
     --button-gap: 5px;
-    --button-padding: 6px 12px;
-    --button-font-size: 14px;
-    --button-icon-size: 16px;
+    --button-font-size: 11px;
+    --button-icon-size: 20px;
     --button-color: #fff;
     --button-bg: transparent;
     --button-hover-bg: #333;
     --button-hover-color: #fff;
+}
 
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: var(--justify-content);
-    gap: var(--button-gap);
+.sefwpb-profile-links__title {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .sefwpb-profile-links--solid .sefwpb-profile-links__button {
@@ -35,6 +34,14 @@
     color: var(--button-color);
 }
 
+.sefwpb-profile-links-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: var(--justify-content);
+  gap: var(--button-gap);
+}
+
 .sefwpb-profile-links__button {
     display: inline-flex;
     align-items: center;
@@ -43,7 +50,6 @@
     gap: 5px;
     width: var(--button-icon-size);
     height: var(--button-icon-size);
-    padding: var(--button-padding);
     border-radius: var(--border-radius);
     color: var(--button-color);
     background: var(--button-bg);

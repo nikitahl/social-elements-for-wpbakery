@@ -78,7 +78,7 @@ add_action(
 								'description' => esc_html__( 'Enter text used as title of icon.', 'social-elements-wpbakery' ),
 							],
 							[
-								'type'        => 'textfield',
+								'type'        => 'vc_link',
 								'heading'     => esc_html__( 'URL', 'social-elements-wpbakery' ),
 								'param_name'  => 'url',
 								'description' => esc_html__( 'Enter full URL to your profile, starting with http:// or https://', 'social-elements-wpbakery' ),

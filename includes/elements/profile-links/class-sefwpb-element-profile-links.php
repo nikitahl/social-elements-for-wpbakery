@@ -89,27 +89,25 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function get_single_button_output( $button ) {
+			$link        = ! empty( $button['url'] ) ? vc_build_link( $button['url'] ) : '';
 			$label       = $this->get_label( $button );
-			$url         = $this->get_url( $button );
+			$url         = $this->get_url( $link );
 			$icon        = $this->get_icon_html( $button, $label );
 			$color_style = $this->get_color_style( $button );
-			$title       = $this->get_title_attr( $label );
-			$target      = $this->get_target_attr( $button );
-			$rel         = $this->get_rel_attr( $button );
+			$title       = $this->get_title_attr( $link );
+			$target      = $this->get_target_attr( $link );
+			$rel         = $this->get_rel_attr( $link );
 			$class       = $this->get_button_class( $button );
-			$extra_attrs = $this->get_extra_attrs( $button );
 
 			return sprintf(
-				'<a href="%1$s" class="sefwpb-profile-link %2$s" style="%3$s" %4$s %5$s %6$s %7$s>%8$s<span class="sefwpb-profile-link-label">%9$s</span></a>',
+				'<a href="%1$s" class="sefwpb-profile-links__button %2$s" style="%3$s" title="%4$s" target="%5$s" %6$s aria-label="%4$s">%7$s</a>',
 				esc_url( $url ),
 				esc_attr( $class ),
 				esc_attr( $color_style ),
 				$title,
 				$target,
 				$rel,
-				$extra_attrs,
-				$icon,
-				esc_html( $label )
+				$icon
 			);
 		}
 
@@ -121,42 +119,23 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts            = $this->get_default_atts( $atts );
-			$buttons         = is_array( $atts['buttons'] ) ? $atts['buttons'] : [];
+			$atts    = vc_map_get_attributes( $this->getShortcode(), $atts );
+			$values  = $atts['values'];
+			$buttons = [];
 			$wrapper_classes = $this->get_wrapper_classes( $atts );
+			if ( ! empty( $values ) ) {
+				$buttons = vc_param_group_parse_atts( $values );
+			}
 
 			$output  = '<div class="' . esc_attr( implode( ' ', $wrapper_classes ) ) . '" style="' . esc_attr( $this->get_button_styles( $atts ) ) . '">';
-			$output .= $this->get_buttons_output( $buttons );
+			$output .= ! empty( $atts['profile_title'] ) ? '<h3 class="sefwpb-profile-links__title">' . esc_html( $atts['profile_title'] ) . '</h3>' : '';
+			$output .= '<div class="sefwpb-profile-links-buttons">' . $this->get_buttons_output( $buttons ) . '</div>';
 			$output .= '</div>';
 
 			return $output;
 		}
 
 		// --- Private helper methods for complexity reduction ---
-
-		/**
-		 * Get default shortcode attributes.
-		 *
-		 * @param array $atts
-		 * @return array
-		 */
-		private function get_default_atts( $atts ) {
-			return shortcode_atts(
-				[
-					'buttons'    => [],
-					'shape'      => '',
-					'align'      => '',
-					'gap'        => '',
-					'size'       => '',
-					'text_color' => '',
-					'style'      => '',
-					'el_class'   => '',
-					'css'        => '',
-				],
-				$atts,
-				$this->shortcode
-			);
-		}
 
 		/**
 		 * Get wrapper classes.
@@ -167,7 +146,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		private function get_wrapper_classes( $atts ) {
 			$classes = [ 'sefwpb-profile-links', $atts['el_class'] ];
 			if ( ! empty( $atts['style'] ) ) {
-				$classes[] = 'sefwpb-profile-links-style-' . esc_attr( $atts['style'] );
+				$classes[] = 'sefwpb-profile-links--' . esc_attr( $atts['style'] );
 			}
 			if ( ! empty( $atts['css'] ) ) {
 				$classes[] = vc_shortcode_custom_css_class( $atts['css'], ' ' );
@@ -188,11 +167,15 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		/**
 		 * Get URL.
 		 *
-		 * @param array $button
+		 * @param array $link
 		 * @return string
 		 */
-		private function get_url( $button ) {
-			return ! empty( $button['url'] ) ? $button['url'] : '#';
+		private function get_url( $link ) {
+			if ( ! empty( $link['url'] ) ) {
+				return $link['url'];
+			}
+			// Fallback '#'.
+			return '#';
 		}
 
 		/**
@@ -204,14 +187,18 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		private function get_icon_html( $button, $label ) {
 			$icon_type = ! empty( $button['icon_type'] ) ? $button['icon_type'] : 'monosocial';
+			$icon = '';
 			if ( 'monosocial' === $icon_type && ! empty( $button['icon_monosocial'] ) ) {
-				return '<i class="' . esc_attr( $button['icon_monosocial'] ) . '" aria-hidden="true"></i>';
+				$icon = '<i class="' . esc_attr( $button['icon_monosocial'] ) . '" aria-hidden="true"></i>';
 			}
 			if ( 'fontawesome' === $icon_type && ! empty( $button['icon_fontawesome'] ) ) {
-				return '<i class="' . esc_attr( $button['icon_fontawesome'] ) . '" aria-hidden="true"></i>';
+				$icon = '<i class="' . esc_attr( $button['icon_fontawesome'] ) . '" aria-hidden="true"></i>';
 			}
 			if ( 'custom' === $icon_type && ! empty( $button['icon_custom'] ) ) {
-				return '<img src="' . esc_url( $button['icon_custom'] ) . '" alt="' . esc_attr( $label ) . '"/>';
+				$icon = '<img src="' . esc_url( $button['icon_custom'] ) . '" alt="' . esc_attr( $label ) . '"/>';
+			}
+			if ( $icon ) {
+				return '<span class="sefwpb-profile-links__icon">' . $icon . '</span>';
 			}
 			return '';
 		}
@@ -229,31 +216,40 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		/**
 		 * Get title attribute.
 		 *
-		 * @param string $label
+		 * @param array $link
 		 * @return string
 		 */
-		private function get_title_attr( $label ) {
-			return $label ? 'title="' . esc_html( $label ) . '"' : '';
+		private function get_title_attr( $link ) {
+			if ( ! empty( $link['title'] ) ) {
+				return $link['title'];
+			}
+			return '';
 		}
 
 		/**
 		 * Get target attribute.
 		 *
-		 * @param array $button
+		 * @param array $link
 		 * @return string
 		 */
-		private function get_target_attr( $button ) {
-			return ! empty( $button['target'] ) ? 'target="' . esc_attr( $button['target'] ) . '"' : '';
+		private function get_target_attr( $link ) {
+			if ( is_array( $link ) && ! empty( $link['target'] ) ) {
+				return esc_attr( $link['target'] );
+			}
+			return '_self';
 		}
 
 		/**
 		 * Get rel attribute.
 		 *
-		 * @param array $button
+		 * @param array $link
 		 * @return string
 		 */
-		private function get_rel_attr( $button ) {
-			return ! empty( $button['rel'] ) ? 'rel="' . esc_attr( $button['rel'] ) . '"' : '';
+		private function get_rel_attr( $link ) {
+			if ( ! empty( $link['rel'] ) ) {
+				return 'rel="' . esc_attr( $link['rel'] ) . '"';
+			}
+			return '';
 		}
 
 		/**
@@ -271,16 +267,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$classes[] = 'sefwpb-profile-link-style-' . esc_attr( $button['style'] );
 			}
 			return implode( ' ', $classes );
-		}
-
-		/**
-		 * Get extra attributes.
-		 *
-		 * @param array $button
-		 * @return string
-		 */
-		private function get_extra_attrs( $button ) {
-			return ! empty( $button['extra_attrs'] ) ? $button['extra_attrs'] : '';
 		}
 
 		/**
@@ -324,13 +310,13 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				return '';
 			}
 			if ( 'sm' === $atts['size'] ) {
-				return '--button-size:32px;';
+				return '--button-font-size:11px;--button-icon-size:20px;';
 			}
 			if ( 'md' === $atts['size'] ) {
-				return '--button-size:40px;';
+				return '--button-font-size:16px;--button-icon-size:40px;';
 			}
 			if ( 'lg' === $atts['size'] ) {
-				return '--button-size:48px;';
+				return '--button-font-size:20px;--button-icon-size:48px;';
 			}
 			return '';
 		}

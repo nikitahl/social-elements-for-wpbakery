@@ -46,14 +46,6 @@ add_action(
 						],
 						'std'        => 'left',
 					],
-					[
-						'type'        => 'textfield',
-						'heading'     => esc_html__( 'Width', 'social-elements-wpbakery' ),
-						'param_name'  => 'width',
-						'group'       => esc_html__( 'Styles', 'social-elements-wpbakery' ),
-						'description' => esc_html__( 'Optional. Enter width of the embedded post in pixels. Default is 500px.', 'social-elements-wpbakery' ),
-						'value'       => '500',
-					],
 					vc_map_add_css_animation(),
 					[
 						'type'        => 'el_id',

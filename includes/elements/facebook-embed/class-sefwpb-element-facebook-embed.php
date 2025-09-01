@@ -76,7 +76,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$style .= 'text-align: ' . $atts['align'] . ';';
 			}
 			$url     = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
-			$width   = isset( $atts['width'] ) ? esc_attr( $atts['width'] ) : '';
+			$width   = isset( $atts['width'] ) ? esc_attr( intval( $atts['width'] ) ) : '';
 			$output  = '<div class="sefwpb-facebook-embed-container" style="' . esc_attr( $style ) . '">';
 			$output .= '<div class="fb-post" data-href="' . $url . '" data-width="' . $width . '"></div>';
 			$output .= '<div id="fb-root"></div>';

@@ -16,6 +16,28 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 	 * Handles the Reddit embed element for WPBakery.
 	 */
 	class WPBakeryShortCode_Sefwpb_Reddit_Embed extends WPBakeryShortCode {
+
+		/**
+		 * Constructor.
+		 *
+		 * @param array $settings Shortcode settings.
+		 */
+		public function __construct( $settings ) {
+			parent::__construct( $settings );
+			$this->element_enqueueing_assets();
+		}
+
+		/**
+		 * Enqueue frontend assets.
+		 */
+		public function element_enqueueing_assets() {
+			wp_enqueue_style(
+				'sefwpb-reddit-embed',
+				plugins_url( '/assets/css/reddit-embed.css', __FILE__ ),
+				[],
+				defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0'
+			);
+		}
 		/**
 		 * Gets attributes and builds CSS class for the element.
 		 *
@@ -47,14 +69,29 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		}
 
 		/**
+		 * Validates and returns width with proper unit.
+		 *
+		 * @param string|int $width
+		 * @return string
+		 */
+		private function get_width( $width ) {
+			if ( is_numeric( $width ) ) {
+				return intval( $width ) . 'px';
+			}
+			return esc_attr( $width );
+		}
+
+		/**
 		 * Renders the Reddit embed blockquote and script.
 		 *
 		 * @param array $atts Shortcode attributes.
 		 * @return string
 		 */
 		private function render_embed( $atts ) {
-			$url     = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
-			$output  = '<div class="sefwpb-reddit-embed-container">';
+			$url     = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '#';
+			$width   = isset( $atts['width'] ) ? $this->get_width( $atts['width'] ) : '500px';
+			$align   = isset( $atts['align'] ) ? $atts['align'] : 'flex-start';
+			$output  = '<div class="sefwpb-reddit-embed-container" style="--justify-content: ' . esc_attr( $align ) . ';--width: ' . esc_attr( $width ) . ';">';
 			$output .= '<blockquote class="reddit-embed-bq" style="height: 400px; width: 300px" data-embed-height="400" data-embed-width="300">';
 			$output .= '<a href="' . $url . '">Reddit Post</a>';
 			$output .= '</blockquote>';

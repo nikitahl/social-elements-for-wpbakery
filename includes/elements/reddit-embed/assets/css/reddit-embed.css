@@ -1,0 +1,21 @@
+.sefwpb-reddit-embed-container {
+    --width: 500px;
+    --justify-content: flex-start;
+    display: flex;
+    justify-content: var(--justify-content);
+    align-items: center;
+    width: 100%;
+}
+
+.sefwpb-reddit-embed-container > iframe,
+.sefwpb-reddit-embed-container > .reddit-embed-bq {
+    width: var(--width);
+    max-width: 100%;
+    margin: 0 !important;
+}
+
+.sefwpb-reddit-embed-title {
+    margin: 0 0 10px;
+    font-size: 17px;
+    font-weight: 600;
+}

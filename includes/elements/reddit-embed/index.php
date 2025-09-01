@@ -34,6 +34,26 @@ add_action(
 						'description' => esc_html__( 'Enter the URL of the Reddit post you want to embed. Example: https://www.reddit.com/r/InteriorDesign/comments/abcd123/example_post/', 'social-elements-wpbakery' ),
 						'value'       => 'https://www.reddit.com/r/redditdev/comments/1lhdu8i/are_there_are_redditsponsored_initiatives_for/',
 					],
+					[
+						'type'       => 'dropdown',
+						'heading'    => esc_html__( 'Alignment', 'social-elements-wpbakery' ),
+						'param_name' => 'align',
+						'group'      => esc_html__( 'Styles', 'social-elements-wpbakery' ),
+						'value'      => [
+							esc_html__( 'Left', 'social-elements-wpbakery' )   => 'flex-start',
+							esc_html__( 'Center', 'social-elements-wpbakery' ) => 'center',
+							esc_html__( 'Right', 'social-elements-wpbakery' )  => 'flex-end',
+						],
+						'std'        => 'flex-start',
+					],
+					[
+						'type'        => 'textfield',
+						'heading'     => esc_html__( 'Width', 'social-elements-wpbakery' ),
+						'param_name'  => 'width',
+						'group'       => esc_html__( 'Styles', 'social-elements-wpbakery' ),
+						'description' => esc_html__( 'Optional. Enter width of the embedded post in pixels. Default is 500px.', 'social-elements-wpbakery' ),
+						'value'       => '500',
+					],
 					vc_map_add_css_animation(),
 					[
 						'type'        => 'el_id',

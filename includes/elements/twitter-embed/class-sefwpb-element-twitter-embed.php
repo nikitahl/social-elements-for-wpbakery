@@ -89,6 +89,19 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		}
 
 		/**
+		 * Validates and returns width with proper unit.
+		 *
+		 * @param string|int $width
+		 * @return string
+		 */
+		private function get_width( $width ) {
+			if ( is_numeric( $width ) ) {
+				return intval( $width ) . 'px';
+			}
+			return esc_attr( $width );
+		}
+
+		/**
 		 * Build style string.
 		 *
 		 * @param array $atts Shortcode attributes.
@@ -96,7 +109,8 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		private function build_style( $atts ) {
 			$align = isset( $atts['align'] ) ? $atts['align'] : 'left';
-			return '--align: ' . $align . ';';
+			$width = isset( $atts['width'] ) ? $this->get_width( $atts['width'] ) : '500px';
+			return '--align: ' . $align . ';--width: ' . $width . ';';
 		}
 
 		/**

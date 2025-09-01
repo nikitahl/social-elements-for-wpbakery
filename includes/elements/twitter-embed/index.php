@@ -44,7 +44,7 @@ add_action(
 							esc_html__( 'Center', 'social-elements-wpbakery' ) => 'center',
 							esc_html__( 'Right', 'social-elements-wpbakery' )  => 'flex-end',
 						],
-						'std'        => 'left',
+						'std'        => 'flex-start',
 					],
 					[
 						'type'        => 'textfield',

@@ -136,9 +136,10 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			if ( $custom_logo_id ) {
 				$site_logo = wp_get_attachment_image( $custom_logo_id, 'full', false, [ 'class' => 'sefwpb-embed-site-logo' ] );
 			}
-			$site_name = '<span class="sefwpb-embed-site-name">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
+			$site_name      = '<span class="sefwpb-embed-site-name">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
+			// Translators: %d is the number of comments.
 			$comments_count = '<div class="sefwpb-embed-comments-count">' . sprintf( esc_html__( '%d Comments', 'social-elements-wpbakery' ), get_comments_number( $post_id ) ) . '</div>';
-			$rel_attr = $rel ? ' rel="' . esc_attr( $rel ) . '"' : '';
+			$rel_attr       = $rel ? ' rel="' . esc_attr( $rel ) . '"' : '';
 
 			$meta  = '<div class="sefwpb-embed-meta">';
 			$meta .= '<a class="sefwpb-embed-brand" href="' . esc_url( home_url() ) . '" target="_blank" rel="noreferrer">' . $site_logo . $site_name . '</a>';
@@ -156,7 +157,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function build_embed_error( $message ) {
-			return '<p>' . esc_html__( $message, 'social-elements-wpbakery' ) . '</p>';
+			return '<p>' . esc_html__( $message ) . '</p>';
 		}
 
 		/**

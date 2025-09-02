@@ -52,47 +52,111 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$output  = '';
 			$url     = $link['url'];
 			$post_id = url_to_postid( $url );
-			if ( $post_id ) {
-				$post = get_post( $post_id );
-				if ( $post ) {
-					// Featured image.
-					$featured_img = get_the_post_thumbnail( $post_id, 'large', [ 'class' => 'sefwpb-embed-featured-image' ] );
-					// Title.
-					$post_title = '<h3 class="sefwpb-embed-title">' . esc_html( get_the_title( $post_id ) ) . '</h3>';
-					// Excerpt.
-					$excerpt = '<p class="sefwpb-embed-excerpt">' . esc_html( get_the_excerpt( $post_id ) ) . '</p>';
-					// Site logo.
-					$site_logo      = '';
-					$custom_logo_id = get_theme_mod( 'custom_logo' );
-					if ( $custom_logo_id ) {
-						$site_logo = wp_get_attachment_image( $custom_logo_id, 'full', false, [ 'class' => 'sefwpb-embed-site-logo' ] );
-					}
-					$width         = ! empty( $atts['width'] ) ? intval( $atts['width'] ) : 500;
-					$rel           = ( isset( $link['rel'] ) && ! empty( $link['rel'] ) ) ? $link['rel'] : '';
-					$target        = ( isset( $link['target'] ) && ! empty( $link['target'] ) ) ? $link['target'] : '_self';
-					$rel_attribute = $rel ? ' rel="' . esc_attr( $rel ) . '"' : '';
-					// Site name.
-					$site_name = '<span class="sefwpb-embed-site-name">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
-					// Translators: %d is the number of comments.
-					$comments_count = '<div class="sefwpb-embed-comments-count">' . sprintf( esc_html__( '%d Comments', 'social-elements-wpbakery' ), get_comments_number( $post_id ) ) . '</div>';
-					$output        .= '<div class="sefwpb-embed-content" style="width:' . esc_attr( $width ) . 'px;">';
-					$output        .= '<a class="sefwpb-embed-image-link" href="' . esc_url( $url ) . '" target="' . $target . '"' . $rel_attribute .  '>' . $featured_img . '</a>';
-					$output        .= '<a class="sefwpb-embed-title-link" href="' . esc_url( $url ) . '" target="' . $target . '"' . $rel_attribute .  '>' . $post_title . '</a>';
-					$output        .= $excerpt;
-					$output        .= '<div class="sefwpb-embed-meta">';
-					$output        .= '<a class="sefwpb-embed-brand" href="' . esc_url( home_url() ) . '" target="_blank" rel="noreferrer">' . $site_logo . $site_name . '</a>';
-					$output        .= '<a class="sefwpb-embed-comments" href="' . esc_url( $url ) . '#respond" target="' . $target . '"' . $rel_attribute . '>';
-					$output        .= $comments_count;
-					$output        .= '</a>'; // .sefwpb-embed-comments.
-					$output        .= '</div>'; // .sefwpb-embed-meta.
-					$output        .= '</div>';
-				} else {
-					$output .= '<p>' . esc_html__( 'Unable to find the specified post.', 'social-elements-wpbakery' ) . '</p>';
-				}
-			} else {
-				$output .= '<p>' . esc_html__( 'Unable to embed the specified URL.', 'social-elements-wpbakery' ) . '</p>';
+			if ( ! $post_id ) {
+				return $this->build_embed_error( 'Unable to embed the specified URL.' );
 			}
+			$post = get_post( $post_id );
+			if ( ! $post ) {
+				return $this->build_embed_error( 'Unable to find the specified post.' );
+			}
+
+			$width  = ! empty( $atts['width'] ) ? intval( $atts['width'] ) : 500;
+			$rel    = ( isset( $link['rel'] ) && ! empty( $link['rel'] ) ) ? $link['rel'] : '';
+			$target = ( isset( $link['target'] ) && ! empty( $link['target'] ) ) ? $link['target'] : '_self';
+
+			$output .= '<div class="sefwpb-embed-content" style="width:' . esc_attr( $width ) . 'px;">';
+			$output .= $this->build_featured_image_link( $post_id, $url, $target, $rel );
+			$output .= $this->build_title_link( $post_id, $url, $target, $rel );
+			$output .= $this->build_excerpt( $post_id );
+			$output .= $this->build_meta( $url, $target, $rel, $post_id );
+			$output .= '</div>';
+
 			return $output;
+		}
+
+		/**
+		 * Build the featured image link HTML.
+		 *
+		 * @param int    $post_id Post ID.
+		 * @param string $url     URL to link to.
+		 * @param string $target  Link target attribute.
+		 * @param string $rel     Link rel attribute.
+		 * @return string
+		 */
+		private function build_featured_image_link( $post_id, $url, $target, $rel ) {
+			$featured_img = get_the_post_thumbnail( $post_id, 'large', [ 'class' => 'sefwpb-embed-featured-image' ] );
+			if ( ! $featured_img ) {
+				return '';
+			}
+			$rel_attr = $rel ? ' rel="' . esc_attr( $rel ) . '"' : '';
+			return '<a class="sefwpb-embed-image-link" href="' . esc_url( $url ) . '" target="' . $target . '"' . $rel_attr . '>' . $featured_img . '</a>';
+		}
+
+		/**
+		 * Build the title link HTML.
+		 *
+		 * @param int    $post_id Post ID.
+		 * @param string $url     URL to link to.
+		 * @param string $target  Link target attribute.
+		 * @param string $rel     Link rel attribute.
+		 * @return string
+		 */
+		private function build_title_link( $post_id, $url, $target, $rel ) {
+			$post_title = get_the_title( $post_id );
+			if ( ! $post_title ) {
+				return '';
+			}
+			$rel_attr = $rel ? ' rel="' . esc_attr( $rel ) . '"' : '';
+			return '<a class="sefwpb-embed-title-link" href="' . esc_url( $url ) . '" target="' . $target . '"' . $rel_attr . '><h3 class="sefwpb-embed-title">' . esc_html( $post_title ) . '</h3></a>';
+		}
+
+		/**
+		 * Build the excerpt HTML.
+		 *
+		 * @param int $post_id Post ID.
+		 * @return string
+		 */
+		private function build_excerpt( $post_id ) {
+			$excerpt = get_the_excerpt( $post_id );
+			return $excerpt ? '<p class="sefwpb-embed-excerpt">' . esc_html( $excerpt ) . '</p>' : '';
+		}
+
+		/**
+		 * Build the meta information HTML.
+		 *
+		 * @param string $url     URL to link to.
+		 * @param string $target  Link target attribute.
+		 * @param string $rel     Link rel attribute.
+		 * @param int    $post_id Post ID.
+		 * @return string
+		 */
+		private function build_meta( $url, $target, $rel, $post_id ) {
+			$site_logo      = '';
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			if ( $custom_logo_id ) {
+				$site_logo = wp_get_attachment_image( $custom_logo_id, 'full', false, [ 'class' => 'sefwpb-embed-site-logo' ] );
+			}
+			$site_name = '<span class="sefwpb-embed-site-name">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
+			$comments_count = '<div class="sefwpb-embed-comments-count">' . sprintf( esc_html__( '%d Comments', 'social-elements-wpbakery' ), get_comments_number( $post_id ) ) . '</div>';
+			$rel_attr = $rel ? ' rel="' . esc_attr( $rel ) . '"' : '';
+
+			$meta  = '<div class="sefwpb-embed-meta">';
+			$meta .= '<a class="sefwpb-embed-brand" href="' . esc_url( home_url() ) . '" target="_blank" rel="noreferrer">' . $site_logo . $site_name . '</a>';
+			$meta .= '<a class="sefwpb-embed-comments" href="' . esc_url( $url ) . '#respond" target="' . $target . '"' . $rel_attr . '>';
+			$meta .= $comments_count;
+			$meta .= '</a>';
+			$meta .= '</div>';
+			return $meta;
+		}
+
+		/**
+		 * Build an embed error message.
+		 *
+		 * @param string $message Error message to display.
+		 * @return string
+		 */
+		private function build_embed_error( $message ) {
+			return '<p>' . esc_html__( $message, 'social-elements-wpbakery' ) . '</p>';
 		}
 
 		/**

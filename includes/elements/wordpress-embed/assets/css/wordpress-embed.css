@@ -1,20 +1,23 @@
-.sefwpb-wordpress-embed {
-  --justify-content: left;
-  display: flex;
-  justify-content: var(--justify-content);
-  align-items: center;
+.sefwpb-embed-wrapper {
+    max-width: 100%;
+    --justify-content: left;
+    display: flex;
+    justify-content: var(--justify-content);
+    align-items: center;
 }
 
-.sefwpb-embed-wrapper {
-  max-width: 100%;
+.sefwpb-element-title {
+    margin: 0 0 10px;
+    font-size: 17px;
+    font-weight: 600;
 }
 
 .sefwpb-embed-content {
-  border: 1px solid #e9e9e9;
-  padding: 15px;
-  border-radius: 4px;
-  max-width: 600px;
-  background: #fcfcfc;
+    border: 1px solid #e9e9e9;
+    padding: 15px;
+    border-radius: 4px;
+    max-width: 100%;
+    background: #fcfcfc;
 }
 
 .sefwpb-embed-image-link,
@@ -98,11 +101,11 @@
 }
 
 .sefwpb-embed-comments {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .sefwpb-embed-comments:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }

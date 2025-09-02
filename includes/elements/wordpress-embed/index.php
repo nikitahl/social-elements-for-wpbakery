@@ -28,7 +28,7 @@ add_action(
 						'description' => esc_html__( 'Optional. Enter title to display above embed.', 'social-elements-wpbakery' ),
 					],
 					[
-						'type'        => 'textfield',
+						'type'        => 'vc_link',
 						'heading'     => esc_html__( 'Post URL', 'social-elements-wpbakery' ),
 						'param_name'  => 'url',
 						'description' => esc_html__( 'Enter the URL of the post you want to embed.', 'social-elements-wpbakery' ),

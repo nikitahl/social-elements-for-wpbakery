@@ -43,12 +43,14 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		/**
 		 * Get the HTML content of the embedded post.
 		 *
-		 * @param string $url URL of the post to embed.
+		 * @param array $atts Shortcode attributes.
+		 * @param array $link Link array from vc_build_link().
 		 *
 		 * @return string HTML content of the embedded post.
 		 */
-		public function get_post_content( $url ) {
+		public function get_post_content( $atts, $link ) {
 			$output  = '';
+			$url     = $link['url'];
 			$post_id = url_to_postid( $url );
 			if ( $post_id ) {
 				$post = get_post( $post_id );
@@ -65,17 +67,21 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 					if ( $custom_logo_id ) {
 						$site_logo = wp_get_attachment_image( $custom_logo_id, 'full', false, [ 'class' => 'sefwpb-embed-site-logo' ] );
 					}
+					$width         = ! empty( $atts['width'] ) ? intval( $atts['width'] ) : 500;
+					$rel           = ( isset( $link['rel'] ) && ! empty( $link['rel'] ) ) ? $link['rel'] : '';
+					$target        = ( isset( $link['target'] ) && ! empty( $link['target'] ) ) ? $link['target'] : '_self';
+					$rel_attribute = $rel ? ' rel="' . esc_attr( $rel ) . '"' : '';
 					// Site name.
 					$site_name = '<span class="sefwpb-embed-site-name">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
 					// Translators: %d is the number of comments.
 					$comments_count = '<div class="sefwpb-embed-comments-count">' . sprintf( esc_html__( '%d Comments', 'social-elements-wpbakery' ), get_comments_number( $post_id ) ) . '</div>';
-					$output        .= '<div class="sefwpb-embed-content">';
-					$output        .= '<a class="sefwpb-embed-image-link" href="' . esc_url( $url ) . '" target="_blank" rel="noreferrer">' . $featured_img . '</a>';
-					$output        .= '<a class="sefwpb-embed-title-link" href="' . esc_url( $url ) . '" target="_blank" rel="noreferrer">' . $post_title . '</a>';
+					$output        .= '<div class="sefwpb-embed-content" style="width:' . esc_attr( $width ) . 'px;">';
+					$output        .= '<a class="sefwpb-embed-image-link" href="' . esc_url( $url ) . '" target="' . $target . '"' . $rel_attribute .  '>' . $featured_img . '</a>';
+					$output        .= '<a class="sefwpb-embed-title-link" href="' . esc_url( $url ) . '" target="' . $target . '"' . $rel_attribute .  '>' . $post_title . '</a>';
 					$output        .= $excerpt;
 					$output        .= '<div class="sefwpb-embed-meta">';
 					$output        .= '<a class="sefwpb-embed-brand" href="' . esc_url( home_url() ) . '" target="_blank" rel="noreferrer">' . $site_logo . $site_name . '</a>';
-					$output        .= '<a class="sefwpb-embed-comments" href="' . esc_url( $url ) . '#respond" target="_blank" rel="noreferrer">';
+					$output        .= '<a class="sefwpb-embed-comments" href="' . esc_url( $url ) . '#respond" target="' . $target . '"' . $rel_attribute . '>';
 					$output        .= $comments_count;
 					$output        .= '</a>'; // .sefwpb-embed-comments.
 					$output        .= '</div>'; // .sefwpb-embed-meta.
@@ -136,10 +142,8 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		private function build_wrapper_open( $atts ) {
 			$el_id     = isset( $atts['el_id'] ) ? $atts['el_id'] : '';
 			$css_class = $this->build_css_class( $atts );
-			$align     = isset( $atts['align'] ) ? $atts['align'] : 'left';
-			$style     = 'style="--justify-content: ' . esc_attr( $align ) . ';"';
 			$id_attr   = ! empty( $el_id ) ? 'id="' . esc_attr( $el_id ) . '"' : '';
-			return '<div ' . $id_attr . ' class="' . esc_attr( $css_class ) . '" ' . $style . '>';
+			return '<div ' . $id_attr . ' class="' . esc_attr( $css_class ) . '">';
 		}
 
 		/**
@@ -162,10 +166,12 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function build_embed_or_error( $atts ) {
-			if ( ! empty( $atts['url'] ) ) {
-				$width = isset( $atts['width'] ) ? $atts['width'] : '500px';
-				return '<div class="sefwpb-embed-wrapper" style="width:' . esc_attr( intval( $width ) ) . 'px;">'
-					. $this->get_post_content( $atts['url'] )
+			$link = ! empty( $atts['url'] ) ? vc_build_link( $atts['url'] ) : '';
+			if ( ! empty( $link['url'] ) ) {
+				$align = isset( $atts['align'] ) ? $atts['align'] : 'left';
+				$style = 'style="--justify-content: ' . esc_attr( $align ) . ';"';
+				return '<div class="sefwpb-embed-wrapper"' . $style . '">'
+					. $this->get_post_content( $atts, $link )
 					. '</div>';
 			}
 			return $this->build_error_message();

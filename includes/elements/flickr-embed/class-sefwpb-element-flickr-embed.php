@@ -19,6 +19,28 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 	class WPBakeryShortCode_Sefwpb_Flickr_Embed extends WPBakeryShortCode {
 
 		/**
+		 * Constructor.
+		 *
+		 * @param array $settings Shortcode settings.
+		 */
+		public function __construct( $settings ) {
+			parent::__construct( $settings );
+			$this->element_enqueueing_assets();
+		}
+
+		/**
+		 * Enqueue frontend assets.
+		 */
+		public function element_enqueueing_assets() {
+			wp_enqueue_style(
+				'sefwpb-flickr-embed',
+				plugins_url( '/assets/css/flickr-embed.css', __FILE__ ),
+				[],
+				defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0'
+			);
+		}
+
+		/**
 		 * Shortcode output.
 		 *
 		 * @param array  $atts    Shortcode attributes.
@@ -31,7 +53,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$el_class      = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
 			$css           = isset( $atts['css'] ) ? $atts['css'] : '';
 			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
-			$width         = ! empty( $atts['width'] ) && is_numeric( $atts['width'] ) ? intval( $atts['width'] ) : 500;
+			$width         = ! empty( $atts['width'] ) ? intval( $atts['width'] ) : 500;
 
 			$css_class = $this->build_css_class( $el_class, $css, $css_animation );
 			$style     = $this->build_style( $atts );

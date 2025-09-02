@@ -1,0 +1,9 @@
+.sefwpb-flickr-embed-title {
+    margin: 0 0 10px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.sefwpb-flickr-embed > iframe {
+    max-width: 100% !important;
+}

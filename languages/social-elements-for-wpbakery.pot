@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-29T13:50:03+00:00\n"
+"POT-Creation-Date: 2025-09-02T19:57:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: social-elements-wpbakery\n"
@@ -83,6 +83,7 @@ msgstr ""
 #: includes/elements/flickr-embed/index.php:39
 #: includes/elements/pinterest-embed/index.php:39
 #: includes/elements/profile-links/index.php:188
+#: includes/elements/reddit-embed/index.php:39
 #: includes/elements/share-buttons/index.php:211
 #: includes/elements/tiktok-embed/index.php:39
 #: includes/elements/twitter-embed/index.php:39
@@ -95,13 +96,14 @@ msgstr ""
 #: includes/elements/flickr-embed/index.php:41
 #: includes/elements/flickr-embed/index.php:53
 #: includes/elements/pinterest-embed/index.php:41
-#: includes/elements/pinterest-embed/index.php:53
 #: includes/elements/profile-links/index.php:141
 #: includes/elements/profile-links/index.php:153
 #: includes/elements/profile-links/index.php:165
 #: includes/elements/profile-links/index.php:177
 #: includes/elements/profile-links/index.php:190
 #: includes/elements/profile-links/index.php:202
+#: includes/elements/reddit-embed/index.php:41
+#: includes/elements/reddit-embed/index.php:53
 #: includes/elements/share-buttons/index.php:164
 #: includes/elements/share-buttons/index.php:176
 #: includes/elements/share-buttons/index.php:188
@@ -121,6 +123,7 @@ msgstr ""
 #: includes/elements/flickr-embed/index.php:43
 #: includes/elements/pinterest-embed/index.php:43
 #: includes/elements/profile-links/index.php:192
+#: includes/elements/reddit-embed/index.php:43
 #: includes/elements/share-buttons/index.php:215
 #: includes/elements/tiktok-embed/index.php:43
 #: includes/elements/twitter-embed/index.php:43
@@ -132,6 +135,7 @@ msgstr ""
 #: includes/elements/flickr-embed/index.php:44
 #: includes/elements/pinterest-embed/index.php:44
 #: includes/elements/profile-links/index.php:193
+#: includes/elements/reddit-embed/index.php:44
 #: includes/elements/share-buttons/index.php:216
 #: includes/elements/tiktok-embed/index.php:44
 #: includes/elements/twitter-embed/index.php:44
@@ -143,6 +147,7 @@ msgstr ""
 #: includes/elements/flickr-embed/index.php:45
 #: includes/elements/pinterest-embed/index.php:45
 #: includes/elements/profile-links/index.php:194
+#: includes/elements/reddit-embed/index.php:45
 #: includes/elements/share-buttons/index.php:217
 #: includes/elements/tiktok-embed/index.php:45
 #: includes/elements/twitter-embed/index.php:45
@@ -152,7 +157,7 @@ msgstr ""
 
 #: includes/elements/facebook-embed/index.php:51
 #: includes/elements/flickr-embed/index.php:51
-#: includes/elements/pinterest-embed/index.php:51
+#: includes/elements/reddit-embed/index.php:51
 #: includes/elements/tiktok-embed/index.php:51
 #: includes/elements/twitter-embed/index.php:51
 #: includes/elements/wordpress-embed/index.php:51
@@ -160,7 +165,7 @@ msgid "Width"
 msgstr ""
 
 #: includes/elements/facebook-embed/index.php:54
-#: includes/elements/pinterest-embed/index.php:54
+#: includes/elements/reddit-embed/index.php:54
 #: includes/elements/tiktok-embed/index.php:54
 #: includes/elements/twitter-embed/index.php:54
 #: includes/elements/wordpress-embed/index.php:54
@@ -169,9 +174,9 @@ msgstr ""
 
 #: includes/elements/facebook-embed/index.php:60
 #: includes/elements/flickr-embed/index.php:60
-#: includes/elements/pinterest-embed/index.php:60
+#: includes/elements/pinterest-embed/index.php:52
 #: includes/elements/profile-links/index.php:208
-#: includes/elements/reddit-embed/index.php:40
+#: includes/elements/reddit-embed/index.php:60
 #: includes/elements/share-buttons/index.php:231
 #: includes/elements/tiktok-embed/index.php:60
 #: includes/elements/twitter-embed/index.php:60
@@ -182,9 +187,9 @@ msgstr ""
 #. translators: %1$s: link to w3c specification, %2$s: closing anchor tag.
 #: includes/elements/facebook-embed/index.php:64
 #: includes/elements/flickr-embed/index.php:64
-#: includes/elements/pinterest-embed/index.php:64
+#: includes/elements/pinterest-embed/index.php:56
 #: includes/elements/profile-links/index.php:211
-#: includes/elements/reddit-embed/index.php:44
+#: includes/elements/reddit-embed/index.php:64
 #: includes/elements/share-buttons/index.php:234
 #: includes/elements/tiktok-embed/index.php:64
 #: includes/elements/twitter-embed/index.php:64
@@ -194,9 +199,9 @@ msgstr ""
 
 #: includes/elements/facebook-embed/index.php:71
 #: includes/elements/flickr-embed/index.php:71
-#: includes/elements/pinterest-embed/index.php:71
+#: includes/elements/pinterest-embed/index.php:63
 #: includes/elements/profile-links/index.php:215
-#: includes/elements/reddit-embed/index.php:51
+#: includes/elements/reddit-embed/index.php:71
 #: includes/elements/share-buttons/index.php:238
 #: includes/elements/tiktok-embed/index.php:71
 #: includes/elements/twitter-embed/index.php:71
@@ -206,9 +211,9 @@ msgstr ""
 
 #: includes/elements/facebook-embed/index.php:73
 #: includes/elements/flickr-embed/index.php:73
-#: includes/elements/pinterest-embed/index.php:73
+#: includes/elements/pinterest-embed/index.php:65
 #: includes/elements/profile-links/index.php:217
-#: includes/elements/reddit-embed/index.php:53
+#: includes/elements/reddit-embed/index.php:73
 #: includes/elements/share-buttons/index.php:240
 #: includes/elements/tiktok-embed/index.php:73
 #: includes/elements/twitter-embed/index.php:73
@@ -218,9 +223,9 @@ msgstr ""
 
 #: includes/elements/facebook-embed/index.php:77
 #: includes/elements/flickr-embed/index.php:77
-#: includes/elements/pinterest-embed/index.php:77
+#: includes/elements/pinterest-embed/index.php:69
 #: includes/elements/profile-links/index.php:221
-#: includes/elements/reddit-embed/index.php:57
+#: includes/elements/reddit-embed/index.php:77
 #: includes/elements/share-buttons/index.php:244
 #: includes/elements/tiktok-embed/index.php:77
 #: includes/elements/twitter-embed/index.php:77
@@ -230,9 +235,9 @@ msgstr ""
 
 #: includes/elements/facebook-embed/index.php:79
 #: includes/elements/flickr-embed/index.php:79
-#: includes/elements/pinterest-embed/index.php:79
+#: includes/elements/pinterest-embed/index.php:71
 #: includes/elements/profile-links/index.php:223
-#: includes/elements/reddit-embed/index.php:59
+#: includes/elements/reddit-embed/index.php:79
 #: includes/elements/share-buttons/index.php:246
 #: includes/elements/tiktok-embed/index.php:79
 #: includes/elements/twitter-embed/index.php:79
@@ -240,15 +245,15 @@ msgstr ""
 msgid "Design Options"
 msgstr ""
 
-#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:109
+#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:131
 msgid "Could not retrieve Flickr embed."
 msgstr ""
 
-#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:116
+#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:138
 msgid "Invalid Flickr image URL."
 msgstr ""
 
-#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:118
+#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:140
 msgid "Please provide a valid Flickr image URL."
 msgstr ""
 
@@ -269,7 +274,7 @@ msgid "Enter the URL of the Flickr image you want to embed. Example: https://www
 msgstr ""
 
 #: includes/elements/flickr-embed/index.php:54
-msgid "Optional. Enter width of the embedded image in pixels. Default is 500px."
+msgid "Optional. Enter the width of the embedded image in pixels (minimum 500px)."
 msgstr ""
 
 #: includes/elements/pinterest-embed/index.php:18
@@ -575,7 +580,7 @@ msgstr ""
 msgid "Button gap"
 msgstr ""
 
-#: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:163
+#: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:164
 msgid "Please provide a valid TikTok post URL."
 msgstr ""
 
@@ -595,7 +600,7 @@ msgstr ""
 msgid "Enter the URL of the TikTok post you want to embed. Example: https://www.tiktok.com/@adnanjanbaloch7/video/7412994512169192710"
 msgstr ""
 
-#: includes/elements/twitter-embed/class-sefwpb-element-twitter-embed.php:135
+#: includes/elements/twitter-embed/class-sefwpb-element-twitter-embed.php:149
 msgid "Please provide a valid Tweet URL to embed."
 msgstr ""
 
@@ -616,19 +621,11 @@ msgid "Enter the URL of the tweet you want to embed."
 msgstr ""
 
 #. Translators: %d is the number of comments.
-#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:71
+#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:141
 msgid "%d Comments"
 msgstr ""
 
-#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:84
-msgid "Unable to find the specified post."
-msgstr ""
-
-#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:87
-msgid "Unable to embed the specified URL."
-msgstr ""
-
-#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:180
+#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:251
 msgid "Please provide a valid URL to embed."
 msgstr ""
 

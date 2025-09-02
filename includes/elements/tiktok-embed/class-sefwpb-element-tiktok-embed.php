@@ -67,14 +67,14 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
 			$width         = isset( $atts['width'] ) ? $atts['width'] : '500px';
 
-			$css_class       = $this->build_css_class( $el_class, $css, $css_animation );
-			$container_style = $this->build_container_style( $atts );
-			$style           = $this->build_width_style( $width );
-			$el_id           = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
+			$css_class   = $this->build_css_class( $el_class, $css, $css_animation );
+			$align_style = $this->build_container_style( $atts );
+			$width_style = $this->build_width_style( $width );
+			$el_id       = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
 
-			$output  = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '" style="' . esc_attr( $container_style ) . '">';
+			$output  = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '">';
 			$output .= $this->render_title( $atts );
-			$output .= $this->render_tiktok_embed( $atts, $style );
+			$output .= $this->render_tiktok_embed( $atts, $align_style, $width_style );
 			$output .= '</div>';
 
 			return $output;
@@ -145,14 +145,15 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * Render the TikTok embed.
 		 *
 		 * @param array  $atts  Shortcode attributes.
-		 * @param string $style Inline style for embed.
+		 * @param string $align_style Container style.
+		 * @param string $width_style Width style.
 		 * @return string
 		 */
-		private function render_tiktok_embed( $atts, $style ) {
+		private function render_tiktok_embed( $atts, $align_style, $width_style ) {
 			if ( ! empty( $atts['url'] ) ) {
 				$video_id = $this->extract_tiktok_video_id( $atts['url'] );
-				$output   = '<div class="sefwpb-tiktok-embed-wrap" style="' . esc_attr( $style ) . '">';
-				$output  .= '<blockquote class="tiktok-embed" cite="' . esc_url( $atts['url'] ) . '" data-video-id="' . esc_attr( $video_id ) . '" style="max-width: 100%;min-width: 325px;" >';
+				$output   = '<div class="sefwpb-tiktok-embed-wrap" style="' . esc_attr( $align_style ) . '">';
+				$output  .= '<blockquote class="tiktok-embed sefwpb-tiktok-embed-content" cite="' . esc_url( $atts['url'] ) . '" data-video-id="' . esc_attr( $video_id ) . '" style="' . esc_attr( $width_style ) . '" >';
 				$output  .= '<section> </section>';
 				$output  .= '</blockquote>';
 				// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript

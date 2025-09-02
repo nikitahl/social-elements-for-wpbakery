@@ -1,15 +1,20 @@
-.sefwpb-tiktok-embed {
+.sefwpb-tiktok-embed-wrap {
     --justify-content: flex-start;
     position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: var(--justify-content);
     align-items: center;
 }
 
-.sefwpb-tiktok-embed-wrap {
+.sefwpb-tiktok-embed-content {
     --width: 500px;
     width: var(--width);
-    min-width: 325px;
     max-width: 100%;
+    margin: 0;
+}
+
+.sefwpb-tiktok-embed-title {
+    margin: 0 0 10px;
+    font-size: 17px;
+    font-weight: 600;
 }

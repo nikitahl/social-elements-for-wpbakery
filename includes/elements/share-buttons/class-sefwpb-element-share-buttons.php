@@ -165,6 +165,10 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function get_gap_style( $atts ) {
+			// check if gap has a unit (px, em, rem, %, etc.) set the value, otherwise default to px.
+			if ( ! empty( $atts['gap'] ) && ! preg_match( '/(px|em|rem|%|vh|vw)$/', $atts['gap'] ) ) {
+				$atts['gap'] .= 'px';
+			}
 			return ! empty( $atts['gap'] ) ? '--button-gap:' . esc_attr( $atts['gap'] ) . ';' : '';
 		}
 
@@ -179,13 +183,13 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				return '';
 			}
 			if ( 'sm' === $atts['size'] ) {
-				return '--button-padding:5px;--button-font-size:11px;--button-icon-size:14px;';
+				return '--button-padding:4px 10px;--button-font-size:11px;--button-icon-size:14px;';
 			}
 			if ( 'md' === $atts['size'] ) {
-				return '--button-padding:12px;--button-font-size:16px;--button-icon-size:19px;';
+				return '--button-padding:12px 18px;--button-font-size:16px;--button-icon-size:19px;';
 			}
 			if ( 'lg' === $atts['size'] ) {
-				return '--button-padding:16px;--button-font-size:20px;--button-icon-size:25px;';
+				return '--button-padding:16px 28px;--button-font-size:20px;--button-icon-size:25px;';
 			}
 			return '';
 		}

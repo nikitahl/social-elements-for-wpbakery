@@ -224,6 +224,7 @@ add_action(
 						'heading'    => esc_html__( 'Button gap', 'social-elements-wpbakery' ),
 						'param_name' => 'gap',
 						'group'      => esc_html__( 'Styles', 'social-elements-wpbakery' ),
+						'description' => esc_html__( 'Set gap between buttons. You can use any CSS unit, e.g. px, em, rem, %.', 'social-elements-wpbakery' ),
 						'value'      => '5px',
 					],
 					vc_map_add_css_animation(),

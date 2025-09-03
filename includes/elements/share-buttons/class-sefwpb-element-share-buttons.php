@@ -284,7 +284,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * Get icon HTML.
 		 *
 		 * @param array  $btn
-		 * @param string $label
 		 * @return string
 		 */
 		private function get_icon_html( $btn ) {
@@ -330,7 +329,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				return 'javascript:void(0);';
 			}
 
-			if ('email' === $platform ) {
+			if ( 'email' === $platform ) {
 				return 'mailto:?subject=' . rawurlencode( $title ) . '&body=' . rawurlencode( $url );
 			}
 
@@ -341,7 +340,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * Get extra attribute for button.
 		 *
 		 * @param string $platform
-		 * @param string $url
+		 * @param string $label
 		 * @return string
 		 */
 		private function get_extra_attr( $platform, $label = '' ) {
@@ -352,7 +351,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$data_fail_attr = 'data-fail-label="' . esc_html__( 'Failed to copy', 'social-elements' ) . '"';
 
 				return 'data-copy-url="' . esc_url( $url ) . '" ' . $data_copy_attr . ' ' . $data_fail_attr;
-			} else if ( 'email' !== $platform && 'copy' !== $platform ) {
+			} elseif ( 'email' !== $platform && 'copy' !== $platform ) {
 				return 'onclick="window.open(this.href, \'sharer\', \'left=20,top=20,width=900,height=500,toolbar=1,resizable=0\');return false;"';
 			}
 		}

@@ -296,6 +296,10 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function get_gap_style( $atts ) {
+			// check if gap has a unit (px, em, rem, %, etc.) set the value, otherwise default to px.
+			if ( ! empty( $atts['gap'] ) && ! preg_match( '/(px|em|rem|%|vh|vw)$/', $atts['gap'] ) ) {
+				$atts['gap'] .= 'px';
+			}
 			return ! empty( $atts['gap'] ) ? '--button-gap:' . esc_attr( $atts['gap'] ) . ';' : '';
 		}
 

@@ -89,6 +89,7 @@ add_action(
 								'heading'     => esc_html__( 'Color', 'social-elements-wpbakery' ),
 								'param_name'  => 'color',
 								'description' => esc_html__( 'Select icon color.', 'social-elements-wpbakery' ),
+								'value'       => '#43CE70',
 							],
 							[
 								'type'        => 'dropdown',
@@ -200,6 +201,7 @@ add_action(
 						'heading'    => esc_html__( 'Icon gap', 'social-elements-wpbakery' ),
 						'param_name' => 'gap',
 						'group'      => esc_html__( 'Styles', 'social-elements-wpbakery' ),
+						'description' => esc_html__( 'Set gap between links. You can use any CSS unit, e.g. px, em, rem, %.', 'social-elements-wpbakery' ),
 						'value'      => '5px',
 					],
 					vc_map_add_css_animation(),

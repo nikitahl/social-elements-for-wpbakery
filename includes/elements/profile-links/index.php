@@ -197,12 +197,12 @@ add_action(
 						'std'        => 'left',
 					],
 					[
-						'type'       => 'textfield',
-						'heading'    => esc_html__( 'Icon gap', 'social-elements-wpbakery' ),
-						'param_name' => 'gap',
-						'group'      => esc_html__( 'Styles', 'social-elements-wpbakery' ),
+						'type'        => 'textfield',
+						'heading'     => esc_html__( 'Icon gap', 'social-elements-wpbakery' ),
+						'param_name'  => 'gap',
+						'group'       => esc_html__( 'Styles', 'social-elements-wpbakery' ),
 						'description' => esc_html__( 'Set gap between links. You can use any CSS unit, e.g. px, em, rem, %.', 'social-elements-wpbakery' ),
-						'value'      => '5px',
+						'value'       => '5px',
 					],
 					vc_map_add_css_animation(),
 					[

@@ -283,7 +283,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		/**
 		 * Get icon HTML.
 		 *
-		 * @param array  $btn
+		 * @param array $btn
 		 * @return string
 		 */
 		private function get_icon_html( $btn ) {

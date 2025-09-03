@@ -40,7 +40,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			);
 			wp_enqueue_style(
 				'vc_monosocial',
-				vc_asset_url( 'css/lib/monosocialiconsfont/monosocialiconsfont.css' ),
+				vc_asset_url( 'css/lib/monosocialiconsfont/monosocialiconsfont.min.css' ),
 				[],
 				WPB_VC_VERSION
 			);

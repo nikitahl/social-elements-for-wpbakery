@@ -84,12 +84,12 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$platform   = $this->get_platform( $btn );
 			$label      = $this->get_label( $btn, $platform );
 			$color      = $this->get_color( $btn );
-			$icon       = $this->get_icon_html( $btn, $label );
+			$icon       = $this->get_icon_html( $btn );
 			$url        = $this->get_share_url( $platform );
-			$extra_attr = $this->get_extra_attr( $platform, $url );
+			$extra_attr = $this->get_extra_attr( $platform, $label );
 			$classes    = $this->get_button_classes( $platform );
 
-			$output = '<a class="' . esc_attr( $classes ) . '" href="' . esc_url( $url ) . '" style="' . esc_attr( $color ) . '" ' . $extra_attr . '>';
+			$output = '<a class="' . esc_attr( $classes ) . '" href="' . esc_attr( $url ) . '" style="' . esc_attr( $color ) . '" ' . $extra_attr . ' target="_self">';
 			if ( $icon ) {
 				$output .= '<span class="sefwpb-social-share__icon">' . $icon . '</span>';
 			}
@@ -287,16 +287,13 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @param string $label
 		 * @return string
 		 */
-		private function get_icon_html( $btn, $label ) {
+		private function get_icon_html( $btn ) {
 			if ( isset( $btn['icon_type'] ) ) {
 				if ( 'monosocial' === $btn['icon_type'] && ! empty( $btn['icon_monosocial'] ) ) {
 					return '<i class="' . esc_attr( $btn['icon_monosocial'] ) . '" aria-hidden="true"></i>';
 				}
 				if ( 'fontawesome' === $btn['icon_type'] && ! empty( $btn['icon_fontawesome'] ) ) {
 					return '<i class="' . esc_attr( $btn['icon_fontawesome'] ) . '" aria-hidden="true"></i>';
-				}
-				if ( 'custom' === $btn['icon_type'] && ! empty( $btn['icon_custom'] ) ) {
-					return '<img src="' . esc_url( $btn['icon_custom'] ) . '" alt="' . esc_attr( $label ) . '"/>';
 				}
 			}
 			return '';
@@ -314,9 +311,12 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 
 			$templates = [
 				'facebook'  => 'https://www.facebook.com/sharer/sharer.php?u=%s',
-				'twitter'   => 'https://twitter.com/intent/tweet?url=%s&text=%s',
+				'x'         => 'https://twitter.com/intent/tweet?url=%s&text=%s',
 				'linkedin'  => 'https://www.linkedin.com/shareArticle?mini=true&url=%s&title=%s',
 				'pinterest' => 'https://pinterest.com/pin/create/button/?url=%s&description=%s',
+				'reddit'    => 'https://www.reddit.com/submit?url=%s&title=%s',
+				'whatsapp'  => 'https://api.whatsapp.com/send?text=%s %s',
+				'telegram'  => 'https://t.me/share/url?url=%s&text=%s',
 			];
 
 			if ( isset( $templates[ $platform ] ) ) {
@@ -330,6 +330,10 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				return 'javascript:void(0);';
 			}
 
+			if ('email' === $platform ) {
+				return 'mailto:?subject=' . rawurlencode( $title ) . '&body=' . rawurlencode( $url );
+			}
+
 			return '#';
 		}
 
@@ -340,11 +344,17 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @param string $url
 		 * @return string
 		 */
-		private function get_extra_attr( $platform, $url ) {
+		private function get_extra_attr( $platform, $label = '' ) {
 			if ( 'copy' === $platform ) {
-				return 'data-share-copy="' . esc_url( $url ) . '"';
+				$url            = get_permalink();
+				$copied_label   = esc_html__( 'Link copied!', 'social-elements' );
+				$data_copy_attr = 'data-copied-label="' . esc_attr( $copied_label ) . '" data-copy-label="' . esc_attr( $label ) . '"';
+				$data_fail_attr = 'data-fail-label="' . esc_html__( 'Failed to copy', 'social-elements' ) . '"';
+
+				return 'data-copy-url="' . esc_url( $url ) . '" ' . $data_copy_attr . ' ' . $data_fail_attr;
+			} else if ( 'email' !== $platform && 'copy' !== $platform ) {
+				return 'onclick="window.open(this.href, \'sharer\', \'left=20,top=20,width=900,height=500,toolbar=1,resizable=0\');return false;"';
 			}
-			return 'target="_blank" rel="noopener noreferrer"';
 		}
 
 		/**

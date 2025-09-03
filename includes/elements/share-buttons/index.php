@@ -109,9 +109,10 @@ add_action(
 							],
 							[
 								'type'        => 'colorpicker',
-								'heading'     => esc_html__( 'Color', 'social-elements-wpbakery' ),
+								'heading'     => esc_html__( 'Button color', 'social-elements-wpbakery' ),
 								'param_name'  => 'color',
-								'description' => esc_html__( 'Select button color.', 'social-elements-wpbakery' ),
+								'description' => esc_html__( 'Select button background color.', 'social-elements-wpbakery' ),
+								'value'       => '#973CF1',
 							],
 							[
 								'type'        => 'dropdown',

@@ -20,11 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	document.querySelectorAll(".sefwpb-social-share__button--copy").forEach(function(button) {
 		button.addEventListener("click", function(e) {
 			e.preventDefault();
-			const link = button.getAttribute("data-link");
+			const link = button.getAttribute("data-copy-url");
 			copyToClipboard(link).then(function() {
-				button.querySelector("span").innerText = button.getAttribute("data-copied-label");
+				button.querySelector(".sefwpb-social-share__label").innerText = button.getAttribute("data-copied-label");
 				setTimeout(function() {
-					button.querySelector("span").innerText = button.getAttribute("data-copy-label");
+					button.querySelector(".sefwpb-social-share__label").innerText = button.getAttribute("data-copy-label");
 				}, 1500);
 			}, function() {
 				alert(button.getAttribute("data-fail-label") + " " + link);

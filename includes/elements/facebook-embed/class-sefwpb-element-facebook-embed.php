@@ -16,6 +16,29 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 	 * Handles the Facebook embed element for WPBakery.
 	 */
 	class WPBakeryShortCode_Sefwpb_Facebook_Embed extends WPBakeryShortCode {
+
+		/**
+		 * Constructor.
+		 *
+		 * @param array $settings Shortcode settings.
+		 */
+		public function __construct( $settings ) {
+			parent::__construct( $settings );
+			$this->element_enqueueing_assets();
+		}
+
+		/**
+		 * Enqueue frontend assets.
+		 */
+		public function element_enqueueing_assets() {
+			wp_enqueue_style(
+				'sefwpb-facebook-embed',
+				plugins_url( '/assets/css/facebook-embed.css', __FILE__ ),
+				[],
+				defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0'
+			);
+		}
+
 		/**
 		 * Shortcode output.
 		 *

@@ -1,0 +1,13 @@
+.sefwpb-facebook-embed-title {
+    margin: 0 0 10px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.sefwpb-facebook-embed-container .fb-post {
+    width: 100% !important;
+}
+.sefwpb-facebook-embed-container .fb-post > span,
+.sefwpb-facebook-embed-container iframe {
+    max-width: 100% !important;
+}

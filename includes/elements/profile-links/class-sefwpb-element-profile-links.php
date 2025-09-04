@@ -92,12 +92,13 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$link        = ! empty( $button['url'] ) ? vc_build_link( $button['url'] ) : '';
 			$label       = $this->get_label( $button );
 			$url         = $this->get_url( $link );
-			$icon        = $this->get_icon_html( $button, $label );
+			$icon        = $this->get_icon_html( $button );
 			$color_style = $this->get_color_style( $button );
 			$title       = $this->get_title_attr( $link );
 			$target      = $this->get_target_attr( $link );
 			$rel         = $this->get_rel_attr( $link );
 			$class       = $this->get_button_class( $button );
+			$title       = ! empty( $title ) ? $title : $label;
 
 			return sprintf(
 				'<a href="%1$s" class="sefwpb-profile-links__button %2$s" style="%3$s" title="%4$s" target="%5$s" %6$s aria-label="%4$s">%7$s</a>',
@@ -182,10 +183,9 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * Get icon HTML.
 		 *
 		 * @param array  $button
-		 * @param string $label
 		 * @return string
 		 */
-		private function get_icon_html( $button, $label ) {
+		private function get_icon_html( $button ) {
 			$icon_type = ! empty( $button['icon_type'] ) ? $button['icon_type'] : 'monosocial';
 			$icon      = '';
 			if ( 'monosocial' === $icon_type && ! empty( $button['icon_monosocial'] ) ) {
@@ -193,9 +193,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			}
 			if ( 'fontawesome' === $icon_type && ! empty( $button['icon_fontawesome'] ) ) {
 				$icon = '<i class="' . esc_attr( $button['icon_fontawesome'] ) . '" aria-hidden="true"></i>';
-			}
-			if ( 'custom' === $icon_type && ! empty( $button['icon_custom'] ) ) {
-				$icon = '<img src="' . esc_url( $button['icon_custom'] ) . '" alt="' . esc_attr( $label ) . '"/>';
 			}
 			if ( $icon ) {
 				return '<span class="sefwpb-profile-links__icon">' . $icon . '</span>';

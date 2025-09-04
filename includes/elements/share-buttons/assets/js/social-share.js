@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		}
 	}
+
 	document.querySelectorAll(".sefwpb-social-share__button--copy").forEach(function(button) {
 		button.addEventListener("click", function(e) {
 			e.preventDefault();
@@ -29,6 +30,19 @@ document.addEventListener("DOMContentLoaded", function() {
 			}, function() {
 				alert(button.getAttribute("data-fail-label") + " " + link);
 			});
+		});
+	});
+
+	document.querySelectorAll('.sefwpb-social-share__button--pinterest').forEach(function(btn) {
+		btn.addEventListener('click', function(e) {
+			e.preventDefault();
+			let url = btn.getAttribute('data-share-url');
+			if (!url) {
+				url = 'https://pinterest.com/pin/create/button/?url=' + window.location.href + '&description=' + document.title;
+				url = encodeURI(url);
+				console.error('Pinterest share URL not found.');
+			}
+			window.open(url, 'sharer', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0');
 		});
 	});
 });

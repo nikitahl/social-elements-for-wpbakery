@@ -51,8 +51,8 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				SEFWPB_VERSION
 			);
 			wp_enqueue_script(
-				'sefwpb-social-share-copy',
-				plugins_url( '/assets/js/social-share-copy.js', __FILE__ ),
+				'sefwpb-social-share',
+				plugins_url( '/assets/js/social-share.js', __FILE__ ),
 				[],
 				SEFWPB_VERSION,
 				true
@@ -88,6 +88,11 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$url        = $this->get_share_url( $platform );
 			$extra_attr = $this->get_extra_attr( $platform, $label );
 			$classes    = $this->get_button_classes( $platform );
+
+			if ( 'pinterest' === $platform ) {
+				$extra_attr .= ' data-share-url="' . esc_url( $url ) . '"';
+				$url         = '#';
+			}
 
 			$output = '<a class="' . esc_attr( $classes ) . '" href="' . esc_attr( $url ) . '" style="' . esc_attr( $color ) . '" ' . $extra_attr . ' target="_self">';
 			if ( $icon ) {

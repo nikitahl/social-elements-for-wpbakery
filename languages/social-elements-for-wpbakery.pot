@@ -9,10 +9,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-05T07:19:43+00:00\n"
+"POT-Creation-Date: 2025-09-05T08:10:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
-"X-Domain: social-elements-wpbakery\n"
+"X-Domain: social-elements-for-wpbakery\n"
 
 #. Plugin Name of the plugin
 msgid "Social Elements for WPBakery Page Builder"
@@ -491,6 +491,14 @@ msgstr ""
 msgid "Enter the URL of the Reddit post you want to embed. Example: https://www.reddit.com/r/InteriorDesign/comments/abcd123/example_post/"
 msgstr ""
 
+#: includes/elements/share-buttons/class-sefwpb-element-share-buttons.php:358
+msgid "Link copied!"
+msgstr ""
+
+#: includes/elements/share-buttons/class-sefwpb-element-share-buttons.php:360
+msgid "Failed to copy"
+msgstr ""
+
 #: includes/elements/share-buttons/index.php:18
 msgid "Social Share Buttons"
 msgstr ""
@@ -656,6 +664,6 @@ msgstr ""
 msgid "Enter the URL of the post you want to embed."
 msgstr ""
 
-#: social-elements-for-wpbakery.php:80
+#: social-elements-for-wpbakery.php:77
 msgid "Social Elements for WPBakery requires WPBakery Page Builder to be installed and active."
 msgstr ""

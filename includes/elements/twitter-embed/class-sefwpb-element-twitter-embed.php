@@ -146,7 +146,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$output .= '</div>';
 				return $output;
 			}
-			return '<p>' . esc_html__( 'Please provide a valid Tweet URL to embed.', 'social-elements-wpbakery' ) . '</p>';
+			return '<p>' . esc_html__( 'Please provide a valid Tweet URL to embed.', 'social-elements-for-wpbakery' ) . '</p>';
 		}
 	}
 }

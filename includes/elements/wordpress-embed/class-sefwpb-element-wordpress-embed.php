@@ -138,7 +138,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			}
 			$site_name = '<span class="sefwpb-embed-site-name">' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
 			// Translators: %d is the number of comments.
-			$comments_count = '<div class="sefwpb-embed-comments-count">' . sprintf( esc_html__( '%d Comments', 'social-elements-wpbakery' ), get_comments_number( $post_id ) ) . '</div>';
+			$comments_count = '<div class="sefwpb-embed-comments-count">' . sprintf( esc_html__( '%d Comments', 'social-elements-for-wpbakery' ), get_comments_number( $post_id ) ) . '</div>';
 			$rel_attr       = $rel ? ' rel="' . esc_attr( $rel ) . '"' : '';
 
 			$meta  = '<div class="sefwpb-embed-meta">';
@@ -248,7 +248,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function build_error_message() {
-			return '<p>' . esc_html__( 'Please provide a valid URL to embed.', 'social-elements-wpbakery' ) . '</p>';
+			return '<p>' . esc_html__( 'Please provide a valid URL to embed.', 'social-elements-for-wpbakery' ) . '</p>';
 		}
 	}
 }

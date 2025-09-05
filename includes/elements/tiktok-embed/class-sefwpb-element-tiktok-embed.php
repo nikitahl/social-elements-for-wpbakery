@@ -161,7 +161,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$output .= '</div>';
 				return $output;
 			}
-			return esc_html__( 'Please provide a valid TikTok post URL.', 'social-elements-wpbakery' );
+			return esc_html__( 'Please provide a valid TikTok post URL.', 'social-elements-for-wpbakery' );
 		}
 	}
 }

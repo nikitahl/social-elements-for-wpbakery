@@ -3,7 +3,7 @@
 Contributors: nikitahl
 Tags: wpbakery, wpbakery-extension, wpbakery-addon
 Requires at least: 6.4
-Tested up to: 6.8.1
+Tested up to: 6.8
 Stable tag: 1.0
 Requires PHP: 7.0
 License: GPLv3 or later

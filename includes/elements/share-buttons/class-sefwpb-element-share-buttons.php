@@ -355,9 +355,9 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		private function get_extra_attr( $platform, $label = '' ) {
 			if ( 'copy' === $platform ) {
 				$url            = get_permalink();
-				$copied_label   = esc_html__( 'Link copied!', 'social-elements' );
+				$copied_label   = esc_html__( 'Link copied!', 'social-elements-for-wpbakery' );
 				$data_copy_attr = 'data-copied-label="' . esc_attr( $copied_label ) . '" data-copy-label="' . esc_attr( $label ) . '"';
-				$data_fail_attr = 'data-fail-label="' . esc_html__( 'Failed to copy', 'social-elements' ) . '"';
+				$data_fail_attr = 'data-fail-label="' . esc_html__( 'Failed to copy', 'social-elements-for-wpbakery' ) . '"';
 
 				return 'data-copy-url="' . esc_url( $url ) . '" ' . $data_copy_attr . ' ' . $data_fail_attr;
 			} elseif ( 'email' !== $platform && 'copy' !== $platform ) {

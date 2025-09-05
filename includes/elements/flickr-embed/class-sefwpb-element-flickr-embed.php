@@ -128,16 +128,16 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$oembed_url = 'https://www.flickr.com/services/oembed/?format=json&url=' . rawurlencode( $flickr_url ) . '&maxwidth=' . $width;
 				$response   = wp_remote_get( $oembed_url );
 				if ( is_wp_error( $response ) ) {
-					return '<p>' . esc_html__( 'Could not retrieve Flickr embed.', 'social-elements-wpbakery' ) . '</p>';
+					return '<p>' . esc_html__( 'Could not retrieve Flickr embed.', 'social-elements-for-wpbakery' ) . '</p>';
 				}
 				$body = wp_remote_retrieve_body( $response );
 				$data = json_decode( $body );
 				if ( ! empty( $data->html ) ) {
 					return $data->html;
 				}
-				return '<p>' . esc_html__( 'Invalid Flickr image URL.', 'social-elements-wpbakery' ) . '</p>';
+				return '<p>' . esc_html__( 'Invalid Flickr image URL.', 'social-elements-for-wpbakery' ) . '</p>';
 			}
-			return '<p>' . esc_html__( 'Please provide a valid Flickr image URL.', 'social-elements-wpbakery' ) . '</p>';
+			return '<p>' . esc_html__( 'Please provide a valid Flickr image URL.', 'social-elements-for-wpbakery' ) . '</p>';
 		}
 	}
 }

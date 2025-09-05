@@ -15,4 +15,4 @@ zip -r "$ZIP_FILE" \
   assets/images \
   includes \
   languages \
-  -x "*.DS_Store"  # Exclude unnecessary files like macOS metadata
+  -x "*.DS_Store" "ci/*" "_tools/*" ".github/*" "README.md" ".gitignore" "composer.js" "LICENSE" # Exclude unnecessary files like macOS metadata

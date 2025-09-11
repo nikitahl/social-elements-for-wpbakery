@@ -17,6 +17,36 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 	 * Handles the Pinterest embed element for WPBakery.
 	 */
 	class WPBakeryShortCode_Sefwpb_Pinterest_Embed extends WPBakeryShortCode {
+
+		/**
+		 * Constructor.
+		 *
+		 * @param array $settings Shortcode settings.
+		 */
+		public function __construct( $settings ) {
+			parent::__construct( $settings );
+			$this->element_enqueueing_assets();
+		}
+
+		/**
+		 * Enqueue frontend assets.
+		 */
+		public function element_enqueueing_assets() {
+			if ( ! wp_script_is( 'sefwpb-pinterest-embed', 'enqueued' ) ) {
+				wp_enqueue_script(
+					'sefwpb-pinterest-embed',
+					'https://assets.pinterest.com/js/pinit.js',
+					[],
+					null,
+					true
+				);
+				wp_add_inline_script(
+					'sefwpb-pinterest-embed',
+					'if (window.PinUtils && typeof window.PinUtils.build === "function") { window.PinUtils.build(); }'
+				);
+			}
+		}
+
 		/**
 		 * Shortcode output.
 		 *
@@ -79,13 +109,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$url     = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
 			$output  = '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">';
 			$output .= '<a data-pin-do="embedPin" href="' . $url . '">Pinterest Post</a>';
-			// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
-			$output .= '<script async defer src="https://assets.pinterest.com/js/pinit.js"></script>';
-			$output .= '<script>';
-			$output .= 'if (window.PinUtils && typeof window.PinUtils.build === "function") {';
-			$output .= 'window.PinUtils.build();';
-			$output .= '}';
-			$output .= '</script>';
 			$output .= '</div>';
 			return $output;
 		}

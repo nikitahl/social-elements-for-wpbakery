@@ -37,6 +37,16 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				[],
 				SEFWPB_VERSION
 			);
+			// Enqueue TikTok only once.
+			if ( ! wp_script_is( 'sefwpb-tiktok-embed', 'enqueued' ) ) {
+				wp_enqueue_script(
+					'sefwpb-tiktok-embed',
+					'https://www.tiktok.com/embed.js',
+					[],
+					defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0',
+					true
+				);
+			}
 		}
 
 		/**
@@ -156,8 +166,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$output  .= '<blockquote class="tiktok-embed sefwpb-tiktok-embed-content" cite="' . esc_url( $atts['url'] ) . '" data-video-id="' . esc_attr( $video_id ) . '" style="' . esc_attr( $width_style ) . '" >';
 				$output  .= '<section> </section>';
 				$output  .= '</blockquote>';
-				// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
-				$output .= '<script async src="https://www.tiktok.com/embed.js"></script>';
 				$output .= '</div>';
 				return $output;
 			}

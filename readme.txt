@@ -33,6 +33,19 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 8. TikTok Embed: Embed TikTok videos.
 9. WordPress Embed: Integrate WordPress posts.
 
+== Privacy ==
+
+This plugin uses third-party services to embed social media content. When you embed content from these services, data (such as the post URL, user’s IP address, and browser information) may be sent to the respective service.
+
+For more information, see each service’s privacy policy and terms:
+
+- **Facebook:** [Privacy Policy](https://www.facebook.com/policy.php) | [Terms of Service](https://www.facebook.com/terms.php)
+- **X (Twitter):** [Privacy Policy](https://x.com/en/privacy) | [Terms of Service](https://x.com/en/tos)
+- **Flickr:** [Privacy Policy](https://www.flickr.com/help/privacy) | [Terms of Service](https://www.flickr.com/help/terms)
+- **Pinterest:** [Privacy Policy](https://policy.pinterest.com/en/privacy-policy) | [Terms of Service](https://policy.pinterest.com/en/terms-of-service)
+- **TikTok:** [Privacy Policy](https://www.tiktok.com/legal/page/row/privacy-policy/en) | [Terms of Service](https://www.tiktok.com/legal/page/row/terms-of-service/en)
+- **Reddit:** [Privacy Policy](https://www.reddit.com/policies/privacy-policy) | [User Agreement](https://redditinc.com/policies/user-agreement)
+
 == Requirements ==
 
 * WPBakery Page Builder 8.0 or later

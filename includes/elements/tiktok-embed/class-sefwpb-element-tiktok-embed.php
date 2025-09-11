@@ -166,7 +166,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$output  .= '<blockquote class="tiktok-embed sefwpb-tiktok-embed-content" cite="' . esc_url( $atts['url'] ) . '" data-video-id="' . esc_attr( $video_id ) . '" style="' . esc_attr( $width_style ) . '" >';
 				$output  .= '<section> </section>';
 				$output  .= '</blockquote>';
-				$output .= '</div>';
+				$output  .= '</div>';
 				return $output;
 			}
 			return esc_html__( 'Please provide a valid TikTok post URL.', 'social-elements-for-wpbakery' );

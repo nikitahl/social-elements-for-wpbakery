@@ -37,6 +37,21 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				[],
 				defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0'
 			);
+			// Enqueue Facebook SDK only once.
+			if ( ! wp_script_is( 'facebook-jssdk', 'enqueued' ) ) {
+				wp_enqueue_script(
+					'facebook-jssdk',
+					'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0',
+					[],
+					null,
+					true
+				);
+				// Inline script to parse embeds after SDK loads.
+				wp_add_inline_script(
+					'facebook-jssdk',
+					'if (typeof FB !== "undefined" && FB.XFBML && FB.XFBML.parse) { FB.XFBML.parse(); }'
+				);
+			}
 		}
 
 		/**
@@ -103,13 +118,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$output  = '<div class="sefwpb-facebook-embed-container" style="' . esc_attr( $style ) . '">';
 			$output .= '<div class="fb-post" data-href="' . $url . '" data-width="' . $width . '"></div>';
 			$output .= '<div id="fb-root"></div>';
-			// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
-			$output .= '<script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"></script>';
-			$output .= '<script>';
-			$output .= 'if (typeof FB !== "undefined" && FB.XFBML && FB.XFBML.parse) {';
-			$output .= 'FB.XFBML.parse();';
-			$output .= '}';
-			$output .= '</script>';
 			$output .= '</div>';
 			return $output;
 		}

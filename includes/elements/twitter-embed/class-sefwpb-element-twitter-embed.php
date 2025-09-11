@@ -138,11 +138,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			if ( ! empty( $url ) ) {
 				$output  = '<div class="sefwpb-twitter-embed-container" data-tweet-url="' . esc_url( $url ) . '" data-theme="' . esc_attr( $theme ) . '" data-is-rendered="false">';
 				$output .= '<div class="sefwpb-twitter-embed-temp"><a href="' . esc_url( $url ) . '" target="_blank" rel="noreferrer noopener">' . esc_url( $url ) . '</a></div>';
-				// phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript
-				$output .= '<script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
-				$output .= '<script>';
-				$output .= 'if (typeof window.sefwpbLoadTwitterEmbed === "function") { window.sefwpbLoadTwitterEmbed(); }';
-				$output .= '</script>';
 				$output .= '</div>';
 				return $output;
 			}

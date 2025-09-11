@@ -1,25 +1,55 @@
-function sefwpbLoadTwitterEmbed(context) {
-	(context || document).querySelectorAll('.sefwpb-twitter-embed-container[data-is-rendered="false"]').forEach(function(container) {
-		var url = container.getAttribute('data-tweet-url');
-		var theme = container.getAttribute('data-theme') || 'light';
-		if (!url) return;
+(function() {
+	function injectTwitterWidgetsScript(callback) {
+		if (!document.getElementById('sefwpb-twitter-widgets-script')) {
+			var s = document.createElement('script');
+			s.id = 'sefwpb-twitter-widgets-script';
+			s.src = 'https://platform.twitter.com/widgets.js';
+			s.async = true;
+			s.onload = callback;
+			document.body.appendChild(s);
+			return true;
+		} else if (typeof callback === 'function') {
+			callback();
+		}
+		return false;
+	}
 
-		var callbackName = 'twitterEmbedCallback_' + Math.random().toString(36).substr(2, 9);
-		window[callbackName] = function(data) {
-			container.innerHTML = data.html;
-			container.setAttribute('data-is-rendered', 'true');
-			if (window.twttr && window.twttr.widgets && typeof window.twttr.widgets.load === 'function') {
-				window.twttr.widgets.load(container);
+	function loadTwitterEmbeds() {
+		(document).querySelectorAll('.sefwpb-twitter-embed-container[data-is-rendered="false"]').forEach(function(container) {
+			var url = container.getAttribute('data-tweet-url');
+			var theme = container.getAttribute('data-theme') || 'light';
+			if (!url) return;
+
+			var callbackName = 'twitterEmbedCallback_' + Math.random().toString(36).substr(2, 9);
+			window[callbackName] = function(data) {
+				container.innerHTML = data.html;
+				container.setAttribute('data-is-rendered', 'true');
+				if (window.twttr && window.twttr.widgets && typeof window.twttr.widgets.load === 'function') {
+					window.twttr.widgets.load(container);
+				}
+				delete window[callbackName];
+			};
+
+			var script = document.createElement('script');
+			script.src = 'https://publish.twitter.com/oembed?url=' + encodeURIComponent(url) + '&theme=' + theme + '&callback=' + callbackName;
+			document.head.appendChild(script);
+		});
+	}
+
+	function checkForTwitterEmbed(observer) {
+		try {
+			if (document.querySelector('.sefwpb-twitter-embed-container[data-is-rendered="false"]')) {
+				injectTwitterWidgetsScript(loadTwitterEmbeds);
+				if (observer) observer.disconnect();
 			}
-			delete window[callbackName];
-		};
+		} catch (e) {
+			console.error('Error checking for X(Twitter) embed:', e);
+		}
+	}
 
-		var script = document.createElement('script');
-		script.src = 'https://publish.twitter.com/oembed?url=' + encodeURIComponent(url) + '&theme=' + theme + '&callback=' + callbackName;
-		document.head.appendChild(script);
+	var observer = new MutationObserver(function() {
+		checkForTwitterEmbed(observer);
 	});
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-	sefwpbLoadTwitterEmbed();
-});
+	checkForTwitterEmbed(observer);
+	observer.observe(document.body, { childList: true, subtree: true });
+})();

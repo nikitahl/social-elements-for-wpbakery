@@ -35,6 +35,8 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 
 == Privacy ==
 
+This plugin does not collect or store any personal data by itself.
+
 This plugin uses third-party services to embed social media content. When you embed content from these services, data (such as the post URL, user’s IP address, and browser information) may be sent to the respective service.
 
 For more information, see each service’s privacy policy and terms:

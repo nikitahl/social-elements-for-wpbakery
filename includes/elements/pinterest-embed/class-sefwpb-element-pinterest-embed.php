@@ -37,8 +37,11 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 					'sefwpb-pinterest-embed',
 					'https://assets.pinterest.com/js/pinit.js',
 					[],
-					null,
-					true
+					defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0',
+					[
+						'in_footer' => true,
+						'strategy'  => 'async',
+					]
 				);
 				wp_add_inline_script(
 					'sefwpb-pinterest-embed',

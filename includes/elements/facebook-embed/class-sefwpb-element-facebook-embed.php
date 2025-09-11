@@ -43,8 +43,11 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 					'facebook-jssdk',
 					'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0',
 					[],
-					null,
-					true
+					defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0',
+					[
+						'in_footer' => true,
+						'strategy'  => 'async',
+					]
 				);
 				// Inline script to parse embeds after SDK loads.
 				wp_add_inline_script(

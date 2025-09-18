@@ -59,6 +59,12 @@ For more information, see each service’s privacy policy and terms:
 1. Upload the plugin folder to your /wp-content/plugins/ folder.
 2. Go to the **Plugins** page and activate the plugin.
 
+== Screenshots ==
+
+1. Social Elements in Social tab in Add Elements panel
+2. Social Share Buttons element preview
+3. Social Profile Links element preview
+
 == Changelog ==
 
 = 1.0 =

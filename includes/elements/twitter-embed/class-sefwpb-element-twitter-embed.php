@@ -38,13 +38,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				[],
 				defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0'
 			);
-			wp_enqueue_script(
-				'sefwpb-twitter-embed',
-				plugins_url( '/assets/js/twitter-embed.js', __FILE__ ),
-				[ 'jquery' ],
-				defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0',
-				true
-			);
 		}
 
 		/**
@@ -134,12 +127,14 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		private function render_twitter_embed( $atts ) {
 			$url   = isset( $atts['url'] ) ? $atts['url'] : '';
-			$theme = isset( $atts['theme'] ) ? $atts['theme'] : 'light';
 			if ( ! empty( $url ) ) {
-				$output  = '<div class="sefwpb-twitter-embed-container" data-tweet-url="' . esc_url( $url ) . '" data-theme="' . esc_attr( $theme ) . '" data-is-rendered="false">';
-				$output .= '<div class="sefwpb-twitter-embed-temp"><a href="' . esc_url( $url ) . '" target="_blank" rel="noreferrer noopener">' . esc_url( $url ) . '</a></div>';
-				$output .= '</div>';
-				return $output;
+				if ( strpos( $url, 'x.com/' ) === 0 || strpos( $url, 'x.com/' ) !== false ) {
+					$url = str_replace( 'x.com/', 'twitter.com/', $url );
+				}
+				$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );
+				if ( $embed_html ) {
+					return '<div class="sefwpb-twitter-embed-container">' . $embed_html . '</div>';
+				}
 			}
 			return '<p>' . esc_html__( 'Please provide a valid Tweet URL to embed.', 'social-elements-for-wpbakery' ) . '</p>';
 		}

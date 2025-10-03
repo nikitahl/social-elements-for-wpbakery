@@ -32,22 +32,12 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * Enqueue frontend assets.
 		 */
 		public function element_enqueueing_assets() {
-			if ( ! wp_script_is( 'sefwpb-pinterest-embed', 'enqueued' ) ) {
-				wp_enqueue_script(
-					'sefwpb-pinterest-embed',
-					'https://assets.pinterest.com/js/pinit.js',
-					[],
-					defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0',
-					[
-						'in_footer' => true,
-						'strategy'  => 'async',
-					]
-				);
-				wp_add_inline_script(
-					'sefwpb-pinterest-embed',
-					'if (window.PinUtils && typeof window.PinUtils.build === "function") { window.PinUtils.build(); }'
-				);
-			}
+			wp_enqueue_style(
+				'sefwpb-pinterest-embed',
+				plugins_url( '/assets/css/pinterest-embed.css', __FILE__ ),
+				[],
+				defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0'
+			);
 		}
 
 		/**
@@ -109,9 +99,18 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			if ( isset( $atts['align'] ) ) {
 				$style .= 'text-align: ' . $atts['align'] . ';';
 			}
-			$url     = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
-			$output  = '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">';
-			$output .= '<a data-pin-do="embedPin" href="' . $url . '">Pinterest Post</a>';
+			$url = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
+			$output = '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">';
+			if ( ! empty( $url ) ) {
+				$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );
+				if ( $embed_html ) {
+					$output .= $embed_html;
+				} else {
+					$output .= esc_html__( 'Please provide a valid Pinterest post URL to embed.', 'social-elements-for-wpbakery' );
+				}
+			} else {
+				$output .= esc_html__( 'Please provide a valid Pinterest post URL to embed.', 'social-elements-for-wpbakery' );
+			}
 			$output .= '</div>';
 			return $output;
 		}

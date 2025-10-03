@@ -67,6 +67,10 @@ For more information, see each service’s privacy policy and terms:
 
 == Changelog ==
 
+= 1.0.1 =
+
+* Updated: Used the oEmbed for all supported services for better compatibility and performance.
+
 = 1.0 =
 * Plugin released.
 

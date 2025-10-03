@@ -99,7 +99,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			if ( isset( $atts['align'] ) ) {
 				$style .= 'text-align: ' . $atts['align'] . ';';
 			}
-			$url = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
+			$url    = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
 			$output = '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">';
 			if ( ! empty( $url ) ) {
 				$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );

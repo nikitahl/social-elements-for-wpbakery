@@ -88,9 +88,9 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function render_embed( $atts ) {
-			$url     = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '#';
-			$width   = isset( $atts['width'] ) ? $this->get_width( $atts['width'] ) : '500px';
-			$align   = isset( $atts['align'] ) ? $atts['align'] : 'flex-start';
+			$url   = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '#';
+			$width = isset( $atts['width'] ) ? $this->get_width( $atts['width'] ) : '500px';
+			$align = isset( $atts['align'] ) ? $atts['align'] : 'flex-start';
 
 			if ( ! empty( $url ) ) {
 				$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );

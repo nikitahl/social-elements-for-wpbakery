@@ -37,13 +37,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				[],
 				defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0'
 			);
-			wp_enqueue_script(
-				'sefwpb-reddit-embed',
-				plugins_url( '/assets/js/reddit-embed.js', __FILE__ ),
-				[],
-				defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0',
-				true
-			);
 		}
 		/**
 		 * Gets attributes and builds CSS class for the element.
@@ -95,15 +88,17 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function render_embed( $atts ) {
-			$url     = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '#';
-			$width   = isset( $atts['width'] ) ? $this->get_width( $atts['width'] ) : '500px';
-			$align   = isset( $atts['align'] ) ? $atts['align'] : 'flex-start';
-			$output  = '<div class="sefwpb-reddit-embed-container" style="--justify-content: ' . esc_attr( $align ) . ';--width: ' . esc_attr( $width ) . ';">';
-			$output .= '<blockquote class="reddit-embed-bq" style="height: 400px; width: 300px" data-embed-height="400" data-embed-width="300">';
-			$output .= '<a href="' . $url . '">Reddit Post</a>';
-			$output .= '</blockquote>';
-			$output .= '</div>';
-			return $output;
+			$url   = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '#';
+			$width = isset( $atts['width'] ) ? $this->get_width( $atts['width'] ) : '500px';
+			$align = isset( $atts['align'] ) ? $atts['align'] : 'flex-start';
+
+			if ( ! empty( $url ) ) {
+				$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );
+				if ( $embed_html ) {
+					return '<div class="sefwpb-reddit-embed-container" style="--justify-content: ' . esc_attr( $align ) . ';--width: ' . esc_attr( $width ) . ';">' . $embed_html . '</div>';
+				}
+			}
+			return '<p>' . esc_html__( 'Please provide a valid Reddit post URL to embed.', 'social-elements-for-wpbakery' ) . '</p>';
 		}
 
 		/**

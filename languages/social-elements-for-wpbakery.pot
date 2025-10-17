@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-05T08:10:32+00:00\n"
+"POT-Creation-Date: 2025-10-02T19:42:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: social-elements-for-wpbakery\n"
@@ -277,6 +277,11 @@ msgstr ""
 msgid "Optional. Enter the width of the embedded image in pixels (minimum 500px)."
 msgstr ""
 
+#: includes/elements/pinterest-embed/class-sefwpb-element-pinterest-embed.php:109
+#: includes/elements/pinterest-embed/class-sefwpb-element-pinterest-embed.php:112
+msgid "Please provide a valid Pinterest post URL to embed."
+msgstr ""
+
 #: includes/elements/pinterest-embed/index.php:18
 msgid "Pinterest Embed"
 msgstr ""
@@ -475,6 +480,10 @@ msgstr ""
 msgid "Set gap between links. You can use any CSS unit, e.g. px, em, rem, %."
 msgstr ""
 
+#: includes/elements/reddit-embed/class-sefwpb-element-reddit-embed.php:101
+msgid "Please provide a valid Reddit post URL to embed."
+msgstr ""
+
 #: includes/elements/reddit-embed/index.php:18
 msgid "Reddit Embed"
 msgstr ""
@@ -599,7 +608,7 @@ msgstr ""
 msgid "Set gap between buttons. You can use any CSS unit, e.g. px, em, rem, %."
 msgstr ""
 
-#: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:164
+#: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:149
 msgid "Please provide a valid TikTok post URL."
 msgstr ""
 
@@ -619,7 +628,7 @@ msgstr ""
 msgid "Enter the URL of the TikTok post you want to embed. Example: https://www.tiktok.com/@adnanjanbaloch7/video/7412994512169192710"
 msgstr ""
 
-#: includes/elements/twitter-embed/class-sefwpb-element-twitter-embed.php:149
+#: includes/elements/twitter-embed/class-sefwpb-element-twitter-embed.php:139
 msgid "Please provide a valid Tweet URL to embed."
 msgstr ""
 

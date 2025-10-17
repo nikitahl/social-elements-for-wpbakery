@@ -37,30 +37,6 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				[],
 				SEFWPB_VERSION
 			);
-			// Enqueue TikTok only once.
-			if ( ! wp_script_is( 'sefwpb-tiktok-embed', 'enqueued' ) ) {
-				wp_enqueue_script(
-					'sefwpb-tiktok-embed',
-					'https://www.tiktok.com/embed.js',
-					[],
-					defined( 'SEFWPB_VERSION' ) ? SEFWPB_VERSION : '1.0.0',
-					true
-				);
-			}
-		}
-
-		/**
-		 * Extract TikTok video ID from URL.
-		 *
-		 * @param string $url TikTok post URL.
-		 * @return string Video ID or empty string.
-		 */
-		public function extract_tiktok_video_id( $url ) {
-			$pattern = '/https?:\/\/(www\.)?tiktok\.com\/@[\w.-]+\/video\/(\d+)/';
-			if ( preg_match( $pattern, $url, $matches ) ) {
-				return $matches[2]; // Return the video ID.
-			}
-			return ''; // Return empty string if no match found.
 		}
 
 		/**
@@ -161,13 +137,14 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		private function render_tiktok_embed( $atts, $align_style, $width_style ) {
 			if ( ! empty( $atts['url'] ) ) {
-				$video_id = $this->extract_tiktok_video_id( $atts['url'] );
-				$output   = '<div class="sefwpb-tiktok-embed-wrap" style="' . esc_attr( $align_style ) . '">';
-				$output  .= '<blockquote class="tiktok-embed sefwpb-tiktok-embed-content" cite="' . esc_url( $atts['url'] ) . '" data-video-id="' . esc_attr( $video_id ) . '" style="' . esc_attr( $width_style ) . '" >';
-				$output  .= '<section> </section>';
-				$output  .= '</blockquote>';
-				$output  .= '</div>';
-				return $output;
+				$embed_html = wp_oembed_get( $atts['url'], [ 'width' => 500 ] );
+				if ( $embed_html ) {
+					$output  = '<div class="sefwpb-tiktok-embed-wrap" style="' . esc_attr( $align_style ) . '">';
+					$output .= '<div class="sefwpb-tiktok-embed-content" style="' . esc_attr( $width_style ) . '">';
+					$output .= $embed_html;
+					$output .= '</div></div>';
+					return $output;
+				}
 			}
 			return esc_html__( 'Please provide a valid TikTok post URL.', 'social-elements-for-wpbakery' );
 		}

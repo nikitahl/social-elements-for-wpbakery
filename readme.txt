@@ -23,15 +23,15 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 
 == Elements ==
 
-1. Social Share Buttons: Easily add share buttons for popular social networks like Facebook, Twitter, LinkedIn, and more.
-2. Social Profile Links: Display links to your social media profiles with customizable icons and styles.
-3. Twitter Embed: Embed tweets directly into your pages.
-4. Facebook Embed: Integrate Facebook posts.
-5. Reddit Embed: Showcase Reddit posts.
-6. Flickr Embed: Display Flickr photos.
-7. Pinterest Embed: Add Pinterest pins to your content.
-8. TikTok Embed: Embed TikTok videos.
-9. WordPress Embed: Integrate WordPress posts.
+1. **Social Share Buttons**: Easily add share buttons for popular social networks like Facebook, Twitter, LinkedIn, and more.
+2. **Social Profile Links**: Display links to your social media profiles with customizable icons and styles.
+3. **Twitter Embed**: Embed tweets directly into your pages.
+4. **Facebook Embed**: Integrate Facebook posts.
+5. **Reddit Embed**: Showcase Reddit posts.
+6. **Flickr Embed**: Display Flickr photos.
+7. **Pinterest Embed**: Add Pinterest pins to your content.
+8. **TikTok Embed**: Embed TikTok videos.
+9. **WordPress Embed**: Integrate WordPress posts.
 
 == Privacy ==
 

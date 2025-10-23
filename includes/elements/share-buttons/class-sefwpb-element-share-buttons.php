@@ -82,7 +82,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		private function get_single_button_output( $btn ) {
 			$platform   = $this->get_platform( $btn );
-			$label      = $this->get_label( $btn, $platform );
+			$label      = $this->get_label( $btn );
 			$color      = $this->get_color( $btn );
 			$icon       = $this->get_icon_html( $btn );
 			$url        = $this->get_share_url( $platform );
@@ -94,11 +94,17 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$url         = '#';
 			}
 
+			if ( ! $label ) {
+				$extra_attr .= ' aria-label="' . esc_attr( ucfirst( $platform ) ) . '"';
+			}
+
 			$output = '<a class="' . esc_attr( $classes ) . '" href="' . esc_attr( $url ) . '" style="' . esc_attr( $color ) . '" ' . $extra_attr . ' target="_self">';
 			if ( $icon ) {
 				$output .= '<span class="sefwpb-social-share__icon">' . $icon . '</span>';
 			}
-			$output .= '<span class="sefwpb-social-share__label">' . esc_html( $label ) . '</span>';
+			if ( $label ) {
+				$output .= '<span class="sefwpb-social-share__label">' . esc_html( $label ) . '</span>';
+			}
 			$output .= '</a>';
 
 			return $output;
@@ -272,11 +278,10 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * Get label.
 		 *
 		 * @param array  $btn
-		 * @param string $platform
 		 * @return string
 		 */
-		private function get_label( $btn, $platform ) {
-			return isset( $btn['label'] ) ? $btn['label'] : ucfirst( $platform );
+		private function get_label( $btn ) {
+			return isset( $btn['label'] ) ? $btn['label'] : '';
 		}
 
 		/**

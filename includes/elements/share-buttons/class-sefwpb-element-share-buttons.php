@@ -277,7 +277,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		/**
 		 * Get label.
 		 *
-		 * @param array  $btn
+		 * @param array $btn
 		 * @return string
 		 */
 		private function get_label( $btn ) {

@@ -39,7 +39,7 @@ function sefwpb_lazy_load_settings_init() {
  * @since 1.1
  */
 function sefwpb_lazy_load_section_callback() {
-	echo '<p>' . __( 'Configure lazy loading options for social embeds.', 'social-elements-for-wpbakery' ) . '</p>';
+	echo '<p>' . esc_html__( 'Configure lazy loading options for social embeds.', 'social-elements-for-wpbakery' ) . '</p>';
 }
 
 /**
@@ -50,8 +50,8 @@ function sefwpb_lazy_load_section_callback() {
 function sefwpb_enable_lazy_load_callback() {
 	$options = get_option( 'sefwpb_options' );
 	$checked = isset( $options['enable_lazy_load'] ) ? checked( $options['enable_lazy_load'], 1, false ) : '';
-	echo '<input type="checkbox" id="enable_lazy_load" name="sefwpb_options[enable_lazy_load]" value="1" ' . $checked . '>';
-	echo '<label for="enable_lazy_load">' . __( 'Enable lazy loading for social embeds', 'social-elements-for-wpbakery' ) . '</label>';
+	echo '<input type="checkbox" id="enable_lazy_load" name="sefwpb_options[enable_lazy_load]" value="1" ' . esc_attr( $checked ) . '>';
+	echo '<label for="enable_lazy_load">' . esc_html__( 'Enable lazy loading for social embeds', 'social-elements-for-wpbakery' ) . '</label>';
 }
 
 /**

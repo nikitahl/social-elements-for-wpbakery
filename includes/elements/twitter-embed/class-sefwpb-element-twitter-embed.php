@@ -126,7 +126,9 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function render_twitter_embed( $atts ) {
-			$url = isset( $atts['url'] ) ? $atts['url'] : '';
+			$url   = isset( $atts['url'] ) ? $atts['url'] : '';
+			$theme = isset( $atts['theme'] ) ? $atts['theme'] : 'light';
+
 			if ( ! empty( $url ) ) {
 				if ( strpos( $url, 'x.com/' ) === 0 || strpos( $url, 'x.com/' ) !== false ) {
 					$url = str_replace( 'x.com/', 'twitter.com/', $url );

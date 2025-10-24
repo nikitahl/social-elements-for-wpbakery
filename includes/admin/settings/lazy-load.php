@@ -19,14 +19,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 function sefwpb_lazy_load_settings_init() {
 	add_settings_section(
 		'sefwpb_lazy_load_section',
-		__( 'Lazy Load Settings', SEFWPB_TD ),
+		__( 'Lazy Load Settings', 'social-elements-for-wpbakery' ),
 		'sefwpb_lazy_load_section_callback',
 		'sefwpb_settings'
 	);
 
 	add_settings_field(
 		'enable_lazy_load',
-		__( 'Enable Lazy Load', SEFWPB_TD ),
+		__( 'Enable Lazy Load', 'social-elements-for-wpbakery' ),
 		'sefwpb_enable_lazy_load_callback',
 		'sefwpb_settings',
 		'sefwpb_lazy_load_section'
@@ -39,7 +39,7 @@ function sefwpb_lazy_load_settings_init() {
  * @since 1.1
  */
 function sefwpb_lazy_load_section_callback() {
-	echo '<p>' . __( 'Configure lazy loading options for social embeds.', SEFWPB_TD ) . '</p>';
+	echo '<p>' . __( 'Configure lazy loading options for social embeds.', 'social-elements-for-wpbakery' ) . '</p>';
 }
 
 /**
@@ -51,7 +51,7 @@ function sefwpb_enable_lazy_load_callback() {
 	$options = get_option( 'sefwpb_options' );
 	$checked = isset( $options['enable_lazy_load'] ) ? checked( $options['enable_lazy_load'], 1, false ) : '';
 	echo '<input type="checkbox" id="enable_lazy_load" name="sefwpb_options[enable_lazy_load]" value="1" ' . $checked . '>';
-	echo '<label for="enable_lazy_load">' . __( 'Enable lazy loading for social embeds', SEFWPB_TD ) . '</label>';
+	echo '<label for="enable_lazy_load">' . __( 'Enable lazy loading for social embeds', 'social-elements-for-wpbakery' ) . '</label>';
 }
 
 /**

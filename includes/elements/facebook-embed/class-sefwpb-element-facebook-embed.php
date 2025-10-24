@@ -134,7 +134,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$style .= 'text-align: ' . $atts['align'] . ';';
 			}
 			if ( empty( $atts['url'] ) || ! $this->is_valid_facebook_url( $atts['url'] ) ) {
-				return '<p>' . esc_html__( 'Please provide a valid Facebook post URL.', 'sefwpb' ) . '</p>';
+				return '<p>' . esc_html__( 'Please provide a valid Facebook post URL.', 'social-elements-for-wpbakery' ) . '</p>';
 			}
 			$url     = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
 			$width   = isset( $atts['width'] ) ? esc_attr( intval( $atts['width'] ) ) : '';

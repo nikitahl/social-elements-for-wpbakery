@@ -20,7 +20,7 @@ function sefwpb_admin_init() {
 	add_action( 'admin_menu', 'sefwpb_add_admin_menu' );
 	add_action( 'admin_init', 'sefwpb_settings_init' );
 
-	// Load settings modules
+	// Load settings modules.
 	require_once SEFWPB_DIR . 'includes/admin/settings/lazy-load.php';
 }
 add_action( 'init', 'sefwpb_admin_init' );
@@ -32,8 +32,8 @@ add_action( 'init', 'sefwpb_admin_init' );
  */
 function sefwpb_add_admin_menu() {
 	add_options_page(
-		__( 'Social Elements Settings', SEFWPB_TD ),
-		__( 'Social Elements', SEFWPB_TD ),
+		__( 'Social Elements Settings', 'social-elements-for-wpbakery' ),
+		__( 'Social Elements', 'social-elements-for-wpbakery' ),
 		'manage_options',
 		'social-elements-for-wpbakery',
 		'sefwpb_settings_page'
@@ -48,7 +48,7 @@ function sefwpb_add_admin_menu() {
 function sefwpb_settings_init() {
 	register_setting( 'sefwpb_settings', 'sefwpb_options' );
 
-	// Initialize lazy load settings
+	// Initialize lazy load settings.
 	sefwpb_lazy_load_settings_init();
 }
 
@@ -65,7 +65,7 @@ function sefwpb_settings_page() {
 			<?php
 			settings_fields( 'sefwpb_settings' );
 			do_settings_sections( 'sefwpb_settings' );
-			submit_button( __( 'Save Settings', SEFWPB_TD ) );
+			submit_button( __( 'Save Settings', 'social-elements-for-wpbakery' ) );
 			?>
 		</form>
 	</div>

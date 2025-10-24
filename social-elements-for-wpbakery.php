@@ -4,7 +4,7 @@
  * Description: A collection of social elements (share buttons, profile links, and more) for WPBakery Page Builder.
  * Author: Nikita Hlopov
  * Author URI: https://nikitahl.com
- * Version: 1.0.1
+ * Version: 1.1
  * Requires PHP: 7.0
  * Requires at least: 6.4
  * License: GPLv3
@@ -24,12 +24,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Constants
 // -----------------------------------------------------------------------------
 /**
- * Plugin version.
+ * Plugin variables.
  *
  * @since 1.0.0
  */
 
-define( 'SEFWPB_VERSION', '1.0.1' );
+define( 'SEFWPB_VERSION', '1.1' );
 define( 'SEFWPB_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SEFWPB_URL', plugin_dir_url( __FILE__ ) );
 define( 'SEFWPB_DIR', __DIR__ . '/' );
@@ -51,6 +51,11 @@ function sefwpb_bootstrap() {
 	if ( ! function_exists( 'vc_map' ) ) {
 		add_action( 'admin_notices', 'sefwpb_missing_wpbakery_notice' );
 		return; // Do not proceed without WPBakery.
+	}
+
+	if ( is_admin() ) {
+		require_once SEFWPB_DIR . 'includes/admin/settings.php';
+		require_once SEFWPB_DIR . 'includes/helpers/lazy-load.php';
 	}
 
 	// Elements.

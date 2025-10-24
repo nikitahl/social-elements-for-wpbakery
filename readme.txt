@@ -4,7 +4,7 @@ Contributors: nikitahl
 Tags: wpbakery, wpbakery-extensions, wpbakery-addons, wpbakery-page-builder, wpbakery-page-builder-addons
 Requires at least: 6.4
 Tested up to: 6.8
-Stable tag: 1.0.1
+Stable tag: 1.1
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -66,6 +66,12 @@ For more information, see each service’s privacy policy and terms:
 3. Social Profile Links element preview
 
 == Changelog ==
+
+= 1.1 =
+* Update: Improved Share Buttons labels appearance and accessibility.
+* Update: Added URL validation for Facebook embed.
+* New: Added option to specify Share Button color.
+* New: Added lazy loading option for social embeds.
 
 = 1.0.1 =
 

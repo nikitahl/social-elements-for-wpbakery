@@ -84,6 +84,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$platform   = $this->get_platform( $btn );
 			$label      = $this->get_label( $btn );
 			$color      = $this->get_color( $btn );
+			$icon_color = $this->get_icon_color( $btn );
 			$icon       = $this->get_icon_html( $btn );
 			$url        = $this->get_share_url( $platform );
 			$extra_attr = $this->get_extra_attr( $platform, $label );
@@ -98,7 +99,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				$extra_attr .= ' aria-label="' . esc_attr( ucfirst( $platform ) ) . '"';
 			}
 
-			$output = '<a class="' . esc_attr( $classes ) . '" href="' . esc_attr( $url ) . '" style="' . esc_attr( $color ) . '" ' . $extra_attr . ' target="_self">';
+			$output = '<a class="' . esc_attr( $classes ) . '" href="' . esc_attr( $url ) . '" style="' . esc_attr( $color ) . esc_attr( $icon_color ) . '" ' . $extra_attr . ' target="_self">';
 			if ( $icon ) {
 				$output .= '<span class="sefwpb-social-share__icon">' . $icon . '</span>';
 			}
@@ -292,6 +293,16 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		private function get_color( $btn ) {
 			return ! empty( $btn['color'] ) ? '--button-bg:' . esc_attr( $btn['color'] ) . ';' : '';
+		}
+
+		/**
+		 * Get icon color style.
+		 *
+		 * @param array $btn
+		 * @return string
+		 */
+		private function get_icon_color( $btn ) {
+			return ! empty( $btn['icon_color'] ) ? '--button-color:' . esc_attr( $btn['icon_color'] ) . ';' : '';
 		}
 
 		/**

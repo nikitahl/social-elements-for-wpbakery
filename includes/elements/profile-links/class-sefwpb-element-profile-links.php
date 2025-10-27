@@ -207,7 +207,10 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function get_color_style( $button ) {
-			return ! empty( $button['color'] ) ? '--button-bg:' . esc_attr( $button['color'] ) . ';' : '';
+			$styles  = '';
+			$styles .= ! empty( $button['color'] ) ? '--button-bg:' . esc_attr( $button['color'] ) . ';' : '';
+			$styles .= ! empty( $button['icon_color'] ) ? '--button-color:' . esc_attr( $button['icon_color'] ) . ';' : '';
+			return $styles;
 		}
 
 		/**

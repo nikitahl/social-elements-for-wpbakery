@@ -69,6 +69,7 @@ For more information, see each service’s privacy policy and terms:
 
 = 1.1 =
 * Update: Improved Share Buttons labels appearance and accessibility.
+* Update: Improved Profile Links color option.
 * Update: Added URL validation for Facebook embed.
 * New: Added option to specify Share Button color.
 * New: Added lazy loading option for social embeds.

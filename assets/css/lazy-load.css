@@ -21,6 +21,21 @@
   border-radius: 4px;
 }
 
+.sefwpb-lazy-placeholder p {
+  margin: 10px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
 .sefwpb-lazy-container {
   min-height: 100px;
+}
+
+.sefwpb-lazy-error {
+  padding: 20px;
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 4px;
+  color: #c33;
+  text-align: center;
 }

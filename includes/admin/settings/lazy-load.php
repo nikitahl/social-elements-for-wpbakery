@@ -53,14 +53,3 @@ function sefwpb_enable_lazy_load_callback() {
 	echo '<input type="checkbox" id="enable_lazy_load" name="sefwpb_options[enable_lazy_load]" value="1" ' . esc_attr( $checked ) . '>';
 	echo '<label for="enable_lazy_load">' . esc_html__( 'Enable lazy loading for social embeds', 'social-elements-for-wpbakery' ) . '</label>';
 }
-
-/**
- * Check if lazy load is enabled.
- *
- * @since 1.1
- * @return bool
- */
-function sefwpb_is_lazy_load_enabled() {
-	$options = get_option( 'sefwpb_options' );
-	return isset( $options['enable_lazy_load'] ) && $options['enable_lazy_load'];
-}

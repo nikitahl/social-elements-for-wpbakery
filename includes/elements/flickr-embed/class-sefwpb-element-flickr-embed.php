@@ -61,7 +61,17 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 
 			$output  = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '" style="' . esc_attr( $style ) . '">';
 			$output .= $this->render_title( $atts );
-			$output .= $this->render_flickr_embed( $atts, $width );
+			$url     = ! empty( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
+
+			// Get the Flickr embed content
+			$flickr_content = $this->render_flickr_embed( $atts, $width );
+
+			// Apply lazy loading if enabled and helper function exists
+			if ( function_exists( 'sefwpb_wrap_for_lazy_load' ) && function_exists( 'sefwpb_is_lazy_load_enabled' ) && sefwpb_is_lazy_load_enabled() ) {
+				$flickr_content = sefwpb_wrap_for_lazy_load( $flickr_content, 'flickr' );
+			}
+
+			$output .= $flickr_content;
 			$output .= '</div>';
 
 			return $output;

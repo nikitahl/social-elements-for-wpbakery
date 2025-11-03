@@ -55,8 +55,8 @@ function sefwpb_bootstrap() {
 
 	if ( is_admin() ) {
 		require_once SEFWPB_DIR . 'includes/admin/settings.php';
-		require_once SEFWPB_DIR . 'includes/helpers/lazy-load.php';
 	}
+	require_once SEFWPB_DIR . 'includes/helpers/lazy-load.php';
 
 	// Elements.
 	require_once SEFWPB_DIR . 'includes/elements/share-buttons/index.php';

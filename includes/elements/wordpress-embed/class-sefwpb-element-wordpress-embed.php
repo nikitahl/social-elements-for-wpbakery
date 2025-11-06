@@ -150,7 +150,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 
 			$meta  = '<div class="sefwpb-embed-meta">';
 			$meta .= '<a class="sefwpb-embed-brand" href="' . esc_url( home_url() ) . '" target="_blank" rel="noreferrer">' . $site_logo . $site_name . '</a>';
-			$meta .= '<a class="sefwpb-embed-comments" href="' . esc_url( $url ) . '#respond' . '" target="' . $target . '"' . $rel_attr . '>';
+			$meta .= '<a class="sefwpb-embed-comments" href="' . esc_url( $url ) . '#respond" target="' . $target . '"' . $rel_attr . '>';
 			$meta .= $comments_count;
 			$meta .= '</a>';
 			$meta .= '</div>';

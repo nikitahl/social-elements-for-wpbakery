@@ -84,10 +84,14 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function build_featured_image_link( $post_id, $url, $target, $rel ) {
-			$featured_img = get_the_post_thumbnail( $post_id, 'large', [
-				'class' => 'sefwpb-embed-featured-image',
-				'loading' => 'lazy'
-			] );
+			$featured_img = get_the_post_thumbnail(
+				$post_id,
+				'large',
+				[
+					'class'   => 'sefwpb-embed-featured-image',
+					'loading' => 'lazy',
+				]
+			);
 			if ( ! $featured_img ) {
 				return '';
 			}
@@ -146,7 +150,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 
 			$meta  = '<div class="sefwpb-embed-meta">';
 			$meta .= '<a class="sefwpb-embed-brand" href="' . esc_url( home_url() ) . '" target="_blank" rel="noreferrer">' . $site_logo . $site_name . '</a>';
-			$meta .= '<a class="sefwpb-embed-comments" href="' . esc_url( $url ) . '#respond" target="' . $target . '"' . $rel_attr . '>';
+			$meta .= '<a class="sefwpb-embed-comments" href="' . esc_url( $url ) . '#respond' . '" target="' . $target . '"' . $rel_attr . '>';
 			$meta .= $comments_count;
 			$meta .= '</a>';
 			$meta .= '</div>';

@@ -92,13 +92,22 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$width = isset( $atts['width'] ) ? $this->get_width( $atts['width'] ) : '500px';
 			$align = isset( $atts['align'] ) ? $atts['align'] : 'flex-start';
 
-			if ( ! empty( $url ) ) {
-				$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );
-				if ( $embed_html ) {
-					return '<div class="sefwpb-reddit-embed-container" style="--justify-content: ' . esc_attr( $align ) . ';--width: ' . esc_attr( $width ) . ';">' . $embed_html . '</div>';
-				}
+			if ( empty( $url ) || '#' === $url ) {
+				return '<p>' . esc_html__( 'Please provide a valid Reddit post URL to embed.', 'social-elements-for-wpbakery' ) . '</p>';
 			}
-			return '<p>' . esc_html__( 'Please provide a valid Reddit post URL to embed.', 'social-elements-for-wpbakery' ) . '</p>';
+
+			$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );
+
+			if ( ! $embed_html ) {
+				return '<p>' . esc_html__( 'Please provide a valid Reddit post URL to embed.', 'social-elements-for-wpbakery' ) . '</p>';
+			}
+
+			// Apply lazy loading if enabled.
+			if ( function_exists( 'sefwpb_is_lazy_load_enabled' ) && sefwpb_is_lazy_load_enabled() ) {
+				$embed_html = sefwpb_wrap_for_lazy_load( $embed_html, 'reddit' );
+			}
+
+			return '<div class="sefwpb-reddit-embed-container" style="--justify-content: ' . esc_attr( $align ) . ';--width: ' . esc_attr( $width ) . ';">' . $embed_html . '</div>';
 		}
 
 		/**

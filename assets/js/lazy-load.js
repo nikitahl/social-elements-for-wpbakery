@@ -2,6 +2,50 @@
   'use strict';
 
   /**
+   * Platform-specific post-load handlers.
+   * Add new platforms here if they need special processing after injection.
+   */
+  const platformHandlers = {
+    facebook: function(container) {
+      // Wait for Facebook SDK to be available, then parse
+      var checkFB = function() {
+        if (typeof FB !== 'undefined' && FB.XFBML && FB.XFBML.parse) {
+          FB.XFBML.parse(container);
+        } else {
+          setTimeout(checkFB, 100);
+        }
+      };
+      setTimeout(checkFB, 50);
+    }
+  };
+
+  /**
+   * Execute scripts from the embed HTML.
+   *
+   * @param {Array} scripts - Array of script elements to execute.
+   */
+  function executeScripts(scripts) {
+    setTimeout(function() {
+      scripts.forEach(function(oldScript) {
+        const newScript = document.createElement('script');
+
+        // Copy attributes
+        Array.from(oldScript.attributes).forEach(function(attr) {
+          newScript.setAttribute(attr.name, attr.value);
+        });
+
+        // Copy inline script content if any
+        if (oldScript.innerHTML) {
+          newScript.innerHTML = oldScript.innerHTML;
+        }
+
+        // Append to document to trigger execution
+        document.body.appendChild(newScript);
+      });
+    }, 50);
+  }
+
+  /**
    * Load the actual content for a given container.
    */
   function loadContent(container) {
@@ -15,6 +59,7 @@
 
     try {
       const content = atob(encodedContent);
+      const platform = container.querySelector('.sefwpb-lazy-placeholder')?.getAttribute('data-platform');
 
       // Create a temporary container to parse the HTML
       const tempDiv = document.createElement('div');
@@ -32,26 +77,13 @@
       container.innerHTML = tempDiv.innerHTML;
       container.classList.add('sefwpb-loaded');
 
-      // Now execute the scripts after DOM update
-      // Use setTimeout to ensure DOM is fully updated
-      setTimeout(function() {
-        scripts.forEach(function(oldScript) {
-          const newScript = document.createElement('script');
-
-          // Copy attributes
-          Array.from(oldScript.attributes).forEach(function(attr) {
-            newScript.setAttribute(attr.name, attr.value);
-          });
-
-          // Copy inline script content if any
-          if (oldScript.innerHTML) {
-            newScript.innerHTML = oldScript.innerHTML;
-          }
-
-          // Append to document to trigger execution
-          document.body.appendChild(newScript);
-        });
-      }, 50);
+      // Check if platform has a special handler
+      if (platform && platformHandlers[platform]) {
+        platformHandlers[platform](container);
+      } else {
+        // Default: execute scripts after DOM update
+        executeScripts(scripts);
+      }
 
     } catch (e) {
       console.error('Error loading lazy content:', e);

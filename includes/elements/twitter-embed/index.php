@@ -54,18 +54,6 @@ add_action(
 						'description' => esc_html__( 'Optional. Enter width of the embedded post in pixels. Default is 500px.', 'social-elements-for-wpbakery' ),
 						'value'       => '500',
 					],
-					[
-						'type'        => 'dropdown',
-						'param_name'  => 'theme',
-						'heading'     => esc_html__( 'Theme', 'social-elements-for-wpbakery' ),
-						'group'       => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
-						'description' => esc_html__( 'Select light or dark theme for the embedded post.', 'social-elements-for-wpbakery' ),
-						'std'         => 'light',
-						'value'       => [
-							esc_html__( 'Light', 'social-elements-for-wpbakery' ) => 'light',
-							esc_html__( 'Dark', 'social-elements-for-wpbakery' )  => 'dark',
-						],
-					],
 					vc_map_add_css_animation(),
 					[
 						'type'        => 'el_id',

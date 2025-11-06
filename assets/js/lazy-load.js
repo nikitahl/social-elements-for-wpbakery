@@ -78,7 +78,7 @@
         }
       });
     }, {
-      rootMargin: '100px'
+      rootMargin: '300px'
     });
 
     // Observe all containers

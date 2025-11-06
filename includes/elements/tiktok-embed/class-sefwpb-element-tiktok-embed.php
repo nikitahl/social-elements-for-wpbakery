@@ -147,9 +147,9 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			}
 
 			// Build the wrapper HTML.
-			$wrapper_start = '<div class="sefwpb-tiktok-embed-wrap" style="' . esc_attr( $align_style ) . '">';
+			$wrapper_start  = '<div class="sefwpb-tiktok-embed-wrap" style="' . esc_attr( $align_style ) . '">';
 			$wrapper_start .= '<div class="sefwpb-tiktok-embed-content" style="' . esc_attr( $width_style ) . '">';
-			$wrapper_end = '</div></div>';
+			$wrapper_end    = '</div></div>';
 
 			// Apply lazy loading if enabled.
 			if ( function_exists( 'sefwpb_is_lazy_load_enabled' ) && sefwpb_is_lazy_load_enabled() ) {

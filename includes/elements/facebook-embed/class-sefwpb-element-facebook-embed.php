@@ -138,13 +138,13 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				return '<p>' . esc_html__( 'Please provide a valid Facebook post URL.', 'social-elements-for-wpbakery' ) . '</p>';
 			}
 
-			$url    = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
-			$width  = isset( $atts['width'] ) ? esc_attr( intval( $atts['width'] ) ) : '';
+			$url   = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
+			$width = isset( $atts['width'] ) ? esc_attr( intval( $atts['width'] ) ) : '';
 
 			$embed_html  = '<div class="fb-post" data-href="' . $url . '" data-width="' . $width . '"></div>';
 			$embed_html .= '<div id="fb-root"></div>';
 
-			// Apply lazy loading if enabled
+			// Apply lazy loading if enabled.
 			if ( function_exists( 'sefwpb_is_lazy_load_enabled' ) && sefwpb_is_lazy_load_enabled() ) {
 				$embed_html = sefwpb_wrap_for_lazy_load( $embed_html, 'facebook' );
 			}

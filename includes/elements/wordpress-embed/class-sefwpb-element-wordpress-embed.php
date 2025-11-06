@@ -84,7 +84,10 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function build_featured_image_link( $post_id, $url, $target, $rel ) {
-			$featured_img = get_the_post_thumbnail( $post_id, 'large', [ 'class' => 'sefwpb-embed-featured-image', 'loading' => 'lazy' ] );
+			$featured_img = get_the_post_thumbnail( $post_id, 'large', [
+				'class' => 'sefwpb-embed-featured-image',
+				'loading' => 'lazy'
+			] );
 			if ( ! $featured_img ) {
 				return '';
 			}

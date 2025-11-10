@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-07T08:26:37+00:00\n"
+"POT-Creation-Date: 2025-11-10T20:18:18+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: social-elements-for-wpbakery\n"
@@ -277,15 +277,15 @@ msgstr ""
 msgid "Design Options"
 msgstr ""
 
-#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:169
+#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:170
 msgid "Could not retrieve Flickr embed."
 msgstr ""
 
-#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:176
+#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:177
 msgid "Invalid Flickr image URL."
 msgstr ""
 
-#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:178
+#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:179
 msgid "Please provide a valid Flickr image URL."
 msgstr ""
 
@@ -658,7 +658,7 @@ msgid "Set gap between buttons. You can use any CSS unit, e.g. px, em, rem, %."
 msgstr ""
 
 #: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:140
-#: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:146
+#: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:147
 msgid "Please provide a valid TikTok post URL."
 msgstr ""
 
@@ -724,15 +724,25 @@ msgstr ""
 msgid "Enter the URL of the post you want to embed."
 msgstr ""
 
-#: includes/helpers/lazy-load.php:73
+#: includes/helpers/lazy-load.php:75
 msgid "Embed data missing."
 msgstr ""
 
 #. translators: %s is the name of the social platform (e.g., Instagram, Flickr).
-#: includes/helpers/lazy-load.php:77
+#: includes/helpers/lazy-load.php:83
+msgid "%s Post"
+msgstr ""
+
+#. translators: %s is the name of the social platform (e.g., Instagram, Flickr).
+#: includes/helpers/lazy-load.php:84
+msgid "View on"
+msgstr ""
+
+#. translators: %s is the name of the social platform (e.g., Instagram, Flickr).
+#: includes/helpers/lazy-load.php:90
 msgid "Loading %s content..."
 msgstr ""
 
-#: social-elements-for-wpbakery.php:82
+#: social-elements-for-wpbakery.php:75
 msgid "Social Elements for WPBakery requires WPBakery Page Builder to be installed and active."
 msgstr ""

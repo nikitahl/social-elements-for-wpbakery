@@ -118,7 +118,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 
 			// Apply lazy loading if enabled.
 			if ( function_exists( 'sefwpb_is_lazy_load_enabled' ) && sefwpb_is_lazy_load_enabled() ) {
-				$embed_html = sefwpb_wrap_for_lazy_load( $embed_html, 'pinterest' );
+				$embed_html = sefwpb_wrap_for_lazy_load( $embed_html, 'pinterest', $url );
 			}
 
 			return '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">' . $embed_html . '</div>';

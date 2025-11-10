@@ -140,7 +140,8 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 				return esc_html__( 'Please provide a valid TikTok post URL.', 'social-elements-for-wpbakery' );
 			}
 
-			$embed_html = wp_oembed_get( $atts['url'], [ 'width' => 500 ] );
+			$url        = $atts['url'];
+			$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );
 
 			if ( ! $embed_html ) {
 				return esc_html__( 'Please provide a valid TikTok post URL.', 'social-elements-for-wpbakery' );
@@ -153,7 +154,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 
 			// Apply lazy loading if enabled.
 			if ( function_exists( 'sefwpb_is_lazy_load_enabled' ) && sefwpb_is_lazy_load_enabled() ) {
-				$embed_html = sefwpb_wrap_for_lazy_load( $embed_html, 'tiktok' );
+				$embed_html = sefwpb_wrap_for_lazy_load( $embed_html, 'tiktok', $url );
 			}
 
 			return $wrapper_start . $embed_html . $wrapper_end;

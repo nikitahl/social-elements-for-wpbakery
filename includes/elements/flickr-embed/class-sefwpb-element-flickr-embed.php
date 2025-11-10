@@ -88,7 +88,8 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$flickr_content = $this->render_flickr_embed( $atts, $width );
 
 			if ( $this->should_lazy_load() ) {
-				$flickr_content = sefwpb_wrap_for_lazy_load( $flickr_content, 'flickr' );
+				$url            = ! empty( $atts['url'] ) ? $atts['url'] : '';
+				$flickr_content = sefwpb_wrap_for_lazy_load( $flickr_content, 'flickr', $url );
 			}
 
 			return $flickr_content;

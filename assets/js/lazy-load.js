@@ -52,8 +52,8 @@
     const encodedContent = container.getAttribute('data-content');
 
     if (!encodedContent) {
-      const error = container.querySelector('.sefwpb-lazy-placeholder')?.getAttribute('data-error');
-      container.innerHTML = `<div class="sefwpb-lazy-error">${error || 'Embed data missing.'}</div>`;
+      // No content to load - keep the placeholder with the link visible
+      console.warn('No embed content found for lazy loading');
       return;
     }
 
@@ -87,7 +87,9 @@
 
     } catch (e) {
       console.error('Error loading lazy content:', e);
-      container.innerHTML = '<div class="sefwpb-lazy-error">Failed to load embed content.</div>';
+      // Don't replace the content - keep the fallback link visible
+      // Just add an error class for styling if needed
+      container.classList.add('sefwpb-lazy-error');
     }
   }
 

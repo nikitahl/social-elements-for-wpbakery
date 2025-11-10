@@ -15,8 +15,6 @@
  * @package SocialElementsWPBakery
  */
 
-// TODO: check embed appearance if not loaded/ on error (should show placeholder).
-
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

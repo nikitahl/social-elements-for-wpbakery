@@ -78,8 +78,8 @@ function sefwpb_wrap_for_lazy_load( $content, $platform, $url = '' ) {
 	$placeholder .= '<div class="sefwpb-lazy-card">';
 
 	if ( ! empty( $url ) ) {
-		// translators: %s is the name of the social platform (e.g., Instagram, Flickr).
 		$placeholder .= '<div class="sefwpb-lazy-content">';
+		// translators: %s is the name of the social platform (e.g., Instagram, Flickr).
 		$placeholder .= '<p class="sefwpb-lazy-title">' . sprintf( esc_html__( '%s Post', 'social-elements-for-wpbakery' ), $platform_name ) . '</p>';
 		$placeholder .= '<a href="' . esc_url( $url ) . '" target="_blank" rel="noopener noreferrer" class="sefwpb-lazy-link">' . esc_html__( 'View on', 'social-elements-for-wpbakery' ) . ' ' . esc_html( $platform_name ) . '</a>';
 		$placeholder .= '</div>';

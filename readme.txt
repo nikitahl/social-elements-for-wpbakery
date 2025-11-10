@@ -17,6 +17,8 @@ Enhance your WPBakery Page Builder with a collection of social elements designed
 
 This plugin adds a variety of customizable social media components, including share buttons, profile links, and social embeds, making it easy to integrate social features into your pages.
 
+Social embeds support lazy loading to improve page performance.
+
 The elements can be seen under the 'Social' tab in the WPBakery 'Add Element' panel.
 
 The WPBakery Page Builder must be installed and activated for this plugin to work.
@@ -80,4 +82,3 @@ For more information, see each service’s privacy policy and terms:
 
 = 1.0 =
 * Plugin released.
-

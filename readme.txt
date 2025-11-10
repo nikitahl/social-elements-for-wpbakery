@@ -71,8 +71,9 @@ For more information, see each service’s privacy policy and terms:
 == Changelog ==
 
 = 1.1 =
-* Update: Improved Share Buttons labels appearance and accessibility.
-* Update: Added URL validation for Facebook embed.
+* Improvement: Improved Share Buttons labels appearance and accessibility.
+* Improvement: Added URL validation for Facebook embed.
+* Improvement: Better code organization - element loader moved to dedicated classes folder.
 * New: Added option to specify Profile Links color.
 * New: Added option to specify Share Button color.
 * New: Added lazy loading option for social embeds.

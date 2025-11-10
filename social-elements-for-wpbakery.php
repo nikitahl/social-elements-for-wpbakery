@@ -58,16 +58,9 @@ function sefwpb_bootstrap() {
 	}
 	require_once SEFWPB_DIR . 'includes/helpers/lazy-load.php';
 
-	// Elements.
-	require_once SEFWPB_DIR . 'includes/elements/share-buttons/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/profile-links/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/twitter-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/reddit-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/pinterest-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/facebook-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/flickr-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/wordpress-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/tiktok-embed/index.php';
+	// Load the element loader class and initialize it.
+	require_once SEFWPB_DIR . 'includes/classes/class-sefwpb-element-loader.php';
+	new SEFWPB_Element_Loader();
 }
 add_action( 'plugins_loaded', 'sefwpb_bootstrap' );
 

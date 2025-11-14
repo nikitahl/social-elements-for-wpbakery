@@ -12,7 +12,7 @@ fi
 zip -r "$ZIP_FILE" \
   *.php \
   readme.txt \
-  assets/images \
+  assets \
   includes \
   languages \
   -x "*.DS_Store" "ci/*" "_tools/*" ".github/*" "README.md" ".gitignore" "composer.js" "LICENSE" # Exclude unnecessary files like macOS metadata

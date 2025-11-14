@@ -136,17 +136,28 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		private function render_tiktok_embed( $atts, $align_style, $width_style ) {
-			if ( ! empty( $atts['url'] ) ) {
-				$embed_html = wp_oembed_get( $atts['url'], [ 'width' => 500 ] );
-				if ( $embed_html ) {
-					$output  = '<div class="sefwpb-tiktok-embed-wrap" style="' . esc_attr( $align_style ) . '">';
-					$output .= '<div class="sefwpb-tiktok-embed-content" style="' . esc_attr( $width_style ) . '">';
-					$output .= $embed_html;
-					$output .= '</div></div>';
-					return $output;
-				}
+			if ( empty( $atts['url'] ) ) {
+				return esc_html__( 'Please provide a valid TikTok post URL.', 'social-elements-for-wpbakery' );
 			}
-			return esc_html__( 'Please provide a valid TikTok post URL.', 'social-elements-for-wpbakery' );
+
+			$url        = $atts['url'];
+			$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );
+
+			if ( ! $embed_html ) {
+				return esc_html__( 'Please provide a valid TikTok post URL.', 'social-elements-for-wpbakery' );
+			}
+
+			// Build the wrapper HTML.
+			$wrapper_start  = '<div class="sefwpb-tiktok-embed-wrap" style="' . esc_attr( $align_style ) . '">';
+			$wrapper_start .= '<div class="sefwpb-tiktok-embed-content" style="' . esc_attr( $width_style ) . '">';
+			$wrapper_end    = '</div></div>';
+
+			// Apply lazy loading if enabled.
+			if ( function_exists( 'sefwpb_is_lazy_load_enabled' ) && sefwpb_is_lazy_load_enabled() ) {
+				$embed_html = sefwpb_wrap_for_lazy_load( $embed_html, 'tiktok', $url );
+			}
+
+			return $wrapper_start . $embed_html . $wrapper_end;
 		}
 	}
 }

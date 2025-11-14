@@ -1,0 +1,52 @@
+.sefwpb-lazy-placeholder {
+  text-align: center;
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sefwpb-lazy-card {
+  width: 100%;
+}
+
+.sefwpb-lazy-content {
+  margin-top: 10px;
+}
+
+.sefwpb-lazy-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 12px;
+}
+
+.sefwpb-lazy-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.sefwpb-lazy-link:hover {
+  background: #2980b9;
+  color: #fff;
+}
+
+.sefwpb-lazy-text {
+  margin: 10px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.sefwpb-lazy-container {
+  min-height: 100px;
+}

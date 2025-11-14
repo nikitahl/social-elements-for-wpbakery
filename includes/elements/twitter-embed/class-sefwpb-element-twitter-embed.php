@@ -127,16 +127,28 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		private function render_twitter_embed( $atts ) {
 			$url = isset( $atts['url'] ) ? $atts['url'] : '';
-			if ( ! empty( $url ) ) {
-				if ( strpos( $url, 'x.com/' ) === 0 || strpos( $url, 'x.com/' ) !== false ) {
-					$url = str_replace( 'x.com/', 'twitter.com/', $url );
-				}
-				$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );
-				if ( $embed_html ) {
-					return '<div class="sefwpb-twitter-embed-container">' . $embed_html . '</div>';
-				}
+
+			if ( empty( $url ) ) {
+				return '<p>' . esc_html__( 'Please provide a valid Tweet URL to embed.', 'social-elements-for-wpbakery' ) . '</p>';
 			}
-			return '<p>' . esc_html__( 'Please provide a valid Tweet URL to embed.', 'social-elements-for-wpbakery' ) . '</p>';
+
+			// Convert x.com URLs to twitter.com for compatibility.
+			if ( strpos( $url, 'x.com/' ) === 0 || strpos( $url, 'x.com/' ) !== false ) {
+				$url = str_replace( 'x.com/', 'twitter.com/', $url );
+			}
+
+			$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );
+
+			if ( ! $embed_html ) {
+				return '<p>' . esc_html__( 'Please provide a valid Tweet URL to embed.', 'social-elements-for-wpbakery' ) . '</p>';
+			}
+
+			// Apply lazy loading if enabled.
+			if ( function_exists( 'sefwpb_is_lazy_load_enabled' ) && sefwpb_is_lazy_load_enabled() ) {
+				$embed_html = sefwpb_wrap_for_lazy_load( $embed_html, 'twitter', $url );
+			}
+
+			return '<div class="sefwpb-twitter-embed-container">' . $embed_html . '</div>';
 		}
 	}
 }

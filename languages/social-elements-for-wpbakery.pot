@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Social Elements for WPBakery Page Builder plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Social Elements for WPBakery Page Builder 1.0\n"
+"Project-Id-Version: Social Elements for WPBakery Page Builder 1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/social-elements-for-wpbakery\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-02T19:42:16+00:00\n"
+"POT-Creation-Date: 2025-11-10T20:18:18+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: social-elements-for-wpbakery\n"
@@ -28,6 +28,38 @@ msgstr ""
 
 #. Author URI of the plugin
 msgid "https://nikitahl.com"
+msgstr ""
+
+#: includes/admin/settings.php:35
+msgid "Social Elements Settings"
+msgstr ""
+
+#: includes/admin/settings.php:36
+msgid "Social Elements"
+msgstr ""
+
+#: includes/admin/settings.php:68
+msgid "Save Settings"
+msgstr ""
+
+#: includes/admin/settings/lazy-load.php:22
+msgid "Lazy Load Settings"
+msgstr ""
+
+#: includes/admin/settings/lazy-load.php:29
+msgid "Enable Lazy Load"
+msgstr ""
+
+#: includes/admin/settings/lazy-load.php:42
+msgid "Configure lazy loading options for social embeds."
+msgstr ""
+
+#: includes/admin/settings/lazy-load.php:54
+msgid "Enable lazy loading for social embeds"
+msgstr ""
+
+#: includes/elements/facebook-embed/class-sefwpb-element-facebook-embed.php:138
+msgid "Please provide a valid Facebook post URL."
 msgstr ""
 
 #: includes/elements/facebook-embed/index.php:18
@@ -82,9 +114,9 @@ msgstr ""
 #: includes/elements/facebook-embed/index.php:39
 #: includes/elements/flickr-embed/index.php:39
 #: includes/elements/pinterest-embed/index.php:39
-#: includes/elements/profile-links/index.php:189
+#: includes/elements/profile-links/index.php:196
 #: includes/elements/reddit-embed/index.php:39
-#: includes/elements/share-buttons/index.php:212
+#: includes/elements/share-buttons/index.php:225
 #: includes/elements/tiktok-embed/index.php:39
 #: includes/elements/twitter-embed/index.php:39
 #: includes/elements/wordpress-embed/index.php:39
@@ -96,20 +128,20 @@ msgstr ""
 #: includes/elements/flickr-embed/index.php:41
 #: includes/elements/flickr-embed/index.php:53
 #: includes/elements/pinterest-embed/index.php:41
-#: includes/elements/profile-links/index.php:142
-#: includes/elements/profile-links/index.php:154
-#: includes/elements/profile-links/index.php:166
-#: includes/elements/profile-links/index.php:178
-#: includes/elements/profile-links/index.php:191
-#: includes/elements/profile-links/index.php:203
+#: includes/elements/profile-links/index.php:149
+#: includes/elements/profile-links/index.php:161
+#: includes/elements/profile-links/index.php:173
+#: includes/elements/profile-links/index.php:185
+#: includes/elements/profile-links/index.php:198
+#: includes/elements/profile-links/index.php:210
 #: includes/elements/reddit-embed/index.php:41
 #: includes/elements/reddit-embed/index.php:53
-#: includes/elements/share-buttons/index.php:165
-#: includes/elements/share-buttons/index.php:177
-#: includes/elements/share-buttons/index.php:189
-#: includes/elements/share-buttons/index.php:201
+#: includes/elements/share-buttons/index.php:178
+#: includes/elements/share-buttons/index.php:190
+#: includes/elements/share-buttons/index.php:202
 #: includes/elements/share-buttons/index.php:214
-#: includes/elements/share-buttons/index.php:226
+#: includes/elements/share-buttons/index.php:227
+#: includes/elements/share-buttons/index.php:239
 #: includes/elements/tiktok-embed/index.php:41
 #: includes/elements/tiktok-embed/index.php:53
 #: includes/elements/twitter-embed/index.php:41
@@ -122,9 +154,9 @@ msgstr ""
 #: includes/elements/facebook-embed/index.php:43
 #: includes/elements/flickr-embed/index.php:43
 #: includes/elements/pinterest-embed/index.php:43
-#: includes/elements/profile-links/index.php:193
+#: includes/elements/profile-links/index.php:200
 #: includes/elements/reddit-embed/index.php:43
-#: includes/elements/share-buttons/index.php:216
+#: includes/elements/share-buttons/index.php:229
 #: includes/elements/tiktok-embed/index.php:43
 #: includes/elements/twitter-embed/index.php:43
 #: includes/elements/wordpress-embed/index.php:43
@@ -134,9 +166,9 @@ msgstr ""
 #: includes/elements/facebook-embed/index.php:44
 #: includes/elements/flickr-embed/index.php:44
 #: includes/elements/pinterest-embed/index.php:44
-#: includes/elements/profile-links/index.php:194
+#: includes/elements/profile-links/index.php:201
 #: includes/elements/reddit-embed/index.php:44
-#: includes/elements/share-buttons/index.php:217
+#: includes/elements/share-buttons/index.php:230
 #: includes/elements/tiktok-embed/index.php:44
 #: includes/elements/twitter-embed/index.php:44
 #: includes/elements/wordpress-embed/index.php:44
@@ -146,9 +178,9 @@ msgstr ""
 #: includes/elements/facebook-embed/index.php:45
 #: includes/elements/flickr-embed/index.php:45
 #: includes/elements/pinterest-embed/index.php:45
-#: includes/elements/profile-links/index.php:195
+#: includes/elements/profile-links/index.php:202
 #: includes/elements/reddit-embed/index.php:45
-#: includes/elements/share-buttons/index.php:218
+#: includes/elements/share-buttons/index.php:231
 #: includes/elements/tiktok-embed/index.php:45
 #: includes/elements/twitter-embed/index.php:45
 #: includes/elements/wordpress-embed/index.php:45
@@ -175,9 +207,9 @@ msgstr ""
 #: includes/elements/facebook-embed/index.php:60
 #: includes/elements/flickr-embed/index.php:60
 #: includes/elements/pinterest-embed/index.php:52
-#: includes/elements/profile-links/index.php:210
+#: includes/elements/profile-links/index.php:217
 #: includes/elements/reddit-embed/index.php:60
-#: includes/elements/share-buttons/index.php:233
+#: includes/elements/share-buttons/index.php:246
 #: includes/elements/tiktok-embed/index.php:60
 #: includes/elements/twitter-embed/index.php:60
 #: includes/elements/wordpress-embed/index.php:60
@@ -188,9 +220,9 @@ msgstr ""
 #: includes/elements/facebook-embed/index.php:64
 #: includes/elements/flickr-embed/index.php:64
 #: includes/elements/pinterest-embed/index.php:56
-#: includes/elements/profile-links/index.php:213
+#: includes/elements/profile-links/index.php:220
 #: includes/elements/reddit-embed/index.php:64
-#: includes/elements/share-buttons/index.php:236
+#: includes/elements/share-buttons/index.php:249
 #: includes/elements/tiktok-embed/index.php:64
 #: includes/elements/twitter-embed/index.php:64
 #: includes/elements/wordpress-embed/index.php:64
@@ -200,9 +232,9 @@ msgstr ""
 #: includes/elements/facebook-embed/index.php:71
 #: includes/elements/flickr-embed/index.php:71
 #: includes/elements/pinterest-embed/index.php:63
-#: includes/elements/profile-links/index.php:217
+#: includes/elements/profile-links/index.php:224
 #: includes/elements/reddit-embed/index.php:71
-#: includes/elements/share-buttons/index.php:240
+#: includes/elements/share-buttons/index.php:253
 #: includes/elements/tiktok-embed/index.php:71
 #: includes/elements/twitter-embed/index.php:71
 #: includes/elements/wordpress-embed/index.php:71
@@ -212,9 +244,9 @@ msgstr ""
 #: includes/elements/facebook-embed/index.php:73
 #: includes/elements/flickr-embed/index.php:73
 #: includes/elements/pinterest-embed/index.php:65
-#: includes/elements/profile-links/index.php:219
+#: includes/elements/profile-links/index.php:226
 #: includes/elements/reddit-embed/index.php:73
-#: includes/elements/share-buttons/index.php:242
+#: includes/elements/share-buttons/index.php:255
 #: includes/elements/tiktok-embed/index.php:73
 #: includes/elements/twitter-embed/index.php:73
 #: includes/elements/wordpress-embed/index.php:73
@@ -224,9 +256,9 @@ msgstr ""
 #: includes/elements/facebook-embed/index.php:77
 #: includes/elements/flickr-embed/index.php:77
 #: includes/elements/pinterest-embed/index.php:69
-#: includes/elements/profile-links/index.php:223
+#: includes/elements/profile-links/index.php:230
 #: includes/elements/reddit-embed/index.php:77
-#: includes/elements/share-buttons/index.php:246
+#: includes/elements/share-buttons/index.php:259
 #: includes/elements/tiktok-embed/index.php:77
 #: includes/elements/twitter-embed/index.php:77
 #: includes/elements/wordpress-embed/index.php:77
@@ -236,24 +268,24 @@ msgstr ""
 #: includes/elements/facebook-embed/index.php:79
 #: includes/elements/flickr-embed/index.php:79
 #: includes/elements/pinterest-embed/index.php:71
-#: includes/elements/profile-links/index.php:225
+#: includes/elements/profile-links/index.php:232
 #: includes/elements/reddit-embed/index.php:79
-#: includes/elements/share-buttons/index.php:248
+#: includes/elements/share-buttons/index.php:261
 #: includes/elements/tiktok-embed/index.php:79
 #: includes/elements/twitter-embed/index.php:79
 #: includes/elements/wordpress-embed/index.php:79
 msgid "Design Options"
 msgstr ""
 
-#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:131
+#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:170
 msgid "Could not retrieve Flickr embed."
 msgstr ""
 
-#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:138
+#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:177
 msgid "Invalid Flickr image URL."
 msgstr ""
 
-#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:140
+#: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:179
 msgid "Please provide a valid Flickr image URL."
 msgstr ""
 
@@ -277,8 +309,8 @@ msgstr ""
 msgid "Optional. Enter the width of the embedded image in pixels (minimum 500px)."
 msgstr ""
 
-#: includes/elements/pinterest-embed/class-sefwpb-element-pinterest-embed.php:109
-#: includes/elements/pinterest-embed/class-sefwpb-element-pinterest-embed.php:112
+#: includes/elements/pinterest-embed/class-sefwpb-element-pinterest-embed.php:107
+#: includes/elements/pinterest-embed/class-sefwpb-element-pinterest-embed.php:115
 msgid "Please provide a valid Pinterest post URL to embed."
 msgstr ""
 
@@ -324,12 +356,12 @@ msgstr ""
 
 #: includes/elements/profile-links/index.php:40
 #: includes/elements/share-buttons/index.php:40
-#: includes/elements/share-buttons/index.php:89
+#: includes/elements/share-buttons/index.php:95
 msgid "Facebook"
 msgstr ""
 
 #: includes/elements/profile-links/index.php:46
-#: includes/elements/share-buttons/index.php:47
+#: includes/elements/share-buttons/index.php:48
 msgid "X"
 msgstr ""
 
@@ -346,7 +378,7 @@ msgid "TikTok"
 msgstr ""
 
 #: includes/elements/profile-links/index.php:75
-#: includes/elements/share-buttons/index.php:106
+#: includes/elements/share-buttons/index.php:112
 msgid "Label"
 msgstr ""
 
@@ -363,124 +395,133 @@ msgid "Enter full URL to your profile, starting with http:// or https://"
 msgstr ""
 
 #: includes/elements/profile-links/index.php:89
-msgid "Color"
+msgid "Background color"
 msgstr ""
 
 #: includes/elements/profile-links/index.php:91
-msgid "Select icon color."
+msgid "Select icon background color."
 msgstr ""
 
 #: includes/elements/profile-links/index.php:96
-#: includes/elements/share-buttons/index.php:119
-msgid "Icon library"
+msgid "Icon color"
 msgstr ""
 
 #: includes/elements/profile-links/index.php:98
-#: includes/elements/share-buttons/index.php:121
-msgid "Font Awesome"
-msgstr ""
-
-#: includes/elements/profile-links/index.php:99
-#: includes/elements/share-buttons/index.php:122
-msgid "Mono Social"
+msgid "Select icon color."
 msgstr ""
 
 #: includes/elements/profile-links/index.php:103
-#: includes/elements/share-buttons/index.php:126
+#: includes/elements/share-buttons/index.php:132
+msgid "Icon library"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:105
+#: includes/elements/share-buttons/index.php:134
+msgid "Font Awesome"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:106
+#: includes/elements/share-buttons/index.php:135
+msgid "Mono Social"
+msgstr ""
+
+#: includes/elements/profile-links/index.php:110
+#: includes/elements/share-buttons/index.php:139
 msgid "Select icon library."
 msgstr ""
 
-#: includes/elements/profile-links/index.php:107
-#: includes/elements/profile-links/index.php:123
-#: includes/elements/share-buttons/index.php:130
-#: includes/elements/share-buttons/index.php:146
+#: includes/elements/profile-links/index.php:114
+#: includes/elements/profile-links/index.php:130
+#: includes/elements/share-buttons/index.php:143
+#: includes/elements/share-buttons/index.php:159
 msgid "Icon"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:119
-#: includes/elements/profile-links/index.php:135
-#: includes/elements/share-buttons/index.php:142
-#: includes/elements/share-buttons/index.php:158
+#: includes/elements/profile-links/index.php:126
+#: includes/elements/profile-links/index.php:142
+#: includes/elements/share-buttons/index.php:155
+#: includes/elements/share-buttons/index.php:171
 msgid "Select icon from library."
 msgstr ""
 
-#: includes/elements/profile-links/index.php:141
-#: includes/elements/share-buttons/index.php:164
+#: includes/elements/profile-links/index.php:148
+#: includes/elements/share-buttons/index.php:177
 msgid "Style"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:145
-#: includes/elements/share-buttons/index.php:168
+#: includes/elements/profile-links/index.php:152
+#: includes/elements/share-buttons/index.php:181
 msgid "Solid (brand color)"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:146
-#: includes/elements/share-buttons/index.php:169
+#: includes/elements/profile-links/index.php:153
+#: includes/elements/share-buttons/index.php:182
 msgid "Outline"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:147
+#: includes/elements/profile-links/index.php:154
 msgid "Minimal (no shape, icon only)"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:153
-#: includes/elements/share-buttons/index.php:176
+#: includes/elements/profile-links/index.php:160
+#: includes/elements/share-buttons/index.php:189
 msgid "Text color"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:156
+#: includes/elements/profile-links/index.php:163
 msgid "Optional. Set custom icon color in."
 msgstr ""
 
-#: includes/elements/profile-links/index.php:165
-#: includes/elements/share-buttons/index.php:188
+#: includes/elements/profile-links/index.php:172
+#: includes/elements/share-buttons/index.php:201
 msgid "Size"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:169
-#: includes/elements/share-buttons/index.php:192
+#: includes/elements/profile-links/index.php:176
+#: includes/elements/share-buttons/index.php:205
 msgid "Small"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:170
-#: includes/elements/share-buttons/index.php:193
+#: includes/elements/profile-links/index.php:177
+#: includes/elements/share-buttons/index.php:206
 msgid "Medium"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:171
-#: includes/elements/share-buttons/index.php:194
+#: includes/elements/profile-links/index.php:178
+#: includes/elements/share-buttons/index.php:207
 msgid "Large"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:177
-#: includes/elements/share-buttons/index.php:200
+#: includes/elements/profile-links/index.php:184
+#: includes/elements/share-buttons/index.php:213
 msgid "Button shape"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:181
-#: includes/elements/share-buttons/index.php:204
+#: includes/elements/profile-links/index.php:188
+#: includes/elements/share-buttons/index.php:217
 msgid "Square"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:182
-#: includes/elements/share-buttons/index.php:205
+#: includes/elements/profile-links/index.php:189
+#: includes/elements/share-buttons/index.php:218
 msgid "Rounded"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:183
-#: includes/elements/share-buttons/index.php:206
+#: includes/elements/profile-links/index.php:190
+#: includes/elements/share-buttons/index.php:219
 msgid "Circle"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:201
+#: includes/elements/profile-links/index.php:208
 msgid "Icon gap"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:204
+#: includes/elements/profile-links/index.php:211
 msgid "Set gap between links. You can use any CSS unit, e.g. px, em, rem, %."
 msgstr ""
 
-#: includes/elements/reddit-embed/class-sefwpb-element-reddit-embed.php:101
+#: includes/elements/reddit-embed/class-sefwpb-element-reddit-embed.php:96
+#: includes/elements/reddit-embed/class-sefwpb-element-reddit-embed.php:102
 msgid "Please provide a valid Reddit post URL to embed."
 msgstr ""
 
@@ -500,11 +541,11 @@ msgstr ""
 msgid "Enter the URL of the Reddit post you want to embed. Example: https://www.reddit.com/r/InteriorDesign/comments/abcd123/example_post/"
 msgstr ""
 
-#: includes/elements/share-buttons/class-sefwpb-element-share-buttons.php:358
+#: includes/elements/share-buttons/class-sefwpb-element-share-buttons.php:374
 msgid "Link copied!"
 msgstr ""
 
-#: includes/elements/share-buttons/class-sefwpb-element-share-buttons.php:360
+#: includes/elements/share-buttons/class-sefwpb-element-share-buttons.php:376
 msgid "Failed to copy"
 msgstr ""
 
@@ -536,79 +577,88 @@ msgstr ""
 msgid "Enter values for button - title, icon, color."
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:54
-#: includes/elements/share-buttons/index.php:91
+#: includes/elements/share-buttons/index.php:56
+#: includes/elements/share-buttons/index.php:97
 msgid "Linkedin"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:61
-#: includes/elements/share-buttons/index.php:92
+#: includes/elements/share-buttons/index.php:64
+#: includes/elements/share-buttons/index.php:98
 msgid "Reddit"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:68
-#: includes/elements/share-buttons/index.php:96
+#: includes/elements/share-buttons/index.php:72
+#: includes/elements/share-buttons/index.php:102
 msgid "Email"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:75
-#: includes/elements/share-buttons/index.php:97
+#: includes/elements/share-buttons/index.php:80
+#: includes/elements/share-buttons/index.php:103
 msgid "Copy link"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:87
+#: includes/elements/share-buttons/index.php:93
 msgid "Social platform"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:90
+#: includes/elements/share-buttons/index.php:96
 msgid "X (Twitter)"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:93
+#: includes/elements/share-buttons/index.php:99
 msgid "Pinterest"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:94
+#: includes/elements/share-buttons/index.php:100
 msgid "WhatsApp"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:95
+#: includes/elements/share-buttons/index.php:101
 msgid "Telegram"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:102
+#: includes/elements/share-buttons/index.php:108
 msgid "Select social media platform to share on."
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:108
+#: includes/elements/share-buttons/index.php:114
 msgid "Enter text used as title of button."
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:112
-msgid "Button color"
+#: includes/elements/share-buttons/index.php:118
+msgid "Button background color"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:114
+#: includes/elements/share-buttons/index.php:120
 msgid "Select button background color."
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:170
+#: includes/elements/share-buttons/index.php:125
+msgid "Button color"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:127
+msgid "Select button color (icon and text)."
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:183
 msgid "Minimal (text only)"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:179
+#: includes/elements/share-buttons/index.php:192
 msgid "Optional. Set custom text color in."
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:224
+#: includes/elements/share-buttons/index.php:237
 msgid "Button gap"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:227
+#: includes/elements/share-buttons/index.php:240
 msgid "Set gap between buttons. You can use any CSS unit, e.g. px, em, rem, %."
 msgstr ""
 
-#: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:149
+#: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:140
+#: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:147
 msgid "Please provide a valid TikTok post URL."
 msgstr ""
 
@@ -628,7 +678,8 @@ msgstr ""
 msgid "Enter the URL of the TikTok post you want to embed. Example: https://www.tiktok.com/@adnanjanbaloch7/video/7412994512169192710"
 msgstr ""
 
-#: includes/elements/twitter-embed/class-sefwpb-element-twitter-embed.php:139
+#: includes/elements/twitter-embed/class-sefwpb-element-twitter-embed.php:132
+#: includes/elements/twitter-embed/class-sefwpb-element-twitter-embed.php:143
 msgid "Please provide a valid Tweet URL to embed."
 msgstr ""
 
@@ -649,11 +700,11 @@ msgid "Enter the URL of the tweet you want to embed."
 msgstr ""
 
 #. Translators: %d is the number of comments.
-#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:141
+#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:148
 msgid "%d Comments"
 msgstr ""
 
-#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:251
+#: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:258
 msgid "Please provide a valid URL to embed."
 msgstr ""
 
@@ -673,6 +724,25 @@ msgstr ""
 msgid "Enter the URL of the post you want to embed."
 msgstr ""
 
-#: social-elements-for-wpbakery.php:77
+#: includes/helpers/lazy-load.php:75
+msgid "Embed data missing."
+msgstr ""
+
+#. translators: %s is the name of the social platform (e.g., Instagram, Flickr).
+#: includes/helpers/lazy-load.php:83
+msgid "%s Post"
+msgstr ""
+
+#. translators: %s is the name of the social platform (e.g., Instagram, Flickr).
+#: includes/helpers/lazy-load.php:84
+msgid "View on"
+msgstr ""
+
+#. translators: %s is the name of the social platform (e.g., Instagram, Flickr).
+#: includes/helpers/lazy-load.php:90
+msgid "Loading %s content..."
+msgstr ""
+
+#: social-elements-for-wpbakery.php:75
 msgid "Social Elements for WPBakery requires WPBakery Page Builder to be installed and active."
 msgstr ""

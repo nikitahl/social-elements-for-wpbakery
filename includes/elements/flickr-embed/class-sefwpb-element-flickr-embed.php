@@ -49,22 +49,61 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts          = vc_map_get_attributes( $this->getShortcode(), $atts );
+			$atts = vc_map_get_attributes( $this->getShortcode(), $atts );
+
+			$output  = $this->build_wrapper_open( $atts );
+			$output .= $this->render_title( $atts );
+			$output .= $this->get_embed_content( $atts );
+			$output .= '</div>';
+
+			return $output;
+		}
+
+		/**
+		 * Build opening wrapper div with attributes.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
+		private function build_wrapper_open( $atts ) {
 			$el_class      = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
 			$css           = isset( $atts['css'] ) ? $atts['css'] : '';
 			$css_animation = isset( $atts['css_animation'] ) ? $atts['css_animation'] : '';
-			$width         = ! empty( $atts['width'] ) ? intval( $atts['width'] ) : 500;
 
 			$css_class = $this->build_css_class( $el_class, $css, $css_animation );
 			$style     = $this->build_style( $atts );
 			$el_id     = ! empty( $atts['el_id'] ) ? 'id="' . esc_attr( $atts['el_id'] ) . '"' : '';
 
-			$output  = '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '" style="' . esc_attr( $style ) . '">';
-			$output .= $this->render_title( $atts );
-			$output .= $this->render_flickr_embed( $atts, $width );
-			$output .= '</div>';
+			return '<div ' . $el_id . ' class="' . esc_attr( $css_class ) . '" style="' . esc_attr( $style ) . '">';
+		}
 
-			return $output;
+		/**
+		 * Get embed content with optional lazy loading.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
+		private function get_embed_content( $atts ) {
+			$width          = ! empty( $atts['width'] ) ? intval( $atts['width'] ) : 500;
+			$flickr_content = $this->render_flickr_embed( $atts, $width );
+
+			if ( $this->should_lazy_load() ) {
+				$url            = ! empty( $atts['url'] ) ? $atts['url'] : '';
+				$flickr_content = sefwpb_wrap_for_lazy_load( $flickr_content, 'flickr', $url );
+			}
+
+			return $flickr_content;
+		}
+
+		/**
+		 * Check if lazy loading should be applied.
+		 *
+		 * @return bool
+		 */
+		private function should_lazy_load() {
+			return function_exists( 'sefwpb_wrap_for_lazy_load' )
+				&& function_exists( 'sefwpb_is_lazy_load_enabled' )
+				&& sefwpb_is_lazy_load_enabled();
 		}
 
 		/**

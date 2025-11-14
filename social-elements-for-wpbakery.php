@@ -4,7 +4,7 @@
  * Description: A collection of social elements (share buttons, profile links, and more) for WPBakery Page Builder.
  * Author: Nikita Hlopov
  * Author URI: https://nikitahl.com
- * Version: 1.0.1
+ * Version: 1.1
  * Requires PHP: 7.0
  * Requires at least: 6.4
  * License: GPLv3
@@ -24,12 +24,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Constants
 // -----------------------------------------------------------------------------
 /**
- * Plugin version.
+ * Plugin variables.
  *
  * @since 1.0.0
  */
 
-define( 'SEFWPB_VERSION', '1.0.1' );
+define( 'SEFWPB_VERSION', '1.1' );
 define( 'SEFWPB_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SEFWPB_URL', plugin_dir_url( __FILE__ ) );
 define( 'SEFWPB_DIR', __DIR__ . '/' );
@@ -53,16 +53,14 @@ function sefwpb_bootstrap() {
 		return; // Do not proceed without WPBakery.
 	}
 
-	// Elements.
-	require_once SEFWPB_DIR . 'includes/elements/share-buttons/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/profile-links/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/twitter-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/reddit-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/pinterest-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/facebook-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/flickr-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/wordpress-embed/index.php';
-	require_once SEFWPB_DIR . 'includes/elements/tiktok-embed/index.php';
+	if ( is_admin() ) {
+		require_once SEFWPB_DIR . 'includes/admin/settings.php';
+	}
+	require_once SEFWPB_DIR . 'includes/helpers/lazy-load.php';
+
+	// Load the element loader class and initialize it.
+	require_once SEFWPB_DIR . 'includes/classes/class-sefwpb-element-loader.php';
+	new SEFWPB_Element_Loader();
 }
 add_action( 'plugins_loaded', 'sefwpb_bootstrap' );
 

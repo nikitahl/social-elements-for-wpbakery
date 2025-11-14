@@ -106,6 +106,23 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		}
 
 		/**
+		 * Validate Facebook URL.
+		 *
+		 * @param string $url The URL to validate.
+		 * @return bool
+		 */
+		private function is_valid_facebook_url( $url ) {
+			// Check if the URL is valid.
+			if ( ! filter_var( $url, FILTER_VALIDATE_URL ) ) {
+				return false;
+			}
+
+			// Check if the URL is a Facebook URL.
+			$facebook_pattern = '/^(https?:\/\/)?(www\.)?(facebook\.com|fb\.com)\/.+$/i';
+			return preg_match( $facebook_pattern, $url ) === 1;
+		}
+
+		/**
 		 * Render Facebook embed code.
 		 *
 		 * @param array $atts Shortcode attributes.
@@ -116,13 +133,23 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			if ( isset( $atts['align'] ) ) {
 				$style .= 'text-align: ' . $atts['align'] . ';';
 			}
-			$url     = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
-			$width   = isset( $atts['width'] ) ? esc_attr( intval( $atts['width'] ) ) : '';
-			$output  = '<div class="sefwpb-facebook-embed-container" style="' . esc_attr( $style ) . '">';
-			$output .= '<div class="fb-post" data-href="' . $url . '" data-width="' . $width . '"></div>';
-			$output .= '<div id="fb-root"></div>';
-			$output .= '</div>';
-			return $output;
+
+			if ( empty( $atts['url'] ) || ! $this->is_valid_facebook_url( $atts['url'] ) ) {
+				return '<p>' . esc_html__( 'Please provide a valid Facebook post URL.', 'social-elements-for-wpbakery' ) . '</p>';
+			}
+
+			$url   = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
+			$width = isset( $atts['width'] ) ? esc_attr( intval( $atts['width'] ) ) : '';
+
+			$embed_html  = '<div class="fb-post" data-href="' . $url . '" data-width="' . $width . '"></div>';
+			$embed_html .= '<div id="fb-root"></div>';
+
+			// Apply lazy loading if enabled.
+			if ( function_exists( 'sefwpb_is_lazy_load_enabled' ) && sefwpb_is_lazy_load_enabled() ) {
+				$embed_html = sefwpb_wrap_for_lazy_load( $embed_html, 'facebook', $url );
+			}
+
+			return '<div class="sefwpb-facebook-embed-container" style="' . esc_attr( $style ) . '">' . $embed_html . '</div>';
 		}
 	}
 }

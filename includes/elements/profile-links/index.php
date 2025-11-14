@@ -86,10 +86,17 @@ add_action(
 							],
 							[
 								'type'        => 'colorpicker',
-								'heading'     => esc_html__( 'Color', 'social-elements-for-wpbakery' ),
+								'heading'     => esc_html__( 'Background color', 'social-elements-for-wpbakery' ),
 								'param_name'  => 'color',
-								'description' => esc_html__( 'Select icon color.', 'social-elements-for-wpbakery' ),
+								'description' => esc_html__( 'Select icon background color.', 'social-elements-for-wpbakery' ),
 								'value'       => '#43CE70',
+							],
+							[
+								'type'        => 'colorpicker',
+								'heading'     => esc_html__( 'Icon color', 'social-elements-for-wpbakery' ),
+								'param_name'  => 'icon_color',
+								'description' => esc_html__( 'Select icon color.', 'social-elements-for-wpbakery' ),
+								'value'       => '#FFFFFF',
 							],
 							[
 								'type'        => 'dropdown',

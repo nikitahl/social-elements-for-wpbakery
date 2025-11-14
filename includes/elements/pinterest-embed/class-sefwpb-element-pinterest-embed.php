@@ -99,20 +99,29 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			if ( isset( $atts['align'] ) ) {
 				$style .= 'text-align: ' . $atts['align'] . ';';
 			}
-			$url    = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
-			$output = '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">';
-			if ( ! empty( $url ) ) {
-				$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );
-				if ( $embed_html ) {
-					$output .= $embed_html;
-				} else {
-					$output .= esc_html__( 'Please provide a valid Pinterest post URL to embed.', 'social-elements-for-wpbakery' );
-				}
-			} else {
-				$output .= esc_html__( 'Please provide a valid Pinterest post URL to embed.', 'social-elements-for-wpbakery' );
+
+			$url = isset( $atts['url'] ) ? esc_url( $atts['url'] ) : '';
+
+			if ( empty( $url ) ) {
+				return '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">'
+					. esc_html__( 'Please provide a valid Pinterest post URL to embed.', 'social-elements-for-wpbakery' )
+					. '</div>';
 			}
-			$output .= '</div>';
-			return $output;
+
+			$embed_html = wp_oembed_get( $url, [ 'width' => 500 ] );
+
+			if ( ! $embed_html ) {
+				return '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">'
+					. esc_html__( 'Please provide a valid Pinterest post URL to embed.', 'social-elements-for-wpbakery' )
+					. '</div>';
+			}
+
+			// Apply lazy loading if enabled.
+			if ( function_exists( 'sefwpb_is_lazy_load_enabled' ) && sefwpb_is_lazy_load_enabled() ) {
+				$embed_html = sefwpb_wrap_for_lazy_load( $embed_html, 'pinterest', $url );
+			}
+
+			return '<div class="sefwpb-pinterest-embed-container" style="' . esc_attr( $style ) . '">' . $embed_html . '</div>';
 		}
 	}
 }

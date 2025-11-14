@@ -4,7 +4,7 @@ Contributors: nikitahl
 Tags: wpbakery, wpbakery-extensions, wpbakery-addons, wpbakery-page-builder, wpbakery-page-builder-addons
 Requires at least: 6.4
 Tested up to: 6.8
-Stable tag: 1.0.1
+Stable tag: 1.1
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -17,7 +17,9 @@ Enhance your WPBakery Page Builder with a collection of social elements designed
 
 This plugin adds a variety of customizable social media components, including share buttons, profile links, and social embeds, making it easy to integrate social features into your pages.
 
-The elements can be seen under the 'Social' tab in the WPBakery 'Add Element' popup.
+Social embeds support lazy loading to improve page performance.
+
+The elements can be seen under the 'Social' tab in the WPBakery 'Add Element' panel.
 
 The WPBakery Page Builder must be installed and activated for this plugin to work.
 
@@ -64,13 +66,20 @@ For more information, see each service’s privacy policy and terms:
 1. Social Elements in Social tab in Add Elements panel
 2. Social Share Buttons element preview
 3. Social Profile Links element preview
+4. Settings page in the WordPress admin area
 
 == Changelog ==
 
-= 1.0.1 =
+= 1.1 =
+* Improvement: Improved Share Buttons labels appearance and accessibility.
+* Improvement: Added URL validation for Facebook embed.
+* Improvement: Better code organization - element loader moved to dedicated classes folder.
+* New: Added option to specify Profile Links color.
+* New: Added option to specify Share Button color.
+* New: Added lazy loading option for social embeds.
 
+= 1.0.1 =
 * Updated: Used the oEmbed for all supported services for better compatibility and performance.
 
 = 1.0 =
 * Plugin released.
-

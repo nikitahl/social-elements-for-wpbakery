@@ -10,7 +10,9 @@ Enhance your WPBakery Page Builder with a collection of social elements designed
 
 This plugin adds a variety of customizable social media components, including share buttons, profile links, and social embeds, making it easy to integrate social features into your pages.
 
-The elements can be seen under the 'Social' tab in the WPBakery 'Add Element' popup.
+Social embeds support lazy loading to improve page performance.
+
+The elements can be seen under the 'Social' tab in the WPBakery 'Add Element' panel.
 
 The WPBakery Page Builder must be installed and activated for this plugin to work.
 
@@ -43,3 +45,21 @@ The plugin is available on the [WordPress plugin repository](#). You can install
 ## License
 
 This plugin is licensed under the [GPLv3](./LICENSE).
+
+## 💙 Support This Project
+
+Thank you for using **Social Elements For WPBakery**! Your support helps keep this project active and maintained. Here are some ways you can contribute:
+
+### ⭐ Star This Repository
+Show your appreciation by starring this repository on GitHub. It helps others discover the project and motivates ongoing development.
+
+### 🛠 Contribute
+Help improve the project by submitting issues, feature requests, or pull requests. Whether it’s fixing bugs, improving documentation, or adding new features, every contribution counts!
+
+### 📢 Share on Social Media
+Spread the word! Share this project on Twitter, LinkedIn, Facebook, or any other platform to help more people find and use it.
+
+### 🌟 Rate in the WordPress Repository
+If you're using this plugin on WordPress, please consider leaving a rating and review in the [WordPress Plugin Repository](https://wordpress.org/plugins/social-elements-for-wpbakery/). Positive feedback helps others trust and adopt the plugin.
+
+Your support makes a difference—thank you! 🚀

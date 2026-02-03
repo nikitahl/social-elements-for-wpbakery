@@ -1,0 +1,34 @@
+.sefwpb-spotify-embed {
+    --align: flex-start;
+    --width: 100%;
+}
+
+.sefwpb-spotify-embed-container {
+    display: flex;
+    justify-content: var(--align);
+    align-items: center;
+}
+
+.sefwpb-spotify-embed-container > div,
+.sefwpb-spotify-embed-container iframe {
+    width: var(--width) !important;
+    max-width: 100% !important;
+}
+
+.sefwpb-spotify-embed-temp {
+    height: 152px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sefwpb-spotify-embed-title {
+    margin: 0 0 10px;
+    font-size: 17px;
+    font-weight: 600;
+}
+

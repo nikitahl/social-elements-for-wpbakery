@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200px" height="200px" viewBox="0 0 200 200" version="1.1">
+    <title>YouTube</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="YouTube">
+            <rect id="Rectangle" fill="#4C2A8A" x="0" y="0" width="200" height="200" rx="5"/>
+            <g id="Group" transform="translate(36.000000, 56.000000)" fill-rule="nonzero">
+                <path d="M63.9329103,88 C63.9329103,88 104.030897,88 113.976938,85.36 C119.577159,83.864 123.7888,79.552 125.266979,74.228 C128,64.46 128,43.912 128,43.912 C128,43.912 128,23.496 125.266979,13.816 C123.7888,8.36 119.577159,4.136 113.976938,2.684 C104.030897,0 63.9329103,0 63.9329103,0 C63.9329103,0 23.9243917,0 14.0231062,2.684 C8.51244138,4.136 4.21141186,8.36 2.64333241,13.816 C0,23.496 0,43.912 0,43.912 C0,43.912 0,64.46 2.64333241,74.228 C4.21141186,79.552 8.51244138,83.864 14.0231062,85.36 C23.9243917,88 63.9329103,88 63.9329103,88 Z" id="Path" fill="#FFFFFF"/>
+                <polygon id="Path" fill="#4C2A8A" points="84 44 51 25 51 63"/>
+            </g>
+        </g>
+    </g>
+</svg>

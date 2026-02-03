@@ -4,7 +4,7 @@ Contributors: nikitahl
 Tags: wpbakery, wpbakery-extensions, wpbakery-addons, wpbakery-page-builder, wpbakery-page-builder-addons
 Requires at least: 6.4
 Tested up to: 6.9
-Stable tag: 1.1
+Stable tag: 1.2
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -34,6 +34,11 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 7. **Pinterest Embed**: Add Pinterest pins to your content.
 8. **TikTok Embed**: Embed TikTok videos.
 9. **WordPress Embed**: Integrate WordPress posts.
+10. **SoundCloud Embed**: Embed SoundCloud tracks and playlists.
+11. **Spotify Embed**: Embed Spotify tracks, albums, and playlists.
+12. **YouTube Embed**: Embed YouTube videos.
+13. **Vimeo Embed**: Embed Vimeo videos.
+14. **Tumblr Embed**: Embed Tumblr posts.
 
 == Privacy ==
 
@@ -49,6 +54,11 @@ For more information, see each service’s privacy policy and terms:
 - **Pinterest:** [Privacy Policy](https://policy.pinterest.com/en/privacy-policy) | [Terms of Service](https://policy.pinterest.com/en/terms-of-service)
 - **TikTok:** [Privacy Policy](https://www.tiktok.com/legal/page/row/privacy-policy/en) | [Terms of Service](https://www.tiktok.com/legal/page/row/terms-of-service/en)
 - **Reddit:** [Privacy Policy](https://www.reddit.com/policies/privacy-policy) | [User Agreement](https://redditinc.com/policies/user-agreement)
+- **SoundCloud:** [Privacy Policy](https://soundcloud.com/pages/privacy) | [Terms of Use](https://soundcloud.com/terms-of-use)
+- **Spotify:** [Privacy Policy](https://www.spotify.com/legal/privacy-policy/) | [Terms of Use](https://www.spotify.com/legal/end-user-agreement/)
+- **YouTube:** [Privacy Policy](https://policies.google.com/privacy) | [Terms of Service](https://www.youtube.com/t/terms)
+- **Vimeo:** [Privacy Policy](https://vimeo.com/privacy) | [Terms of Service](https://vimeo.com/terms)
+- **Tumblr:** [Privacy Policy](https://www.tumblr.com/privacy) | [Terms of Service](https://www.tumblr.com/policy/en/terms-of-service)
 
 == Requirements ==
 
@@ -70,10 +80,17 @@ For more information, see each service’s privacy policy and terms:
 
 == Changelog ==
 
+= 1.2 =
+* New: Added SoundCloud Embed element for embedding tracks and playlists.
+* New: Added Spotify Embed element for embedding tracks, albums, and playlists.
+* New: Added YouTube Embed element for embedding videos.
+* New: Added Vimeo Embed element for embedding videos.
+* New: Added Tumblr Embed element for embedding posts.
+
 = 1.1 =
 * Improvement: Improved Share Buttons labels appearance and accessibility.
 * Improvement: Added URL validation for Facebook embed.
-* Improvement: Better code organization - element loader moved to dedicated classes folder.
+* Improvement: Better code organization - element loader moved to dedicated classes' folder.
 * New: Added option to specify Profile Links color.
 * New: Added option to specify Share Button color.
 * New: Added lazy loading option for social embeds.

@@ -1,15 +1,15 @@
-# Copyright (C) 2025 Nikita Hlopov
+# Copyright (C) 2026 Nikita Hlopov
 # This file is distributed under the same license as the Social Elements for WPBakery Page Builder plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Social Elements for WPBakery Page Builder 1.1\n"
+"Project-Id-Version: Social Elements for WPBakery Page Builder 1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/social-elements-for-wpbakery\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-10T20:18:18+00:00\n"
+"POT-Creation-Date: 2026-02-03T19:56:09+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: social-elements-for-wpbakery\n"
@@ -76,9 +76,14 @@ msgstr ""
 #: includes/elements/profile-links/index.php:21
 #: includes/elements/reddit-embed/index.php:21
 #: includes/elements/share-buttons/index.php:21
+#: includes/elements/soundcloud-embed/index.php:21
+#: includes/elements/spotify-embed/index.php:21
 #: includes/elements/tiktok-embed/index.php:21
+#: includes/elements/tumblr-embed/index.php:21
 #: includes/elements/twitter-embed/index.php:21
+#: includes/elements/vimeo-embed/index.php:21
 #: includes/elements/wordpress-embed/index.php:21
+#: includes/elements/youtube-embed/index.php:21
 msgid "Social"
 msgstr ""
 
@@ -87,9 +92,14 @@ msgstr ""
 #: includes/elements/pinterest-embed/index.php:26
 #: includes/elements/profile-links/index.php:26
 #: includes/elements/reddit-embed/index.php:26
+#: includes/elements/soundcloud-embed/index.php:26
+#: includes/elements/spotify-embed/index.php:26
 #: includes/elements/tiktok-embed/index.php:26
+#: includes/elements/tumblr-embed/index.php:26
 #: includes/elements/twitter-embed/index.php:26
+#: includes/elements/vimeo-embed/index.php:26
 #: includes/elements/wordpress-embed/index.php:26
+#: includes/elements/youtube-embed/index.php:26
 msgid "Title"
 msgstr ""
 
@@ -97,9 +107,14 @@ msgstr ""
 #: includes/elements/flickr-embed/index.php:28
 #: includes/elements/pinterest-embed/index.php:28
 #: includes/elements/reddit-embed/index.php:28
+#: includes/elements/soundcloud-embed/index.php:28
+#: includes/elements/spotify-embed/index.php:28
 #: includes/elements/tiktok-embed/index.php:28
+#: includes/elements/tumblr-embed/index.php:28
 #: includes/elements/twitter-embed/index.php:28
+#: includes/elements/vimeo-embed/index.php:28
 #: includes/elements/wordpress-embed/index.php:28
+#: includes/elements/youtube-embed/index.php:28
 msgid "Optional. Enter title to display above embed."
 msgstr ""
 
@@ -117,9 +132,14 @@ msgstr ""
 #: includes/elements/profile-links/index.php:196
 #: includes/elements/reddit-embed/index.php:39
 #: includes/elements/share-buttons/index.php:225
+#: includes/elements/soundcloud-embed/index.php:39
+#: includes/elements/spotify-embed/index.php:39
 #: includes/elements/tiktok-embed/index.php:39
+#: includes/elements/tumblr-embed/index.php:39
 #: includes/elements/twitter-embed/index.php:39
+#: includes/elements/vimeo-embed/index.php:39
 #: includes/elements/wordpress-embed/index.php:39
+#: includes/elements/youtube-embed/index.php:39
 msgid "Alignment"
 msgstr ""
 
@@ -142,12 +162,22 @@ msgstr ""
 #: includes/elements/share-buttons/index.php:214
 #: includes/elements/share-buttons/index.php:227
 #: includes/elements/share-buttons/index.php:239
+#: includes/elements/soundcloud-embed/index.php:41
+#: includes/elements/soundcloud-embed/index.php:53
+#: includes/elements/spotify-embed/index.php:41
+#: includes/elements/spotify-embed/index.php:53
 #: includes/elements/tiktok-embed/index.php:41
 #: includes/elements/tiktok-embed/index.php:53
+#: includes/elements/tumblr-embed/index.php:41
+#: includes/elements/tumblr-embed/index.php:53
 #: includes/elements/twitter-embed/index.php:41
 #: includes/elements/twitter-embed/index.php:53
+#: includes/elements/vimeo-embed/index.php:41
+#: includes/elements/vimeo-embed/index.php:53
 #: includes/elements/wordpress-embed/index.php:41
 #: includes/elements/wordpress-embed/index.php:53
+#: includes/elements/youtube-embed/index.php:41
+#: includes/elements/youtube-embed/index.php:53
 msgid "Styles"
 msgstr ""
 
@@ -157,9 +187,14 @@ msgstr ""
 #: includes/elements/profile-links/index.php:200
 #: includes/elements/reddit-embed/index.php:43
 #: includes/elements/share-buttons/index.php:229
+#: includes/elements/soundcloud-embed/index.php:43
+#: includes/elements/spotify-embed/index.php:43
 #: includes/elements/tiktok-embed/index.php:43
+#: includes/elements/tumblr-embed/index.php:43
 #: includes/elements/twitter-embed/index.php:43
+#: includes/elements/vimeo-embed/index.php:43
 #: includes/elements/wordpress-embed/index.php:43
+#: includes/elements/youtube-embed/index.php:43
 msgid "Left"
 msgstr ""
 
@@ -169,9 +204,14 @@ msgstr ""
 #: includes/elements/profile-links/index.php:201
 #: includes/elements/reddit-embed/index.php:44
 #: includes/elements/share-buttons/index.php:230
+#: includes/elements/soundcloud-embed/index.php:44
+#: includes/elements/spotify-embed/index.php:44
 #: includes/elements/tiktok-embed/index.php:44
+#: includes/elements/tumblr-embed/index.php:44
 #: includes/elements/twitter-embed/index.php:44
+#: includes/elements/vimeo-embed/index.php:44
 #: includes/elements/wordpress-embed/index.php:44
+#: includes/elements/youtube-embed/index.php:44
 msgid "Center"
 msgstr ""
 
@@ -181,24 +221,35 @@ msgstr ""
 #: includes/elements/profile-links/index.php:202
 #: includes/elements/reddit-embed/index.php:45
 #: includes/elements/share-buttons/index.php:231
+#: includes/elements/soundcloud-embed/index.php:45
+#: includes/elements/spotify-embed/index.php:45
 #: includes/elements/tiktok-embed/index.php:45
+#: includes/elements/tumblr-embed/index.php:45
 #: includes/elements/twitter-embed/index.php:45
+#: includes/elements/vimeo-embed/index.php:45
 #: includes/elements/wordpress-embed/index.php:45
+#: includes/elements/youtube-embed/index.php:45
 msgid "Right"
 msgstr ""
 
 #: includes/elements/facebook-embed/index.php:51
 #: includes/elements/flickr-embed/index.php:51
 #: includes/elements/reddit-embed/index.php:51
+#: includes/elements/soundcloud-embed/index.php:51
+#: includes/elements/spotify-embed/index.php:51
 #: includes/elements/tiktok-embed/index.php:51
+#: includes/elements/tumblr-embed/index.php:51
 #: includes/elements/twitter-embed/index.php:51
+#: includes/elements/vimeo-embed/index.php:51
 #: includes/elements/wordpress-embed/index.php:51
+#: includes/elements/youtube-embed/index.php:51
 msgid "Width"
 msgstr ""
 
 #: includes/elements/facebook-embed/index.php:54
 #: includes/elements/reddit-embed/index.php:54
 #: includes/elements/tiktok-embed/index.php:54
+#: includes/elements/tumblr-embed/index.php:54
 #: includes/elements/twitter-embed/index.php:54
 #: includes/elements/wordpress-embed/index.php:54
 msgid "Optional. Enter width of the embedded post in pixels. Default is 500px."
@@ -210,9 +261,14 @@ msgstr ""
 #: includes/elements/profile-links/index.php:217
 #: includes/elements/reddit-embed/index.php:60
 #: includes/elements/share-buttons/index.php:246
+#: includes/elements/soundcloud-embed/index.php:60
+#: includes/elements/spotify-embed/index.php:60
 #: includes/elements/tiktok-embed/index.php:60
+#: includes/elements/tumblr-embed/index.php:60
 #: includes/elements/twitter-embed/index.php:60
+#: includes/elements/vimeo-embed/index.php:60
 #: includes/elements/wordpress-embed/index.php:60
+#: includes/elements/youtube-embed/index.php:60
 msgid "Element ID"
 msgstr ""
 
@@ -223,9 +279,14 @@ msgstr ""
 #: includes/elements/profile-links/index.php:220
 #: includes/elements/reddit-embed/index.php:64
 #: includes/elements/share-buttons/index.php:249
+#: includes/elements/soundcloud-embed/index.php:64
+#: includes/elements/spotify-embed/index.php:64
 #: includes/elements/tiktok-embed/index.php:64
+#: includes/elements/tumblr-embed/index.php:64
 #: includes/elements/twitter-embed/index.php:64
+#: includes/elements/vimeo-embed/index.php:64
 #: includes/elements/wordpress-embed/index.php:64
+#: includes/elements/youtube-embed/index.php:64
 msgid "Enter element ID (Note: make sure it is unique and valid according to %1$sw3c specification%2$s)."
 msgstr ""
 
@@ -235,9 +296,14 @@ msgstr ""
 #: includes/elements/profile-links/index.php:224
 #: includes/elements/reddit-embed/index.php:71
 #: includes/elements/share-buttons/index.php:253
+#: includes/elements/soundcloud-embed/index.php:71
+#: includes/elements/spotify-embed/index.php:71
 #: includes/elements/tiktok-embed/index.php:71
+#: includes/elements/tumblr-embed/index.php:71
 #: includes/elements/twitter-embed/index.php:71
+#: includes/elements/vimeo-embed/index.php:71
 #: includes/elements/wordpress-embed/index.php:71
+#: includes/elements/youtube-embed/index.php:71
 msgid "Extra class name"
 msgstr ""
 
@@ -247,9 +313,14 @@ msgstr ""
 #: includes/elements/profile-links/index.php:226
 #: includes/elements/reddit-embed/index.php:73
 #: includes/elements/share-buttons/index.php:255
+#: includes/elements/soundcloud-embed/index.php:73
+#: includes/elements/spotify-embed/index.php:73
 #: includes/elements/tiktok-embed/index.php:73
+#: includes/elements/tumblr-embed/index.php:73
 #: includes/elements/twitter-embed/index.php:73
+#: includes/elements/vimeo-embed/index.php:73
 #: includes/elements/wordpress-embed/index.php:73
+#: includes/elements/youtube-embed/index.php:73
 msgid "If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file."
 msgstr ""
 
@@ -259,9 +330,14 @@ msgstr ""
 #: includes/elements/profile-links/index.php:230
 #: includes/elements/reddit-embed/index.php:77
 #: includes/elements/share-buttons/index.php:259
+#: includes/elements/soundcloud-embed/index.php:77
+#: includes/elements/spotify-embed/index.php:77
 #: includes/elements/tiktok-embed/index.php:77
+#: includes/elements/tumblr-embed/index.php:77
 #: includes/elements/twitter-embed/index.php:77
+#: includes/elements/vimeo-embed/index.php:77
 #: includes/elements/wordpress-embed/index.php:77
+#: includes/elements/youtube-embed/index.php:77
 msgid "CSS"
 msgstr ""
 
@@ -271,9 +347,14 @@ msgstr ""
 #: includes/elements/profile-links/index.php:232
 #: includes/elements/reddit-embed/index.php:79
 #: includes/elements/share-buttons/index.php:261
+#: includes/elements/soundcloud-embed/index.php:79
+#: includes/elements/spotify-embed/index.php:79
 #: includes/elements/tiktok-embed/index.php:79
+#: includes/elements/tumblr-embed/index.php:79
 #: includes/elements/twitter-embed/index.php:79
+#: includes/elements/vimeo-embed/index.php:79
 #: includes/elements/wordpress-embed/index.php:79
+#: includes/elements/youtube-embed/index.php:79
 msgid "Design Options"
 msgstr ""
 
@@ -657,6 +738,53 @@ msgstr ""
 msgid "Set gap between buttons. You can use any CSS unit, e.g. px, em, rem, %."
 msgstr ""
 
+#: includes/elements/soundcloud-embed/class-sefwpb-element-soundcloud-embed.php:132
+#: includes/elements/soundcloud-embed/class-sefwpb-element-soundcloud-embed.php:138
+msgid "Please provide a valid SoundCloud URL to embed."
+msgstr ""
+
+#: includes/elements/soundcloud-embed/index.php:18
+msgid "SoundCloud Embed"
+msgstr ""
+
+#: includes/elements/soundcloud-embed/index.php:20
+msgid "Embed SoundCloud track or playlist"
+msgstr ""
+
+#: includes/elements/soundcloud-embed/index.php:32
+msgid "SoundCloud URL"
+msgstr ""
+
+#: includes/elements/soundcloud-embed/index.php:34
+msgid "Enter the URL of the SoundCloud track or playlist you want to embed."
+msgstr ""
+
+#: includes/elements/soundcloud-embed/index.php:54
+#: includes/elements/spotify-embed/index.php:54
+msgid "Optional. Enter width of the embedded player in pixels or percentage. Default is 100%."
+msgstr ""
+
+#: includes/elements/spotify-embed/class-sefwpb-element-spotify-embed.php:132
+#: includes/elements/spotify-embed/class-sefwpb-element-spotify-embed.php:138
+msgid "Please provide a valid Spotify URL to embed."
+msgstr ""
+
+#: includes/elements/spotify-embed/index.php:18
+msgid "Spotify Embed"
+msgstr ""
+
+#: includes/elements/spotify-embed/index.php:20
+msgid "Embed Spotify track, album, or playlist"
+msgstr ""
+
+#: includes/elements/spotify-embed/index.php:32
+msgid "Spotify URL"
+msgstr ""
+
+#: includes/elements/spotify-embed/index.php:34
+msgid "Enter the URL of the Spotify track, album, or playlist you want to embed."
+msgstr ""
+
 #: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:140
 #: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:147
 msgid "Please provide a valid TikTok post URL."
@@ -678,6 +806,27 @@ msgstr ""
 msgid "Enter the URL of the TikTok post you want to embed. Example: https://www.tiktok.com/@adnanjanbaloch7/video/7412994512169192710"
 msgstr ""
 
+#: includes/elements/tumblr-embed/class-sefwpb-element-tumblr-embed.php:132
+#: includes/elements/tumblr-embed/class-sefwpb-element-tumblr-embed.php:138
+msgid "Please provide a valid Tumblr URL to embed."
+msgstr ""
+
+#: includes/elements/tumblr-embed/index.php:18
+msgid "Tumblr Embed"
+msgstr ""
+
+#: includes/elements/tumblr-embed/index.php:20
+msgid "Embed Tumblr post"
+msgstr ""
+
+#: includes/elements/tumblr-embed/index.php:32
+msgid "Tumblr Post URL"
+msgstr ""
+
+#: includes/elements/tumblr-embed/index.php:34
+msgid "Enter the URL of the Tumblr post you want to embed."
+msgstr ""
+
 #: includes/elements/twitter-embed/class-sefwpb-element-twitter-embed.php:132
 #: includes/elements/twitter-embed/class-sefwpb-element-twitter-embed.php:143
 msgid "Please provide a valid Tweet URL to embed."
@@ -697,6 +846,32 @@ msgstr ""
 
 #: includes/elements/twitter-embed/index.php:34
 msgid "Enter the URL of the tweet you want to embed."
+msgstr ""
+
+#: includes/elements/vimeo-embed/class-sefwpb-element-vimeo-embed.php:132
+#: includes/elements/vimeo-embed/class-sefwpb-element-vimeo-embed.php:138
+msgid "Please provide a valid Vimeo URL to embed."
+msgstr ""
+
+#: includes/elements/vimeo-embed/index.php:18
+msgid "Vimeo Embed"
+msgstr ""
+
+#: includes/elements/vimeo-embed/index.php:20
+msgid "Embed Vimeo video"
+msgstr ""
+
+#: includes/elements/vimeo-embed/index.php:32
+msgid "Vimeo URL"
+msgstr ""
+
+#: includes/elements/vimeo-embed/index.php:34
+msgid "Enter the URL of the Vimeo video you want to embed."
+msgstr ""
+
+#: includes/elements/vimeo-embed/index.php:54
+#: includes/elements/youtube-embed/index.php:54
+msgid "Optional. Enter width of the embedded video in pixels or percentage. Default is 100%."
 msgstr ""
 
 #. Translators: %d is the number of comments.
@@ -722,6 +897,27 @@ msgstr ""
 
 #: includes/elements/wordpress-embed/index.php:34
 msgid "Enter the URL of the post you want to embed."
+msgstr ""
+
+#: includes/elements/youtube-embed/class-sefwpb-element-youtube-embed.php:132
+#: includes/elements/youtube-embed/class-sefwpb-element-youtube-embed.php:138
+msgid "Please provide a valid YouTube URL to embed."
+msgstr ""
+
+#: includes/elements/youtube-embed/index.php:18
+msgid "YouTube Embed"
+msgstr ""
+
+#: includes/elements/youtube-embed/index.php:20
+msgid "Embed YouTube video"
+msgstr ""
+
+#: includes/elements/youtube-embed/index.php:32
+msgid "YouTube URL"
+msgstr ""
+
+#: includes/elements/youtube-embed/index.php:34
+msgid "Enter the URL of the YouTube video you want to embed."
 msgstr ""
 
 #: includes/helpers/lazy-load.php:75

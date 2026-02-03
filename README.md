@@ -27,6 +27,11 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 7. Pinterest Embed: Add Pinterest pins to your content.
 8. TikTok Embed: Embed TikTok videos.
 9. WordPress Embed: Integrate WordPress posts.
+10. SoundCloud Embed: Embed SoundCloud tracks and playlists.
+11. Spotify Embed: Embed Spotify tracks, albums, and playlists.
+12. YouTube Embed: Embed YouTube videos.
+13. Vimeo Embed: Embed Vimeo videos.
+14. Tumblr Embed: Embed Tumblr posts.
 
 ## Installation
 

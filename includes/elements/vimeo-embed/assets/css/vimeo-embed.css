@@ -1,0 +1,39 @@
+.sefwpb-vimeo-embed {
+    --align: flex-start;
+    --width: 100%;
+}
+
+.sefwpb-vimeo-embed-container {
+    display: flex;
+    justify-content: var(--align);
+    align-items: center;
+}
+
+.sefwpb-vimeo-embed-container > div,
+.sefwpb-vimeo-embed-container iframe {
+    width: var(--width) !important;
+    max-width: 100% !important;
+}
+
+.sefwpb-vimeo-embed-container iframe {
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+.sefwpb-vimeo-embed-temp {
+    aspect-ratio: 16 / 9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sefwpb-vimeo-embed-title {
+    margin: 0 0 10px;
+    font-size: 17px;
+    font-weight: 600;
+}
+

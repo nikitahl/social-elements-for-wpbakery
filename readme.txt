@@ -38,6 +38,7 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 11. **Spotify Embed**: Embed Spotify tracks, albums, and playlists.
 12. **YouTube Embed**: Embed YouTube videos.
 13. **Vimeo Embed**: Embed Vimeo videos.
+14. **Tumblr Embed**: Embed Tumblr posts.
 
 == Privacy ==
 
@@ -57,6 +58,7 @@ For more information, see each service’s privacy policy and terms:
 - **Spotify:** [Privacy Policy](https://www.spotify.com/legal/privacy-policy/) | [Terms of Use](https://www.spotify.com/legal/end-user-agreement/)
 - **YouTube:** [Privacy Policy](https://policies.google.com/privacy) | [Terms of Service](https://www.youtube.com/t/terms)
 - **Vimeo:** [Privacy Policy](https://vimeo.com/privacy) | [Terms of Service](https://vimeo.com/terms)
+- **Tumblr:** [Privacy Policy](https://www.tumblr.com/privacy) | [Terms of Service](https://www.tumblr.com/policy/en/terms-of-service)
 
 == Requirements ==
 
@@ -83,6 +85,7 @@ For more information, see each service’s privacy policy and terms:
 * New: Added Spotify Embed element for embedding tracks, albums, and playlists.
 * New: Added YouTube Embed element for embedding videos.
 * New: Added Vimeo Embed element for embedding videos.
+* New: Added Tumblr Embed element for embedding posts.
 
 = 1.1 =
 * Improvement: Improved Share Buttons labels appearance and accessibility.

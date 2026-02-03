@@ -36,6 +36,7 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 9. **WordPress Embed**: Integrate WordPress posts.
 10. **SoundCloud Embed**: Embed SoundCloud tracks and playlists.
 11. **Spotify Embed**: Embed Spotify tracks, albums, and playlists.
+12. **YouTube Embed**: Embed YouTube videos.
 
 == Privacy ==
 
@@ -53,6 +54,7 @@ For more information, see each service’s privacy policy and terms:
 - **Reddit:** [Privacy Policy](https://www.reddit.com/policies/privacy-policy) | [User Agreement](https://redditinc.com/policies/user-agreement)
 - **SoundCloud:** [Privacy Policy](https://soundcloud.com/pages/privacy) | [Terms of Use](https://soundcloud.com/terms-of-use)
 - **Spotify:** [Privacy Policy](https://www.spotify.com/legal/privacy-policy/) | [Terms of Use](https://www.spotify.com/legal/end-user-agreement/)
+- **YouTube:** [Privacy Policy](https://policies.google.com/privacy) | [Terms of Service](https://www.youtube.com/t/terms)
 
 == Requirements ==
 
@@ -77,6 +79,7 @@ For more information, see each service’s privacy policy and terms:
 = 1.2 =
 * New: Added SoundCloud Embed element for embedding tracks and playlists.
 * New: Added Spotify Embed element for embedding tracks, albums, and playlists.
+* New: Added YouTube Embed element for embedding videos.
 
 = 1.1 =
 * Improvement: Improved Share Buttons labels appearance and accessibility.

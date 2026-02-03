@@ -1,0 +1,39 @@
+.sefwpb-youtube-embed {
+    --align: flex-start;
+    --width: 100%;
+}
+
+.sefwpb-youtube-embed-container {
+    display: flex;
+    justify-content: var(--align);
+    align-items: center;
+}
+
+.sefwpb-youtube-embed-container > div,
+.sefwpb-youtube-embed-container iframe {
+    width: var(--width) !important;
+    max-width: 100% !important;
+}
+
+.sefwpb-youtube-embed-container iframe {
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+.sefwpb-youtube-embed-temp {
+    aspect-ratio: 16 / 9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sefwpb-youtube-embed-title {
+    margin: 0 0 10px;
+    font-size: 17px;
+    font-weight: 600;
+}
+

@@ -146,5 +146,4 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			return '<div class="sefwpb-tumblr-embed-container">' . $embed_html . '</div>';
 		}
 	}
-}
-
+}g

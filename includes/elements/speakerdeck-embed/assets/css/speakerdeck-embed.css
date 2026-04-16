@@ -1,0 +1,21 @@
+.sefwpb-speakerdeck-embed{
+	display:flex;
+	flex-direction:column;
+	align-items:var(--align, flex-start);
+}
+
+.sefwpb-speakerdeck-embed-container{
+	width:var(--width, 100%);
+	max-width:100%;
+}
+
+.sefwpb-speakerdeck-embed-container iframe,
+.sefwpb-speakerdeck-embed-container embed,
+.sefwpb-speakerdeck-embed-container object{
+	max-width:100%;
+}
+
+.sefwpb-speakerdeck-embed-title{
+	margin:0 0 12px;
+}
+

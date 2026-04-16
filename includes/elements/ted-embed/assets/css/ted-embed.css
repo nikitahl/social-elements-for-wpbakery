@@ -1,0 +1,21 @@
+.sefwpb-ted-embed{
+	display:flex;
+	flex-direction:column;
+	align-items:var(--align, flex-start);
+}
+
+.sefwpb-ted-embed-container{
+	width:var(--width, 100%);
+	max-width:100%;
+}
+
+.sefwpb-ted-embed-container iframe,
+.sefwpb-ted-embed-container embed,
+.sefwpb-ted-embed-container object{
+	max-width:100%;
+}
+
+.sefwpb-ted-embed-title{
+	margin:0 0 12px;
+}
+

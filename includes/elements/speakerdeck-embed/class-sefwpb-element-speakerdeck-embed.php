@@ -59,6 +59,12 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			return $output;
 		}
 
+		/**
+		 * Build CSS class string based on attributes.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
 		private function build_css_class( $atts ) {
 			$el_class      = isset( $atts['el_class'] ) ? $atts['el_class'] : '';
 			$css           = isset( $atts['css'] ) ? $atts['css'] : '';
@@ -78,6 +84,12 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			return implode( ' ', array_filter( $css_classes ) );
 		}
 
+		/**
+		 * Get width value with proper unit.
+		 *
+		 * @param string|int $width Width value from attributes.
+		 * @return string
+		 */
 		private function get_width( $width ) {
 			if ( is_numeric( $width ) ) {
 				return intval( $width ) . 'px';
@@ -85,12 +97,24 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			return esc_attr( $width );
 		}
 
+		/**
+		 * Build inline style string based on attributes.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
 		private function build_style( $atts ) {
 			$align = isset( $atts['align'] ) ? $atts['align'] : 'flex-start';
 			$width = isset( $atts['width'] ) ? $this->get_width( $atts['width'] ) : '100%';
 			return '--align: ' . $align . ';--width: ' . $width . ';';
 		}
 
+		/**
+		 * Render the title if provided.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
 		private function render_title( $atts ) {
 			if ( ! empty( $atts['title'] ) ) {
 				return '<h3 class="sefwpb-speakerdeck-embed-title">' . esc_html( $atts['title'] ) . '</h3>';
@@ -98,6 +122,12 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			return '';
 		}
 
+		/**
+		 * Render the Speaker Deck embed using oEmbed.
+		 *
+		 * @param array $atts Shortcode attributes.
+		 * @return string
+		 */
 		private function render_speakerdeck_embed( $atts ) {
 			$url = isset( $atts['url'] ) ? $atts['url'] : '';
 
@@ -119,4 +149,3 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		}
 	}
 }
-

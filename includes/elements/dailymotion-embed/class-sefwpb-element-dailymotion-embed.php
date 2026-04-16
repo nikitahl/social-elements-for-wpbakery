@@ -152,4 +152,3 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		}
 	}
 }
-

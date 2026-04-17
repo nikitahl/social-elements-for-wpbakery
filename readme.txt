@@ -4,7 +4,7 @@ Contributors: nikitahl
 Tags: wpbakery, wpbakery-extensions, wpbakery-addons, wpbakery-page-builder, wpbakery-page-builder-addons
 Requires at least: 6.4
 Tested up to: 6.9
-Stable tag: 1.2
+Stable tag: 1.3
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -13,7 +13,7 @@ A collection of social elements (share buttons, profile links, and more) for WPB
 
 == Description ==
 
-Enhance your WPBakery Page Builder with a collection of social elements designed to boost engagement and connectivity.
+Enhance your WPBakery Page Builder with a collection of **20 FREE** social elements designed to boost engagement and connectivity.
 
 This plugin adds a variety of customizable social media components, including share buttons, profile links, and social embeds, making it easy to integrate social features into your pages.
 
@@ -39,6 +39,12 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 12. **YouTube Embed**: Embed YouTube videos.
 13. **Vimeo Embed**: Embed Vimeo videos.
 14. **Tumblr Embed**: Embed Tumblr posts.
+15. **TED Embed**: Embed TED talks.
+16. **Dailymotion Embed**: Embed Dailymotion videos.
+17. **Imgur Embed**: Embed Imgur posts.
+18. **Mixcloud Embed**: Embed Mixcloud audio shows.
+19. **Speaker Deck Embed**: Embed Speaker Deck presentations.
+20. **Kickstarter Embed**: Embed Kickstarter projects.
 
 == Privacy ==
 
@@ -59,6 +65,12 @@ For more information, see each service’s privacy policy and terms:
 - **YouTube:** [Privacy Policy](https://policies.google.com/privacy) | [Terms of Service](https://www.youtube.com/t/terms)
 - **Vimeo:** [Privacy Policy](https://vimeo.com/privacy) | [Terms of Service](https://vimeo.com/terms)
 - **Tumblr:** [Privacy Policy](https://www.tumblr.com/privacy) | [Terms of Service](https://www.tumblr.com/policy/en/terms-of-service)
+- **TED:** [Privacy Policy](https://www.ted.com/about/our-organization/our-policies-terms/privacy-policy) | [Terms of Use](https://www.ted.com/about/our-organization/our-policies-terms/ted-com-terms-of-use)
+- **Dailymotion:** [Privacy Policy](https://www.dailymotion.com/legal/privacy) | [Terms of Use](https://www.dailymotion.com/legal/terms)
+- **Imgur:** [Privacy Policy](https://imgur.com/privacy) | [Terms of Service](https://imgur.com/tos)
+- **Mixcloud:** [Privacy Policy](https://www.mixcloud.com/privacy/) | [Terms of Use](https://www.mixcloud.com/terms/)
+- **Speaker Deck:** [Privacy Policy](https://speakerdeck.com/privacy) | [Terms of Service](https://speakerdeck.com/tos)
+- **Kickstarter:** [Privacy Policy](https://www.kickstarter.com/privacy) | [Terms of Use](https://www.kickstarter.com/terms-of-use)
 
 == Requirements ==
 
@@ -79,6 +91,14 @@ For more information, see each service’s privacy policy and terms:
 4. Settings page in the WordPress admin area
 
 == Changelog ==
+
+= 1.3 =
+* New: Added TED Embed element for embedding TED talks.
+* New: Added Dailymotion Embed element for embedding videos.
+* New: Added Imgur Embed element for embedding posts.
+* New: Added Mixcloud Embed element for embedding audio shows.
+* New: Added Speaker Deck Embed element for embedding presentations.
+* New: Added Kickstarter Embed element for embedding projects.
 
 = 1.2 =
 * New: Added SoundCloud Embed element for embedding tracks and playlists.

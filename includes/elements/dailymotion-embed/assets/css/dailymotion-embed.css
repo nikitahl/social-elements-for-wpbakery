@@ -1,0 +1,21 @@
+.sefwpb-dailymotion-embed{
+	display:flex;
+	flex-direction:column;
+	align-items:var(--align, flex-start);
+}
+
+.sefwpb-dailymotion-embed-container{
+	width:var(--width, 100%);
+	max-width:100%;
+}
+
+.sefwpb-dailymotion-embed-container iframe,
+.sefwpb-dailymotion-embed-container embed,
+.sefwpb-dailymotion-embed-container object{
+	max-width:100%;
+}
+
+.sefwpb-dailymotion-embed-title{
+	margin:0 0 12px;
+}
+

@@ -1,0 +1,21 @@
+.sefwpb-mixcloud-embed{
+	display:flex;
+	flex-direction:column;
+	align-items:var(--align, flex-start);
+}
+
+.sefwpb-mixcloud-embed-container{
+	width:var(--width, 100%);
+	max-width:100%;
+}
+
+.sefwpb-mixcloud-embed-container iframe,
+.sefwpb-mixcloud-embed-container embed,
+.sefwpb-mixcloud-embed-container object{
+	max-width:100%;
+}
+
+.sefwpb-mixcloud-embed-title{
+	margin:0 0 12px;
+}
+

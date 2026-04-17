@@ -1,0 +1,21 @@
+.sefwpb-imgur-embed{
+	display:flex;
+	flex-direction:column;
+	align-items:var(--align, flex-start);
+}
+
+.sefwpb-imgur-embed-container{
+	width:var(--width, 100%);
+	max-width:100%;
+}
+
+.sefwpb-imgur-embed-container iframe,
+.sefwpb-imgur-embed-container embed,
+.sefwpb-imgur-embed-container object{
+	max-width:100%;
+}
+
+.sefwpb-imgur-embed-title{
+	margin:0 0 12px;
+}
+

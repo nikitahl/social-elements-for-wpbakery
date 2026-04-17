@@ -6,7 +6,7 @@ A collection of social elements (share buttons, profile links, and more) for WPB
 
 ## Description
 
-Enhance your WPBakery Page Builder with a collection of social elements designed to boost engagement and connectivity.
+Enhance your WPBakery Page Builder with a collection of **20 FREE** social elements designed to boost engagement and connectivity.
 
 This plugin adds a variety of customizable social media components, including share buttons, profile links, and social embeds, making it easy to integrate social features into your pages.
 
@@ -32,6 +32,12 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 12. YouTube Embed: Embed YouTube videos.
 13. Vimeo Embed: Embed Vimeo videos.
 14. Tumblr Embed: Embed Tumblr posts.
+15. TED Embed: Embed TED talks.
+16. Dailymotion Embed: Embed Dailymotion videos.
+17. Imgur Embed: Embed Imgur posts.
+18. Mixcloud Embed: Embed Mixcloud audio shows.
+19. Speaker Deck Embed: Embed Speaker Deck presentations.
+20. Kickstarter Embed: Embed Kickstarter projects.
 
 ## Installation
 

@@ -41,7 +41,7 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 
 ## Installation
 
-The plugin is available on the [WordPress plugin repository](#). You can install it directly from the WordPress dashboard, or you can directly install the plugin from the GitHub repository.
+The plugin is available on the [WordPress plugin repository](https://wordpress.org/plugins/social-elements-for-wpbakery/). You can install it directly from the WordPress dashboard, or you can directly install the plugin from the GitHub repository.
 
 1. Clone the repository to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.

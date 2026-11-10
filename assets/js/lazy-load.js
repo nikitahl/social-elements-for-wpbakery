@@ -19,6 +19,18 @@
   };
 
   /**
+   * Register a platform-specific post-load handler (used by add-ons, e.g. Pro).
+   *
+   * @param {string}   platform - Platform name matching the placeholder data-platform.
+   * @param {Function} handler  - Callback receiving the element the embed was loaded into.
+   */
+  window.sefwpbRegisterLazyLoadHandler = function(platform, handler) {
+    if (typeof platform === 'string' && typeof handler === 'function') {
+      platformHandlers[platform] = handler;
+    }
+  };
+
+  /**
    * Execute scripts from the embed HTML.
    *
    * @param {Array} scripts - Array of script elements to execute.
@@ -67,11 +79,18 @@
         script.parentNode.removeChild(script);
       });
 
-      container.innerHTML = tempDiv.innerHTML;
-      container.classList.add('sefwpb-loaded');
+      // Unwrap the lazy container so the embed markup matches the non-lazy output
+      // and element styles (e.g. "> div", "iframe" selectors) apply the same way.
+      const parent = container.parentNode;
+
+      while (tempDiv.firstChild) {
+        parent.insertBefore(tempDiv.firstChild, container);
+      }
+
+      parent.removeChild(container);
 
       if (platform && platformHandlers[platform]) {
-        platformHandlers[platform](container);
+        platformHandlers[platform](parent);
       } else {
         executeScripts(scripts);
       }

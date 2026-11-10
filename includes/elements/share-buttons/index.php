@@ -177,59 +177,59 @@ add_action(
 						],
 					],
 					[
-						'type'       => 'dropdown',
-						'heading'    => esc_html__( 'Style', 'social-elements-for-wpbakery' ),
-						'group'      => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
-						'param_name' => 'style',
-						'value'      => [
+						'type'             => 'dropdown',
+						'heading'          => esc_html__( 'Style', 'social-elements-for-wpbakery' ),
+						'group'            => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
+						'param_name'       => 'style',
+						'value'            => [
 							esc_html__( 'Solid (brand color)', 'social-elements-for-wpbakery' ) => 'solid',
 							esc_html__( 'Outline', 'social-elements-for-wpbakery' ) => 'outline',
 							esc_html__( 'Minimal (text only)', 'social-elements-for-wpbakery' ) => 'minimal',
 						],
-						'settings'   => [
+						'settings'         => [
 							'default' => 'solid',
 						],
 						'edit_field_class' => 'vc_col-xs-6 vc_col-expand-next-hidden',
 					],
 					[
-						'type'        => 'colorpicker',
-						'heading'     => esc_html__( 'Text color', 'social-elements-for-wpbakery' ),
-						'group'       => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
-						'param_name'  => 'text_color',
-						'description' => esc_html__( 'Optional. Set custom text color in.', 'social-elements-for-wpbakery' ),
-						'value'       => '#0a0b0e',
-						'dependency'  => [
+						'type'             => 'colorpicker',
+						'heading'          => esc_html__( 'Text color', 'social-elements-for-wpbakery' ),
+						'group'            => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
+						'param_name'       => 'text_color',
+						'description'      => esc_html__( 'Optional. Set custom text color in.', 'social-elements-for-wpbakery' ),
+						'value'            => '#0a0b0e',
+						'dependency'       => [
 							'element' => 'style',
 							'value'   => [ 'minimal' ],
 						],
 						'edit_field_class' => 'vc_col-xs-6',
 					],
 					[
-						'type'       => 'dropdown',
-						'heading'    => esc_html__( 'Size', 'social-elements-for-wpbakery' ),
-						'group'      => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
-						'param_name' => 'size',
-						'value'      => [
+						'type'             => 'dropdown',
+						'heading'          => esc_html__( 'Size', 'social-elements-for-wpbakery' ),
+						'group'            => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
+						'param_name'       => 'size',
+						'value'            => [
 							esc_html__( 'Small', 'social-elements-for-wpbakery' ) => 'sm',
 							esc_html__( 'Medium', 'social-elements-for-wpbakery' ) => 'md',
 							esc_html__( 'Large', 'social-elements-for-wpbakery' ) => 'lg',
 						],
-						'settings'   => [
+						'settings'         => [
 							'default' => 'md',
 						],
 						'edit_field_class' => 'vc_col-xs-6',
 					],
 					[
-						'type'       => 'dropdown',
-						'heading'    => esc_html__( 'Button shape', 'social-elements-for-wpbakery' ),
-						'group'      => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
-						'param_name' => 'shape',
-						'value'      => [
+						'type'             => 'dropdown',
+						'heading'          => esc_html__( 'Button shape', 'social-elements-for-wpbakery' ),
+						'group'            => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
+						'param_name'       => 'shape',
+						'value'            => [
 							esc_html__( 'Square', 'social-elements-for-wpbakery' ) => '0px',
 							esc_html__( 'Rounded', 'social-elements-for-wpbakery' ) => '5px',
 							esc_html__( 'Circle', 'social-elements-for-wpbakery' ) => '50px',
 						],
-						'settings'   => [
+						'settings'         => [
 							'default' => 'rounded',
 						],
 						'edit_field_class' => 'vc_col-xs-6',
@@ -250,12 +250,12 @@ add_action(
 						'edit_field_class' => 'vc_col-xs-6',
 					],
 					[
-						'type'        => 'textfield',
-						'heading'     => esc_html__( 'Button gap', 'social-elements-for-wpbakery' ),
-						'param_name'  => 'gap',
-						'group'       => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
-						'description' => esc_html__( 'Set gap between buttons. You can use any CSS unit, e.g. px, em, rem, %.', 'social-elements-for-wpbakery' ),
-						'value'       => '5px',
+						'type'             => 'textfield',
+						'heading'          => esc_html__( 'Button gap', 'social-elements-for-wpbakery' ),
+						'param_name'       => 'gap',
+						'group'            => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
+						'description'      => esc_html__( 'Set gap between buttons. You can use any CSS unit, e.g. px, em, rem, %.', 'social-elements-for-wpbakery' ),
+						'value'            => '5px',
 						'edit_field_class' => 'vc_col-xs-6',
 					],
 					vc_config()->get_css_animation(),

@@ -1,32 +1,36 @@
 # Copyright (C) 2026 Nikita Hlopov
-# This file is distributed under the same license as the Social Elements for WPBakery Page Builder plugin.
+# This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Social Elements for WPBakery Page Builder 1.2\n"
+"Project-Id-Version: Social Elements for WPBakery Page Builder 1.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/social-elements-for-wpbakery\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-03T19:56:09+00:00\n"
+"POT-Creation-Date: 2026-11-10T19:45:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.4.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: social-elements-for-wpbakery\n"
 
 #. Plugin Name of the plugin
+#: social-elements-for-wpbakery.php
 msgid "Social Elements for WPBakery Page Builder"
 msgstr ""
 
 #. Description of the plugin
+#: social-elements-for-wpbakery.php
 msgid "A collection of social elements (share buttons, profile links, and more) for WPBakery Page Builder."
 msgstr ""
 
 #. Author of the plugin
+#: social-elements-for-wpbakery.php
 msgid "Nikita Hlopov"
 msgstr ""
 
 #. Author URI of the plugin
+#: social-elements-for-wpbakery.php
 msgid "https://nikitahl.com"
 msgstr ""
 
@@ -58,6 +62,402 @@ msgstr ""
 msgid "Enable lazy loading for social embeds"
 msgstr ""
 
+#: includes/elements/dailymotion-embed/class-sefwpb-element-dailymotion-embed.php:137
+#: includes/elements/dailymotion-embed/class-sefwpb-element-dailymotion-embed.php:143
+msgid "Please provide a valid Dailymotion URL to embed."
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:18
+msgid "Dailymotion Embed"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:20
+msgid "Embed Dailymotion video"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:21
+#: includes/elements/facebook-embed/index.php:21
+#: includes/elements/flickr-embed/index.php:21
+#: includes/elements/imgur-embed/index.php:21
+#: includes/elements/kickstarter-embed/index.php:21
+#: includes/elements/mixcloud-embed/index.php:21
+#: includes/elements/pinterest-embed/index.php:21
+#: includes/elements/profile-links/index.php:21
+#: includes/elements/reddit-embed/index.php:21
+#: includes/elements/share-buttons/index.php:21
+#: includes/elements/soundcloud-embed/index.php:21
+#: includes/elements/speakerdeck-embed/index.php:21
+#: includes/elements/spotify-embed/index.php:21
+#: includes/elements/ted-embed/index.php:21
+#: includes/elements/tiktok-embed/index.php:21
+#: includes/elements/tumblr-embed/index.php:21
+#: includes/elements/twitter-embed/index.php:21
+#: includes/elements/vimeo-embed/index.php:21
+#: includes/elements/wordpress-embed/index.php:21
+#: includes/elements/youtube-embed/index.php:21
+msgid "Social"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:26
+#: includes/elements/facebook-embed/index.php:26
+#: includes/elements/flickr-embed/index.php:26
+#: includes/elements/imgur-embed/index.php:26
+#: includes/elements/kickstarter-embed/index.php:26
+#: includes/elements/mixcloud-embed/index.php:26
+#: includes/elements/pinterest-embed/index.php:26
+#: includes/elements/profile-links/index.php:26
+#: includes/elements/reddit-embed/index.php:26
+#: includes/elements/soundcloud-embed/index.php:26
+#: includes/elements/speakerdeck-embed/index.php:26
+#: includes/elements/spotify-embed/index.php:26
+#: includes/elements/ted-embed/index.php:26
+#: includes/elements/tiktok-embed/index.php:26
+#: includes/elements/tumblr-embed/index.php:26
+#: includes/elements/twitter-embed/index.php:26
+#: includes/elements/vimeo-embed/index.php:26
+#: includes/elements/wordpress-embed/index.php:26
+#: includes/elements/youtube-embed/index.php:26
+msgid "Title"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:28
+#: includes/elements/facebook-embed/index.php:28
+#: includes/elements/flickr-embed/index.php:28
+#: includes/elements/imgur-embed/index.php:28
+#: includes/elements/kickstarter-embed/index.php:28
+#: includes/elements/mixcloud-embed/index.php:28
+#: includes/elements/pinterest-embed/index.php:28
+#: includes/elements/reddit-embed/index.php:28
+#: includes/elements/soundcloud-embed/index.php:28
+#: includes/elements/speakerdeck-embed/index.php:28
+#: includes/elements/spotify-embed/index.php:28
+#: includes/elements/ted-embed/index.php:28
+#: includes/elements/tiktok-embed/index.php:28
+#: includes/elements/tumblr-embed/index.php:28
+#: includes/elements/twitter-embed/index.php:28
+#: includes/elements/vimeo-embed/index.php:28
+#: includes/elements/wordpress-embed/index.php:28
+#: includes/elements/youtube-embed/index.php:28
+msgid "Optional. Enter title to display above embed."
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:32
+msgid "Dailymotion URL"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:34
+msgid "Enter the URL of the Dailymotion video you want to embed."
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:40
+#: includes/elements/facebook-embed/index.php:39
+#: includes/elements/flickr-embed/index.php:39
+#: includes/elements/imgur-embed/index.php:39
+#: includes/elements/kickstarter-embed/index.php:39
+#: includes/elements/mixcloud-embed/index.php:39
+#: includes/elements/pinterest-embed/index.php:39
+#: includes/elements/profile-links/index.php:208
+#: includes/elements/reddit-embed/index.php:39
+#: includes/elements/share-buttons/index.php:239
+#: includes/elements/soundcloud-embed/index.php:39
+#: includes/elements/speakerdeck-embed/index.php:39
+#: includes/elements/spotify-embed/index.php:39
+#: includes/elements/ted-embed/index.php:39
+#: includes/elements/tiktok-embed/index.php:39
+#: includes/elements/tumblr-embed/index.php:39
+#: includes/elements/twitter-embed/index.php:39
+#: includes/elements/vimeo-embed/index.php:39
+#: includes/elements/wordpress-embed/index.php:39
+#: includes/elements/youtube-embed/index.php:39
+msgid "Alignment"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:42
+#: includes/elements/dailymotion-embed/index.php:57
+#: includes/elements/facebook-embed/index.php:41
+#: includes/elements/facebook-embed/index.php:56
+#: includes/elements/flickr-embed/index.php:41
+#: includes/elements/flickr-embed/index.php:56
+#: includes/elements/imgur-embed/index.php:41
+#: includes/elements/imgur-embed/index.php:56
+#: includes/elements/kickstarter-embed/index.php:41
+#: includes/elements/kickstarter-embed/index.php:56
+#: includes/elements/mixcloud-embed/index.php:41
+#: includes/elements/mixcloud-embed/index.php:56
+#: includes/elements/pinterest-embed/index.php:41
+#: includes/elements/profile-links/index.php:151
+#: includes/elements/profile-links/index.php:166
+#: includes/elements/profile-links/index.php:179
+#: includes/elements/profile-links/index.php:194
+#: includes/elements/profile-links/index.php:210
+#: includes/elements/profile-links/index.php:225
+#: includes/elements/reddit-embed/index.php:41
+#: includes/elements/reddit-embed/index.php:56
+#: includes/elements/share-buttons/index.php:182
+#: includes/elements/share-buttons/index.php:197
+#: includes/elements/share-buttons/index.php:210
+#: includes/elements/share-buttons/index.php:225
+#: includes/elements/share-buttons/index.php:241
+#: includes/elements/share-buttons/index.php:256
+#: includes/elements/soundcloud-embed/index.php:41
+#: includes/elements/soundcloud-embed/index.php:56
+#: includes/elements/speakerdeck-embed/index.php:41
+#: includes/elements/speakerdeck-embed/index.php:56
+#: includes/elements/spotify-embed/index.php:41
+#: includes/elements/spotify-embed/index.php:56
+#: includes/elements/ted-embed/index.php:41
+#: includes/elements/ted-embed/index.php:56
+#: includes/elements/tiktok-embed/index.php:41
+#: includes/elements/tiktok-embed/index.php:56
+#: includes/elements/tumblr-embed/index.php:41
+#: includes/elements/tumblr-embed/index.php:56
+#: includes/elements/twitter-embed/index.php:41
+#: includes/elements/twitter-embed/index.php:56
+#: includes/elements/vimeo-embed/index.php:41
+#: includes/elements/vimeo-embed/index.php:56
+#: includes/elements/wordpress-embed/index.php:41
+#: includes/elements/wordpress-embed/index.php:56
+#: includes/elements/youtube-embed/index.php:41
+#: includes/elements/youtube-embed/index.php:56
+msgid "Styles"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:44
+#: includes/elements/facebook-embed/index.php:43
+#: includes/elements/flickr-embed/index.php:43
+#: includes/elements/imgur-embed/index.php:43
+#: includes/elements/kickstarter-embed/index.php:43
+#: includes/elements/mixcloud-embed/index.php:43
+#: includes/elements/pinterest-embed/index.php:43
+#: includes/elements/profile-links/index.php:212
+#: includes/elements/reddit-embed/index.php:43
+#: includes/elements/share-buttons/index.php:243
+#: includes/elements/soundcloud-embed/index.php:43
+#: includes/elements/speakerdeck-embed/index.php:43
+#: includes/elements/spotify-embed/index.php:43
+#: includes/elements/ted-embed/index.php:43
+#: includes/elements/tiktok-embed/index.php:43
+#: includes/elements/tumblr-embed/index.php:43
+#: includes/elements/twitter-embed/index.php:43
+#: includes/elements/vimeo-embed/index.php:43
+#: includes/elements/wordpress-embed/index.php:43
+#: includes/elements/youtube-embed/index.php:43
+msgid "Left"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:45
+#: includes/elements/facebook-embed/index.php:44
+#: includes/elements/flickr-embed/index.php:44
+#: includes/elements/imgur-embed/index.php:44
+#: includes/elements/kickstarter-embed/index.php:44
+#: includes/elements/mixcloud-embed/index.php:44
+#: includes/elements/pinterest-embed/index.php:44
+#: includes/elements/profile-links/index.php:213
+#: includes/elements/reddit-embed/index.php:44
+#: includes/elements/share-buttons/index.php:244
+#: includes/elements/soundcloud-embed/index.php:44
+#: includes/elements/speakerdeck-embed/index.php:44
+#: includes/elements/spotify-embed/index.php:44
+#: includes/elements/ted-embed/index.php:44
+#: includes/elements/tiktok-embed/index.php:44
+#: includes/elements/tumblr-embed/index.php:44
+#: includes/elements/twitter-embed/index.php:44
+#: includes/elements/vimeo-embed/index.php:44
+#: includes/elements/wordpress-embed/index.php:44
+#: includes/elements/youtube-embed/index.php:44
+msgid "Center"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:46
+#: includes/elements/facebook-embed/index.php:45
+#: includes/elements/flickr-embed/index.php:45
+#: includes/elements/imgur-embed/index.php:45
+#: includes/elements/kickstarter-embed/index.php:45
+#: includes/elements/mixcloud-embed/index.php:45
+#: includes/elements/pinterest-embed/index.php:45
+#: includes/elements/profile-links/index.php:214
+#: includes/elements/reddit-embed/index.php:45
+#: includes/elements/share-buttons/index.php:245
+#: includes/elements/soundcloud-embed/index.php:45
+#: includes/elements/speakerdeck-embed/index.php:45
+#: includes/elements/spotify-embed/index.php:45
+#: includes/elements/ted-embed/index.php:45
+#: includes/elements/tiktok-embed/index.php:45
+#: includes/elements/tumblr-embed/index.php:45
+#: includes/elements/twitter-embed/index.php:45
+#: includes/elements/vimeo-embed/index.php:45
+#: includes/elements/wordpress-embed/index.php:45
+#: includes/elements/youtube-embed/index.php:45
+msgid "Right"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:55
+#: includes/elements/facebook-embed/index.php:54
+#: includes/elements/flickr-embed/index.php:54
+#: includes/elements/imgur-embed/index.php:54
+#: includes/elements/kickstarter-embed/index.php:54
+#: includes/elements/mixcloud-embed/index.php:54
+#: includes/elements/reddit-embed/index.php:54
+#: includes/elements/soundcloud-embed/index.php:54
+#: includes/elements/speakerdeck-embed/index.php:54
+#: includes/elements/spotify-embed/index.php:54
+#: includes/elements/ted-embed/index.php:54
+#: includes/elements/tiktok-embed/index.php:54
+#: includes/elements/tumblr-embed/index.php:54
+#: includes/elements/twitter-embed/index.php:54
+#: includes/elements/vimeo-embed/index.php:54
+#: includes/elements/wordpress-embed/index.php:54
+#: includes/elements/youtube-embed/index.php:54
+msgid "Width"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:58
+#: includes/elements/ted-embed/index.php:57
+#: includes/elements/vimeo-embed/index.php:57
+#: includes/elements/youtube-embed/index.php:57
+msgid "Optional. Enter width of the embedded video in pixels or percentage. Default is 100%."
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:65
+#: includes/elements/facebook-embed/index.php:64
+#: includes/elements/flickr-embed/index.php:64
+#: includes/elements/imgur-embed/index.php:64
+#: includes/elements/kickstarter-embed/index.php:64
+#: includes/elements/mixcloud-embed/index.php:64
+#: includes/elements/pinterest-embed/index.php:55
+#: includes/elements/profile-links/index.php:233
+#: includes/elements/reddit-embed/index.php:64
+#: includes/elements/share-buttons/index.php:264
+#: includes/elements/soundcloud-embed/index.php:64
+#: includes/elements/speakerdeck-embed/index.php:64
+#: includes/elements/spotify-embed/index.php:64
+#: includes/elements/ted-embed/index.php:64
+#: includes/elements/tiktok-embed/index.php:64
+#: includes/elements/tumblr-embed/index.php:64
+#: includes/elements/twitter-embed/index.php:64
+#: includes/elements/vimeo-embed/index.php:64
+#: includes/elements/wordpress-embed/index.php:64
+#: includes/elements/youtube-embed/index.php:64
+msgid "Element ID"
+msgstr ""
+
+#. translators: %1$s: link to w3c specification, %2$s: closing anchor tag.
+#: includes/elements/dailymotion-embed/index.php:69
+#: includes/elements/facebook-embed/index.php:68
+#: includes/elements/flickr-embed/index.php:68
+#: includes/elements/imgur-embed/index.php:68
+#: includes/elements/kickstarter-embed/index.php:68
+#: includes/elements/mixcloud-embed/index.php:68
+#: includes/elements/pinterest-embed/index.php:59
+#: includes/elements/profile-links/index.php:236
+#: includes/elements/reddit-embed/index.php:68
+#: includes/elements/share-buttons/index.php:267
+#: includes/elements/soundcloud-embed/index.php:68
+#: includes/elements/speakerdeck-embed/index.php:68
+#: includes/elements/spotify-embed/index.php:68
+#: includes/elements/ted-embed/index.php:68
+#: includes/elements/tiktok-embed/index.php:68
+#: includes/elements/tumblr-embed/index.php:68
+#: includes/elements/twitter-embed/index.php:68
+#: includes/elements/vimeo-embed/index.php:68
+#: includes/elements/wordpress-embed/index.php:68
+#: includes/elements/youtube-embed/index.php:68
+#, php-format
+msgid "Enter element ID (Note: make sure it is unique and valid according to %1$sw3c specification%2$s)."
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:77
+#: includes/elements/facebook-embed/index.php:76
+#: includes/elements/flickr-embed/index.php:76
+#: includes/elements/imgur-embed/index.php:76
+#: includes/elements/kickstarter-embed/index.php:76
+#: includes/elements/mixcloud-embed/index.php:76
+#: includes/elements/pinterest-embed/index.php:67
+#: includes/elements/profile-links/index.php:241
+#: includes/elements/reddit-embed/index.php:76
+#: includes/elements/share-buttons/index.php:272
+#: includes/elements/soundcloud-embed/index.php:76
+#: includes/elements/speakerdeck-embed/index.php:76
+#: includes/elements/spotify-embed/index.php:76
+#: includes/elements/ted-embed/index.php:76
+#: includes/elements/tiktok-embed/index.php:76
+#: includes/elements/tumblr-embed/index.php:76
+#: includes/elements/twitter-embed/index.php:76
+#: includes/elements/vimeo-embed/index.php:76
+#: includes/elements/wordpress-embed/index.php:76
+#: includes/elements/youtube-embed/index.php:76
+msgid "Extra class name"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:79
+#: includes/elements/facebook-embed/index.php:78
+#: includes/elements/flickr-embed/index.php:78
+#: includes/elements/imgur-embed/index.php:78
+#: includes/elements/kickstarter-embed/index.php:78
+#: includes/elements/mixcloud-embed/index.php:78
+#: includes/elements/pinterest-embed/index.php:69
+#: includes/elements/profile-links/index.php:243
+#: includes/elements/reddit-embed/index.php:78
+#: includes/elements/share-buttons/index.php:274
+#: includes/elements/soundcloud-embed/index.php:78
+#: includes/elements/speakerdeck-embed/index.php:78
+#: includes/elements/spotify-embed/index.php:78
+#: includes/elements/ted-embed/index.php:78
+#: includes/elements/tiktok-embed/index.php:78
+#: includes/elements/tumblr-embed/index.php:78
+#: includes/elements/twitter-embed/index.php:78
+#: includes/elements/vimeo-embed/index.php:78
+#: includes/elements/wordpress-embed/index.php:78
+#: includes/elements/youtube-embed/index.php:78
+msgid "If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file."
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:84
+#: includes/elements/facebook-embed/index.php:83
+#: includes/elements/flickr-embed/index.php:83
+#: includes/elements/imgur-embed/index.php:83
+#: includes/elements/kickstarter-embed/index.php:83
+#: includes/elements/mixcloud-embed/index.php:83
+#: includes/elements/pinterest-embed/index.php:74
+#: includes/elements/profile-links/index.php:248
+#: includes/elements/reddit-embed/index.php:83
+#: includes/elements/share-buttons/index.php:279
+#: includes/elements/soundcloud-embed/index.php:83
+#: includes/elements/speakerdeck-embed/index.php:83
+#: includes/elements/spotify-embed/index.php:83
+#: includes/elements/ted-embed/index.php:83
+#: includes/elements/tiktok-embed/index.php:83
+#: includes/elements/tumblr-embed/index.php:83
+#: includes/elements/twitter-embed/index.php:83
+#: includes/elements/vimeo-embed/index.php:83
+#: includes/elements/wordpress-embed/index.php:83
+#: includes/elements/youtube-embed/index.php:83
+msgid "CSS"
+msgstr ""
+
+#: includes/elements/dailymotion-embed/index.php:86
+#: includes/elements/facebook-embed/index.php:85
+#: includes/elements/flickr-embed/index.php:85
+#: includes/elements/imgur-embed/index.php:85
+#: includes/elements/kickstarter-embed/index.php:85
+#: includes/elements/mixcloud-embed/index.php:85
+#: includes/elements/pinterest-embed/index.php:76
+#: includes/elements/profile-links/index.php:250
+#: includes/elements/reddit-embed/index.php:85
+#: includes/elements/share-buttons/index.php:281
+#: includes/elements/soundcloud-embed/index.php:85
+#: includes/elements/speakerdeck-embed/index.php:85
+#: includes/elements/spotify-embed/index.php:85
+#: includes/elements/ted-embed/index.php:85
+#: includes/elements/tiktok-embed/index.php:85
+#: includes/elements/tumblr-embed/index.php:85
+#: includes/elements/twitter-embed/index.php:85
+#: includes/elements/vimeo-embed/index.php:85
+#: includes/elements/wordpress-embed/index.php:85
+#: includes/elements/youtube-embed/index.php:85
+msgid "Design Options"
+msgstr ""
+
 #: includes/elements/facebook-embed/class-sefwpb-element-facebook-embed.php:138
 msgid "Please provide a valid Facebook post URL."
 msgstr ""
@@ -70,54 +470,6 @@ msgstr ""
 msgid "Embed a single Facebook post"
 msgstr ""
 
-#: includes/elements/facebook-embed/index.php:21
-#: includes/elements/flickr-embed/index.php:21
-#: includes/elements/pinterest-embed/index.php:21
-#: includes/elements/profile-links/index.php:21
-#: includes/elements/reddit-embed/index.php:21
-#: includes/elements/share-buttons/index.php:21
-#: includes/elements/soundcloud-embed/index.php:21
-#: includes/elements/spotify-embed/index.php:21
-#: includes/elements/tiktok-embed/index.php:21
-#: includes/elements/tumblr-embed/index.php:21
-#: includes/elements/twitter-embed/index.php:21
-#: includes/elements/vimeo-embed/index.php:21
-#: includes/elements/wordpress-embed/index.php:21
-#: includes/elements/youtube-embed/index.php:21
-msgid "Social"
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:26
-#: includes/elements/flickr-embed/index.php:26
-#: includes/elements/pinterest-embed/index.php:26
-#: includes/elements/profile-links/index.php:26
-#: includes/elements/reddit-embed/index.php:26
-#: includes/elements/soundcloud-embed/index.php:26
-#: includes/elements/spotify-embed/index.php:26
-#: includes/elements/tiktok-embed/index.php:26
-#: includes/elements/tumblr-embed/index.php:26
-#: includes/elements/twitter-embed/index.php:26
-#: includes/elements/vimeo-embed/index.php:26
-#: includes/elements/wordpress-embed/index.php:26
-#: includes/elements/youtube-embed/index.php:26
-msgid "Title"
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:28
-#: includes/elements/flickr-embed/index.php:28
-#: includes/elements/pinterest-embed/index.php:28
-#: includes/elements/reddit-embed/index.php:28
-#: includes/elements/soundcloud-embed/index.php:28
-#: includes/elements/spotify-embed/index.php:28
-#: includes/elements/tiktok-embed/index.php:28
-#: includes/elements/tumblr-embed/index.php:28
-#: includes/elements/twitter-embed/index.php:28
-#: includes/elements/vimeo-embed/index.php:28
-#: includes/elements/wordpress-embed/index.php:28
-#: includes/elements/youtube-embed/index.php:28
-msgid "Optional. Enter title to display above embed."
-msgstr ""
-
 #: includes/elements/facebook-embed/index.php:32
 msgid "Facebook Post URL"
 msgstr ""
@@ -126,236 +478,13 @@ msgstr ""
 msgid "Enter the URL of the Facebook post you want to embed. Example: https://www.facebook.com/100064860875397/posts/10154009990506729/"
 msgstr ""
 
-#: includes/elements/facebook-embed/index.php:39
-#: includes/elements/flickr-embed/index.php:39
-#: includes/elements/pinterest-embed/index.php:39
-#: includes/elements/profile-links/index.php:196
-#: includes/elements/reddit-embed/index.php:39
-#: includes/elements/share-buttons/index.php:225
-#: includes/elements/soundcloud-embed/index.php:39
-#: includes/elements/spotify-embed/index.php:39
-#: includes/elements/tiktok-embed/index.php:39
-#: includes/elements/tumblr-embed/index.php:39
-#: includes/elements/twitter-embed/index.php:39
-#: includes/elements/vimeo-embed/index.php:39
-#: includes/elements/wordpress-embed/index.php:39
-#: includes/elements/youtube-embed/index.php:39
-msgid "Alignment"
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:41
-#: includes/elements/facebook-embed/index.php:53
-#: includes/elements/flickr-embed/index.php:41
-#: includes/elements/flickr-embed/index.php:53
-#: includes/elements/pinterest-embed/index.php:41
-#: includes/elements/profile-links/index.php:149
-#: includes/elements/profile-links/index.php:161
-#: includes/elements/profile-links/index.php:173
-#: includes/elements/profile-links/index.php:185
-#: includes/elements/profile-links/index.php:198
-#: includes/elements/profile-links/index.php:210
-#: includes/elements/reddit-embed/index.php:41
-#: includes/elements/reddit-embed/index.php:53
-#: includes/elements/share-buttons/index.php:178
-#: includes/elements/share-buttons/index.php:190
-#: includes/elements/share-buttons/index.php:202
-#: includes/elements/share-buttons/index.php:214
-#: includes/elements/share-buttons/index.php:227
-#: includes/elements/share-buttons/index.php:239
-#: includes/elements/soundcloud-embed/index.php:41
-#: includes/elements/soundcloud-embed/index.php:53
-#: includes/elements/spotify-embed/index.php:41
-#: includes/elements/spotify-embed/index.php:53
-#: includes/elements/tiktok-embed/index.php:41
-#: includes/elements/tiktok-embed/index.php:53
-#: includes/elements/tumblr-embed/index.php:41
-#: includes/elements/tumblr-embed/index.php:53
-#: includes/elements/twitter-embed/index.php:41
-#: includes/elements/twitter-embed/index.php:53
-#: includes/elements/vimeo-embed/index.php:41
-#: includes/elements/vimeo-embed/index.php:53
-#: includes/elements/wordpress-embed/index.php:41
-#: includes/elements/wordpress-embed/index.php:53
-#: includes/elements/youtube-embed/index.php:41
-#: includes/elements/youtube-embed/index.php:53
-msgid "Styles"
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:43
-#: includes/elements/flickr-embed/index.php:43
-#: includes/elements/pinterest-embed/index.php:43
-#: includes/elements/profile-links/index.php:200
-#: includes/elements/reddit-embed/index.php:43
-#: includes/elements/share-buttons/index.php:229
-#: includes/elements/soundcloud-embed/index.php:43
-#: includes/elements/spotify-embed/index.php:43
-#: includes/elements/tiktok-embed/index.php:43
-#: includes/elements/tumblr-embed/index.php:43
-#: includes/elements/twitter-embed/index.php:43
-#: includes/elements/vimeo-embed/index.php:43
-#: includes/elements/wordpress-embed/index.php:43
-#: includes/elements/youtube-embed/index.php:43
-msgid "Left"
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:44
-#: includes/elements/flickr-embed/index.php:44
-#: includes/elements/pinterest-embed/index.php:44
-#: includes/elements/profile-links/index.php:201
-#: includes/elements/reddit-embed/index.php:44
-#: includes/elements/share-buttons/index.php:230
-#: includes/elements/soundcloud-embed/index.php:44
-#: includes/elements/spotify-embed/index.php:44
-#: includes/elements/tiktok-embed/index.php:44
-#: includes/elements/tumblr-embed/index.php:44
-#: includes/elements/twitter-embed/index.php:44
-#: includes/elements/vimeo-embed/index.php:44
-#: includes/elements/wordpress-embed/index.php:44
-#: includes/elements/youtube-embed/index.php:44
-msgid "Center"
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:45
-#: includes/elements/flickr-embed/index.php:45
-#: includes/elements/pinterest-embed/index.php:45
-#: includes/elements/profile-links/index.php:202
-#: includes/elements/reddit-embed/index.php:45
-#: includes/elements/share-buttons/index.php:231
-#: includes/elements/soundcloud-embed/index.php:45
-#: includes/elements/spotify-embed/index.php:45
-#: includes/elements/tiktok-embed/index.php:45
-#: includes/elements/tumblr-embed/index.php:45
-#: includes/elements/twitter-embed/index.php:45
-#: includes/elements/vimeo-embed/index.php:45
-#: includes/elements/wordpress-embed/index.php:45
-#: includes/elements/youtube-embed/index.php:45
-msgid "Right"
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:51
-#: includes/elements/flickr-embed/index.php:51
-#: includes/elements/reddit-embed/index.php:51
-#: includes/elements/soundcloud-embed/index.php:51
-#: includes/elements/spotify-embed/index.php:51
-#: includes/elements/tiktok-embed/index.php:51
-#: includes/elements/tumblr-embed/index.php:51
-#: includes/elements/twitter-embed/index.php:51
-#: includes/elements/vimeo-embed/index.php:51
-#: includes/elements/wordpress-embed/index.php:51
-#: includes/elements/youtube-embed/index.php:51
-msgid "Width"
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:54
-#: includes/elements/reddit-embed/index.php:54
-#: includes/elements/tiktok-embed/index.php:54
-#: includes/elements/tumblr-embed/index.php:54
-#: includes/elements/twitter-embed/index.php:54
-#: includes/elements/wordpress-embed/index.php:54
+#: includes/elements/facebook-embed/index.php:57
+#: includes/elements/reddit-embed/index.php:57
+#: includes/elements/tiktok-embed/index.php:57
+#: includes/elements/tumblr-embed/index.php:57
+#: includes/elements/twitter-embed/index.php:57
+#: includes/elements/wordpress-embed/index.php:57
 msgid "Optional. Enter width of the embedded post in pixels. Default is 500px."
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:60
-#: includes/elements/flickr-embed/index.php:60
-#: includes/elements/pinterest-embed/index.php:52
-#: includes/elements/profile-links/index.php:217
-#: includes/elements/reddit-embed/index.php:60
-#: includes/elements/share-buttons/index.php:246
-#: includes/elements/soundcloud-embed/index.php:60
-#: includes/elements/spotify-embed/index.php:60
-#: includes/elements/tiktok-embed/index.php:60
-#: includes/elements/tumblr-embed/index.php:60
-#: includes/elements/twitter-embed/index.php:60
-#: includes/elements/vimeo-embed/index.php:60
-#: includes/elements/wordpress-embed/index.php:60
-#: includes/elements/youtube-embed/index.php:60
-msgid "Element ID"
-msgstr ""
-
-#. translators: %1$s: link to w3c specification, %2$s: closing anchor tag.
-#: includes/elements/facebook-embed/index.php:64
-#: includes/elements/flickr-embed/index.php:64
-#: includes/elements/pinterest-embed/index.php:56
-#: includes/elements/profile-links/index.php:220
-#: includes/elements/reddit-embed/index.php:64
-#: includes/elements/share-buttons/index.php:249
-#: includes/elements/soundcloud-embed/index.php:64
-#: includes/elements/spotify-embed/index.php:64
-#: includes/elements/tiktok-embed/index.php:64
-#: includes/elements/tumblr-embed/index.php:64
-#: includes/elements/twitter-embed/index.php:64
-#: includes/elements/vimeo-embed/index.php:64
-#: includes/elements/wordpress-embed/index.php:64
-#: includes/elements/youtube-embed/index.php:64
-msgid "Enter element ID (Note: make sure it is unique and valid according to %1$sw3c specification%2$s)."
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:71
-#: includes/elements/flickr-embed/index.php:71
-#: includes/elements/pinterest-embed/index.php:63
-#: includes/elements/profile-links/index.php:224
-#: includes/elements/reddit-embed/index.php:71
-#: includes/elements/share-buttons/index.php:253
-#: includes/elements/soundcloud-embed/index.php:71
-#: includes/elements/spotify-embed/index.php:71
-#: includes/elements/tiktok-embed/index.php:71
-#: includes/elements/tumblr-embed/index.php:71
-#: includes/elements/twitter-embed/index.php:71
-#: includes/elements/vimeo-embed/index.php:71
-#: includes/elements/wordpress-embed/index.php:71
-#: includes/elements/youtube-embed/index.php:71
-msgid "Extra class name"
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:73
-#: includes/elements/flickr-embed/index.php:73
-#: includes/elements/pinterest-embed/index.php:65
-#: includes/elements/profile-links/index.php:226
-#: includes/elements/reddit-embed/index.php:73
-#: includes/elements/share-buttons/index.php:255
-#: includes/elements/soundcloud-embed/index.php:73
-#: includes/elements/spotify-embed/index.php:73
-#: includes/elements/tiktok-embed/index.php:73
-#: includes/elements/tumblr-embed/index.php:73
-#: includes/elements/twitter-embed/index.php:73
-#: includes/elements/vimeo-embed/index.php:73
-#: includes/elements/wordpress-embed/index.php:73
-#: includes/elements/youtube-embed/index.php:73
-msgid "If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file."
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:77
-#: includes/elements/flickr-embed/index.php:77
-#: includes/elements/pinterest-embed/index.php:69
-#: includes/elements/profile-links/index.php:230
-#: includes/elements/reddit-embed/index.php:77
-#: includes/elements/share-buttons/index.php:259
-#: includes/elements/soundcloud-embed/index.php:77
-#: includes/elements/spotify-embed/index.php:77
-#: includes/elements/tiktok-embed/index.php:77
-#: includes/elements/tumblr-embed/index.php:77
-#: includes/elements/twitter-embed/index.php:77
-#: includes/elements/vimeo-embed/index.php:77
-#: includes/elements/wordpress-embed/index.php:77
-#: includes/elements/youtube-embed/index.php:77
-msgid "CSS"
-msgstr ""
-
-#: includes/elements/facebook-embed/index.php:79
-#: includes/elements/flickr-embed/index.php:79
-#: includes/elements/pinterest-embed/index.php:71
-#: includes/elements/profile-links/index.php:232
-#: includes/elements/reddit-embed/index.php:79
-#: includes/elements/share-buttons/index.php:261
-#: includes/elements/soundcloud-embed/index.php:79
-#: includes/elements/spotify-embed/index.php:79
-#: includes/elements/tiktok-embed/index.php:79
-#: includes/elements/tumblr-embed/index.php:79
-#: includes/elements/twitter-embed/index.php:79
-#: includes/elements/vimeo-embed/index.php:79
-#: includes/elements/wordpress-embed/index.php:79
-#: includes/elements/youtube-embed/index.php:79
-msgid "Design Options"
 msgstr ""
 
 #: includes/elements/flickr-embed/class-sefwpb-element-flickr-embed.php:170
@@ -386,8 +515,78 @@ msgstr ""
 msgid "Enter the URL of the Flickr image you want to embed. Example: https://www.flickr.com/photos/thomasheaton/31961411065/"
 msgstr ""
 
-#: includes/elements/flickr-embed/index.php:54
+#: includes/elements/flickr-embed/index.php:57
 msgid "Optional. Enter the width of the embedded image in pixels (minimum 500px)."
+msgstr ""
+
+#: includes/elements/imgur-embed/class-sefwpb-element-imgur-embed.php:135
+#: includes/elements/imgur-embed/class-sefwpb-element-imgur-embed.php:141
+msgid "Please provide a valid Imgur URL to embed."
+msgstr ""
+
+#: includes/elements/imgur-embed/index.php:18
+msgid "Imgur Embed"
+msgstr ""
+
+#: includes/elements/imgur-embed/index.php:20
+msgid "Embed Imgur post"
+msgstr ""
+
+#: includes/elements/imgur-embed/index.php:32
+msgid "Imgur URL"
+msgstr ""
+
+#: includes/elements/imgur-embed/index.php:34
+msgid "Enter the URL of the Imgur post you want to embed."
+msgstr ""
+
+#: includes/elements/imgur-embed/index.php:57
+#: includes/elements/kickstarter-embed/index.php:57
+#: includes/elements/mixcloud-embed/index.php:57
+#: includes/elements/speakerdeck-embed/index.php:57
+msgid "Optional. Enter width of the embedded content in pixels or percentage. Default is 100%."
+msgstr ""
+
+#: includes/elements/kickstarter-embed/class-sefwpb-element-kickstarter-embed.php:135
+#: includes/elements/kickstarter-embed/class-sefwpb-element-kickstarter-embed.php:141
+msgid "Please provide a valid Kickstarter URL to embed."
+msgstr ""
+
+#: includes/elements/kickstarter-embed/index.php:18
+msgid "Kickstarter Embed"
+msgstr ""
+
+#: includes/elements/kickstarter-embed/index.php:20
+msgid "Embed Kickstarter project"
+msgstr ""
+
+#: includes/elements/kickstarter-embed/index.php:32
+msgid "Kickstarter URL"
+msgstr ""
+
+#: includes/elements/kickstarter-embed/index.php:34
+msgid "Enter the URL of the Kickstarter project you want to embed."
+msgstr ""
+
+#: includes/elements/mixcloud-embed/class-sefwpb-element-mixcloud-embed.php:135
+#: includes/elements/mixcloud-embed/class-sefwpb-element-mixcloud-embed.php:141
+msgid "Please provide a valid Mixcloud URL to embed."
+msgstr ""
+
+#: includes/elements/mixcloud-embed/index.php:18
+msgid "Mixcloud Embed"
+msgstr ""
+
+#: includes/elements/mixcloud-embed/index.php:20
+msgid "Embed Mixcloud audio"
+msgstr ""
+
+#: includes/elements/mixcloud-embed/index.php:32
+msgid "Mixcloud URL"
+msgstr ""
+
+#: includes/elements/mixcloud-embed/index.php:34
+msgid "Enter the URL of the Mixcloud show you want to embed."
 msgstr ""
 
 #: includes/elements/pinterest-embed/class-sefwpb-element-pinterest-embed.php:107
@@ -459,7 +658,7 @@ msgid "TikTok"
 msgstr ""
 
 #: includes/elements/profile-links/index.php:75
-#: includes/elements/share-buttons/index.php:112
+#: includes/elements/share-buttons/index.php:114
 msgid "Label"
 msgstr ""
 
@@ -484,6 +683,7 @@ msgid "Select icon background color."
 msgstr ""
 
 #: includes/elements/profile-links/index.php:96
+#: includes/elements/profile-links/index.php:165
 msgid "Icon color"
 msgstr ""
 
@@ -492,112 +692,107 @@ msgid "Select icon color."
 msgstr ""
 
 #: includes/elements/profile-links/index.php:103
-#: includes/elements/share-buttons/index.php:132
+#: includes/elements/share-buttons/index.php:134
 msgid "Icon library"
 msgstr ""
 
 #: includes/elements/profile-links/index.php:105
-#: includes/elements/share-buttons/index.php:134
+#: includes/elements/share-buttons/index.php:136
 msgid "Font Awesome"
 msgstr ""
 
 #: includes/elements/profile-links/index.php:106
-#: includes/elements/share-buttons/index.php:135
+#: includes/elements/share-buttons/index.php:137
 msgid "Mono Social"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:110
-#: includes/elements/share-buttons/index.php:139
+#: includes/elements/profile-links/index.php:112
+#: includes/elements/share-buttons/index.php:143
 msgid "Select icon library."
 msgstr ""
 
-#: includes/elements/profile-links/index.php:114
-#: includes/elements/profile-links/index.php:130
-#: includes/elements/share-buttons/index.php:143
-#: includes/elements/share-buttons/index.php:159
+#: includes/elements/profile-links/index.php:116
+#: includes/elements/profile-links/index.php:132
+#: includes/elements/share-buttons/index.php:147
+#: includes/elements/share-buttons/index.php:163
 msgid "Icon"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:126
-#: includes/elements/profile-links/index.php:142
-#: includes/elements/share-buttons/index.php:155
-#: includes/elements/share-buttons/index.php:171
+#: includes/elements/profile-links/index.php:128
+#: includes/elements/profile-links/index.php:144
+#: includes/elements/share-buttons/index.php:159
+#: includes/elements/share-buttons/index.php:175
 msgid "Select icon from library."
 msgstr ""
 
-#: includes/elements/profile-links/index.php:148
-#: includes/elements/share-buttons/index.php:177
+#: includes/elements/profile-links/index.php:150
+#: includes/elements/share-buttons/index.php:181
 msgid "Style"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:152
-#: includes/elements/share-buttons/index.php:181
+#: includes/elements/profile-links/index.php:154
+#: includes/elements/share-buttons/index.php:185
 msgid "Solid (brand color)"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:153
-#: includes/elements/share-buttons/index.php:182
+#: includes/elements/profile-links/index.php:155
+#: includes/elements/share-buttons/index.php:186
 msgid "Outline"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:154
+#: includes/elements/profile-links/index.php:156
 msgid "Minimal (no shape, icon only)"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:160
-#: includes/elements/share-buttons/index.php:189
-msgid "Text color"
-msgstr ""
-
-#: includes/elements/profile-links/index.php:163
+#: includes/elements/profile-links/index.php:168
 msgid "Optional. Set custom icon color in."
 msgstr ""
 
-#: includes/elements/profile-links/index.php:172
-#: includes/elements/share-buttons/index.php:201
+#: includes/elements/profile-links/index.php:178
+#: includes/elements/share-buttons/index.php:209
 msgid "Size"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:176
-#: includes/elements/share-buttons/index.php:205
+#: includes/elements/profile-links/index.php:182
+#: includes/elements/share-buttons/index.php:213
 msgid "Small"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:177
-#: includes/elements/share-buttons/index.php:206
+#: includes/elements/profile-links/index.php:183
+#: includes/elements/share-buttons/index.php:214
 msgid "Medium"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:178
-#: includes/elements/share-buttons/index.php:207
+#: includes/elements/profile-links/index.php:184
+#: includes/elements/share-buttons/index.php:215
 msgid "Large"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:184
-#: includes/elements/share-buttons/index.php:213
+#: includes/elements/profile-links/index.php:193
+#: includes/elements/share-buttons/index.php:224
 msgid "Button shape"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:188
-#: includes/elements/share-buttons/index.php:217
+#: includes/elements/profile-links/index.php:197
+#: includes/elements/share-buttons/index.php:228
 msgid "Square"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:189
-#: includes/elements/share-buttons/index.php:218
+#: includes/elements/profile-links/index.php:198
+#: includes/elements/share-buttons/index.php:229
 msgid "Rounded"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:190
-#: includes/elements/share-buttons/index.php:219
+#: includes/elements/profile-links/index.php:199
+#: includes/elements/share-buttons/index.php:230
 msgid "Circle"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:208
+#: includes/elements/profile-links/index.php:223
 msgid "Icon gap"
 msgstr ""
 
-#: includes/elements/profile-links/index.php:211
+#: includes/elements/profile-links/index.php:226
 msgid "Set gap between links. You can use any CSS unit, e.g. px, em, rem, %."
 msgstr ""
 
@@ -698,43 +893,47 @@ msgstr ""
 msgid "Telegram"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:108
+#: includes/elements/share-buttons/index.php:110
 msgid "Select social media platform to share on."
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:114
+#: includes/elements/share-buttons/index.php:116
 msgid "Enter text used as title of button."
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:118
+#: includes/elements/share-buttons/index.php:120
 msgid "Button background color"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:120
+#: includes/elements/share-buttons/index.php:122
 msgid "Select button background color."
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:125
+#: includes/elements/share-buttons/index.php:127
 msgid "Button color"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:127
+#: includes/elements/share-buttons/index.php:129
 msgid "Select button color (icon and text)."
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:183
+#: includes/elements/share-buttons/index.php:187
 msgid "Minimal (text only)"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:192
+#: includes/elements/share-buttons/index.php:196
+msgid "Text color"
+msgstr ""
+
+#: includes/elements/share-buttons/index.php:199
 msgid "Optional. Set custom text color in."
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:237
+#: includes/elements/share-buttons/index.php:254
 msgid "Button gap"
 msgstr ""
 
-#: includes/elements/share-buttons/index.php:240
+#: includes/elements/share-buttons/index.php:257
 msgid "Set gap between buttons. You can use any CSS unit, e.g. px, em, rem, %."
 msgstr ""
 
@@ -759,9 +958,30 @@ msgstr ""
 msgid "Enter the URL of the SoundCloud track or playlist you want to embed."
 msgstr ""
 
-#: includes/elements/soundcloud-embed/index.php:54
-#: includes/elements/spotify-embed/index.php:54
+#: includes/elements/soundcloud-embed/index.php:57
+#: includes/elements/spotify-embed/index.php:57
 msgid "Optional. Enter width of the embedded player in pixels or percentage. Default is 100%."
+msgstr ""
+
+#: includes/elements/speakerdeck-embed/class-sefwpb-element-speakerdeck-embed.php:135
+#: includes/elements/speakerdeck-embed/class-sefwpb-element-speakerdeck-embed.php:141
+msgid "Please provide a valid Speaker Deck URL to embed."
+msgstr ""
+
+#: includes/elements/speakerdeck-embed/index.php:18
+msgid "Speaker Deck Embed"
+msgstr ""
+
+#: includes/elements/speakerdeck-embed/index.php:20
+msgid "Embed Speaker Deck presentation"
+msgstr ""
+
+#: includes/elements/speakerdeck-embed/index.php:32
+msgid "Speaker Deck URL"
+msgstr ""
+
+#: includes/elements/speakerdeck-embed/index.php:34
+msgid "Enter the URL of the Speaker Deck presentation you want to embed."
 msgstr ""
 
 #: includes/elements/spotify-embed/class-sefwpb-element-spotify-embed.php:132
@@ -783,6 +1003,27 @@ msgstr ""
 
 #: includes/elements/spotify-embed/index.php:34
 msgid "Enter the URL of the Spotify track, album, or playlist you want to embed."
+msgstr ""
+
+#: includes/elements/ted-embed/class-sefwpb-element-ted-embed.php:137
+#: includes/elements/ted-embed/class-sefwpb-element-ted-embed.php:143
+msgid "Please provide a valid TED URL to embed."
+msgstr ""
+
+#: includes/elements/ted-embed/index.php:18
+msgid "TED Embed"
+msgstr ""
+
+#: includes/elements/ted-embed/index.php:20
+msgid "Embed TED talk"
+msgstr ""
+
+#: includes/elements/ted-embed/index.php:32
+msgid "TED URL"
+msgstr ""
+
+#: includes/elements/ted-embed/index.php:34
+msgid "Enter the URL of the TED talk you want to embed."
 msgstr ""
 
 #: includes/elements/tiktok-embed/class-sefwpb-element-tiktok-embed.php:140
@@ -869,13 +1110,9 @@ msgstr ""
 msgid "Enter the URL of the Vimeo video you want to embed."
 msgstr ""
 
-#: includes/elements/vimeo-embed/index.php:54
-#: includes/elements/youtube-embed/index.php:54
-msgid "Optional. Enter width of the embedded video in pixels or percentage. Default is 100%."
-msgstr ""
-
 #. Translators: %d is the number of comments.
 #: includes/elements/wordpress-embed/class-sefwpb-element-wordpress-embed.php:148
+#, php-format
 msgid "%d Comments"
 msgstr ""
 
@@ -926,16 +1163,17 @@ msgstr ""
 
 #. translators: %s is the name of the social platform (e.g., Instagram, Flickr).
 #: includes/helpers/lazy-load.php:83
+#, php-format
 msgid "%s Post"
 msgstr ""
 
-#. translators: %s is the name of the social platform (e.g., Instagram, Flickr).
 #: includes/helpers/lazy-load.php:84
 msgid "View on"
 msgstr ""
 
 #. translators: %s is the name of the social platform (e.g., Instagram, Flickr).
 #: includes/helpers/lazy-load.php:90
+#, php-format
 msgid "Loading %s content..."
 msgstr ""
 

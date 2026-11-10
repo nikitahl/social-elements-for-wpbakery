@@ -4,7 +4,7 @@ Contributors: nikitahl
 Tags: wpbakery, wpbakery-extensions, wpbakery-addons, wpbakery-page-builder, wpbakery-page-builder-addons
 Requires at least: 6.4
 Tested up to: 6.9
-Stable tag: 1.3
+Stable tag: 1.3.1
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -91,6 +91,14 @@ For more information, see each service’s privacy policy and terms:
 4. Settings page in the WordPress admin area
 
 == Changelog ==
+
+= 1.3.1 =
+* Fix: Removed WPBakery deprecation notices by replacing the deprecated "std" param attribute with "settings" default values.
+* Fix: Replaced deprecated vc_map_add_css_animation() with vc_config()->get_css_animation().
+* Fix: Lazy loaded embeds now render with the same markup as regular embeds, fixing incorrect embed widths.
+* Fix: Minimal style icon color in Profile Links and Share Buttons is no longer overridden by the individual button icon color.
+* Improvement: Element settings are now displayed in a more compact two-column layout.
+* Improvement: Added support for loading elements from custom directories and registering custom lazy load handlers.
 
 = 1.3 =
 * New: Added TED Embed element for embedding TED talks.

@@ -25,9 +25,24 @@ class SEFWPB_Element_Loader {
 	private $elements = [];
 
 	/**
-	 * Constructor.
+	 * Absolute path to the elements directory to scan.
+	 *
+	 * @var string
 	 */
-	public function __construct() {
+	private $elements_dir;
+
+	/**
+	 * Constructor.
+	 *
+	 * @param string $elements_dir Optional. Absolute path to a directory containing
+	 *                             element subfolders, each with an index.php file.
+	 *                             Defaults to the free plugin's own elements directory.
+	 */
+	public function __construct( $elements_dir = '' ) {
+		$this->elements_dir = '' !== $elements_dir
+			? trailingslashit( $elements_dir )
+			: SEFWPB_DIR . 'includes/elements/';
+
 		$this->discover_elements();
 		$this->load_all_elements();
 	}
@@ -38,7 +53,7 @@ class SEFWPB_Element_Loader {
 	 * @return void
 	 */
 	private function discover_elements() {
-		$elements_dir = SEFWPB_DIR . 'includes/elements/';
+		$elements_dir = $this->elements_dir;
 
 		if ( ! is_dir( $elements_dir ) ) {
 			return;

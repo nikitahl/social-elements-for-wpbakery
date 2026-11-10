@@ -8,6 +8,7 @@
     --button-bg: transparent;
     --button-hover-bg: #333;
     --button-hover-color: #fff;
+    --minimal-icon-color: #000;
 }
 
 .sefwpb-profile-links__title {
@@ -31,7 +32,7 @@
 .sefwpb-profile-links--minimal .sefwpb-profile-links__button {
     background: transparent;
     border: none;
-    color: var(--button-color);
+    color: var(--minimal-icon-color, var(--button-color));
 }
 
 .sefwpb-profile-links-buttons {

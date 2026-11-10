@@ -32,19 +32,23 @@ add_action(
 						'heading'     => esc_html__( 'Dailymotion URL', 'social-elements-for-wpbakery' ),
 						'param_name'  => 'url',
 						'description' => esc_html__( 'Enter the URL of the Dailymotion video you want to embed.', 'social-elements-for-wpbakery' ),
-						'value'       => 'https://www.dailymotion.com/video/x7tgczq',
+						'value'       => 'https://www.dailymotion.com/video/x7wcbvq',
 					],
+
 					[
-						'type'       => 'dropdown',
-						'heading'    => esc_html__( 'Alignment', 'social-elements-for-wpbakery' ),
-						'param_name' => 'align',
-						'group'      => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
-						'value'      => [
+						'type'             => 'dropdown',
+						'heading'          => esc_html__( 'Alignment', 'social-elements-for-wpbakery' ),
+						'param_name'       => 'align',
+						'group'            => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
+						'value'            => [
 							esc_html__( 'Left', 'social-elements-for-wpbakery' )   => 'flex-start',
 							esc_html__( 'Center', 'social-elements-for-wpbakery' ) => 'center',
 							esc_html__( 'Right', 'social-elements-for-wpbakery' )  => 'flex-end',
 						],
-						'std'        => 'flex-start',
+						'settings'         => [
+							'default' => 'flex-start',
+						],
+						'edit_field_class' => 'vc_col-xs-6',
 					],
 					[
 						'type'        => 'textfield',
@@ -53,24 +57,27 @@ add_action(
 						'group'       => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
 						'description' => esc_html__( 'Optional. Enter width of the embedded video in pixels or percentage. Default is 100%.', 'social-elements-for-wpbakery' ),
 						'value'       => '100%',
+						'edit_field_class' => 'vc_col-xs-6',
 					],
-					vc_map_add_css_animation(),
+					vc_config()->get_css_animation(),
 					[
-						'type'        => 'el_id',
-						'heading'     => esc_html__( 'Element ID', 'social-elements-for-wpbakery' ),
-						'param_name'  => 'el_id',
-						'description' => sprintf(
+						'type'             => 'el_id',
+						'heading'          => esc_html__( 'Element ID', 'social-elements-for-wpbakery' ),
+						'param_name'       => 'el_id',
+						'description'      => sprintf(
 							// translators: %1$s: link to w3c specification, %2$s: closing anchor tag.
 							esc_html__( 'Enter element ID (Note: make sure it is unique and valid according to %1$sw3c specification%2$s).', 'social-elements-for-wpbakery' ),
 							'<a href="https://www.w3schools.com/tags/att_global_id.asp" target="_blank">',
 							'</a>'
 						),
+						'edit_field_class' => 'vc_col-xs-6',
 					],
 					[
-						'type'        => 'textfield',
-						'heading'     => esc_html__( 'Extra class name', 'social-elements-for-wpbakery' ),
-						'param_name'  => 'el_class',
-						'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'social-elements-for-wpbakery' ),
+						'type'             => 'textfield',
+						'heading'          => esc_html__( 'Extra class name', 'social-elements-for-wpbakery' ),
+						'param_name'       => 'el_class',
+						'description'      => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'social-elements-for-wpbakery' ),
+						'edit_field_class' => 'vc_col-xs-6',
 					],
 					[
 						'type'       => 'css_editor',

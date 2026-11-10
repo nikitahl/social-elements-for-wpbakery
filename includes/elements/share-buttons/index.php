@@ -102,7 +102,9 @@ add_action(
 									esc_html__( 'Email', 'social-elements-for-wpbakery' ) => 'email',
 									esc_html__( 'Copy link', 'social-elements-for-wpbakery' ) => 'copy',
 								],
-								'std'         => 'facebook',
+								'settings'    => [
+									'default' => 'facebook',
+								],
 								'admin_label' => true,
 								'param_name'  => 'social_platform',
 								'description' => esc_html__( 'Select social media platform to share on.', 'social-elements-for-wpbakery' ),
@@ -134,7 +136,9 @@ add_action(
 									esc_html__( 'Font Awesome', 'social-elements-for-wpbakery' ) => 'fontawesome',
 									esc_html__( 'Mono Social', 'social-elements-for-wpbakery' ) => 'monosocial',
 								],
-								'std'         => 'fontawesome',
+								'settings'    => [
+									'default' => 'fontawesome',
+								],
 								'param_name'  => 'icon_type',
 								'description' => esc_html__( 'Select icon library.', 'social-elements-for-wpbakery' ),
 							],
@@ -182,7 +186,10 @@ add_action(
 							esc_html__( 'Outline', 'social-elements-for-wpbakery' ) => 'outline',
 							esc_html__( 'Minimal (text only)', 'social-elements-for-wpbakery' ) => 'minimal',
 						],
-						'std'        => 'solid',
+						'settings'   => [
+							'default' => 'solid',
+						],
+						'edit_field_class' => 'vc_col-xs-6 vc_col-expand-next-hidden',
 					],
 					[
 						'type'        => 'colorpicker',
@@ -195,6 +202,7 @@ add_action(
 							'element' => 'style',
 							'value'   => [ 'minimal' ],
 						],
+						'edit_field_class' => 'vc_col-xs-6',
 					],
 					[
 						'type'       => 'dropdown',
@@ -206,7 +214,10 @@ add_action(
 							esc_html__( 'Medium', 'social-elements-for-wpbakery' ) => 'md',
 							esc_html__( 'Large', 'social-elements-for-wpbakery' ) => 'lg',
 						],
-						'std'        => 'md',
+						'settings'   => [
+							'default' => 'md',
+						],
+						'edit_field_class' => 'vc_col-xs-6',
 					],
 					[
 						'type'       => 'dropdown',
@@ -218,19 +229,25 @@ add_action(
 							esc_html__( 'Rounded', 'social-elements-for-wpbakery' ) => '5px',
 							esc_html__( 'Circle', 'social-elements-for-wpbakery' ) => '50px',
 						],
-						'std'        => 'rounded',
+						'settings'   => [
+							'default' => 'rounded',
+						],
+						'edit_field_class' => 'vc_col-xs-6',
 					],
 					[
-						'type'       => 'dropdown',
-						'heading'    => esc_html__( 'Alignment', 'social-elements-for-wpbakery' ),
-						'param_name' => 'align',
-						'group'      => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
-						'value'      => [
+						'type'             => 'dropdown',
+						'heading'          => esc_html__( 'Alignment', 'social-elements-for-wpbakery' ),
+						'param_name'       => 'align',
+						'group'            => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
+						'value'            => [
 							esc_html__( 'Left', 'social-elements-for-wpbakery' ) => 'left',
 							esc_html__( 'Center', 'social-elements-for-wpbakery' ) => 'center',
 							esc_html__( 'Right', 'social-elements-for-wpbakery' ) => 'right',
 						],
-						'std'        => 'left',
+						'settings'         => [
+							'default' => 'left',
+						],
+						'edit_field_class' => 'vc_col-xs-6',
 					],
 					[
 						'type'        => 'textfield',
@@ -239,20 +256,23 @@ add_action(
 						'group'       => esc_html__( 'Styles', 'social-elements-for-wpbakery' ),
 						'description' => esc_html__( 'Set gap between buttons. You can use any CSS unit, e.g. px, em, rem, %.', 'social-elements-for-wpbakery' ),
 						'value'       => '5px',
+						'edit_field_class' => 'vc_col-xs-6',
 					],
-					vc_map_add_css_animation(),
+					vc_config()->get_css_animation(),
 					[
-						'type'        => 'el_id',
-						'heading'     => esc_html__( 'Element ID', 'social-elements-for-wpbakery' ),
-						'param_name'  => 'el_id',
+						'type'             => 'el_id',
+						'heading'          => esc_html__( 'Element ID', 'social-elements-for-wpbakery' ),
+						'param_name'       => 'el_id',
 						// translators: %1$s: link to w3c specification, %2$s: closing anchor tag.
-						'description' => sprintf( esc_html__( 'Enter element ID (Note: make sure it is unique and valid according to %1$sw3c specification%2$s).', 'social-elements-for-wpbakery' ), '<a href="https://www.w3schools.com/tags/att_global_id.asp" target="_blank">', '</a>' ),
+						'description'      => sprintf( esc_html__( 'Enter element ID (Note: make sure it is unique and valid according to %1$sw3c specification%2$s).', 'social-elements-for-wpbakery' ), '<a href="https://www.w3schools.com/tags/att_global_id.asp" target="_blank">', '</a>' ),
+						'edit_field_class' => 'vc_col-xs-6',
 					],
 					[
-						'type'        => 'textfield',
-						'heading'     => esc_html__( 'Extra class name', 'social-elements-for-wpbakery' ),
-						'param_name'  => 'el_class',
-						'description' => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'social-elements-for-wpbakery' ),
+						'type'             => 'textfield',
+						'heading'          => esc_html__( 'Extra class name', 'social-elements-for-wpbakery' ),
+						'param_name'       => 'el_class',
+						'description'      => esc_html__( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'social-elements-for-wpbakery' ),
+						'edit_field_class' => 'vc_col-xs-6',
 					],
 					[
 						'type'       => 'css_editor',

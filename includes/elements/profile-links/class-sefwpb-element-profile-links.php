@@ -64,7 +64,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 			$styles .= $this->get_align_style( $atts );
 			$styles .= $this->get_gap_style( $atts );
 			$styles .= $this->get_size_style( $atts );
-			$styles .= $this->get_text_color_style( $atts );
+			$styles .= $this->get_minimal_icon_color_style( $atts );
 			return $styles;
 		}
 
@@ -120,7 +120,12 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 * @return string
 		 */
 		public function content( $atts, $content = '' ) {
-			$atts            = vc_map_get_attributes( $this->getShortcode(), $atts );
+			// Back-compat: the minimal style "text_color" param was renamed to "icon_color".
+			$legacy_icon_color = ( is_array( $atts ) && ! empty( $atts['text_color'] ) && empty( $atts['icon_color'] ) ) ? $atts['text_color'] : '';
+			$atts              = vc_map_get_attributes( $this->getShortcode(), $atts );
+			if ( '' !== $legacy_icon_color ) {
+				$atts['icon_color'] = $legacy_icon_color;
+			}
 			$values          = $atts['values'];
 			$buttons         = [];
 			$wrapper_classes = $this->get_wrapper_classes( $atts );
@@ -326,14 +331,17 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		}
 
 		/**
-		 * Get text color style.
+		 * Get minimal style icon color.
+		 *
+		 * Uses a dedicated variable so it is not overridden by the per-button
+		 * "--button-color" set from the param group item.
 		 *
 		 * @param array $atts
 		 * @return string
 		 */
-		private function get_text_color_style( $atts ) {
-			return ( ! empty( $atts['text_color'] ) && 'minimal' === $atts['style'] )
-				? '--button-color:' . esc_attr( $atts['text_color'] ) . ';'
+		private function get_minimal_icon_color_style( $atts ) {
+			return ( ! empty( $atts['icon_color'] ) && 'minimal' === $atts['style'] )
+				? '--minimal-icon-color:' . esc_attr( $atts['icon_color'] ) . ';'
 				: '';
 		}
 	}

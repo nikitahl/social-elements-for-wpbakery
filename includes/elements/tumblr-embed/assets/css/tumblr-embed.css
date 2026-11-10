@@ -13,6 +13,7 @@
 .sefwpb-tumblr-embed-container iframe {
     width: var(--width) !important;
     max-width: 100% !important;
+    margin: 0 !important;
 }
 
 .sefwpb-tumblr-embed-temp {

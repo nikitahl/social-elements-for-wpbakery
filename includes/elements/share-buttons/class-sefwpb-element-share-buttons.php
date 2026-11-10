@@ -214,7 +214,7 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 		 */
 		private function get_text_color_style( $atts ) {
 			return ( ! empty( $atts['text_color'] ) && 'minimal' === $atts['style'] )
-				? '--button-color:' . esc_attr( $atts['text_color'] ) . ';'
+				? '--minimal-icon-color:' . esc_attr( $atts['text_color'] ) . ';'
 				: '';
 		}
 

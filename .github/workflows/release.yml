@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*.*.*'  # Triggers the workflow on tag push like v1.0.0
 
+permissions:
+  contents: write  # Required to create releases and upload assets
+
 jobs:
   codestyle-php:
     name: PHP codestyle checks
@@ -12,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Composer dependencies
         run: php ci/composer.phar install
@@ -39,7 +42,7 @@ jobs:
 
     steps:
       - name: Checkout the code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Fetch all history so we can access tags and branches
           ref: ${{ github.ref }}
@@ -51,19 +54,19 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
           body: |
-            Automated release for ${{ github.ref }}
+            Automated release for ${{ github.ref_name }}
           draft: false
           prerelease: false
 
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./social-elements-for-wpbakery.zip

@@ -25,7 +25,7 @@ The WPBakery Page Builder must be installed and activated for this plugin to wor
 
 == Elements ==
 
-1. **Social Share Buttons**: Easily add share buttons for popular social networks like Facebook, Twitter, LinkedIn, and more.
+1. **Social Share Buttons**: Add share buttons for popular social networks like Facebook, Twitter, LinkedIn, and more.
 2. **Social Profile Links**: Display links to your social media profiles with customizable icons and styles.
 3. **Twitter Embed**: Embed tweets directly into your pages.
 4. **Facebook Embed**: Integrate Facebook posts.
@@ -85,7 +85,7 @@ For more information, see each service’s privacy policy and terms:
 
 == Screenshots ==
 
-1. Social Elements in Social tab in Add Elements panel
+1. Social Elements in the Social tab in the Add Elements panel
 2. Social Share Buttons element preview
 3. Social Profile Links element preview
 4. Settings page in the WordPress admin area
@@ -96,7 +96,7 @@ For more information, see each service’s privacy policy and terms:
 * Fix: Removed WPBakery deprecation notices by replacing the deprecated "std" param attribute with "settings" default values.
 * Fix: Replaced deprecated vc_map_add_css_animation() with vc_config()->get_css_animation().
 * Fix: Lazy loaded embeds now render with the same markup as regular embeds, fixing incorrect embed widths.
-* Fix: Minimal style icon color in Profile Links and Share Buttons is no longer overridden by the individual button icon color.
+* Fix: Minimal style icon color in Profile Links is no longer overridden by the individual button icon color.
 * Improvement: Element settings are now displayed in a more compact two-column layout.
 * Improvement: Added support for loading elements from custom directories and registering custom lazy load handlers.
 
